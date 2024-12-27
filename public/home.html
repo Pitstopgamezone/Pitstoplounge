@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pit-Stop Lounge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Логотип с анимацией -->
+    <div id="logo-container">
+        <img id="logo" src="images/logo.jpg" alt="Pit-Stop Lounge Logo">
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <h1>Welcome to Pit-Stop Lounge!</h1>
+        <p>Your token balance: <span id="balance">Loading...</span></p>
+        <button id="exchangeTokens">Exchange 10 PTC</button>
+    </div>
+
+    <script>
+        // Показать основной контент после анимации логотипа
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('logo-container').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }, 2000);  // Время задержки, пока логотип будет отображаться (2 секунды)
+        };
+
+        // Получаем баланс с сервера
+        async function fetchBalance() {
+            const response = await fetch('http://localhost:3000/balance');
+            const data = await response.json();
+            document.getElementById('balance').textContent = data.balance;
+        }
+
+        // Отправляем запрос на обмен токенов
+        async function exchangeTokens() {
+            const response = await fetch('/exchange', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ tokens: 10 })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert(data.message);
+                fetchBalance(); // Обновляем баланс после обмена
+            } else {
+                const error = await response.json();
+                alert(error.message);
+            }
+        }
+
+        document.getElementById('exchangeTokens').addEventListener('click', exchangeTokens);
+
+        // Загружаем баланс при загрузке страницы
+        fetchBalance();
+    </script>
+</body>
+</html>

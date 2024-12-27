@@ -1,0 +1,130 @@
+body { 
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #000;
+}
+
+#neon-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#neon-text {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fd7200;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: inline-block;
+  animation: neon-glow 1.5s ease-in-out infinite;
+}
+
+.neon-letter {
+  display: inline-block;
+  opacity: 0;
+  animation: neon-flicker 0.5s ease forwards;
+}
+
+.neon-letter:nth-child(1) { animation-delay: 0s; }
+.neon-letter:nth-child(2) { animation-delay: 0.1s; }
+.neon-letter:nth-child(3) { animation-delay: 0.2s; }
+.neon-letter:nth-child(4) { animation-delay: 0.3s; }
+.neon-letter:nth-child(5) { animation-delay: 0.4s; }
+.neon-letter:nth-child(6) { animation-delay: 0.5s; }
+.neon-letter:nth-child(7) { animation-delay: 0.6s; }
+.neon-letter:nth-child(8) { animation-delay: 0.7s; }
+.neon-letter:nth-child(9) { animation-delay: 0.8s; }
+.neon-letter:nth-child(10) { animation-delay: 0.9s; }
+.neon-letter:nth-child(11) { animation-delay: 1s; }
+.neon-letter:nth-child(12) { animation-delay: 1.1s; }
+.neon-letter:nth-child(13) { animation-delay: 1.2s; }
+.neon-letter:nth-child(14) { animation-delay: 1.3s; }
+.neon-letter:nth-child(15) { animation-delay: 1.4s; }
+
+@keyframes neon-flicker {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes neon-glow {
+  0% {
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff5722, 0 0 30px #ff5722;
+  }
+  50% {
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff5722, 0 0 50px #ff5722;
+  }
+  100% {
+    text-shadow: 0 0 5px #ff2600, 0 0 10px #ff0000, 0 0 20px #ff5722, 0 0 30px #ff5722;
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.tab-button {
+  background-color: #008ba3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.tab-button:hover {
+  background-color: #00bcd4;
+}
+
+.tab-button:active {
+  background-color: #008ba3;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  color: white;
+  background-color: #222;
+  margin-top: 20px;
+}
+
+#main-content {
+  color: white;
+  padding: 20px;
+}
+
+button {
+  background-color: #00bcd4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #008ba3;
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: #00FFFF;
+  width: 0;
+  z-index: 9999;
+}
