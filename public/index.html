@@ -3,162 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pit-Stop Lounge</title>
+    <title>Pit-Stop Lounge - Packages & Games</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-
-    <style>
-        /* Общие стили для кнопок */
-        .button {
-            background: transparent;
-            color: white;
-            padding: 5px 15px;
-            border: 1px solid white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .button:hover {
-            background: white;
-            color: black;
-        }
-
-        /* Левый верхний блок с контактами, соцсетями и личным кабинетом */
-        #header-left {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            display: flex;
-            gap: 10px;
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-
-        /* Фиксированная и прозрачная верхняя панель */
-        .tabs {
-            position: fixed;
-            top: 10px; /* Уровень кнопок выбора языка */
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.5); /* Прозрачный фон */
-            color: white;
-            display: flex;
-            gap: 20px;
-            padding: 5px 10px;
-            border-radius: 10px;
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-
-        .tab-button {
-            background: transparent;
-            color: #fff;
-            padding: 5px 15px;
-            border: 1px solid white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .tab-button:hover {
-            background: white;
-            color: black;
-        }
-
-        /* Стили для выбора языка */
-        #language-selector {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            gap: 10px;
-            opacity: 0; /* Скрыто при загрузке */
-            transition: opacity 1s ease; /* Плавное появление */
-        }
-
-        /* Отступ для основного контента */
-        #main-content {
-            padding-top: 60px; /* Отступ, чтобы контент не перекрывался фиксированной панелью */
-        }
-
-        /* Прогресс-бар */
-        #progress-bar {
-            height: 5px;
-            background-color: #ff6600;
-            width: 0;
-        }
-
-        /* Стиль для кнопки онлайн бронирования */
-        .booking-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 15px 30px;
-            font-size: 18px;
-            color: white;
-            background: linear-gradient(45deg, #ff6600, #ff9966, #ff6600);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            z-index: 999;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .booking-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
-        }
-
-        .booking-button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            animation: pulse 1.5s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.2;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <!-- Прогресс-бар -->
     <div id="progress-bar"></div>
 
-    <!-- Левый верхний блок (контакты, соцсети, личный кабинет) -->
+    <!-- Верхний блок с адресом и телефоном -->
+    <!-- <div id="header-info">
+        <p id="address">Address: Chrudimská 2526/2a, Praha 3</p>
+        <p id="phone">Phone: +(420) 720 888 131</p>
+    </div> -->
+
+    <!-- Нижний блок с адресом и телефоном -->
+    <div id="footer-info" class="hidden">
+        <p id="address-footer">Address: Chrudimská 2526/2a, Prague 3 </p>
+        <p id="phone-footer">Phone: +(420) 720 888 131</p>
+    </div>
+
+    <!-- Левый верхний блок -->
     <div id="header-left">
-        <button class="button" onclick="showLoginModal()">Login</button>
-        <button class="button" onclick="showContactModal()">Contact</button>
-        <button class="button" onclick="showSocialModal()">Socials</button>
+        <button class="button socials-button">
+            
+            <a href="https://facebook.com" target="_blank" class="social-icon fb" aria-label="Facebook"></a>
+            <a href="https://www.instagram.com/pitstoploungecz/" target="_blank" class="social-icon ig" aria-label="Instagram"></a>
+            <a href="https://www.tiktok.com/@pitstoplounge0" target="_blank" class="social-icon tw" aria-label="TikTok"></a>
+        </button>
     </div>
 
     <!-- Выбор языка -->
     <div id="language-selector">
-        <button onclick="changeLanguage('en')" class="button">EN</button>
-        <button onclick="changeLanguage('cz')" class="button">CZ</button>
-        <button onclick="changeLanguage('ru')" class="button">RU</button>
-        <button onclick="changeLanguage('uk')" class="button">UA</button> <!-- Кнопка для украинского -->
+        <select id="language-dropdown" class="button" onchange="changeLanguage(this.value)">
+            <option value="en">EN</option>
+            <option value="cz">CZ</option>
+            <option value="ru">RU</option>
+            <option value="uk">UA</option>
+        </select>
     </div>
 
     <!-- Неоновая заставка -->
@@ -188,99 +73,125 @@
     <!-- Основной контент -->
     <div id="main-content" style="display: none;">
         <!-- Навигация (вкладки) -->
+        
         <div class="tabs">
-            <button class="tab-button" onclick="showTab('club')">Computer Club</button>
-            <button class="tab-button" onclick="showTab('service')">Pit-Stop Service</button>
-            <button class="tab-button" onclick="showTab('token')">Token</button>
+            <button class="tab-button club-button active" onclick="showTab('club')" role="tab" aria-label="Перейти в компьютерный клуб">
+                <i class="fas fa-gamepad fa-3x"></i> Computer Club
+            </button>
+            <button class="tab-button service-button" onclick="showTab('service')" role="tab" aria-label="Перейти в Pit-Stop Service">
+                <i class="fas fa-bicycle fa-3x"></i> Pit-Stop Service
+            <!-- </button>
+            <button class="tab-button token-button" onclick="showTab('token')" role="tab" aria-label="Перейти в раздел Token">
+                <i class="fas fa-coins fa-3x"></i> Token -->
+            </button>
         </div>
 
-        <!-- Контент вкладок -->
+        <!-- Контент вкладки "Computer Club" -->
         <div id="club" class="tab-content">
-            <h2>Computer Club</h2>
-            <p id="club-description">Information about the computer club, photos, contact details, and map.</p>
-            <div style="height: 1500px; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center;">
-                <img src="images/image01.jpg" alt="Pit Stop Image" style="max-width: 100%; height: auto; border-radius: 10px;">
+            <div class="club-content">
+                <img src="images/image01.jpg" alt="Pit Stop Image" class="club-image">
+                <div class="club-overlay">
+                    <h2>Computer Club</h2>
+                    <p>Experience the ultimate gaming environment:</p>
+                    <ul>
+                        <li>High-performance PCs</li>
+                        <li>Comfortable gaming chairs</li>
+                        <li>Affordable hourly rates starting at $5</li>
+                        <li>Special discounts for groups</li>
+                    </ul>
+                </div>
+                <!-- Пакеты -->
+                <section class="section" id="packages-section">
+                    <div class="section-content">
+                        <div class="overlay">
+                            <h2>Our Packages</h2>
+                            <p>Explore our different packages to enjoy the best gaming experience at Pit-Stop Lounge!</p>
+                        </div>
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-box">
+                            <img src="images/package1.jpg" alt="Package 1" class="overlay-image">
+                            <div class="overlay-text">
+                                <h3>Basic Package</h3>
+                                <p>1 hour of gaming, basic equipment, and comfy chairs for $10.</p>
+                            </div>
+                        </div>
+                        <div class="content-box">
+                            <img src="images/package2.jpg" alt="Package 2" class="overlay-image">
+                            <div class="overlay-text">
+                                <h3>Premium Package</h3>
+                                <p>3 hours of gaming with high-performance equipment and free drinks for $30.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Игры -->
+                <section class="section" id="games-section">
+                    <div class="section-content">
+                        <div class="overlay">
+                            <h2>Our Games</h2>
+                            <p>Choose from our exciting range of games and challenge your friends!</p>
+                        </div>
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-box">
+                            <img src="images/game1.jpg" alt="Game 1" class="overlay-image">
+                            <div class="overlay-text">
+                                <h3>Action Game 1</h3>
+                                <p>Experience intense battles with friends in this action-packed game.</p>
+                            </div>
+                        </div>
+                        <div class="content-box">
+                            <img src="images/game2.jpg" alt="Game 2" class="overlay-image">
+                            <div class="overlay-text">
+                                <h3>Racing Game 2</h3>
+                                <p>Race against your friends and prove who is the fastest on the track!</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        
+                <!-- Бонусная система -->
+                <section class="section" id="bonus-section">
+                    <div class="section-content">
+                        <div class="overlay">
+                            <h2>Bonus System</h2>
+                            <p>Earn points while you play and redeem them for extra time, rewards, and discounts!</p>
+                        </div>
+                    </div>
+                    <div class="content-overlay">
+                        <div class="content-box">
+                            <video src="videos/bonus-system.mp4" controls class="overlay-video"></video>
+                            <div class="overlay-text">
+                                <h3>Earn & Redeem Bonuses</h3>
+                                <p>Collect bonus points to unlock exclusive rewards and discounts!</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
             </div>
         </div>
+
+        <!-- Контент вкладки "Pit-Stop Service" -->
         <div id="service" class="tab-content">
             <h2>Pit-Stop Service</h2>
-            <p id="service-description">Details about bike and scooter repair and rental services.</p>
-            <p>Additional text and content for testing scrolling.</p>
-            <div style="height: 1500px; background-color: #e0e0e0;"></div>
+            <p>Details about bike and scooter repair and rental services.</p>
         </div>
+
+        <!-- Контент вкладки "Token" -->
         <div id="token" class="tab-content">
             <h2>Our Token</h2>
             <p>Your token balance: <span id="balance">Loading...</span></p>
-            <button id="exchangeTokens">Exchange 10 PTC</button>
-            <p>Additional text and content for testing scrolling.</p>
-            <div style="height: 1500px; background-color: #c8c8c8;"></div>
+            <button id="exchangeTokens" aria-label="Exchange 10 PTC">Exchange 10 PTC</button>
         </div>
     </div>
 
     <!-- Кнопка онлайн бронирования -->
-    <button class="booking-button" onclick="window.location.href='https://pitstoplounge.booking.enes.tech/'">
+    <button class="booking-button" onclick="window.location.href='https://pitstoplounge.booking.enes.tech/'" aria-label="Забронировать онлайн">
         Online Booking
     </button>
 
-    <script>
-        // Прогресс-бар при скролле
-        window.onscroll = function() {
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollProgress = (scrollTop / scrollHeight) * 100;
-            document.getElementById('progress-bar').style.width = scrollProgress + '%';
-        };
-
-        // Показать вкладку
-        function showTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.style.display = 'none');
-            document.getElementById(tabId).style.display = 'block';
-        }
-
-        // Показать основной контент после анимации
-        window.onload = function() {
-            setTimeout(function() {
-                document.getElementById('neon-text-container').style.display = 'none';
-                document.getElementById('main-content').style.display = 'block';
-                showTab('club');
-                // Показать кнопки после заставки
-                document.getElementById('header-left').style.opacity = 1;
-                document.querySelector('.tabs').style.opacity = 1;
-                document.getElementById('language-selector').style.opacity = 1;
-            }, 4000); 
-        };
-
-        // Применение изменений для языков
-        function changeLanguage(language) {
-            const translations = {
-                en: {
-                    "club-description": "Information about the computer club, photos, contact details, and map.",
-                    "service-description": "Details about bike and scooter repair and rental services."
-                },
-                ru: {
-                    "club-description": "Информация о компьютерном клубе, фотографии, контактные данные и карта.",
-                    "service-description": "Подробности о ремонте и аренде велосипедов и самокатов."
-                },
-                uk: {
-                    "club-description": "Інформація про комп'ютерний клуб, фотографії, контактні дані та карта.",
-                    "service-description": "Деталі про ремонт і оренду велосипедів та самокатів."
-                },
-                cz: {
-                    "club-description": "Informace o počítačovém klubu, fotky, kontaktní údaje a mapa.",
-                    "service-description": "Podrobnosti o opravách a pronájmu bicyklů a koloběžek."
-                }
-            };
-
-            const elementsToTranslate = document.querySelectorAll('[id]');
-
-            elementsToTranslate.forEach(element => {
-                const id = element.id;
-                if (translations[language] && translations[language][id]) {
-                    element.innerText = translations[language][id];
-                }
-            });
-        }
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

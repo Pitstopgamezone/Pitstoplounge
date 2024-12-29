@@ -1,4 +1,5 @@
-body { 
+/* Общие стили */
+body {  
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
@@ -71,53 +72,100 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  gap: 20px; /* Расстояние между кнопками */
 }
 
 .tab-button {
-  background-color: #008ba3;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #444, #000000); /* Базовый градиентный фон */
   color: white;
-  padding: 10px 20px;
+  padding: 15px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  margin: 0 10px;
-  font-size: 16px;
+  font-size: 18px;
+  transition: background 0.5s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  position: relative; /* Для эффектов */
+  overflow: hidden; /* Скрываем элементы за границами кнопки */
+}
+
+.tab-button .icon {
+  margin-right: 10px; /* Отступ иконки от текста */
 }
 
 .tab-button:hover {
-  background-color: #00bcd4;
+  background: linear-gradient(90deg, #ff7c7c, #ffc07c);
+  color: black;
+  box-shadow: 0 5px 15px rgba(255, 128, 0, 0.5);
 }
 
 .tab-button:active {
-  background-color: #008ba3;
+  transform: scale(0.95); /* Легкий эффект нажатия */
+  box-shadow: 0 3px 10px rgba(255, 128, 0, 0.7);
+}
+
+.tab-button.club-button:hover {
+  background: linear-gradient(90deg, #008ba3, #00e4ff);
+}
+
+.tab-button.service-button:hover {
+  background: linear-gradient(90deg, #ff7c00, #ffcf00);
+}
+
+.tab-button.token-button:hover {
+  background: linear-gradient(90deg, #00ffab, #00d084);
+}
+
+/* Анимация фона на кнопке */
+.tab-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.tab-button:hover::before {
+  transform: scale(2);
+}
+
+/* Активная кнопка */
+.tab-button.active {
+  border: 2px solid #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 .tab-content {
   display: none;
   padding: 20px;
   color: white;
-  background-color: #222;
   margin-top: 20px;
 }
 
-#main-content {
-  color: white;
-  padding: 20px;
+#club {
+  background: url('../images/pc-console.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 500px;
 }
 
-button {
-  background-color: #00bcd4;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+#service {
+  background: url('../images/bike-scooter.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 500px;
 }
 
-button:hover {
-  background-color: #008ba3;
+#token {
+  background: url('../images/crypto.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 500px;
 }
+
 
 #progress-bar {
   position: fixed;
@@ -128,3 +176,322 @@ button:hover {
   width: 0;
   z-index: 9999;
 }
+
+/* Общие стили для кнопок */
+.button {
+  background: transparent;
+  color: rgb(64, 231, 253);
+  padding: 5px 15px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background: white;
+  color: black;
+}
+
+/* Левый верхний блок с контактами, соцсетями и личным кабинетом */
+#header-left {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Фиксированная и прозрачная верхняя панель */
+.tabs {
+  position: fixed;
+  top: 10px; /* Уровень кнопок выбора языка */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5); /* Прозрачный фон */
+  color: white;
+  display: flex;
+  gap: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.tab-button {
+  background: transparent;
+  color: #fff;
+  padding: 5px 15px;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button:hover {
+  background: rgb(255, 255, 255);
+  color: black;
+}
+
+/* Стили для выбора языка */
+#language-selector {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 2000; /* Поверх всех других элементов */
+  display: flex;
+  gap: 10px;
+  opacity: 0; /* Скрыто при загрузке */
+  transition: opacity 1s ease; /* Плавное появление */
+}
+#language-dropdown {
+  background: transparent;
+  color: #00faed;
+  padding: 5px 15px;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none; /* Для Safari */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#language-dropdown:hover {
+  background: white;
+  color: black;
+}
+
+/* Отступ для основного контента */
+#main-content {
+  padding-top: 60px; /* Отступ, чтобы контент не перекрывался фиксированной панелью */
+}
+
+/* Прогресс-бар */
+#progress-bar {
+  height: 5px;
+  background-color: #ff6600;
+  width: 0;
+}
+/* Стиль для кнопки онлайн бронирования */
+.booking-button {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  padding: 10px 30px;
+  font-size: 18px;
+  color: white;
+  background: linear-gradient(45deg, #ff6600, #ff9966, #ff6600);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
+}
+
+.booking-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 0.8;
+  }
+  50% {
+      transform: scale(1.2);
+      opacity: 0.3;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 0.8;
+  }
+}
+/* Верхний блок с адресом и телефоном */
+#header-info {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+/* Нижний блок с адресом и телефоном */
+#footer-info {
+  position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Прозрачный фон */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Прозрачная граница */
+    z-index: 10000; /* Поднято на верхний уровень */
+}
+
+#header-info p,
+#footer-info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Стили для кнопки Socials */
+.socials-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  display: inline-block;
+}
+
+.social-icon.fb {
+  background-image: url('../images/Facebook.png');
+}
+
+.social-icon.ig {
+  background-image: url('../images/Instagram.webp');
+}
+
+.social-icon.tw {
+  background-image: url('../images/tiktok.png');
+}
+
+/* Вкладка "Computer Club" */
+.club-content {
+  position: relative;
+}
+
+.club-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.club-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  max-width: 600px;
+  width: 80%;
+}
+
+.club-overlay h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.club-overlay ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.club-overlay li {
+  margin-bottom: 10px;
+}
+
+/* Другие стили */
+
+/* 3D-эффект для иконок */
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: rotateY(180deg);
+}
+
+/* Стандартный стиль */
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+}
+
+/* Медиазапрос для экранов шириной до 768px (планшеты и мобильные устройства) */
+@media (max-width: 768px) {
+  /* Уменьшаем размер шрифта для текста */
+  body {
+      font-size: 14px;
+  }
+
+  /* Настроим размер неонового текста */
+  #neon-text h1 {
+      font-size: 2rem;
+  }
+
+  /* Сделаем кнопки вкладок более компактными */
+  .tab-button {
+      font-size: 12px;
+      padding: 10px;
+  }
+
+  /* Изменим размер изображения в клубе */
+  .club-image {
+      width: 100%;
+      height: auto;
+  }
+
+  /* Изменим расположение и размеры социальных иконок */
+  .socials-button {
+      font-size: 12px;
+  }
+
+  .social-icon {
+      width: 20px;
+      height: 20px;
+  }
+}
+
+/* Медиазапрос для экранов шириной до 480px (мобильные устройства) */
+@media (max-width: 480px) {
+  /* Еще больше уменьшаем размер шрифта */
+  body {
+      font-size: 12px;
+  }
+
+  /* Делаем текст в заголовке неона еще меньше */
+  #neon-text h1 {
+      font-size: 1.5rem;
+  }
+
+  /* Уменьшаем размер кнопок вкладок */
+  .tab-button {
+      font-size: 10px;
+      padding: 8px;
+  }
+
+  /* Обновляем размер кнопки онлайн-бронирования */
+  .booking-button {
+      font-size: 14px;
+      padding: 8px 15px;
+  }
+}
+
