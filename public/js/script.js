@@ -164,3 +164,4 @@ document.getElementById('neon-text')?.addEventListener('animationend', function(
   // Показываем нижний блок с контактной информацией
   document.getElementById('footer-info').style.display = 'block';
 });
+
