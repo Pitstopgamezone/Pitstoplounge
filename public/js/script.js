@@ -21,22 +21,31 @@ function showTab(tabId) {
 // Убедитесь, что первая вкладка активна по умолчанию
 document.addEventListener('DOMContentLoaded', () => {
   showTab('club');
+
+  const neonTextContainer = document.getElementById('neon-text-container');
+  const delayedElements = document.querySelectorAll('.hidden');
+
+  // Установите длительность задержки в миллисекундах
+  const delayDuration = 3000; // 3 секунды, чтобы совпадало с анимацией заставки
+
+  // Скрыть неоновую заставку после анимации
+  setTimeout(() => {
+      neonTextContainer.style.display = 'none';
+
+      // Показать скрытые элементы
+      delayedElements.forEach((element) => {
+          element.classList.remove('hidden');
+          element.classList.add('visible');
+      });
+
+      // Показываем вкладку по умолчанию
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('header-left').style.opacity = 1;
+      document.querySelector('.tabs').style.opacity = 1;
+      document.getElementById('language-selector').style.opacity = 1;
+      fetchBalance(); // Загружаем баланс при загрузке
+  }, delayDuration);
 });
-
-// Показать основной контент после анимации
-window.onload = function() {
-  setTimeout(function() {
-    document.getElementById('neon-text-container').style.display = 'none';
-    document.getElementById('main-content').style.display = 'block';
-    showTab('club'); // Показываем вкладку по умолчанию
-
-    // Показать кнопки после заставки
-    document.getElementById('header-left').style.opacity = 1;
-    document.querySelector('.tabs').style.opacity = 1;
-    document.getElementById('language-selector').style.opacity = 1;
-    fetchBalance(); // Загружаем баланс при загрузке
-  }, 4000);
-};
 
 // Применение изменений для языков
 function changeLanguage(language) {
@@ -87,7 +96,7 @@ function changeLanguage(language) {
   const elementsToTranslate = document.querySelectorAll('[id], .tab-button');
 
   elementsToTranslate.forEach(element => {
-    const id = element.id || element.className.split(' ').find(cls => cls.includes('-button'));
+    const id = element.id || element.classList.contains('tab-button') && element.className.split(' ').find(cls => cls.includes('-button'));
     if (translations[language] && translations[language][id]) {
       element.innerText = translations[language][id];
     }
@@ -96,46 +105,62 @@ function changeLanguage(language) {
 
 // Получаем баланс с сервера
 async function fetchBalance() {
-  const response = await fetch('http://localhost:3000/balance');
-  const data = await response.json();
-  document.getElementById('balance').textContent = data.balance;
+  try {
+    const response = await fetch('http://localhost:3000/balance');
+    if (!response.ok) throw new Error('Network response was not ok');
+    const data = await response.json();
+    document.getElementById('balance').textContent = data.balance;
+  } catch (error) {
+    console.error('Fetch balance error:', error);
+  }
 }
 
 // Обмен токенов
 async function exchangeTokens() {
-  const response = await fetch('/exchange', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ tokens: 10 })
-  });
+  try {
+    const response = await fetch('/exchange', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tokens: 10 })
+    });
 
-  if (response.ok) {
+    if (!response.ok) throw new Error('Exchange request failed');
     const data = await response.json();
     alert(data.message);
     fetchBalance(); // Обновляем баланс после обмена
-  } else {
-    const error = await response.json();
-    alert(error.message);
+  } catch (error) {
+    alert('Ошибка обмена токенов: ' + error.message);
   }
 }
 
 // Получаем 10 токенов
 async function claimTokens() {
-  const response = await fetch('http://localhost:3000/claim', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' }
-  });
+  try {
+    const response = await fetch('http://localhost:3000/claim', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    });
 
-  const data = await response.json();
-  alert(data.message);
-  fetchBalance(); // Обновляем баланс после получения токенов
+    if (!response.ok) throw new Error('Claim request failed');
+    const data = await response.json();
+    alert(data.message);
+    fetchBalance(); // Обновляем баланс после получения токенов
+  } catch (error) {
+    alert('Ошибка получения токенов: ' + error.message);
+  }
 }
 
 // События для кнопок
-document.getElementById('claimTokens').addEventListener('click', claimTokens);
-document.getElementById('exchangeTokens').addEventListener('click', exchangeTokens);
+document.getElementById('claimTokens')?.addEventListener('click', claimTokens);
+document.getElementById('exchangeTokens')?.addEventListener('click', exchangeTokens);
 
 // Инициализация выбора языка
-document.getElementById('language-dropdown').addEventListener('change', (e) => {
+document.getElementById('language-dropdown')?.addEventListener('change', (e) => {
   changeLanguage(e.target.value);
+});
+
+// Слушаем завершение анимации неонового текста
+document.getElementById('neon-text')?.addEventListener('animationend', function() {
+  // Показываем нижний блок с контактной информацией
+  document.getElementById('footer-info').style.display = 'block';
 });

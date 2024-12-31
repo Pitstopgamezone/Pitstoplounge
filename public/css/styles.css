@@ -71,13 +71,13 @@ body {
 .tabs {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 24px;
   gap: 20px; /* Расстояние между кнопками */
 }
 
 .tab-button {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(45deg, #444, #000000); /* Базовый градиентный фон */
+  background: linear-gradient(45deg, #444444, #000000); /* Базовый градиентный фон */
   color: white;
   padding: 15px 30px;
   border: none;
@@ -211,7 +211,7 @@ body {
   top: 10px; /* Уровень кнопок выбора языка */
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.5); /* Прозрачный фон */
+  background: none; /* Прозрачный фон */
   color: white;
   display: flex;
   gap: 20px;
@@ -267,7 +267,7 @@ body {
 
 /* Отступ для основного контента */
 #main-content {
-  padding-top: 60px; /* Отступ, чтобы контент не перекрывался фиксированной панелью */
+  padding-top: 1px; /* Отступ, чтобы контент не перекрывался фиксированной панелью */
 }
 
 /* Прогресс-бар */
@@ -279,7 +279,7 @@ body {
 /* Стиль для кнопки онлайн бронирования */
 .booking-button {
   position: fixed;
-  bottom: 50px;
+  bottom: 75px;
   right: 20px;
   padding: 10px 30px;
   font-size: 18px;
@@ -493,5 +493,76 @@ body {
       font-size: 14px;
       padding: 8px 15px;
   }
+}
+
+#contact-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Расстояние между номером телефона и кнопкой */
+}
+
+.telegram-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0088cc; /* Цвет Telegram */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.telegram-button:hover {
+  background-color: #0077b5; /* Темнее при наведении */
+  color: #fff;
+}
+
+.telegram-button i {
+  margin-right: 5px; /* Отступ иконки */
+}
+
+#footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 1px;
+}
+
+#contact-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Расстояние между телефоном и кнопкой Telegram */
+  margin-top: 10px;
+}
+
+#phone-footer {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.telegram-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0088cc; /* Цвет Telegram */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.telegram-button:hover {
+  background-color: #0077b5; /* Темнее при наведении */
+  color: #fff;
+}
+
+.telegram-button i {
+  margin-right: 5px; /* Отступ иконки от текста */
 }
 
