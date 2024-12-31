@@ -543,26 +543,3 @@ body {
   font-size: 16px;
   font-weight: bold;
 }
-
-.telegram-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #0088cc; /* Цвет Telegram */
-  color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-.telegram-button:hover {
-  background-color: #0077b5; /* Темнее при наведении */
-  color: #fff;
-}
-
-.telegram-button i {
-  margin-right: 5px; /* Отступ иконки от текста */
-}
-
