@@ -1,6 +1,6 @@
 /* Общие стили */
 body {  
-  font-family: 'Arial', sans-serif;
+  font-family: 'Permanent Marker', sans-serif;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -100,7 +100,7 @@ body {
 }
 
 .tab-button {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Permanent Marker', sans-serif;
   background: linear-gradient(45deg, #444444, #000000); /* Базовый градиентный фон */
   color: white;
   padding: 15px 30px;
@@ -598,3 +598,45 @@ body::before {
   pointer-events: none; /* Чтобы сетка не блокировала клики */
 }
 
+#company-name {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: none; /* Тёмный фон с прозрачностью */
+  color: #fff; /* Белый текст */
+  text-align: center; /* Центрирование текста */
+  font-size: 10px; /* Размер шрифта */
+  padding: 1px 0; /* Внутренние отступы */
+  z-index: 1000; /* Поверх всех элементов */
+  font-family: 'Permanent Marker', sans-serif; /* Шрифт */
+}
+
+#company-name {
+  font-size: 2rem; /* начальный размер шрифта для больших экранов */
+  font-weight: bold;
+  text-align: center;
+  color: #fdfdfd;
+  font-family: 'Permanent Marker', cursive;
+  margin: 0;
+  padding: 1px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
+  #company-name {
+      font-size: 1.5rem; /* Уменьшение размера для экранов среднего размера */
+  }
+}
+
+@media (max-width: 768px) {
+  #company-name {
+      font-size: 1rem; /* Еще меньше размер для планшетов и мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  #company-name {
+      font-size: 0.5rem; /* Минимальный размер для маленьких экранов */
+  }
+}
