@@ -610,6 +610,8 @@ body::before {
   padding: 1px 0; /* Внутренние отступы */
   z-index: 1000; /* Поверх всех элементов */
   font-family: 'Permanent Marker', sans-serif; /* Шрифт */
+  opacity: 0; /* Начальная прозрачность */
+  transition: opacity 1s ease-in-out; /* Плавное изменение прозрачности */
 }
 
 #company-name {

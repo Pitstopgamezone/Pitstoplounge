@@ -177,3 +177,8 @@ document.getElementById('neon-text')?.addEventListener('animationend', function(
   document.getElementById('footer-info').style.display = 'block';
 });
 
+// Плавное появление названия компании с задержкой 3 секунды
+setTimeout(() => {
+  const companyName = document.getElementById('company-name');
+  companyName.style.opacity = 1;
+}, 3000); // 3000 миллисекунд = 3 секунды
