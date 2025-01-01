@@ -45,6 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('language-selector').style.opacity = 1;
       fetchBalance(); // Загружаем баланс при загрузке
   }, delayDuration);
+
+  // Плавное появление нижнего блока с задержкой 4 секунды
+  setTimeout(() => {
+    const footerInfo = document.getElementById('footer-info');
+    footerInfo.style.opacity = 1;
+  }, 3000);
+
+  // Плавное появление кнопки бронирования
+  setTimeout(() => {
+    const bookingButton = document.querySelector('.booking-button');
+    bookingButton.style.opacity = 1;
+  }, 3000);
 });
 
 // Применение изменений для языков
@@ -164,4 +176,3 @@ document.getElementById('neon-text')?.addEventListener('animationend', function(
   // Показываем нижний блок с контактной информацией
   document.getElementById('footer-info').style.display = 'block';
 });
-

@@ -68,6 +68,30 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  #neon-text {
+    font-size: 20px; /* Уменьшаем размер текста */
+    letter-spacing: 3px; /* Уменьшаем расстояние между буквами */
+  }
+}
+
+@media (max-width: 480px) {
+  #neon-text {
+    font-size: 10px; /* Ещё меньше для очень маленьких экранов */
+    letter-spacing: 2px; /* Ещё больше уменьшение расстояния между буквами */
+  }
+}
+
+#footer-info {
+  opacity: 0; /* Начальное состояние – скрыт */
+  transition: opacity 1s ease-in-out; /* Плавное появление */
+}
+
+.booking-button {
+  opacity: 0; /* Начальное состояние – скрыт */
+  transition: opacity 1s ease-in-out; /* Плавное появление */
+}
+
 .tabs {
   display: flex;
   justify-content: center;
