@@ -692,22 +692,24 @@ body {
   animation-delay: 0.9s;
 }
 
+/* Специальный стиль для блока с изображением (high-performance) */
 #high-performance {
-  background-image: url('images/pc1.jpg'); /* Путь к картинке */
-  background-size: cover; /* Изменяет размер картинки, чтобы она покрыла весь блок */
-  background-position: center center; /* Центрирует картинку */
-  color: white; /* Цвет текста, чтобы он был видим на фоне */
+  background-image: url('images/pc1.jpg'); /* Фоновое изображение для блока */
+  background-size: cover; /* Покрытие всего блока */
+  background-position: center center; /* Центрирование изображения */
+  color: white; /* Белый цвет текста для контраста */
   padding: 40px; /* Отступы внутри блока */
   border-radius: 10px; /* Закругленные углы */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Тень для блока */
   transition: all 0.3s ease; /* Плавный переход */
+  background-color: transparent; /* Убираем фон, если есть конфликт */
 }
 
 #high-performance h3 {
   font-family: 'Permanent Marker', cursive;
   font-size: 28px;
   color: #ff7f00;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 #high-performance p {
