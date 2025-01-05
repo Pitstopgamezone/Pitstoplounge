@@ -594,6 +594,75 @@ body {
   transform: translateY(-5px);
 }
 
+/* Контейнер с изображением и текстом */
+.club-content {
+  display: flex;
+  flex-wrap: wrap; /* Адаптация для маленьких экранов */
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Отступы внутри контейнера */
+  box-sizing: border-box;
+  border: 3px solid rgba(255, 127, 0, 0.8); /* Рамка по периметру */
+  background-color: transparent; /* Прозрачный фон */
+}
+
+/* Стили для текста */
+.club-overlay {
+  flex: 1 1 50%; /* Текст занимает 50% ширины */
+  padding: 10px;
+  color: #fff;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Стили для изображения */
+.club-content img {
+  flex: 1 1 50%; /* Изображение занимает 50% ширины */
+  max-width: 100%; /* Ограничение ширины */
+  height: auto; /* Сохраняем пропорции */
+  margin: 0; /* Убираем отступы */
+  border: none; /* Без рамок */
+  opacity: 0.9; /* Полупрозрачность */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.club-content img:hover {
+  opacity: 1; /* Полная видимость при наведении */
+  transform: scale(1.05); /* Увеличение при наведении */
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 768px) {
+  .club-content {
+    flex-direction: column; /* Ставит текст и изображение друг под другом */
+  }
+
+  .club-overlay, .club-content img {
+    flex: 1 1 100%; /* Оба элемента занимают 100% ширины */
+    text-align: center; /* Центрирование текста */
+  }
+
+  .club-overlay {
+    font-size: 14px; /* Уменьшаем шрифт на маленьких экранах */
+    padding: 10px;
+  }
+
+  .club-content img {
+    width: 80%; /* Уменьшаем размер изображения */
+    margin: 0 auto; /* Центрируем изображение */
+  }
+}
+
+@media (max-width: 480px) {
+  .club-overlay {
+    font-size: 12px; /* Ещё меньше шрифт для самых маленьких экранов */
+  }
+
+  .club-content img {
+    width: 100%; /* Изображение занимает всю ширину экрана */
+  }
+}
+
 
 /* Другие стили */
 
