@@ -421,8 +421,24 @@ body {
   color: #fff;
   background-color: #1c1c1c;
   padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(10px);
+  opacity: 0;
+  animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
 }
 
 .club-overlay {
@@ -431,15 +447,18 @@ body {
 
 .club-overlay h2 {
   font-family: 'Permanent Marker', cursive;
-  font-size: 32px;
-  color: #ff7f00; /* Оранжевый цвет для выделения заголовков */
+  font-size: 36px;
+  color: #ff7f00; /* Ярко-оранжевый цвет для заголовков */
   margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .club-overlay p {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.8;
   color: #e0e0e0;
+  margin-bottom: 20px;
+  font-weight: 300;
 }
 
 .club-overlay ul {
@@ -447,11 +466,20 @@ body {
   font-size: 16px;
   list-style-type: none;
   color: #e0e0e0;
+  margin-top: 20px;
 }
 
 .club-overlay ul li {
-  margin: 10px 0;
+  margin: 12px 0;
   position: relative;
+  padding-left: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.club-overlay ul li:hover {
+  color: #ff7f00;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(255, 127, 0, 0.8);
 }
 
 .club-overlay ul li::before {
@@ -459,13 +487,24 @@ body {
   color: #ff7f00;
   font-size: 20px;
   position: absolute;
-  left: -20px;
+  left: 0;
   top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.club-overlay ul li:hover::before {
+  color: #ffffff;
+  font-size: 24px;
 }
 
 .club-overlay ul li span {
   color: #a0a0a0;
   font-style: italic;
+}
+
+/* Тени для текста */
+.club-overlay h2, .club-overlay p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Плавное появление текста */
@@ -498,6 +537,57 @@ body {
       opacity: 1;
   }
 }
+
+/* Фоновая анимация */
+.club-content::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 127, 0, 0.3), rgba(0, 0, 0, 0.1));
+  animation: glowingBackground 5s linear infinite;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@keyframes glowingBackground {
+  0% {
+      transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+      transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Стиль для ссылки (если есть) */
+.club-overlay a {
+  color: #ff7f00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.club-overlay a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Плавный переход для всей области */
+.club-content {
+  transition: all 0.4s ease;
+}
+
+.club-content:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px);
+}
+
 
 /* Другие стили */
 
