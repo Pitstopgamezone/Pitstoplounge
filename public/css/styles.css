@@ -643,3 +643,25 @@ body::before {
   }
 }
 
+/* Скрытая карта */
+.hidden {
+  display: none;
+}
+
+/* Карта */
+#map {
+  width: 100%;
+  height: 50vh; /* Высота карты */
+  margin-top: 10px;
+  border-top: 2px solid #333;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный эффект появления */
+  opacity: 0;
+  transform: translateY(20px); /* Начальное смещение */
+}
+
+/* Видимая карта */
+#map.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0); /* Убираем смещение */
+}
