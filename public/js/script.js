@@ -183,3 +183,15 @@ setTimeout(() => {
   companyName.style.opacity = 1;
 }, 3000); // 3000 миллисекунд = 3 секунды
 
+// Функция для плавного скроллинга к соответствующим блокам
+document.querySelectorAll('.club-overlay ul li a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    targetElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+});
