@@ -694,7 +694,7 @@ body {
 
 /* Специальный стиль для блока с изображением (high-performance) */
 #high-performance {
-  background-image: url('images/pc1.jpg'); /* Фоновое изображение для блока */
+  background-image: url('images/pc.jpg'); /* Фоновое изображение для блока */
   background-size: cover; /* Покрытие всего блока */
   background-position: center center; /* Центрирование изображения */
   color: white; /* Белый цвет текста для контраста */
