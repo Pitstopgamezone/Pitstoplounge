@@ -443,6 +443,8 @@ body {
 .club-overlay h2 {
   font-size: 36px;
   margin-bottom: 10px;
+  bottom: 20px; /* Отступ от нижнего края */
+  left: 20px; /* Отступ от левого края */
 }
 
 .club-overlay ul {
