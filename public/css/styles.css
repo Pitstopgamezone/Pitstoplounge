@@ -428,8 +428,8 @@ body {
 
 .club-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  bottom: 20px; /* Отступ от нижнего края */
+  left: 20px; /* Отступ от левого края */
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
@@ -443,8 +443,6 @@ body {
 .club-overlay h2 {
   font-size: 36px;
   margin-bottom: 10px;
-  bottom: 20px; /* Отступ от нижнего края */
-  left: 20px; /* Отступ от левого края */
 }
 
 .club-overlay ul {
