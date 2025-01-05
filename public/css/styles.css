@@ -419,12 +419,16 @@ body {
 .club-content {
   font-family: 'Agu Display', sans-serif;
   color: #fff;
-  background-color: #1c1c1c;
+  background-color: transparent; /* Прозрачный фон */
   padding: 40px;
+  border: 4px solid #ff7f00; /* Рамка по периметру */
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Расстояние между изображением и текстом */
   transform: translateY(10px);
   opacity: 0;
   animation: slideIn 1s ease-out forwards;
@@ -432,17 +436,27 @@ body {
 
 @keyframes slideIn {
   from {
-      transform: translateY(50px);
-      opacity: 0;
+    transform: translateY(50px);
+    opacity: 0;
   }
   to {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
+/* Контейнер для изображения */
+.club-content img {
+  max-width: 40%; /* Максимальная ширина изображения */
+  height: auto; /* Сохраняем пропорции изображения */
+  border-radius: 10px; /* Закругление углов изображения */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Текстовое содержимое */
 .club-overlay {
   text-align: left;
+  flex: 1; /* Занимает оставшееся пространство */
 }
 
 .club-overlay h2 {
@@ -502,11 +516,6 @@ body {
   font-style: italic;
 }
 
-/* Тени для текста */
-.club-overlay h2, .club-overlay p {
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
 /* Плавное появление текста */
 .club-overlay p, .club-overlay ul li {
   opacity: 0;
@@ -531,41 +540,14 @@ body {
 
 @keyframes fadeIn {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
-/* Фоновая анимация */
-.club-content::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(circle, rgba(255, 127, 0, 0.3), rgba(0, 0, 0, 0.1));
-  animation: glowingBackground 5s linear infinite;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: -1;
-}
-
-@keyframes glowingBackground {
-  0% {
-      transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-      transform: translate(-50%, -50%) scale(1.2);
-  }
-  100% {
-      transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-/* Стиль для ссылки (если есть) */
+/* Стиль для ссылки */
 .club-overlay a {
   color: #ff7f00;
   text-decoration: none;
@@ -578,7 +560,7 @@ body {
   text-decoration: underline;
 }
 
-/* Плавный переход для всей области */
+/* Плавный переход */
 .club-content {
   transition: all 0.4s ease;
 }
@@ -587,7 +569,6 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   transform: translateY(-5px);
 }
-
 
 /* Другие стили */
 
