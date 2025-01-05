@@ -415,43 +415,19 @@ body {
   background-image: url('../images/tiktok.png');
 }
 
+/* Основные стили для текста */
 .club-content {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: 'Agu Display', sans-serif;
+  color: #fff;
+  background-color: #1c1c1c;
+  padding: 40px;
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
-  height: 250px;
-  margin: 10px;
-  background: linear-gradient(to bottom, #1c1c1c, #0f0f0f);
-  padding: 40px;
-  font-family: 'Permanent Marker', sans-serif;
-  color: #fff;
+  position: relative;
+  overflow: hidden;
   transform: translateY(10px);
   opacity: 0;
   animation: slideIn 1s ease-out forwards;
-  transition: all 0.4s ease;
-}
-
-.club-content:hover {
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-  transform: translateY(-5px);
-}
-
-.club-content img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  filter: brightness(50%);
-  transition: transform 0.4s ease-in-out;
-}
-
-.club-content:hover img {
-  transform: scale(1.1);
 }
 
 @keyframes slideIn {
@@ -465,6 +441,104 @@ body {
   }
 }
 
+.club-overlay {
+  text-align: left;
+}
+
+.club-overlay h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 36px;
+  color: #ff7f00; /* Ярко-оранжевый цвет для заголовков */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.club-overlay p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.club-overlay ul {
+  padding-left: 20px;
+  font-size: 16px;
+  list-style-type: none;
+  color: #e0e0e0;
+  margin-top: 20px;
+}
+
+.club-overlay ul li {
+  margin: 12px 0;
+  position: relative;
+  padding-left: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.club-overlay ul li:hover {
+  color: #ff7f00;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(255, 127, 0, 0.8);
+}
+
+.club-overlay ul li::before {
+  content: '\2022'; /* Добавляем маркеры */
+  color: #ff7f00;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.club-overlay ul li:hover::before {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.club-overlay ul li span {
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+/* Тени для текста */
+.club-overlay h2, .club-overlay p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Плавное появление текста */
+.club-overlay p, .club-overlay ul li {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.club-overlay p:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.club-overlay ul li:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.club-overlay ul li:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.club-overlay ul li:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Фоновая анимация */
 .club-content::before {
   content: "";
   position: absolute;
@@ -491,87 +565,7 @@ body {
   }
 }
 
-.club-overlay {
-  position: relative;
-  z-index: 2;
-  text-align: left;
-}
-
-.club-overlay h2 {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 36px;
-  color: #ff7f00;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.club-overlay p {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #e0e0e0;
-  margin-bottom: 20px;
-  font-weight: 300;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-  animation-delay: 0.3s;
-}
-
-.club-overlay ul {
-  list-style: none;
-  padding-left: 20px;
-  font-size: 16px;
-  color: #e0e0e0;
-  margin-top: 20px;
-}
-
-.club-overlay ul li {
-  margin: 12px 0;
-  position: relative;
-  padding-left: 30px;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
-.club-overlay ul li:nth-child(1) {
-  animation-delay: 0.5s;
-}
-
-.club-overlay ul li:nth-child(2) {
-  animation-delay: 0.6s;
-}
-
-.club-overlay ul li:nth-child(3) {
-  animation-delay: 0.7s;
-}
-
-.club-overlay ul li:hover {
-  color: #ff7f00;
-  transform: scale(1.05);
-  text-shadow: 0 0 10px rgba(255, 127, 0, 0.8);
-}
-
-.club-overlay ul li::before {
-  content: '\2022';
-  color: #ff7f00;
-  font-size: 20px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-.club-overlay ul li:hover::before {
-  color: #ffffff;
-  font-size: 24px;
-}
-
-.club-overlay ul li span {
-  color: #a0a0a0;
-  font-style: italic;
-}
-
+/* Стиль для ссылки (если есть) */
 .club-overlay a {
   color: #ff7f00;
   text-decoration: none;
@@ -584,14 +578,16 @@ body {
   text-decoration: underline;
 }
 
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
+/* Плавный переход для всей области */
+.club-content {
+  transition: all 0.4s ease;
 }
+
+.club-content:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px);
+}
+
 
 /* Другие стили */
 
