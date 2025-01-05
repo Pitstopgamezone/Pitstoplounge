@@ -416,6 +416,7 @@ body {
 }
 
 /* Основные стили для текста */
+/* Контейнер с изображением и текстом */
 .club-content {
   font-family: 'Agu Display', sans-serif;
   color: #fff;
@@ -432,6 +433,12 @@ body {
   transform: translateY(10px);
   opacity: 0;
   animation: slideIn 1s ease-out forwards;
+  flex-wrap: wrap; /* Адаптация для маленьких экранов */
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Отступы внутри контейнера */
+  box-sizing: border-box;
+  border: 3px solid rgba(255, 127, 0, 0.8); /* Рамка по периметру */
 }
 
 @keyframes slideIn {
@@ -445,42 +452,13 @@ body {
   }
 }
 
-/* Контейнер для изображения */
-.club-content img {
-  /*max-width: 40%; /* Максимальная ширина изображения */
-  width: 50vw; /* Лого занимает половину ширины экрана */
-  height: auto; /* Сохраняем пропорции изображения */
-  border-radius: 0; /* Убираем закругление углов */
-  box-shadow: none; /* Убираем тень */
-  margin: 0; /* Убираем отступы */
-  border: none; /* Убираем рамки */
-  opacity: 0.9; /* Небольшая прозрачность */
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.club-content img:hover {
-  opacity: 1; /* Полностью видно при наведении */
-  transform: scale(1.05); /* Увеличение при наведении */
-}
-
-/* Медиа-запросы для адаптивности */
-@media (max-width: 768px) {
-  .club-content img {
-    width: 70vw; /* Увеличиваем изображение на мобильных устройствах */
-    margin: 0 auto; /* Центрируем изображение */
-  }
-}
-
-@media (max-width: 480px) {
-  .club-content img {
-    width: 90vw; /* Почти полный экран на очень маленьких устройствах */
-  }
-}
-
-/* Текстовое содержимое */
+/* Стили для текста */
 .club-overlay {
+  flex: 1 1 50%; /* Текст занимает 50% ширины */
+  padding: 10px;
+  color: #fff;
   text-align: left;
-  flex: 1; /* Занимает оставшееся пространство */
+  font-size: 16px;
 }
 
 .club-overlay h2 {
@@ -594,27 +572,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* Контейнер с изображением и текстом */
-.club-content {
-  display: flex;
-  flex-wrap: wrap; /* Адаптация для маленьких экранов */
-  justify-content: center;
-  align-items: center;
-  padding: 20px; /* Отступы внутри контейнера */
-  box-sizing: border-box;
-  border: 3px solid rgba(255, 127, 0, 0.8); /* Рамка по периметру */
-  background-color: transparent; /* Прозрачный фон */
-}
-
-/* Стили для текста */
-.club-overlay {
-  flex: 1 1 50%; /* Текст занимает 50% ширины */
-  padding: 10px;
-  color: #fff;
-  text-align: left;
-  font-size: 16px;
-}
-
 /* Стили для изображения */
 .club-content img {
   flex: 1 1 50%; /* Изображение занимает 50% ширины */
@@ -662,7 +619,6 @@ body {
     width: 100%; /* Изображение занимает всю ширину экрана */
   }
 }
-
 
 /* Другие стили */
 
