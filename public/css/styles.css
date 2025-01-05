@@ -421,8 +421,13 @@ body {
   display: flex; /* Используем Flexbox для выравнивания изображений */
   flex-direction: column; /* Размещение элементов в колонку */
   align-items: center; /* Центрируем изображения */
-  justify-content: center; /* Центрируем изображения по вертикали */
+  /*justify-content: center; /* Центрируем изображения по вертикали */
 
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
 }
 
 .club-image {
