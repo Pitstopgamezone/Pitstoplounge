@@ -415,6 +415,90 @@ body {
   background-image: url('../images/tiktok.png');
 }
 
+/* Основные стили для текста */
+.club-content {
+  font-family: 'Agu Display', sans-serif;
+  color: #fff;
+  background-color: #1c1c1c;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.club-overlay {
+  text-align: left;
+}
+
+.club-overlay h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 32px;
+  color: #ff7f00; /* Оранжевый цвет для выделения заголовков */
+  margin-bottom: 20px;
+}
+
+.club-overlay p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.club-overlay ul {
+  padding-left: 20px;
+  font-size: 16px;
+  list-style-type: none;
+  color: #e0e0e0;
+}
+
+.club-overlay ul li {
+  margin: 10px 0;
+  position: relative;
+}
+
+.club-overlay ul li::before {
+  content: '\2022'; /* Добавляем маркеры */
+  color: #ff7f00;
+  font-size: 20px;
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+
+.club-overlay ul li span {
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+/* Плавное появление текста */
+.club-overlay p, .club-overlay ul li {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.club-overlay p:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.club-overlay ul li:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.club-overlay ul li:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.club-overlay ul li:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
 /* Другие стили */
 
 /* 3D-эффект для иконок */
