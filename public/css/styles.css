@@ -449,8 +449,16 @@ body {
 .club-content img {
   max-width: 40%; /* Максимальная ширина изображения */
   height: auto; /* Сохраняем пропорции изображения */
-  border-radius: 10px; /* Закругление углов изображения */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 0; /* Убираем закругление углов */
+  box-shadow: none; /* Убираем тень */
+  margin: 0; /* Убираем отступы */
+  opacity: 0.9; /* Небольшая прозрачность */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.club-content img:hover {
+  opacity: 1; /* Полностью видно при наведении */
+  transform: scale(1.05); /* Увеличение при наведении */
 }
 
 /* Текстовое содержимое */
@@ -569,6 +577,7 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   transform: translateY(-5px);
 }
+
 
 /* Другие стили */
 
