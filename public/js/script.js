@@ -182,3 +182,42 @@ setTimeout(() => {
   const companyName = document.getElementById('company-name');
   companyName.style.opacity = 1;
 }, 3000); // 3000 миллисекунд = 3 секунды
+
+// Инициализация карты
+const map = L.map('map').setView([50.0755, 14.4378], 12); // Координаты центра (Прага)
+
+// Добавление базового слоя карты (OpenStreetMap)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+// Добавление маркера
+const marker = L.marker([50.0755, 14.4378]).addTo(map);
+
+// Настройка всплывающего сообщения
+marker.bindPopup('<b>Pit Stop Game Zone</b><br>Ваш адрес здесь.').openPopup();
+
+// Выбор элемента карты
+const mapElement = document.getElementById('map');
+
+// Callback для появления карты
+const mapObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      map.invalidateSize(); // Пересчитать размеры карты, если она стала видимой
+    }
+  });
+});
+
+// Наблюдение за картой
+mapObserver.observe(mapElement);
+
+mapObserver.observe(mapElement);
+
+mapObserver.observe(mapElement, (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      mapElement.classList.add('visible');
+    }
+  });
+});
