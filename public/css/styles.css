@@ -712,22 +712,7 @@ body {
 
 #high-performance p {
   font-size: 18px;
-  line-height: 1.6;
-  color: #e0e0e0;
-}
-
-
-/* Стили для активных ссылок */
-.club-overlay ul li a {
-  color: #ff7f00;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.club-overlay ul li a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
+  line-height:
 
 
 
