@@ -712,7 +712,14 @@ body {
 
 #high-performance p {
   font-size: 18px;
-  line-height:
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+#high-performance:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Увеличиваем тень при наведении */
+}
 
 
 
