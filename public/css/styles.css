@@ -179,7 +179,7 @@ body {
 }
 
 #service {
-  background: url('../images/bike-scooter.jpg') no-repeat center center;
+  background: url('../images/console2.jpg') no-repeat center center;
   background-size: cover;
   min-height: 500px;
 }
@@ -642,3 +642,23 @@ body::before {
       font-size: 0.5rem; /* Минимальный размер для маленьких экранов */
   }
 }
+
+/* Стиль для карты */
+#map {
+  width: 100%;
+  height: 50vh; /* Высота карты - 50% от высоты экрана */
+  margin-top: 20px; /* Отступ сверху */
+  border-top: 2px solid #333; /* Верхняя рамка */
+}
+
+#map {
+  opacity: 0; /* Начальное состояние – невидимое */
+  transform: translateY(20px); /* Начальная позиция */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный эффект */
+}
+
+#map.visible {
+  opacity: 1; /* Сделать видимым */
+  transform: translateY(0); /* Вернуть в начальную позицию */
+}
+
