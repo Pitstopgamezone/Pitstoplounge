@@ -183,28 +183,3 @@ setTimeout(() => {
   companyName.style.opacity = 1;
 }, 3000); // 3000 миллисекунд = 3 секунды
 
-// Выбор элементов
-const addressFooter = document.getElementById('address-footer');
-const mapContainer = document.getElementById('map');
-
-// Функция для отображения карты
-addressFooter.addEventListener('click', () => {
-  // Проверяем, уже ли карта отображена
-  if (!mapContainer.classList.contains('visible')) {
-    mapContainer.classList.add('visible'); // Показываем карту
-
-    // Инициализация карты (один раз)
-    const map = L.map('map').setView([50.0755, 14.4378], 12); // Координаты (Прага)
-
-    // Добавление слоя OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
-
-    // Добавление маркера на карту
-    const marker = L.marker([50.0755, 14.4378]).addTo(map);
-
-    // Всплывающее сообщение на маркере
-    marker.bindPopup('<b>Pit Stop Game Zone</b><br>Ваш адрес здесь.').openPopup();
-  }
-});
