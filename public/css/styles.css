@@ -692,6 +692,31 @@ body {
   animation-delay: 0.9s;
 }
 
+#high-performance {
+  background-image: url('images/pc1.jpg'); /* Путь к картинке */
+  background-size: cover; /* Изменяет размер картинки, чтобы она покрыла весь блок */
+  background-position: center center; /* Центрирует картинку */
+  color: white; /* Цвет текста, чтобы он был видим на фоне */
+  padding: 40px; /* Отступы внутри блока */
+  border-radius: 10px; /* Закругленные углы */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Тень для блока */
+  transition: all 0.3s ease; /* Плавный переход */
+}
+
+#high-performance h3 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 28px;
+  color: #ff7f00;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
+}
+
+#high-performance p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+
 /* Стили для активных ссылок */
 .club-overlay ul li a {
   color: #ff7f00;
