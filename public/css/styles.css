@@ -417,7 +417,7 @@ body {
 
 /* Основные стили для текста */
 .club-content {
-  font-family: 'Permanent Marker', sans-serif;
+  font-family: 'Agu Display', sans-serif;
   color: #fff;
   background-color: #1c1c1c;
   padding: 40px;
@@ -428,24 +428,6 @@ body {
   transform: translateY(10px);
   opacity: 0;
   animation: slideIn 1s ease-out forwards;
-  border: 5px solid transparent;
-  background-clip: padding-box;
-  animation: doubleBorder 3s infinite alternate;
-}
-
-@keyframes doubleBorder {
-  0% {
-      border-color: #ff7f00;
-      box-shadow: 0 6px 20px rgba(255, 127, 0, 0.5), 0 10px 30px rgba(255, 127, 0, 0.3);
-  }
-  50% {
-      border-color: #00bfff;
-      box-shadow: 0 6px 20px rgba(0, 191, 255, 0.5), 0 10px 30px rgba(0, 191, 255, 0.3);
-  }
-  100% {
-      border-color: #ff007f;
-      box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5), 0 10px 30px rgba(255, 0, 127, 0.3);
-  }
 }
 
 @keyframes slideIn {
@@ -469,29 +451,6 @@ body {
   color: #ff7f00; /* Ярко-оранжевый цвет для заголовков */
   margin-bottom: 20px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  position: relative;
-}
-
-.club-overlay h2::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #ff007f; /* Розовая линия под заголовком */
-  animation: underlinePulse 1s infinite alternate;
-}
-
-@keyframes underlinePulse {
-  0% {
-      width: 50%;
-      background: #ff007f;
-  }
-  100% {
-      width: 100%;
-      background: #00bfff;
-  }
 }
 
 .club-overlay p {
@@ -500,7 +459,6 @@ body {
   color: #e0e0e0;
   margin-bottom: 20px;
   font-weight: 300;
-  position: relative;
 }
 
 .club-overlay ul {
@@ -509,7 +467,6 @@ body {
   list-style-type: none;
   color: #e0e0e0;
   margin-top: 20px;
-  position: relative;
 }
 
 .club-overlay ul li {
@@ -581,14 +538,14 @@ body {
   }
 }
 
-/* Геометрические фигуры */
+/* Фоновая анимация */
 .club-content::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 150%;
-  height: 150%;
+  width: 300%;
+  height: 300%;
   background: radial-gradient(circle, rgba(255, 127, 0, 0.3), rgba(0, 0, 0, 0.1));
   animation: glowingBackground 5s linear infinite;
   transform: translate(-50%, -50%);
@@ -608,19 +565,17 @@ body {
   }
 }
 
-/* Логотип справа от текста */
-.club-overlay h2 {
-  display: inline-block;
-  margin-right: 20px;
+/* Стиль для ссылки (если есть) */
+.club-overlay a {
+  color: #ff7f00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-@keyframes logoBounce {
-  0% {
-      transform: translateY(0);
-  }
-  100% {
-      transform: translateY(-10px);
-  }
+.club-overlay a:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* Плавный переход для всей области */
@@ -632,6 +587,7 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   transform: translateY(-5px);
 }
+
 
 /* Другие стили */
 
