@@ -960,3 +960,23 @@ body::before {
       transform: rotate(360deg);
   }
 }
+
+/* Стили для ссылки на адрес */
+.address-link {
+  color: #ffffff; /* Белый цвет */
+  text-decoration: none; /* Убираем подчеркивание */
+  transition: all 0.3s ease; /* Плавный переход для эффектов */
+}
+
+/* Эффект при наведении */
+.address-link:hover {
+  color: #d1d1d1; /* Светлый оттенок белого при наведении */
+  animation: blink 1s infinite; /* Мигающий эффект */
+}
+
+/* Мигающий эффект */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
