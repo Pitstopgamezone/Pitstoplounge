@@ -421,7 +421,7 @@ body {
   color: #fff;
   background-color: transparent; /* Прозрачный фон */
   padding: 40px;
-  border: 4px solid #ff7f00; /* Рамка по периметру */
+  border: 4px solid #fa7837; /* Рамка по периметру */
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -461,7 +461,7 @@ body {
 .club-overlay h2 {
   font-family: 'Permanent Marker', cursive;
   font-size: 36px;
-  color: #ff7f00; /* Ярко-оранжевый цвет для заголовков */
+  color: #fa7837; /* Ярко-оранжевый цвет для заголовков */
   margin-bottom: 20px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
@@ -631,7 +631,7 @@ body {
 .detail-block h3 {
   font-family: 'Permanent Marker', cursive;
   font-size: 28px;
-  color: #ff7f00;
+  color: #fa7837;
   margin-bottom: 10px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
@@ -694,7 +694,7 @@ body {
 
 /* Специальный стиль для блока с изображением (high-performance) */
 #high-performance {
-  background-image: url('images/pc.jpg'); /* Фоновое изображение для блока */
+  background-image: url('images/pc1.jpg'); /* Фоновое изображение для блока */
   background-size: cover; /* Покрытие всего блока */
   background-position: center center; /* Центрирование изображения */
   color: white; /* Белый цвет текста для контраста */
