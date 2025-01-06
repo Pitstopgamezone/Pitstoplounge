@@ -221,4 +221,3 @@ function setCurrentSlide(index) {
 
 // Инициализация галереи
 showSlide(0);
-</script>
