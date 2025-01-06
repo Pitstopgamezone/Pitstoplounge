@@ -132,7 +132,15 @@
       <!-- 4 новые блока с деталями -->
       <div id="high-performance" class="detail-block">
         <h3>High-performance PCs</h3>
-        <p>Our computers are equipped with the latest graphics cards and processors to provide the best gaming experience. Whether you are into action games, strategy, or simulations, you will enjoy a smooth and fast performance.</p>
+        <p>Processor: The powerful Intel Core i5-12400F Alder Lake with 6 cores and a boost clock of up to 4.4 GHz ensures lightning-fast speed and smooth gameplay.</p>
+        <p>Graphics Card: NVIDIA GeForce RTX 4060 with 8 GB of memory and NVIDIA DLSS 3.0 support for realistic graphics and top-notch performance.</p>
+        <p>RAM: 32 GB of DDR4 memory at 3200 MHz guarantees flawless performance even for the most demanding applications.</p>
+        <p>Storage: A high-speed M2 NVMe SSD with 2 TB of storage capacity ensures instant loading of games and applications.</p>
+        <p>Display: Samsung Odyssey G40B monitors with Full HD resolution (1920×1080), a 240 Hz refresh rate, and a 1 ms response time immerse you fully in the game.</p>
+        <p>Additional Gear:</p>
+        <p>Headset: HyperX Cloud Alpha delivers crystal-clear sound and exceptional comfort.</p>
+        <p>Keyboard: HyperX Alloy Origins 60 offers a durable build with stunning RGB lighting.</p>
+        <p>Gaming Mouse: HyperX Pulsefire Haste 2 Wireless features up to 26000 DPI sensitivity and an ultra-lightweight design.</p>
       </div>
       
       <div id="gaming-chairs" class="detail-block">
@@ -149,19 +157,19 @@
         <h3>Special Discounts for Groups</h3>
         <p>Book your session in a group and get special discounts. Whether it’s a birthday, a party, or a team-building event, we offer great deals to make your gathering even more fun.</p>
       </div>
-      <!-- Блок галереи -->
-    <div class="gallery-container">
+      <!-- Галерея изображений -->
+    <div id="gallery" class="gallery-container">
+    <h2>Gallery</h2>
     <div class="gallery-slider">
-      <div class="gallery-slide">
-        <img src="images/image01.jpg" alt="Photo 1">
-        <img src="images/image02.jpg" alt="Photo 2">
-        <img src="images/image03.jpg" alt="Photo 3">
-      </div>
+        <button class="gallery-button prev" aria-label="Previous Image" onclick="changeSlide(-1)">&lt;</button>
+        <div class="gallery-slides">
+            <img src="images/photo1.jpg" alt="Gallery Image 1" class="gallery-image">
+            <img src="images/photo2.jpg" alt="Gallery Image 2" class="gallery-image">
+            <img src="images/photo3.jpg" alt="Gallery Image 3" class="gallery-image">
+            <img src="images/photo4.jpg" alt="Gallery Image 4" class="gallery-image">
+        </div>
+        <button class="gallery-button next" aria-label="Next Image" onclick="changeSlide(1)">&gt;</button>
     </div>
-    <button class="gallery-button left" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="gallery-button right" onclick="moveSlide(1)">&#10095;</button>
-    </div>
-  
     <div class="gallery-dots">
         <span class="dot" onclick="setCurrentSlide(0)"></span>
         <span class="dot" onclick="setCurrentSlide(1)"></span>
