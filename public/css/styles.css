@@ -628,7 +628,7 @@ body {
 
 /* Общие стили для всех блоков */
 .detail-block {
-  background-color: #222;
+  background-color: transparent;
   color: #fff;
   padding: 20px;
   margin: 20px 0;
