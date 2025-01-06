@@ -942,7 +942,7 @@ body::before {
 .address-link:hover {
   color: #d1d1d1; /* Светлый оттенок белого при наведении */
   animation: blink 1s infinite; /* Мигающий эффект */
-  transform: scale(1.1); /* Увеличение ссылки */
+  transform: scale(1.9); /* Увеличение ссылки */
 }
 
 /* Мигающий эффект */
