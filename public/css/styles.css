@@ -913,3 +913,41 @@ body::before {
   }
 }
 
+.circle-text {
+  position: relative;
+  width: 200px; /* Диаметр круга */
+  height: 200px; /* Диаметр круга */
+  margin: 20px auto; /* Центрирование круга */
+  border-radius: 50%; /* Делает элемент кругом */
+  overflow: hidden; /* Скрывает лишний текст */
+  border: 2px solid #ff6600; /* Обводка круга */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black; /* Цвет фона круга */
+}
+
+.circle-content {
+  position: absolute;
+  width: 400%; /* Длина линии текста */
+  transform: rotate(0deg); /* Начальная позиция текста */
+  animation: rotate-circle 10s linear infinite; /* Анимация вращения текста */
+  white-space: nowrap; /* Запрет переноса текста */
+}
+
+.circle-content span {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+}
+
+/* Анимация вращения */
+@keyframes rotate-circle {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
