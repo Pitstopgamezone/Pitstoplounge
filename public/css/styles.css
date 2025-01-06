@@ -952,67 +952,63 @@ body::before {
   100% { opacity: 1; }
 }
 
-/* Стили для галереи (CSS) */
+/* Стили для галереи */
 .gallery-container {
-    text-align: center;
-    margin: 20px auto;
-    max-width: 800px;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px auto; /* Центрирование */
+  width: 80%; /* Ширина галереи */
+  max-width: 1200px; /* Максимальная ширина */
+  padding-bottom: 20px; /* Отступ от дна */
 }
 
 .gallery-slider {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  width: 100%; /* Занимает ширину контейнера */
+  overflow: hidden; /* Скрытие лишнего */
+  border-radius: 10px;
 }
 
-.gallery-slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 400%;
+.gallery-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
-.gallery-image {
-    min-width: 100%;
-    max-height: 400px;
-    object-fit: cover;
+.gallery-slide img {
+  width: 100%; /* Адаптивная ширина */
+  height: auto; /* Пропорциональная высота */
+  object-fit: cover; /* Центрирование содержимого */
+  border-radius: 10px;
 }
 
+/* Навигационные кнопки */
 .gallery-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  font-size: 20px;
+  outline: none;
 }
 
-.gallery-button.prev {
-    left: 10px;
+.gallery-button.left {
+  left: 10px;
 }
 
-.gallery-button.next {
-    right: 10px;
+.gallery-button.right {
+  right: 10px;
 }
 
-.gallery-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.dot.active {
-    background-color: #717171;
+.gallery-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
 }

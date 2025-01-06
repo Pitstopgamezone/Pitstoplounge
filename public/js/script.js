@@ -196,28 +196,16 @@ document.querySelectorAll('.club-overlay ul li a').forEach(anchor => {
   });
 });
 
-// Логика для галереи (JavaScript)
-let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.gallery-image');
-const dots = document.querySelectorAll('.dot');
-
-function showSlide(index) {
-    const totalSlides = slides.length;
-    currentSlideIndex = (index + totalSlides) % totalSlides;
-    const offset = -currentSlideIndex * 100;
-    document.querySelector('.gallery-slides').style.transform = `translateX(${offset}%)`;
-    dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === currentSlideIndex);
-    });
-}
-
-function changeSlide(step) {
-    showSlide(currentSlideIndex + step);
-}
-
-function setCurrentSlide(index) {
-    showSlide(index);
-}
-
 // Инициализация галереи
 showSlide(0);
+let currentSlide = 0;
+
+function moveSlide(direction) {
+  const slides = document.querySelector('.gallery-slide');
+  const totalSlides = slides.children.length;
+  const slideWidth = slides.children[0].getBoundingClientRect().width;
+
+  currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+  slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+
