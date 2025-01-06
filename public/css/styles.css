@@ -234,46 +234,14 @@ body {
 }
 
 .social-icon {
-  font-size: 24px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.social-icon:hover {
-  color: #0078d4; /* Цвет при наведении для социальных кнопок */
-}
-
-.fb {
-  background: url('facebook-icon.png') no-repeat center;
-}
-
-.ig {
-  background: url('instagram-icon.png') no-repeat center;
-}
-
-.tw {
-  background: url('tiktok-icon.png') no-repeat center;
-}
-
-/* Стили для кнопки Socials */
-.socials-button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  border: none; /* Рамка вокруг блока */
-  padding: 5px; /* Отступы внутри блока */
-  border-radius: 5px; /* Скругленные углы */
-}
-
-.social-icon {
-  width: 20px;
-  height: 20px;
-  background-size: contain;
+  width: 24px; /* Размер иконки */
+  height: 24px;
+  background-size: contain; /* Подгонка изображения */
   display: inline-block;
 }
 
 .social-icon.fb {
-  background-image: url('../images/Facebook.png');
+  background-image: url('../images/Facebook.png'); /* Путь к изображению */
 }
 
 .social-icon.ig {
@@ -283,6 +251,21 @@ body {
 .social-icon.tw {
   background-image: url('../images/tiktok.png');
 }
+
+.social-icon:hover {
+  opacity: 0.8; /* Эффект при наведении */
+}
+
+/* Стили для кнопки Socials */
+.socials-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 
 /* Фиксированная и прозрачная верхняя панель */
 .tabs {
