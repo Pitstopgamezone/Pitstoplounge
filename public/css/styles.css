@@ -229,6 +229,33 @@ body {
   transition: opacity 1s ease;
 }
 
+.socials-container {
+  display: inline-block;
+}
+
+.social-icon {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #0078d4; /* Цвет при наведении для социальных кнопок */
+}
+
+.fb {
+  background: url('facebook-icon.png') no-repeat center;
+}
+
+.ig {
+  background: url('instagram-icon.png') no-repeat center;
+}
+
+.tw {
+  background: url('tiktok-icon.png') no-repeat center;
+}
+
+
 /* Фиксированная и прозрачная верхняя панель */
 .tabs {
   position: fixed;
