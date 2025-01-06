@@ -626,6 +626,38 @@ body {
   }
 }
 
+/* Контейнер для неоновых всплывающих элементов */
+.neon-spray {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 127, 0, 0.8); /* Цвет спрея */
+  /*background: rgba(0, 255, 127, 0.8); /* Зелёный неон */
+  filter: blur(15px);
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: neonSpray 3s ease-in-out infinite;
+  z-index: 2; /* Поверх контента */
+  pointer-events: none;
+}
+
+/* Эффект прорисовки */
+@keyframes neonSpray {
+  0% {
+    transform: scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5) translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+
 /* Общие стили для всех блоков */
 .detail-block {
   background-color: transparent;
