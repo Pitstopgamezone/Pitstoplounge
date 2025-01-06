@@ -129,11 +129,11 @@ body {
 }
 
 .tab-button.club-button:hover {
-  background: linear-gradient(90deg, #008ba3, #00e4ff);
+  background: linear-gradient(90deg, #ff7c00, #ffcf00);#008ba3, #00e4ff
 }
 
 .tab-button.service-button:hover {
-  background: linear-gradient(90deg, #ff7c00, #ffcf00);
+  background: linear-gradient(90deg, #008ba3, #00e4ff);#ff7c00, #ffcf00
 }
 
 .tab-button.token-button:hover {
