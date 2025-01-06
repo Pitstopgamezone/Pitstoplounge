@@ -149,6 +149,26 @@
         <h3>Special Discounts for Groups</h3>
         <p>Book your session in a group and get special discounts. Whether it’s a birthday, a party, or a team-building event, we offer great deals to make your gathering even more fun.</p>
       </div>
+      <!-- Галерея изображений -->
+    <div id="gallery" class="gallery-container">
+    <h2>Gallery</h2>
+    <div class="gallery-slider">
+        <button class="gallery-button prev" aria-label="Previous Image" onclick="changeSlide(-1)">&lt;</button>
+        <div class="gallery-slides">
+            <img src="images/photo1.jpg" alt="Gallery Image 1" class="gallery-image">
+            <img src="images/photo2.jpg" alt="Gallery Image 2" class="gallery-image">
+            <img src="images/photo3.jpg" alt="Gallery Image 3" class="gallery-image">
+            <img src="images/photo4.jpg" alt="Gallery Image 4" class="gallery-image">
+        </div>
+        <button class="gallery-button next" aria-label="Next Image" onclick="changeSlide(1)">&gt;</button>
+    </div>
+    <div class="gallery-dots">
+        <span class="dot" onclick="setCurrentSlide(0)"></span>
+        <span class="dot" onclick="setCurrentSlide(1)"></span>
+        <span class="dot" onclick="setCurrentSlide(2)"></span>
+        <span class="dot" onclick="setCurrentSlide(3)"></span>
+    </div>
+    </div>
       
 </div>
 

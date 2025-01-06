@@ -102,7 +102,7 @@ body {
 .tab-button {
   font-family: 'Permanent Marker', sans-serif;
   background: linear-gradient(45deg, #444444, #000000); /* Базовый градиентный фон */
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 15px 30px;
   border: none;
   border-radius: 10px;
@@ -161,7 +161,7 @@ body {
 
 /* Активная кнопка */
 .tab-button.active {
-  border: 2px solid #fff;
+  border: 3px solid #ffffff;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
@@ -942,7 +942,7 @@ body::before {
 .address-link:hover {
   color: #d1d1d1; /* Светлый оттенок белого при наведении */
   animation: blink 1s infinite; /* Мигающий эффект */
-  transform: scale(1.9); /* Увеличение ссылки */
+  /*transform: scale(1.9); /* Увеличение ссылки */
 }
 
 /* Мигающий эффект */
@@ -951,3 +951,69 @@ body::before {
   50% { opacity: 0.7; } /* Чуть больше прозрачности для плавности */
   100% { opacity: 1; }
 }
+
+/* Стили для галереи (CSS) */
+.gallery-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    position: relative;
+}
+
+.gallery-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 400%;
+}
+
+.gallery-image {
+    min-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.gallery-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.gallery-button.prev {
+    left: 10px;
+}
+
+.gallery-button.next {
+    right: 10px;
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+</style>
