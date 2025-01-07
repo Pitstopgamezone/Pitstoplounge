@@ -903,12 +903,12 @@ body {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(45deg, rgba(4, 240, 16, 0.2) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(36, 247, 47, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 255, 0.2), rgba(255, 0, 0, 0.2));
+    radial-gradient(circle, rgba(1, 245, 253, 0.247) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(2, 178, 248, 0.274) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(36, 75, 247, 0.274) 1px, transparent 1px),
+    linear-gradient(to bottom, #00738a34, #00738aa9);
   background-size: 
-    100px 100px, /* Радиальная сетка */
+    10px 10px, /* Радиальная сетка */
     10px 10px,   /* Сетка под углом 45° */
     10px 10px,   /* Сетка под углом 135° */
     100% 100%;   /* Градиент-заливка */
@@ -957,7 +957,6 @@ body {
   }
 }
 
-/* Пиксельный человечек */
 #pixel-character {
   position: absolute;
   width: 32px;
@@ -968,7 +967,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  animation: walk-cycle 0.5s steps(4) infinite, move-character 10s linear infinite;
+  animation: walk-cycle 0.5s steps(4) infinite, 
+            move-character 10s linear infinite;
+  opacity: 0; /* Начинаем с невидимости */
+  animation-delay: 3s; /* Устанавливаем задержку (зависит от продолжительности неоновой анимации) */
+  animation-name: walk-cycle, move-character, fadeIn; /* Добавляем анимацию для появления */
 }
 
 @keyframes walk-cycle {
@@ -983,6 +986,12 @@ body {
   75% { top: 90%; left: 50%; }
   100% { top: 50%; left: 10%; }
 }
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
 
 

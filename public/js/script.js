@@ -209,8 +209,8 @@ function moveSlide(direction) {
   slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
 
-const canvas = document.getElementById('snake-game');
-const ctx = canvas.getContext('2d');
+//const canvas = document.getElementById('snake-game');
+//const ctx = canvas.getContext('2d');
 
 // Пиксельный персонаж
 const character = document.getElementById('pixel-character');
