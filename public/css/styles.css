@@ -230,8 +230,26 @@ body {
 }
 
 .socials-container {
-  display: inline-block;
+  display: flex; /* Устанавливает flexbox для выравнивания содержимого */
+  align-items: center;
+  justify-content: center; /* Центрирует содержимое */
+  gap: 5px;
+  border: 0px solid white; /* Рамка кнопки */
+  padding: 0px 0px; /* Отступы внутри кнопки */
+  border-radius: 5px; /* Закруглённые углы */
+  background-color: #333; /* Фоновый цвет кнопки */
+  color: white; /* Цвет текста */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  width: max-content; /* Размер кнопки автоматически подстраивается под содержимое */
+  height: auto; /* Устанавливает высоту в зависимости от содержимого */
+  box-sizing: border-box; /* Учитывает рамку и отступы в размерах кнопки */
 }
+
+.socials-container:hover {
+  box-shadow: 0 0 10px 2px white; /* Эффект свечения */
+  background-color: #444; /* Лёгкое изменение фона */
+}
+
 
 .social-icon {
   width: 26px; /* Размер иконки */
@@ -256,23 +274,7 @@ body {
   opacity: 0.8; /* Эффект при наведении */
 }
 
-/* Стили для кнопки Socials */
-.socials-button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  border: 2px solid white; /* Прозрачная рамка по умолчанию */
-  padding: 5px;
-  border-radius: 5px;
-  background-color: #333; /* Фоновый цвет кнопки */
-  color: white; /* Цвет текста */
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
-}
 
-.socials-button:hover {
-  box-shadow: 0 0 10px 2px white; /* Эффект свечения */
-  background-color: #444; /* Лёгкое изменение фона */
-}
 
 /* Фиксированная и прозрачная верхняя панель */
 .tabs {
@@ -341,7 +343,7 @@ body {
 
 /* Прогресс-бар */
 #progress-bar {
-  height: 5px;
+  height: 4px;
   background-color: #fa7837;
   width: 0;
 }
@@ -428,10 +430,31 @@ body {
 }
 
 #footer-info .phone-link:hover {
-  color: #ccc; /* Цвет при наведении */
+  color: #00d9ff; /* Цвет при наведении */
+}
+/* Стили для ссылки на адрес */
+.address-link {
+  color: #ffffff; /* Белый цвет */
+  text-decoration: none; /* Убираем подчеркивание */
+  transition: all 0.3s ease; /* Плавный переход для эффектов */
 }
 
-/* Контейнер с изображением и текстом */
+/* Эффект при наведении */
+.address-link:hover {
+  color: #05ffff; /* Светлый оттенок белого при наведении */
+  animation: blink 1s infinite; /* Мигающий эффект */
+  /*transform: scale(1.9); /* Увеличение ссылки */
+  /*font-weight: bold;*/
+}
+
+/* Мигающий эффект */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; } /* Чуть больше прозрачности для плавности */
+  100% { opacity: 1; }
+}
+
+/* Заглавный Контейнер с изображением и текстом */
 .club-content {
   font-family: 'Permanent Marker', sans-serif;
   color: #fff;
@@ -833,7 +856,7 @@ body {
   background-color: #fcfdfd; /* Цвет Telegram */
   color: rgb(0, 142, 207);
   padding: 10px; /* Оставляем только padding, чтобы контролировать размер */
-  border-radius: 50%; /* Округляем края */
+  border-radius: 55%; /* Округляем края */
   text-decoration: none;
   font-size: 14px;
   transition: background-color 0.3s ease;
@@ -872,19 +895,96 @@ body {
   font-weight: bold;
 }
 
-body::before {
+#background-grid {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(4, 240, 16, 0.082) 1px, transparent 1px),
-              linear-gradient(135deg, rgba(36, 247, 47, 0.089) 1px, transparent 1px);
-  background-size: 5px 5px; /* Размер ячеек сетки */
-  z-index: -1; /* Помещаем сетку за контент */
-  pointer-events: none; /* Чтобы сетка не блокировала клики */
+  background: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(4, 240, 16, 0.2) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(36, 247, 47, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 255, 0.2), rgba(255, 0, 0, 0.2));
+  background-size: 
+    100px 100px, /* Радиальная сетка */
+    10px 10px,   /* Сетка под углом 45° */
+    10px 10px,   /* Сетка под углом 135° */
+    100% 100%;   /* Градиент-заливка */
+  background-blend-mode: screen, overlay, overlay, soft-light;
+  z-index: -1;
+  pointer-events: none;
+  animation: 
+    grid-flow 10s infinite linear, 
+    color-pulse 12s infinite alternate ease-in-out, 
+    flash 5s infinite ease-in-out;
 }
+
+/* Анимация движения сетки */
+@keyframes grid-flow {
+  0% {
+    background-position: 0 0, 0 0, 0 0, center;
+  }
+  50% {
+    background-position: 20px 20px, -20px -20px, 10px 10px, center;
+  }
+  100% {
+    background-position: 0 0, 0 0, 0 0, center;
+  }
+}
+
+/* Анимация переливающихся цветов */
+@keyframes color-pulse {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    filter: hue-rotate(180deg) brightness(1.2);
+  }
+  100% {
+    filter: hue-rotate(360deg) brightness(1);
+  }
+}
+
+/* Вспышки света */
+@keyframes flash {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Пиксельный человечек */
+#pixel-character {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-image: url('../images/pixel-character.jpg');
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  animation: walk-cycle 0.5s steps(4) infinite, move-character 10s linear infinite;
+}
+
+@keyframes walk-cycle {
+  0% { background-position: 0 0; }
+  100% { background-position: -128px 0; }
+}
+
+@keyframes move-character {
+  0% { top: 50%; left: 10%; }
+  25% { top: 10%; left: 50%; }
+  50% { top: 50%; left: 90%; }
+  75% { top: 90%; left: 50%; }
+  100% { top: 50%; left: 10%; }
+}
+
+
 
 #company-name {
   position: fixed;
@@ -970,26 +1070,7 @@ body::before {
   }
 }
 
-/* Стили для ссылки на адрес */
-.address-link {
-  color: #ffffff; /* Белый цвет */
-  text-decoration: none; /* Убираем подчеркивание */
-  transition: all 0.3s ease; /* Плавный переход для эффектов */
-}
 
-/* Эффект при наведении */
-.address-link:hover {
-  color: #d1d1d1; /* Светлый оттенок белого при наведении */
-  animation: blink 1s infinite; /* Мигающий эффект */
-  /*transform: scale(1.9); /* Увеличение ссылки */
-}
-
-/* Мигающий эффект */
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.7; } /* Чуть больше прозрачности для плавности */
-  100% { opacity: 1; }
-}
 
 /* Стили для галереи */
 .gallery-container {

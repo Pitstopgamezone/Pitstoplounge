@@ -212,3 +212,18 @@ function moveSlide(direction) {
 const canvas = document.getElementById('snake-game');
 const ctx = canvas.getContext('2d');
 
+// Пиксельный персонаж
+const character = document.getElementById('pixel-character');
+
+// При клике — персонаж объясняет что-то
+character.addEventListener('click', () => {
+  alert('Привет! Я гид по вашему сайту. Нажми на меня, чтобы узнать больше!');
+});
+
+// Динамическое изменение маршрута движения
+setInterval(() => {
+  const randomTop = Math.random() * 90 + 5; // Случайная позиция (5% до 95%)
+  const randomLeft = Math.random() * 90 + 5;
+  character.style.top = `${randomTop}%`;
+  character.style.left = `${randomLeft}%`;
+}, 8000);
