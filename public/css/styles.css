@@ -629,8 +629,8 @@ body {
 /* Контейнер для неоновых всплывающих элементов */
 .neon-spray {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 15px;
+  height: 15px;
   background: rgba(255, 127, 0, 0.8); /* Цвет спрея */
   /*background: rgba(0, 255, 127, 0.8); /* Зелёный неон */
   filter: blur(15px);
@@ -1043,4 +1043,14 @@ body::before {
 .gallery-button:hover {
   background-color: rgba(255, 255, 255, 0.8);
   color: #000;
+}
+
+#snake-game {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* На задний план */
+  background-color: #000; /* Цвет фона для холста */
 }

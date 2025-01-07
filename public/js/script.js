@@ -209,3 +209,100 @@ function moveSlide(direction) {
   slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
 
+const canvas = document.getElementById('snake-game');
+const ctx = canvas.getContext('2d');
+
+// Настройка холста
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Размер клетки
+const gridSize = 20;
+
+// Змейка и яблоко
+let snake = [{ x: 10, y: 10 }];
+let apple = { x: Math.floor(Math.random() * canvas.width / gridSize) * gridSize, 
+              y: Math.floor(Math.random() * canvas.height / gridSize) * gridSize };
+let direction = { x: 0, y: 0 };
+let newDirection = { x: 0, y: 0 };
+let speed = 100; // Интервал обновления в мс
+
+// Обработчик клавиш
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowUp' && direction.y === 0) newDirection = { x: 0, y: -1 };
+  if (e.key === 'ArrowDown' && direction.y === 0) newDirection = { x: 0, y: 1 };
+  if (e.key === 'ArrowLeft' && direction.x === 0) newDirection = { x: -1, y: 0 };
+  if (e.key === 'ArrowRight' && direction.x === 0) newDirection = { x: 1, y: 0 };
+});
+
+// Функция обновления игры
+function update() {
+  direction = newDirection;
+
+  // Двигаем змейку
+  const head = { 
+    x: snake[0].x + direction.x * gridSize, 
+    y: snake[0].y + direction.y * gridSize 
+  };
+
+  // Проверка на столкновение с краями
+  if (head.x < 0 || head.y < 0 || head.x >= canvas.width || head.y >= canvas.height || 
+      snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+    resetGame();
+    return;
+  }
+
+  snake.unshift(head);
+
+  // Проверка на яблоко
+  if (head.x === apple.x && head.y === apple.y) {
+    generateApple();
+  } else {
+    snake.pop(); // Убираем хвост, если яблоко не съедено
+  }
+}
+
+// Функция рисования
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Рисуем змейку
+  ctx.fillStyle = 'lime';
+  snake.forEach(segment => {
+    ctx.fillRect(segment.x, segment.y, gridSize - 2, gridSize - 2);
+  });
+
+  // Рисуем яблоко
+  ctx.fillStyle = 'red';
+  ctx.fillRect(apple.x, apple.y, gridSize - 2, gridSize - 2);
+}
+
+// Генерация нового яблока
+function generateApple() {
+  apple.x = Math.floor(Math.random() * canvas.width / gridSize) * gridSize;
+  apple.y = Math.floor(Math.random() * canvas.height / gridSize) * gridSize;
+}
+
+// Сброс игры
+function resetGame() {
+  snake = [{ x: 10, y: 10 }];
+  newDirection = { x: 0, y: 0 };
+  direction = { x: 0, y: 0 };
+  generateApple();
+}
+
+// Цикл игры
+function gameLoop() {
+  update();
+  draw();
+}
+
+// Запуск игры
+setInterval(gameLoop, speed);
+
+// Обновление размера холста при изменении размера окна
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
