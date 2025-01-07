@@ -234,8 +234,8 @@ body {
 }
 
 .social-icon {
-  width: 24px; /* Размер иконки */
-  height: 24px;
+  width: 26px; /* Размер иконки */
+  height: 26px;
   background-size: contain; /* Подгонка изображения */
   display: inline-block;
 }
@@ -264,8 +264,15 @@ body {
   border: none;
   padding: 5px;
   border-radius: 5px;
+  background-color: #333; /* Фоновый цвет кнопки */
+  color: white; /* Цвет текста */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+.socials-button:hover {
+  box-shadow: 0 0 10px 2px white; /* Эффект свечения */
+  background-color: #444; /* Лёгкое изменение фона */
+}
 
 /* Фиксированная и прозрачная верхняя панель */
 .tabs {
@@ -1045,12 +1052,12 @@ body::before {
   color: #000;
 }
 
-#snake-game {
+/*#snake-game {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1; /* На задний план */
-  background-color: #000; /* Цвет фона для холста */
-}
+  /*background-color: #000; /* Цвет фона для холста */
+
