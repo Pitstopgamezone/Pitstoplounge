@@ -24,7 +24,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
 
       
-    
+    <script src="js/script.js"></script>
+
    
 
 
@@ -186,7 +187,7 @@
 
       <!-- 4 новые блока с деталями -->
       <div id="high-performance" class="detail-block">
-        <h3>High-performance PCs</h3>
+        <h3>Computer Zone</h3>
         <p>Processor: The powerful Intel Core i5 Alder Lake with a boost clock of up to 4.4 GHz ensures lightning-fast speed and smooth gameplay.</p>
         <p>Graphics Card: NVIDIA GeForce RTX 4060 Ti with NVIDIA DLSS 3.0 support for realistic graphics and top-notch performance.</p>
         <p>RAM: 32 GB of DDR4 memory guarantees flawless performance even for the most demanding applications.</p>
@@ -199,39 +200,34 @@
       </div>
       
       <div id="gaming-chairs" class="detail-block">
-        <h3>Comfortable Gaming Chairs</h3>
+        <h3>PlayStation Zone</h3>
         <p>We provide ergonomic gaming chairs that ensure comfort during long gaming sessions. Adjustable features, high-quality materials, and modern design will keep you relaxed and focused.</p>
       </div>
       
       <div id="hourly-rates" class="detail-block">
-        <h3>Affordable Hourly Rates Starting at $5</h3>
+        <h3>VR and Others</h3>
         <p>Enjoy competitive hourly rates starting from just $5. We offer flexible options for solo players and groups, so you can game without breaking your budget.</p>
       </div>
       
       <div id="group-discounts" class="detail-block">
-        <h3>Special Discounts for Groups</h3>
+        <h3>Our Prices</h3>
         <p>Book your session in a group and get special discounts. Whether it’s a birthday, a party, or a team-building event, we offer great deals to make your gathering even more fun.</p>
       </div>
-      <!-- Галерея изображений -->
-    <div id="gallery" class="gallery-container">
-    <h2>Gallery</h2>
-    <div class="gallery-slider">
-        <button class="gallery-button prev" aria-label="Previous Image" onclick="changeSlide(-1)">&lt;</button>
-        <div class="gallery-slides">
-            <img src="images/photo1.jpg" alt="Gallery Image 1" class="gallery-image">
-            <img src="images/photo2.jpg" alt="Gallery Image 2" class="gallery-image">
-            <img src="images/photo3.jpg" alt="Gallery Image 3" class="gallery-image">
-            <img src="images/photo4.jpg" alt="Gallery Image 4" class="gallery-image">
+      <div id="gallery" class="gallery-container" data-width="80%" data-max-width="1200px">
+        <h2>Gallery</h2>
+        <div class="gallery-slider">
+            <div class="gallery-slides"> <!-- Добавлен контейнер -->
+                <img src="images/photo1.jpg" alt="Gallery Image 1" class="gallery-image">
+                <img src="images/photo2.jpg" alt="Gallery Image 2" class="gallery-image">
+                <img src="images/photo3.jpg" alt="Gallery Image 3" class="gallery-image">
+                <img src="images/photo4.jpg" alt="Gallery Image 4" class="gallery-image">
+            </div>
         </div>
-        <button class="gallery-button next" aria-label="Next Image" onclick="changeSlide(1)">&gt;</button>
+        <button class="gallery-button prev" aria-label="Previous Image">&lt;</button>
+        <button class="gallery-button next" aria-label="Next Image">&gt;</button>
     </div>
-    <div class="gallery-dots">
-        <span class="dot" onclick="setCurrentSlide(0)"></span>
-        <span class="dot" onclick="setCurrentSlide(1)"></span>
-        <span class="dot" onclick="setCurrentSlide(2)"></span>
-        <span class="dot" onclick="setCurrentSlide(3)"></span>
-    </div>
-    </div>
+    
+
       
 </div>
 

@@ -521,8 +521,9 @@ body {
 .club-overlay h2 {
   font-family: 'Permanent Marker', cursive;
   font-size: 36px;
-  color: #fa7837; /* Ярко-оранжевый цвет для заголовков */
+  color: #ff7f00; /* Ярко-оранжевый цвет для заголовков */
   margin-bottom: 20px;
+  margin-top: 1px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -532,6 +533,7 @@ body {
   color: #e0e0e0;
   margin-bottom: 20px;
   font-weight: 300;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .club-overlay ul {
@@ -551,8 +553,8 @@ body {
 
 .club-overlay ul li:hover {
   color: #ff7f00;
-  transform: scale(1.05);
-  text-shadow: 0 0 10px rgba(255, 127, 0, 0.8);
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
 .club-overlay ul li::before {
@@ -561,6 +563,7 @@ body {
   font-size: 20px;
   position: absolute;
   left: 0;
+  padding-left: 20px;
   top: 0;
   transition: all 0.3s ease-in-out;
 }
@@ -595,6 +598,9 @@ body {
 
 .club-overlay ul li:nth-child(3) {
   animation-delay: 0.7s;
+}
+.club-overlay ul li:nth-child(4) {
+  animation-delay: 0.8s;
 }
 
 @keyframes fadeIn {
@@ -715,9 +721,10 @@ body {
 
 /* Стиль для блока новостей и календаря */
 #news-calendar {
-  margin-top: 1px;
+  margin-top: 20px;
   background-color: transparent;
   border: 5px solid #00738a;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   padding: 30px;
   border-radius: 15px;
 }
@@ -739,6 +746,7 @@ body {
   font-family: 'Permanent Marker', cursive;
   font-size: 1.5rem;
   color: #007bff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .news-section ul {
@@ -751,6 +759,7 @@ body {
   margin-bottom: 10px;
   font-size: 1.1rem;
   color: #7506f5;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .news-section li p {
@@ -758,6 +767,7 @@ body {
   margin: 5px 0;
   font-size: 1rem;
   color: #888;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 #calendar {
@@ -765,6 +775,7 @@ body {
   height: 400px;
   background-color: #02dffc36;
   border: 1px solid #01c4f5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   display: flex; /* Flex для центрирования элементов */
   align-items: center; /* Центрируем контент по вертикали */
@@ -1180,72 +1191,99 @@ body {
 
 
 /* Стили для галереи */
+:root {
+  --gallery-width: 80%; /* Задаёт ширину галереи относительно ширины окна */
+  --gallery-max-width: 1200px; /* Устанавливает максимальную ширину галереи */
+  --gallery-aspect-ratio: 16/9; /* Соотношение сторон изображений в галерее */
+}
+
 .gallery-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin: 20px auto; /* Центрирование */
-  width: 80%; /* Ширина галереи */
-  max-width: 1200px; /* Максимальная ширина */
-  padding-bottom: 20px; /* Отступ от дна */
+  display: flex; /* Устанавливает flex-контейнер для элементов */
+  flex-direction: column; /* Располагает элементы вертикально */
+  align-items: center; /* Выравнивает элементы по центру по горизонтали */
+  justify-content: center; /* Центрирует элементы по вертикали */
+  position: relative; /* Относительное позиционирование для последующих вложенных элементов */
+  margin: 20px auto; /* Устанавливает внешние отступы для центрирования контейнера */
+  width: var(--gallery-width); /* Использует ширину из переменной */
+  max-width: var(--gallery-max-width); /* Ограничивает ширину контейнера */
+  padding-bottom: 20px; /* Отступ снизу контейнера */
 }
 
 .gallery-slider {
-  position: relative;
-  width: 100%; /* Занимает ширину контейнера */
-  overflow: hidden; /* Скрытие лишнего */
-  border-radius: 10px;
+  position: relative; /* Позволяет размещать кнопки и изображения в пределах контейнера */
+  width: 100%; /* Устанавливает ширину слайдера равной ширине контейнера */
+  overflow: hidden; /* Скрывает элементы, выходящие за границы контейнера */
+  border-radius: 10px; /* Скругляет углы слайдера */
+  aspect-ratio: var(--gallery-aspect-ratio); /* Поддерживает соотношение сторон изображений */
 }
 
-.gallery-slide {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+.gallery-slides {
+  display: flex; /* Устанавливает изображения в строку */
+  transition: transform 0.5s ease-in-out; /* Анимация при смене слайда */
+  width: 100%; /* Устанавливает ширину равной контейнеру */
 }
 
-.gallery-slide img {
-  width: 100%; /* Адаптивная ширина */
-  height: auto; /* Пропорциональная высота */
-  object-fit: cover; /* Центрирование содержимого */
-  border-radius: 10px;
+.gallery-slides {
+  display: flex; /* Устанавливает элементы слайдера в строку */
+  transition: transform 0.5s ease-in-out; /* Добавляет анимацию при смене слайда */
 }
 
-/* Навигационные кнопки */
+.gallery-image {
+  width: 100%; /* Устанавливает ширину изображения равной ширине контейнера */
+  height: auto; /* Поддерживает пропорции изображения */
+  object-fit: cover; /* Увеличивает изображение для заполнения контейнера, обрезая лишнее */
+  border-radius: 10px; /* Скругляет углы изображений */
+}
+
 .gallery-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  font-size: 20px;
-  outline: none;
+  position: absolute; /* Абсолютное позиционирование кнопок относительно слайдера */
+  top: 50%; /* Расположение по вертикали в середине */
+  transform: translateY(-50%); /* Сдвиг по вертикали для точного центрирования */
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон кнопок */
+  color: #fff; /* Цвет текста кнопок */
+  border: none; /* Убирает стандартные границы кнопок */
+  padding: 10px; /* Внутренний отступ кнопок */
+  cursor: pointer; /* Указывает, что элемент кликабельный */
+  z-index: 10; /* Устанавливает кнопки над другими элементами */
+  border-radius: 50%; /* Делает кнопки круглыми */
+  font-size: 20px; /* Размер текста кнопок */
+  outline: none; /* Убирает стандартный контур кнопок при фокусе */
 }
 
-.gallery-button.left {
-  left: 10px;
+.gallery-button.prev {
+  left: 10px; /* Расположение кнопки "назад" слева */
 }
 
-.gallery-button.right {
-  right: 10px;
+.gallery-button.next {
+  right: 10px; /* Расположение кнопки "вперед" справа */
 }
 
 .gallery-button:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #000;
+  background-color: rgba(255, 255, 255, 0.8); /* Меняет цвет фона кнопок при наведении */
+  color: #000000; /* Меняет цвет текста кнопок при наведении */
 }
 
-/*#snake-game {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* На задний план */
-  /*background-color: #000; /* Цвет фона для холста */
+.gallery-container h2 {
+  font-family: 'Permanent Marker', sans-serif; /* Использует декоративный шрифт */
+  font-size: 2rem; /* Размер шрифта заголовка */
+  font-weight: bold; /* Жирность шрифта */
+  color: #a6ff00; /* Яркий зеленый цвет текста */
+  text-align: center; /* Выравнивание заголовка по центру */
+  margin-bottom: 20px; /* Отступ между заголовком и галереей */
+  text-transform: uppercase; /* Преобразует текст в верхний регистр */
+  letter-spacing: 2px; /* Увеличивает расстояние между буквами */
+}
 
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  :root {
+      --gallery-width: 95%; /* Увеличивает ширину галереи на мобильных устройствах */
+      --gallery-max-width: 600px; /* Ограничивает максимальную ширину на маленьких экранах */
+      --gallery-aspect-ratio: 4/3; /* Меняет соотношение сторон для компактных экранов */
+  }
+
+  .gallery-button {
+      font-size: 16px; /* Уменьшает размер текста кнопок на мобильных устройствах */
+      padding: 8px; /* Уменьшает внутренние отступы кнопок */
+  }
+}
