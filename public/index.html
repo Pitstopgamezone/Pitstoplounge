@@ -57,6 +57,7 @@
     <div id="footer-info">
         <p id="address-footer">
             Address: <a href="https://maps.app.goo.gl/iFwwjAqRLb5ToML68" target="_blank" class="address-link">Chrudimská 2526/2a, Prague 3</a>
+            <span style="color: white; margin-left: 10px;">Mo-Su, 10-22</span>
         </p>
         <div id="contact-footer">
             <p id="phone-footer">
@@ -181,23 +182,32 @@
         </div>
         <div class="calendar-section">
             <h3>Event Calendar</h3>
-            <div id="calendar"></div> <!-- You can integrate a calendar plugin or custom calendar here -->
+            <div id="calendar"></div> <!-- integrate a calendar plugin or custom calendar here -->
         </div>
     </div> 
 
       <!-- 4 новые блока с деталями -->
       <div id="high-performance" class="detail-block">
         <h3>Computer Zone</h3>
-        <p>Processor: The powerful Intel Core i5 Alder Lake with a boost clock of up to 4.4 GHz ensures lightning-fast speed and smooth gameplay.</p>
-        <p>Graphics Card: NVIDIA GeForce RTX 4060 Ti with NVIDIA DLSS 3.0 support for realistic graphics and top-notch performance.</p>
-        <p>RAM: 32 GB of DDR4 memory guarantees flawless performance even for the most demanding applications.</p>
-        <p>Storage: A high-speed M2 SSD ensures instant loading of games and applications.</p>
-        <p>Display: Samsung Odyssey G40B monitors with a 240 Hz refresh rate immerse you fully in the game.</p>
-        <p>Additional Gear:</p>
-        <p>Headset: HyperX Cloud Alpha delivers crystal-clear sound and exceptional comfort.</p>
-        <p>Keyboard: HyperX Alloy Origins 60 offers a durable build with stunning RGB lighting.</p>
-        <p>Gaming Mouse: HyperX Pulsefire Haste 2 Wireless features up to 26000 DPI sensitivity and an ultra-lightweight design.</p>
-      </div>
+      
+        <div class="detail-content">
+          <!-- Изображение блока -->
+          <!--<img src="images/computer-zone.jpg" alt="High Performance Computer" class="detail-image">-->
+      
+          <!-- Текстовые детали -->
+          <div class="detail-text">
+            <p>Processor: The powerful Intel Core i5 Alder Lake with a boost clock of up to 4.4 GHz ensures lightning-fast speed and smooth gameplay.</p>
+            <p>Graphics Card: NVIDIA GeForce RTX 4060 Ti with NVIDIA DLSS 3.0 support for realistic graphics and top-notch performance.</p>
+            <p>RAM: 32 GB of DDR4 memory guarantees flawless performance even for the most demanding applications.</p>
+            <p>Storage: A high-speed M2 SSD ensures instant loading of games and applications.</p>
+            <p>Display: Samsung Odyssey G40B monitors with a 240 Hz refresh rate immerse you fully in the game.</p>
+            <p>Additional Gear:</p>
+            <p>Headset: HyperX Cloud Alpha delivers crystal-clear sound and exceptional comfort.</p>
+            <p>Keyboard: HyperX Alloy Origins 60 offers a durable build with stunning RGB lighting.</p>
+            <p>Gaming Mouse: HyperX Pulsefire Haste 2 Wireless features up to 26000 DPI sensitivity and an ultra-lightweight design.</p>
+          </div>
+       
+      
       
       <div id="gaming-chairs" class="detail-block">
         <h3>PlayStation Zone</h3>
@@ -213,18 +223,30 @@
         <h3>Our Prices</h3>
         <p>Book your session in a group and get special discounts. Whether it’s a birthday, a party, or a team-building event, we offer great deals to make your gathering even more fun.</p>
       </div>
-      <div id="gallery" class="gallery-container" data-width="80%" data-max-width="1200px">
-        <h2>Gallery</h2>
-        <div class="gallery-slider">
-            <div class="gallery-slides"> <!-- Добавлен контейнер -->
-                <img src="images/photo1.JPG" alt="Gallery Image 1" class="gallery-image">
-                <img src="images/photo2.JPG" alt="Gallery Image 2" class="gallery-image">
-                <img src="images/photo3.JPG" alt="Gallery Image 3" class="gallery-image">
-                <img src="images/photo4.jpg" alt="Gallery Image 4" class="gallery-image">
-            </div>
+      
+      <div class="gallery-title">Gallery</div>
+
+      <!-- Слайд-шоу -->
+      <div class="gallery-collage">
+        <div class="gallery-item" style="background-image: url('images/photo1.JPG');" onclick="openModal(0)"></div>
+        <div class="gallery-item" style="background-image: url('images/photo2.JPG');" onclick="openModal(1)"></div>
+        <div class="gallery-item" style="background-image: url('images/photo3.JPG');" onclick="openModal(2)"></div>
+        <div class="gallery-item" style="background-image: url('images/photo4.jpg');" onclick="openModal(3)"></div>
+      </div>
+      
+      <!-- Модальное окно для слайд-шоу -->
+      <div id="modal" class="modal" onclick="closeModal()">
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <div class="modal-content">
+          <img id="modal-image" src="" alt="Gallery Image">
         </div>
-        <button class="gallery-button prev" aria-label="Previous Image">&lt;</button>
-        <button class="gallery-button next" aria-label="Next Image">&gt;</button>
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+      </div>
+      
+
+      
+      
+
     </div>
     
 
@@ -234,10 +256,12 @@
 
 
         <!-- Контент вкладки "Pit-Stop Service" -->
-        <div id="service" class="tab-content">
-            <h2>Pit-Stop Service</h2>
-            <p>Details about bike and scooter repair and rental services.</p>
-        </div>
+<div id="service" class="tab-content light-grid">
+    <div class="background-grid"></div> <!-- Сетка для этой вкладки -->
+    <h2>Pit-Stop Service</h2>
+    <p>Details about bike and scooter repair and rental services.</p>
+</div>
+
 
         <!-- Контент вкладки "Token" -->
         <div id="token" class="tab-content">

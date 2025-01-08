@@ -255,33 +255,35 @@ $(document).ready(function() {
 });
 
 // Gallery
-// Получаем элементы галереи
-const slides = document.querySelector('.gallery-slides'); // Контейнер с изображениями
-const images = document.querySelectorAll('.gallery-image'); // Все изображения
-const prevButton = document.querySelector('.gallery-button.prev'); // Кнопка "назад"
-const nextButton = document.querySelector('.gallery-button.next'); // Кнопка "вперед"
+let currentImageIndex = 0;
+const images = [
+  'images/photo1.JPG',
+  'images/photo2.JPG',
+  'images/photo3.JPG',
+  'images/photo4.jpg'
+];
 
-// Переменные для отслеживания текущего слайда
-let currentIndex = 0; // Индекс текущего слайда
-const totalSlides = images.length; // Общее количество слайдов
-
-// Функция для обновления положения слайдов
-function updateSlidePosition() {
-    const offset = -currentIndex * 100; // Сдвиг для текущего слайда
-    slides.style.transform = `translateX(${offset}%)`; // Применяем сдвиг к контейнеру слайдов
+// Открытие модального окна
+function openModal(index) {
+  currentImageIndex = index;
+  document.getElementById('modal').style.display = 'flex';
+  document.getElementById('modal-image').src = images[currentImageIndex];
 }
 
-// Обработчик для кнопки "вперед"
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % totalSlides; // Увеличиваем индекс и возвращаемся к началу, если достигли конца
-    updateSlidePosition(); // Обновляем позицию
-});
+// Закрытие модального окна
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
 
-// Обработчик для кнопки "назад"
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Уменьшаем индекс и переходим к последнему, если текущий равен 0
-    updateSlidePosition(); // Обновляем позицию
-});
+// Переключение изображений
+function changeImage(direction) {
+  currentImageIndex += direction;
 
-// Установка начальной позиции
-updateSlidePosition();
+  if (currentImageIndex < 0) {
+    currentImageIndex = images.length - 1; // Переход к последнему изображению
+  } else if (currentImageIndex >= images.length) {
+    currentImageIndex = 0; // Переход к первому изображению
+  }
+
+  document.getElementById('modal-image').src = images[currentImageIndex];
+}

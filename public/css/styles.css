@@ -198,12 +198,30 @@ body {
   min-height: 500px;
 }
 
+
 #service {
   background: url('../images/console2.jpg') no-repeat center center;
   background-size: cover;
   min-height: 500px;
+  background-color: white; /* Белый фон */
+  padding: 20px; /* Отступы внутри блока */
+  border-radius: 10px; /* Закругление углов, если нужно */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для контента */
+  display: grid; /* Если сетка должна оставаться */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Пример сетки для элементов */
+  gap: 20px; /* Отступы между элементами сетки */
 }
 
+#service h2 {
+  color: #333; /* Цвет заголовка */
+  font-size: 2rem; /* Размер шрифта */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+#service p {
+  color: #555; /* Цвет текста */
+  font-size: 1rem; /* Размер шрифта */
+}
 #token {
   background: url('../images/crypto.jpg') no-repeat center center;
   background-size: cover;
@@ -721,9 +739,9 @@ body {
 
 /* Стиль для блока новостей и календаря */
 #news-calendar {
-  margin-top: 20px;
+  margin-top: 5px;
   background-color: transparent;
-  border: 5px solid #00738a;
+  border: 5px solid #00ecfd;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   padding: 30px;
   border-radius: 15px;
@@ -734,7 +752,7 @@ body {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 20px;
-  color: #00738a;
+  color: #00ecfd;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -758,7 +776,7 @@ body {
   font-family: 'Permanent Marker', cursive;
   margin-bottom: 10px;
   font-size: 1.1rem;
-  color: #7506f5;
+  color: #00ecfd;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -766,8 +784,8 @@ body {
   font-family: 'Permanent Marker', cursive;
   margin: 5px 0;
   font-size: 1rem;
-  color: #888;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
 }
 
 #calendar {
@@ -785,11 +803,20 @@ body {
 
 
 /* Общие стили для всех блоков */
+#high-performance .detail-image {
+  width: 50%; /* Ширина изображения 100% относительно родительского блока */
+  max-width: 600px; /* Ограничиваем максимальную ширину изображения */
+  margin: 20px 0; /* Отступы сверху и снизу */
+  display: block; /* Блокируем изображение для упрощения стилизации */
+  border-radius: 8px; /* Добавим немного закругления углов для красоты */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для изображения */
+}
+
 .detail-block {
   background-color: transparent;
   color: #fff;
   padding: 20px;
-  margin: 20px 0;
+  margin: 5px 0;
   border-radius: 10px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
@@ -1185,101 +1212,124 @@ body {
   }
 }
 
-
-
-
-
-
 /* Стили для галереи */
 :root {
-  --gallery-width: 70%; /* Задаёт ширину галереи относительно ширины окна */
-  --gallery-max-width: 1200px; /* Устанавливает максимальную ширину галереи */
-  --gallery-aspect-ratio: 16/9; /* Соотношение сторон изображений в галерее */
+  --collage-gap: 10px; /* Зазор между изображениями */
 }
 
-.gallery-container {
-  display: flex; /* Устанавливает flex-контейнер для элементов */
-  flex-direction: column; /* Располагает элементы вертикально */
-  align-items: center; /* Выравнивает элементы по центру по горизонтали */
-  justify-content: center; /* Центрирует элементы по вертикали */
-  position: relative; /* Относительное позиционирование для последующих вложенных элементов */
-  margin: 20px auto; /* Устанавливает внешние отступы для центрирования контейнера */
-  width: var(--gallery-width); /* Использует ширину из переменной */
-  max-width: var(--gallery-max-width); /* Ограничивает ширину контейнера */
-  padding-bottom: 20px; /* Отступ снизу контейнера */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-.gallery-slider {
-  position: relative; /* Позволяет размещать кнопки и изображения в пределах контейнера */
-  width: 100%; /* Устанавливает ширину слайдера равной ширине контейнера */
-  overflow: hidden; /* Скрывает элементы, выходящие за границы контейнера */
-  border-radius: 10px; /* Скругляет углы слайдера */
-  aspect-ratio: var(--gallery-aspect-ratio); /* Поддерживает соотношение сторон изображений */
+/* Заголовок галереи */
+.gallery-title {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #c4a704;
 }
 
-.gallery-slides {
-  display: flex; /* Выстраивает изображения в ряд */
-  transition: transform 0.5s ease-in-out; /* Анимация для смены слайда */
+/* Контейнер для галереи */
+.gallery-collage {
+  display: flex;
+  gap: var(--collage-gap);
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  width: 70%;
+  max-width: 1200px;
+  overflow-x: auto; /* Разрешаем горизонтальный скроллинг */
 }
 
-.gallery-image {
-  flex-shrink: 0; /* Запрещает сжиматься изображениям */
-  width: 100%; /* Устанавливает ширину изображения равной контейнеру */
-  height: auto; /* Поддерживает пропорции изображений */
-  object-fit: cover; /* Увеличивает изображение для заполнения контейнера, обрезая лишнее */
-  border-radius: 10px; /* Скругляет углы изображений */
+/* Элементы галереи */
+.gallery-item {
+  position: relative;
+  width: 300px; /* Задаем ширину изображения */
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  will-change: transform, filter;
+  cursor: pointer; /* Курсор изменяется при наведении */
 }
 
-
-.gallery-button {
-  position: absolute; /* Абсолютное позиционирование кнопок относительно слайдера */
-  top: 50%; /* Расположение по вертикали в середине */
-  transform: translateY(-50%); /* Сдвиг по вертикали для точного центрирования */
-  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон кнопок */
-  color: #fff; /* Цвет текста кнопок */
-  border: none; /* Убирает стандартные границы кнопок */
-  padding: 10px; /* Внутренний отступ кнопок */
-  cursor: pointer; /* Указывает, что элемент кликабельный */
-  z-index: 10; /* Устанавливает кнопки над другими элементами */
-  border-radius: 50%; /* Делает кнопки круглыми */
-  font-size: 20px; /* Размер текста кнопок */
-  outline: none; /* Убирает стандартный контур кнопок при фокусе */
+/* Эффект при наведении на изображение */
+.gallery-item:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 
-.gallery-button.prev {
-  left: 10px; /* Расположение кнопки "назад" слева */
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
 }
 
-.gallery-button.next {
-  right: 10px; /* Расположение кнопки "вперед" справа */
+/* Содержимое модального окна */
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
 }
 
-.gallery-button:hover {
-  background-color: rgba(255, 255, 255, 0.8); /* Меняет цвет фона кнопок при наведении */
-  color: #000000; /* Меняет цвет текста кнопок при наведении */
+/* Изображение внутри модального окна */
+.modal img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-.gallery-container h2 {
-  font-family: 'Permanent Marker', sans-serif; /* Использует декоративный шрифт */
-  font-size: 2rem; /* Размер шрифта заголовка */
-  font-weight: bold; /* Жирность шрифта */
-  color: #a6ff00; /* Яркий зеленый цвет текста */
-  text-align: center; /* Выравнивание заголовка по центру */
-  margin-bottom: 20px; /* Отступ между заголовком и галереей */
-  text-transform: uppercase; /* Преобразует текст в верхний регистр */
-  letter-spacing: 2px; /* Увеличивает расстояние между буквами */
+/* Кнопки переключения изображений */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  user-select: none;
 }
 
-/* Адаптация для мобильных устройств */
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
-  :root {
-      --gallery-width: 95%; /* Увеличивает ширину галереи на мобильных устройствах */
-      --gallery-max-width: 600px; /* Ограничивает максимальную ширину на маленьких экранах */
-      --gallery-aspect-ratio: 4/3; /* Меняет соотношение сторон для компактных экранов */
-  }
-
-  .gallery-button {
-      font-size: 16px; /* Уменьшает размер текста кнопок на мобильных устройствах */
-      padding: 8px; /* Уменьшает внутренние отступы кнопок */
+  .gallery-item {
+    width: 200px; /* Меньше изображение на экранах с шириной меньше 768px */
+    height: 150px;
   }
 }
+
+@media (max-width: 480px) {
+  .gallery-item {
+    width: 150px; /* Еще меньше изображение для экранов до 480px */
+    height: 120px;
+  }
+}
+
+
+
+
+
