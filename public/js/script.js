@@ -209,8 +209,11 @@ function moveSlide(direction) {
   slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
 
+
+
+
 //const canvas = document.getElementById('snake-game');
-//const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
 
 // Пиксельный персонаж
 const character = document.getElementById('pixel-character');
@@ -227,3 +230,26 @@ setInterval(() => {
   character.style.top = `${randomTop}%`;
   character.style.left = `${randomLeft}%`;
 }, 8000);
+
+// Calendar
+$(document).ready(function() {
+  $('#calendar').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    },
+    events: [
+      {
+        title: 'Gaming Tournament',
+        start: '2025-01-15',
+        description: 'Join us for an exciting gaming tournament with great prizes!'
+      },
+      {
+        title: 'VR Experience Night',
+        start: '2025-01-22',
+        description: 'Step into the world of virtual reality and experience the future of gaming.'
+      }
+    ]
+  });
+});

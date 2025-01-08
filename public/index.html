@@ -10,6 +10,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css">
+     <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
+    <!-- FullCalendar CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css" rel="stylesheet">
+      
+    <!-- FullCalendar JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
+
+      
+    
+   
+
+
 
 </head>
 <body>
@@ -101,7 +119,6 @@
     <!-- Основной контент -->
     <div id="main-content" style="display: none;">
         <!-- Навигация (вкладки) -->
-        
         <div class="tabs">
             <button class="tab-button club-button active" onclick="showTab('club')" role="tab" aria-label="Перейти в компьютерный клуб">
                 <i class="fas fa-gamepad fa-3x"></i> Game Zone
@@ -124,29 +141,57 @@
             </div>
         </div>
         <div class="club-overlay">
-          <h2>Computer Club</h2>
+          <h2>Our Gaming Zone</h2>
           <p>Experience the ultimate gaming environment:</p>
           <ul>
-            <li><a href="#high-performance">High-performance PCs</a></li>
-            <li><a href="#gaming-chairs">Comfortable gaming chairs</a></li>
-            <li><a href="#hourly-rates">Affordable hourly rates starting at $5</a></li>
-            <li><a href="#group-discounts">Special discounts for groups</a></li>
+            <li><a href="#high-performance">Computer Zone</a></li>
+            <li><a href="#gaming-chairs">PlayStation Zone</a></li>
+            <li><a href="#hourly-rates">VR and Others</a></li>
+            <li><a href="#group-discounts">Our Prices</a></li>
           </ul>
         </div>
         <!-- Неоновые всплывающие элементы -->
   <div class="neon-spray" style="top: 40%; left: 55%;"></div>
   <div class="neon-spray" style="top: 40%; left: 56%; animation-delay: 1s;"></div>
   <div class="neon-spray" style="top: 40%; left: 55%; animation-delay: 2s;"></div>
+  <div class="neon-spray" style="top: 41%; left: 54%; animation-delay: 2.5s;"></div>
+  <div class="neon-spray" style="top: 41%; left: 57%; animation-delay: 3s;"></div>
+  <div class="neon-spray" style="top: 41%; left: 57%; animation-delay: 1s;"></div>
+  <div class="neon-spray" style="top: 40%; left: 57%; animation-delay: 2s;"></div>
+  <div class="neon-spray" style="top: 38%; left: 57%; animation-delay: 2.5s;"></div>
+  <div class="neon-spray" style="top: 45%; left: 57%; animation-delay: 3s;"></div>
       </div>
       
+      <!-- Блок новостей и календаря событий -->
+    <div id="news-calendar" class="news-calendar-container">
+        <h2>Latest News & Events</h2>
+        <div class="news-section">
+            <h3>Upcoming Events</h3>
+            <ul>
+                <li>
+                    <strong>January 15, 2025</strong> - Gaming Tournament
+                    <p>Join us for an exciting gaming tournament with great prizes!</p>
+                </li>
+                <li>
+                    <strong>January 22, 2025</strong> - VR Experience Night
+                    <p>Step into the world of virtual reality and experience the future of gaming.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="calendar-section">
+            <h3>Event Calendar</h3>
+            <div id="calendar"></div> <!-- You can integrate a calendar plugin or custom calendar here -->
+        </div>
+    </div> 
+
       <!-- 4 новые блока с деталями -->
       <div id="high-performance" class="detail-block">
         <h3>High-performance PCs</h3>
-        <p>Processor: The powerful Intel Core i5-12400F Alder Lake with 6 cores and a boost clock of up to 4.4 GHz ensures lightning-fast speed and smooth gameplay.</p>
-        <p>Graphics Card: NVIDIA GeForce RTX 4060 with 8 GB of memory and NVIDIA DLSS 3.0 support for realistic graphics and top-notch performance.</p>
-        <p>RAM: 32 GB of DDR4 memory at 3200 MHz guarantees flawless performance even for the most demanding applications.</p>
-        <p>Storage: A high-speed M2 NVMe SSD with 2 TB of storage capacity ensures instant loading of games and applications.</p>
-        <p>Display: Samsung Odyssey G40B monitors with Full HD resolution (1920×1080), a 240 Hz refresh rate, and a 1 ms response time immerse you fully in the game.</p>
+        <p>Processor: The powerful Intel Core i5 Alder Lake with a boost clock of up to 4.4 GHz ensures lightning-fast speed and smooth gameplay.</p>
+        <p>Graphics Card: NVIDIA GeForce RTX 4060 Ti with NVIDIA DLSS 3.0 support for realistic graphics and top-notch performance.</p>
+        <p>RAM: 32 GB of DDR4 memory guarantees flawless performance even for the most demanding applications.</p>
+        <p>Storage: A high-speed M2 SSD ensures instant loading of games and applications.</p>
+        <p>Display: Samsung Odyssey G40B monitors with a 240 Hz refresh rate immerse you fully in the game.</p>
         <p>Additional Gear:</p>
         <p>Headset: HyperX Cloud Alpha delivers crystal-clear sound and exceptional comfort.</p>
         <p>Keyboard: HyperX Alloy Origins 60 offers a durable build with stunning RGB lighting.</p>
