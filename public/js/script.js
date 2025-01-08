@@ -261,32 +261,27 @@ const images = document.querySelectorAll('.gallery-image'); // Все изобр
 const prevButton = document.querySelector('.gallery-button.prev'); // Кнопка "назад"
 const nextButton = document.querySelector('.gallery-button.next'); // Кнопка "вперед"
 
-// Проверяем наличие слайдов
-if (slides && images.length > 0) {
-  // Переменные для отслеживания текущего слайда
-  let currentIndex = 0; // Индекс текущего слайда
-  const totalSlides = images.length; // Общее количество слайдов
+// Переменные для отслеживания текущего слайда
+let currentIndex = 0; // Индекс текущего слайда
+const totalSlides = images.length; // Общее количество слайдов
 
-  // Функция для обновления положения слайдов
-  function updateSlidePosition() {
+// Функция для обновления положения слайдов
+function updateSlidePosition() {
     const offset = -currentIndex * 100; // Сдвиг для текущего слайда
     slides.style.transform = `translateX(${offset}%)`; // Применяем сдвиг к контейнеру слайдов
-  }
+}
 
-  // Обработчик для кнопки "вперед"
-  nextButton.addEventListener('click', () => {
+// Обработчик для кнопки "вперед"
+nextButton.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % totalSlides; // Увеличиваем индекс и возвращаемся к началу, если достигли конца
     updateSlidePosition(); // Обновляем позицию
-  });
+});
 
-  // Обработчик для кнопки "назад"
-  prevButton.addEventListener('click', () => {
+// Обработчик для кнопки "назад"
+prevButton.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Уменьшаем индекс и переходим к последнему, если текущий равен 0
     updateSlidePosition(); // Обновляем позицию
-  });
+});
 
-  // Установка начальной позиции
-  updateSlidePosition();
-} else {
-  console.error('Слайды не найдены или галерея не инициализирована.');
-}
+// Установка начальной позиции
+updateSlidePosition();
