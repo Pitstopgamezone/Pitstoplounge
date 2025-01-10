@@ -22,6 +22,10 @@
     <!-- FullCalendar JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@interactjs/interactjs/dist/interact.min.js"></script>
+</head>
 
       
     <script src="js/script.js"></script>
@@ -183,6 +187,31 @@
         <div class="calendar-section">
             <h3>Event Calendar</h3>
             <div id="calendar"></div> <!-- integrate a calendar plugin or custom calendar here -->
+            <div class="image-carousel-container">
+                <button class="carousel-control prev" onclick="scrollCarousel(-1)">&#8249;</button>
+                <div class="image-carousel">
+                    <div class="image-wrapper">
+                        <img src="images/image001.jpg" alt="Image 1">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images/img2.jpg" alt="Image 2">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images/img3.avif" alt="Image 3">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images/img4.jpg" alt="Image 3">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images/img5.jpg" alt="Image 3">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="images/IMG_7746.JPG" alt="Image 3">
+                    </div>
+                </div>
+                <button class="carousel-control next" onclick="scrollCarousel(1)">&#8250;</button>
+            </div>
+            
         </div>
     </div> 
 
@@ -198,7 +227,6 @@
         <p>Headset: HyperX Cloud Alpha delivers crystal-clear sound and exceptional comfort.</p>
         <p>Keyboard: HyperX Alloy Origins 60 offers a durable build with stunning RGB lighting.</p>
         <p>Gaming Mouse: HyperX Pulsefire Haste 2 Wireless features up to 26000 DPI sensitivity and an ultra-lightweight design.</p>
-        <img src="images/computer-zone.jpg" alt="High Performance Computer" class="detail-image">
         <img src="images/computer-zone.jpg" alt="High Performance Computer" class="detail-image">
       </div>
       

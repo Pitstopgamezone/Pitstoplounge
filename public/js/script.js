@@ -287,3 +287,12 @@ function changeImage(direction) {
 
   document.getElementById('modal-image').src = images[currentImageIndex];
 }
+
+function scrollCarousel(direction) {
+  const carousel = document.querySelector('.image-carousel');
+  const scrollAmount = carousel.clientWidth * 0.3; // Прокрутка на 30% ширины
+  carousel.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth',
+  });
+}
