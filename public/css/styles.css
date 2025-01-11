@@ -792,10 +792,10 @@ body {
 .calendar-section {
   margin: 20px;
   padding: 20px;
-  background-color: #0898ec4d;
+  background-color: #0898ec28;
   border: 1px solid #00d9ff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Стили для блока изображений */
@@ -804,6 +804,7 @@ body {
   overflow-x: auto; /* Добавляем горизонтальную прокрутку */
   gap: 16px; /* Отступы между изображениями */
   padding: 10px 0; /* Внутренние отступы */
+  align-items: flex-end; /* Выравнивание по нижнему краю */
 }
 
 .image-wrapper {
@@ -845,6 +846,70 @@ body {
 }
 
 
+/* Общие стили для блока */
+#high-performance {
+  display: flex;
+  flex-wrap: wrap; /* Перенос элементов на следующую строку */
+  gap: 20px;
+  justify-content: center;
+}
+
+#high-performance h3 {
+  width: 100%;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  color: #fa7837;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Стили для каждого компонента */
+.component {
+  position: relative;
+  width: 160px; /* Ширина кнопки */
+  height: 160px; /* Высота кнопки */
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.component img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: opacity 0.3s ease;
+}
+
+.component:hover {
+  transform: scale(1.1); /* Увеличение при наведении */
+}
+
+.component:hover img {
+  opacity: 0.3; /* Затемнение изображения при наведении */
+}
+
+/* Информация, всплывающая при наведении */
+.component .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Запрещаем клики по тексту */
+}
+
+.component:hover .info {
+  opacity: 1; /* Показываем текст при наведении */
+}
 
 /* Общие стили для всех блоков */
 #high-performance .detail-image {
@@ -855,6 +920,7 @@ body {
   border-radius: 8px; /* Добавим немного закругления углов для красоты */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для изображения */
   opacity: 0.9; /* Добавление прозрачности изображения */
+  align-items: flex-end; /* Выравниваем содержимое по нижнему краю */
 }
 
 .detail-block {
@@ -865,6 +931,10 @@ body {
   border-radius: 10px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  display: flex; /* Используем Flexbox для управления содержимым */
+  flex-direction: row; /* Размещаем изображение и текст в строку */
+  align-items: flex-end; /* Выравниваем содержимое по нижнему краю */
+  gap: 20px; /* Расстояние между изображением и текстом */
 }
 
 .detail-block h3 {
@@ -873,6 +943,7 @@ body {
   color: #fa7837;
   margin-bottom: 10px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  align-self: center; /* Выравниваем заголовок отдельно */
 }
 
 .detail-block p {
@@ -898,6 +969,23 @@ body {
   text-decoration: underline;
 }
 
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
+  .detail-block {
+    flex-direction: column; /* Вертикальное выравнивание для текста и изображения */
+    align-items: center; /* Выравнивание по центру */
+  }
+
+  .detail-block img {
+    width: 100%; /* Изображение на всю ширину */
+    max-width: 100%; /* Убираем ограничение ширины */
+  }
+
+  .detail-block p {
+    text-align: center; /* Центрируем текст */
+  }
+}
+
 /* Анимации для появления */
 @keyframes fadeInDetails {
   from {
@@ -908,6 +996,11 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.detail-block {
+  opacity: 0;
+  animation: fadeInDetails 1s ease-out forwards;
 }
 
 .detail-block {
