@@ -857,6 +857,7 @@ body {
 #high-performance h3 {
   width: 100%;
   text-align: center;
+  top: 10%; /* Устанавливаем отступ сверху */
   font-family: 'Permanent Marker', cursive;
   color: #fa7837;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
@@ -864,9 +865,9 @@ body {
 
 /* Стили для каждого компонента */
 .component {
-  position: relative;
-  width: 160px; /* Ширина кнопки */
-  height: 160px; /* Высота кнопки */
+  position: flex;
+  width: 150px; /* Ширина кнопки */
+  height: 150px; /* Высота кнопки */
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -915,14 +916,22 @@ body {
 #high-performance .detail-image {
   width: 100%; /* Ширина изображения 100% относительно родительского блока */
   max-width: 800px; /* Ограничиваем максимальную ширину изображения */
-  margin: 20px 0; /* Отступы сверху и снизу */
+  margin: 10px 0; /* Отступы сверху и снизу */
   display: block; /* Блокируем изображение для упрощения стилизации */
   border-radius: 8px; /* Добавим немного закругления углов для красоты */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для изображения */
   opacity: 0.9; /* Добавление прозрачности изображения */
   align-items: flex-end; /* Выравниваем содержимое по нижнему краю */
 }
-
+#gaming-chairs .detail-image {
+  max-width: 100%; /* Изображение не будет превышать ширину родительского блока */
+  max-height: 600px; /* Ограничиваем максимальную высоту */
+  width: auto; /* Автоматическая ширина для сохранения пропорций */
+  height: auto; /* Автоматическая высота для сохранения пропорций */
+  object-fit: contain; /* Убедимся, что изображение вписывается в указанные размеры */
+  border-radius: 8px; /* Добавляем закругленные углы для красоты */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для визуального улучшения */
+}
 .detail-block {
   background-color: transparent;
   color: #fff;
@@ -933,7 +942,7 @@ body {
   transition: all 0.3s ease;
   display: flex; /* Используем Flexbox для управления содержимым */
   flex-direction: row; /* Размещаем изображение и текст в строку */
-  align-items: flex-end; /* Выравниваем содержимое по нижнему краю */
+  align-items: flex-start; /* Выравниваем содержимое по нижнему краю */
   gap: 20px; /* Расстояние между изображением и текстом */
 }
 
@@ -953,7 +962,7 @@ body {
 }
 
 .detail-block:hover {
-  background-color: #ff80006e;
+  background-color: #ffe34431;
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
@@ -1022,6 +1031,30 @@ body {
 
 .detail-block:nth-child(4) {
   animation-delay: 0.9s;
+}
+
+/* Контейнер для изображения и текста */
+#gaming-chairs .image-container {
+  position: relative;
+  display: block;  /* Используем блок, чтобы занять весь доступный размер */
+  width: 100%;     /* Ширина контейнера на весь размер блока */
+  height: 100%;    /* Высота контейнера на весь размер блока */
+}
+
+/* Текст, который должен быть по центру изображения */
+#gaming-chairs .centered-text {
+  font-family: 'Permanent Marker', cursive;
+  position: absolute; /* Абсолютное позиционирование */
+  top: 50%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  color: #bdecca; /* Цвет текста */
+  font-size: 1.2em; /* Размер шрифта */
+  text-align: center; /* Выравнивание текста по центру */
+  width: 40%; /* Можно настроить ширину для лучшего расположения */
+  background-color: rgba(7, 63, 245, 0); /* Полупрозрачный фон для лучшей читаемости */
+  padding: 10px; /* Отступы */
+  border-radius: 10px;
 }
 
 
