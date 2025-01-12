@@ -365,3 +365,5 @@ window.addEventListener('load', function() {
   statusIndicator.style.opacity = 0; // Начальная прозрачность 0
   setTimeout(updateServiceStatus, 500); // Плавно показываем через 500ms
 });
+
+

@@ -523,7 +523,7 @@ body {
   color: #fff;
   padding: 5px 20px;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Прозрачная граница */
+  border-top: 1px solid rgba(255, 255, 255, 0.61); /* Прозрачная граница */
   z-index: 10000; /* Поднято на верхний уровень */
 }
 
@@ -531,6 +531,8 @@ body {
   margin: 0;
   font-size: 14px;
 }
+
+
 
 /* Стили для ссылки на адрес */
 .address-link {
@@ -582,6 +584,31 @@ body {
     max-width: 220px; /* Меньше ширина подсказки для маленьких экранов */
   }
 }
+
+/* Рабочие часы */
+.working-hours {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Мигающий зеленый */
+.blink-green {
+  color: green;
+  animation: blink 1s infinite;
+}
+
+/* Статичный красный */
+.static-red {
+  color: red;
+}
+
+/* Анимация мигания */
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
+}
+
 
 
 
@@ -900,7 +927,7 @@ body {
   background-color: transparent;
   border: 5px solid #00ecfd;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  padding: 10px; /* Отступы внутри блока */
+  padding: 3px; /* Отступы внутри блока */
   border-radius: 15px;
 }
 
@@ -908,13 +935,13 @@ body {
   font-family: 'Permanent Marker', cursive;
   font-size: 2rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   color: #00ecfd;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .news-section, .calendar-section {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .news-section h3, .calendar-section h3 {
@@ -947,7 +974,7 @@ body {
 
 
 .calendar-section {
-  margin: 20px;
+  margin: 10px;
   padding: 20px;
   background-color: #0898ec28;
   border: 1px solid #00d9ff;
@@ -1126,13 +1153,13 @@ body {
 }
 #gaming-chairs .detail-image {
   max-width: 100%; /* Изображение не будет превышать ширину родительского блока */
-  max-height: 600px; /* Ограничиваем максимальную высоту */
+  max-height: 500px; /* Ограничиваем максимальную высоту */
   width: auto; /* Автоматическая ширина для сохранения пропорций */
   height: auto; /* Автоматическая высота для сохранения пропорций */
   object-fit: contain; /* Убедимся, что изображение вписывается в указанные размеры */
   border-radius: 8px; /* Добавляем закругленные углы для красоты */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для визуального улучшения */
-  opacity: 0.8; /* Добавление прозрачности изображения */
+  opacity: 0.9; /* Добавление прозрачности изображения */
 }
 .detail-block {
   background-color: transparent;
@@ -1238,12 +1265,38 @@ body {
 /* Контейнер для изображения и текста */
 #gaming-chairs .image-container {
   position: relative;
-  display: block;  /* Используем блок, чтобы занять весь доступный размер */
+  display: inline-block; /* Изображения идут в ряд */
   width: 100%;     /* Ширина контейнера на весь размер блока */
   height: 100%;    /* Высота контейнера на весь размер блока */
   background-color: transparent;
+  margin: 5px;           /* Внешний отступ (расстояние между контейнерами) */
+  padding: 2px;          /* Внутренний отступ (расстояние от содержимого до границ контейнера) */
+  box-sizing: border-box; /* Учитываем padding в размере контейнера */
 }
 
+/* Адаптация для экранов шириной до 768px (планшеты) */
+@media (max-width: 768px) {
+  #gaming-chairs .image-container {
+    width: 100%;         /* Контейнер занимает всю ширину экрана */
+    height: 50%;         /* Высота адаптируется */
+    margin: 3px;         /* Уменьшаем внешний отступ */
+  }
+}
+
+/* Адаптация для экранов шириной до 480px (мобильные телефоны) */
+@media (max-width: 480px) {
+  #gaming-chairs .image-container {
+    width: 100%;         /* Контейнер на всю ширину экрана */
+    height: auto;        /* Высота автоматически подстраивается */
+    margin: 2px;         /* Еще меньший отступ */
+  }
+
+  #gaming-chairs .image-container img {
+    position: static;    /* Убираем абсолютное позиционирование для лучшего поведения */
+    width: 100%;         /* Ширина изображения на 100% контейнера */
+    height: auto;        /* Высота автоматически подстраивается */
+  } 
+}
 /* Текст, который должен быть по центру изображения */
 #gaming-chairs .centered-text {
   font-family: 'Permanent Marker', cursive;

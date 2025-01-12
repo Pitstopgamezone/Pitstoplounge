@@ -25,6 +25,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@interactjs/interactjs/dist/interact.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+    
+
+
 </head>
 
       
@@ -87,27 +91,29 @@
     </div> -->
 
     <!-- Нижний блок с адресом и телефоном -->
-    <div id="footer-info">
-        <p id="address-footer">
-            Address: 
-            <a href="https://maps.app.goo.gl/iFwwjAqRLb5ToML68" target="_blank" class="address-link">
-                Chrudimská, 2a  |  Mo-Su, 10-22
-            </a>
-            
-            <span class="tooltip">
-                <strong>Full Address:</strong> Chrudimská 2526/2a, Prague 3, Vinohrady<br>
-                <strong>Working Hours:</strong> Monday-Sunday, 10:00 AM - 10:00 PM
-            </span>
+<div id="footer-info">
+    <p id="address-footer">
+        Address: 
+        <a href="https://maps.app.goo.gl/iFwwjAqRLb5ToML68" target="_blank" class="address-link">
+            Chrudimská, 2a | 
+            <span id="working-hours" class="working-hours">Mo-Su,10-22</span>
+        </a>
+        <span class="tooltip">
+            <strong>Full Address:</strong> Chrudimská 2526/2a, Prague 3, Vinohrady<br>
+            <strong>Working Hours:</strong> Monday-Sunday, 10:00 AM - 10:00 PM
+        </span>
+    </p>
+    <div id="contact-footer">
+        <p id="phone-footer">
+            Phone: <a href="tel:+420720888131" class="phone-link">+(420) 720 888 131</a>
         </p>
-        <div id="contact-footer">
-            <p id="phone-footer">
-                Phone: <a href="tel:+420720888131" class="phone-link">+(420) 720 888 131</a>
-            </p>
-            <a href="https://t.me/your_telegram_link" target="_blank" class="telegram-button" aria-label="Telegram">
-                <i class="fab fa-telegram-plane"></i> <!-- Telegram -->
-            </a>
-            <button class="footer-docs-button" onclick="openModal()">View Documents</button>
-        </div>
+        <a href="https://t.me/your_telegram_link" target="_blank" class="telegram-button" aria-label="Telegram">
+            <i class="fab fa-telegram-plane"></i> <!-- Telegram -->
+        </a>
+        <button class="footer-docs-button" onclick="openModal()">View Documents</button>
+    </div>
+</div>
+
         <!-- Модальное окно -->
 <div id="documents-modal" class="modal">
     <div class="modal-content">
@@ -178,7 +184,7 @@
           <h2>Our Gaming Zone</h2>
           <p>Experience the ultimate gaming environment:</p>
           <ul>
-            <li><a href="#high-performance">Computer Zone</a></li>
+            <li><a href="#high-performance">Our Computers</a></li>
             <li><a href="#gaming-chairs">PlayStation Zone</a></li>
             <li><a href="#hourly-rates">VR and Others</a></li>
             <li><a href="#group-discounts">Our Prices</a></li>
@@ -284,11 +290,14 @@
         <!--<h3>PlayStation Zone</h3>-->
         <div class="image-container">
             <img src="images/ps5.png" alt="High Performance Computer" class="detail-image">
+            <img src="images/vr2.png" alt="High Performance Computer" class="detail-image">
+            
             <p class="centered-text">We provide ergonomic Play Station 5 gaming zone that ensure comfort during long gaming sessions.</p>
             <!--<img src="images/ps-zone.JPG" alt="High Performance Computer" class="detail-image">-->
         </div>
         </div>
-    
+        
+          
     </div>
     <!--<img src="images/ps-zone.JPG" alt="High Performance Computer" class="detail-image">-->
       <div id="hourly-rates" class="detail-block">
