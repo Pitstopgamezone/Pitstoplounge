@@ -50,6 +50,35 @@
         Pit-Stop Game Zone s.r.o
     </div>-->
     
+    <!-- Неоновая заставка -->
+    <div id="neon-text-container">
+        <h1 id="neon-text">
+            <span class="neon-letter">P</span>
+            <span class="neon-letter">i</span>
+            <span class="neon-letter">t</span>
+            <span class="neon-letter">-</span>
+            <span class="neon-letter">S</span>
+            <span class="neon-letter">t</span>
+            <span class="neon-letter">o</span>
+            <span class="neon-letter">p</span>
+            <span class="neon-letter"> </span>
+            <span class="neon-letter">G</span>
+            <span class="neon-letter">a</span>
+            <span class="neon-letter">m</span>
+            <span class="neon-letter">e</span>
+            <span class="neon-letter"> </span>
+            <span class="neon-letter">Z</span>
+            <span class="neon-letter">o</span>
+            <span class="neon-letter">n</span>
+            <span class="neon-letter">e</span>
+        </h1>
+    </div>
+
+    <div id="service-status" class="status-container">
+        <button id="toggle-status" onclick="toggleServiceStatus()" aria-label="Toggle Service Status">
+            <span id="status-indicator" class="status-off">Status</span>
+        </button>
+    </div>
 
     <!-- Верхний блок с адресом и телефоном -->
     <!-- <div id="header-info">
@@ -60,8 +89,15 @@
     <!-- Нижний блок с адресом и телефоном -->
     <div id="footer-info">
         <p id="address-footer">
-            Address: <a href="https://maps.app.goo.gl/iFwwjAqRLb5ToML68" target="_blank" class="address-link">Chrudimská 2526/2a, Prague 3</a>
-            <span style="color: white; margin-left: 10px;">Mo-Su, 10-22</span>
+            Address: 
+            <a href="https://maps.app.goo.gl/iFwwjAqRLb5ToML68" target="_blank" class="address-link">
+                Chrudimská, 2a | Mo-Su, 10-22
+            </a>
+            
+            <span class="tooltip">
+                <strong>Full Address:</strong> Chrudimská 2526/2a, Prague 3, Vinohrady<br>
+                <strong>Working Hours:</strong> Monday-Sunday, 10:00 AM - 10:00 PM
+            </span>
         </p>
         <div id="contact-footer">
             <p id="phone-footer">
@@ -70,7 +106,21 @@
             <a href="https://t.me/your_telegram_link" target="_blank" class="telegram-button" aria-label="Telegram">
                 <i class="fab fa-telegram-plane"></i> <!-- Telegram -->
             </a>
+            <button class="footer-docs-button" onclick="openModal()">View Documents</button>
         </div>
+        <!-- Модальное окно -->
+<div id="documents-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Documents</h2>
+        <ul>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#terms-and-conditions">Terms and Conditions</a></li>
+            <li><a href="#impressum">Impressum</a></li>
+            <!-- Добавьте дополнительные документы, если нужно -->
+        </ul>
+    </div>
+</div>
     </div>
     
     
@@ -98,29 +148,7 @@
         </select>
     </div>
 
-    <!-- Неоновая заставка -->
-    <div id="neon-text-container">
-        <h1 id="neon-text">
-            <span class="neon-letter">P</span>
-            <span class="neon-letter">i</span>
-            <span class="neon-letter">t</span>
-            <span class="neon-letter">-</span>
-            <span class="neon-letter">S</span>
-            <span class="neon-letter">t</span>
-            <span class="neon-letter">o</span>
-            <span class="neon-letter">p</span>
-            <span class="neon-letter"> </span>
-            <span class="neon-letter">G</span>
-            <span class="neon-letter">a</span>
-            <span class="neon-letter">m</span>
-            <span class="neon-letter">e</span>
-            <span class="neon-letter"> </span>
-            <span class="neon-letter">Z</span>
-            <span class="neon-letter">o</span>
-            <span class="neon-letter">n</span>
-            <span class="neon-letter">e</span>
-        </h1>
-    </div>
+    
 
     <!-- Основной контент -->
     <div id="main-content" style="display: none;">

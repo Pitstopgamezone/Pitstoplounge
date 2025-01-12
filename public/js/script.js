@@ -296,3 +296,72 @@ function scrollCarousel(direction) {
       behavior: 'smooth',
   });
 }
+
+// Открытие модального окна
+function openModal() {
+  document.getElementById('documents-modal').style.display = 'block';
+}
+
+// Закрытие модального окна
+function closeModal() {
+  document.getElementById('documents-modal').style.display = 'none';
+}
+
+// Закрытие модального окна при клике за его пределами
+window.onclick = function(event) {
+  const modal = document.getElementById('documents-modal');
+  if (event.target === modal) {
+      modal.style.display = 'none';
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const addressLink = document.querySelector('.address-link');
+  const tooltip = document.querySelector('.tooltip');
+
+  addressLink.addEventListener('mouseenter', () => {
+      tooltip.style.display = 'block';
+      tooltip.style.opacity = '1';
+  });
+
+  addressLink.addEventListener('mouseleave', () => {
+      tooltip.style.opacity = '0';
+      setTimeout(() => {
+          tooltip.style.display = 'none';
+      }, 300); // Убираем с задержкой для плавного исчезновения
+  });
+});
+document.querySelector('.address-link').addEventListener('mouseenter', function() {
+  document.querySelector('.tooltip').style.display = 'block';
+});
+document.querySelector('.address-link').addEventListener('mouseleave', function() {
+  document.querySelector('.tooltip').style.display = 'none';
+});
+
+// баннер статуса работы
+function updateServiceStatus() {
+  let currentTime = new Date().getHours();
+  let statusIndicator = document.getElementById('status-indicator');
+  
+  if (currentTime >= 22 || currentTime < 6) {
+      // После 10 PM - Закрыто (красный)
+      statusIndicator.textContent = "Closed";
+      statusIndicator.classList.remove('status-on');
+      statusIndicator.classList.add('status-off');
+  } else {
+      // В рабочие часы - Открыто (зеленый)
+      statusIndicator.textContent = "Open";
+      statusIndicator.classList.remove('status-off');
+      statusIndicator.classList.add('status-on');
+  }
+
+  // Плавное появление элемента
+  statusIndicator.style.opacity = 1;
+}
+
+// Проверка статуса при загрузке страницы
+window.addEventListener('load', function() {
+  let statusIndicator = document.getElementById('status-indicator');
+  statusIndicator.style.opacity = 0; // Начальная прозрачность 0
+  setTimeout(updateServiceStatus, 500); // Плавно показываем через 500ms
+});
