@@ -983,6 +983,52 @@ body {
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Контейнер для бегущей строки с фоном */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 100%;
+  background: url('images/--collage.jpg') repeat-x; /* Фон с повторением по горизонтали */
+  background-size: cover; /* Масштабирование фоновых изображений */
+  padding: 20px 0; /* Отступы сверху и снизу */
+}
+
+/* Анимация текста */
+.marquee ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  animation: scroll 15s linear infinite; /* Анимация 15 секунд */
+}
+
+.marquee li {
+  display: inline-block; /* Элементы в строку */
+  margin-right: 50px; /* Расстояние между элементами */
+  font-size: 16px; /* Размер текста */
+  color: #ffffff; /* Цвет текста */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Тень для выделения текста */
+}
+
+.marquee p {
+  display: inline; /* Вставляем текст в одну линию */
+  margin: 0;
+}
+
+/* Анимация для бегущей строки */
+@keyframes scroll {
+  0% {
+      transform: translateX(100%); /* Начало за пределами правой границы */
+  }
+  100% {
+      transform: translateX(-100%); /* Конец за пределами левой границы */
+  }
+}
+
+
+
 /* Стили для блока изображений */
 .image-carousel {
   display: flex; /* Размещаем элементы в строку */
@@ -1172,7 +1218,7 @@ body {
   transition: all 0.3s ease;
   display: flex; /* Используем Flexbox для управления содержимым */
   flex-direction: row; /* Размещаем изображение и текст в строку */
-  align-items: flex-start; /* Выравниваем содержимое по нижнему краю */
+  align-items: center; /* Выравниваем содержимое по нижнему краю */
   gap: 20px; /* Расстояние между изображением и текстом */
 }
 
@@ -1192,9 +1238,9 @@ body {
 }
 
 .detail-block:hover {
-  background-color: #ffe34431;
+  background-color: #ffe3442f;
   transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgb(255, 230, 0);
 }
 
 .detail-block a {
@@ -1656,7 +1702,7 @@ body {
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Circular, sans-serif;
   overflow-x: hidden;
 }
 
