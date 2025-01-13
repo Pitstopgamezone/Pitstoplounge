@@ -686,7 +686,7 @@ body {
   padding: 40px;
   border: 4px solid #fa7837; /* Рамка по периметру */
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgb(0, 238, 255), 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -927,7 +927,7 @@ body {
   margin-top: 5px;
   background-color: transparent;
   border: 5px solid #00ecfd;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgb(0, 238, 255);
   padding: 3px; /* Отступы внутри блока */
   border-radius: 15px;
 }
@@ -938,7 +938,7 @@ body {
   text-align: center;
   margin-bottom: 5px;
   color: #00ecfd;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
 .news-section, .calendar-section {
@@ -975,7 +975,7 @@ body {
 
 
 .calendar-section {
-  margin: 10px;
+  margin: 0px;
   padding: 20px;
   background-color: #0898ec28;
   border: 1px solid #00d9ff;
@@ -990,7 +990,7 @@ body {
   white-space: nowrap;
   box-sizing: border-box;
   width: 100%;
-  background: url('images/--collage.jpg') repeat-x; /* Фон с повторением по горизонтали */
+  background: url('images/--collage2.png') repeat-x; /* Фон с повторением по горизонтали */
   background-size: cover; /* Масштабирование фоновых изображений */
   padding: 20px 0; /* Отступы сверху и снизу */
 }
@@ -1001,7 +1001,7 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
-  animation: scroll 15s linear infinite; /* Анимация 15 секунд */
+  animation: scroll 35s linear infinite; /* Анимация 35 секунд */
 }
 
 .marquee li {
@@ -1026,6 +1026,39 @@ body {
       transform: translateX(-100%); /* Конец за пределами левой границы */
   }
 }
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .marquee {
+    padding: 10px 0; /* Уменьшаем отступы */
+    background-size: auto; /* Подгоняем фон под меньший экран */
+  }
+
+  .marquee ul {
+    animation: scroll 25s linear infinite; /* Ускоряем анимацию для мобильных устройств */
+  }
+
+  .marquee li {
+    margin-right: 20px; /* Уменьшаем расстояние между элементами */
+    font-size: 14px; /* Уменьшаем размер текста */
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee {
+    padding: 5px 0; /* Ещё меньше отступы для очень маленьких экранов */
+  }
+
+  .marquee ul {
+    animation: scroll 20s linear infinite; /* Делаем текст чуть быстрее */
+  }
+
+  .marquee li {
+    margin-right: 10px; /* Минимизируем расстояние */
+    font-size: 12px; /* Компактный текст */
+  }
+}
+
 
 
 
@@ -1567,7 +1600,7 @@ body {
   position: absolute;
   width: 32px;
   height: 32px;
-  background-image: url('../images/pixel-character.jpg');
+  background-image: url('../images/character1.png');
   background-size: cover;
   top: 50%;
   left: 50%;
