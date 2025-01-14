@@ -327,4 +327,17 @@ setTimeout(() => {
 }, 3000);
 
 
+function scrollGallery(direction) {
+  const gallery = document.querySelector('.gallery-images');
+  const galleryWidth = gallery.offsetWidth;
+  
+  // Рассчитываем сколько пикселей прокручивать на каждое нажатие
+  const scrollAmount = galleryWidth / 3; // Можно отрегулировать, например, на 1/3 от общей ширины
+
+  // Получаем текущую позицию и прокручиваем
+  gallery.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+  });
+}
 
