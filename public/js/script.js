@@ -326,31 +326,5 @@ setTimeout(() => {
   pricingSection.style.opacity = 1;
 }, 3000);
 
-let autoScrollInterval;
-const galleryImages = document.querySelector('.gallery-images');
-let scrollIndex = 0;
 
-/* Функция для листания галереи */
-function scrollGallery(direction) {
-  const imageWidth = galleryImages.querySelector('img').offsetWidth + 10; // Ширина + gap
-  scrollIndex += direction;
-  const maxScroll = galleryImages.children.length - 4; // Видимые изображения
-
-  // Проверка границ прокрутки
-  if (scrollIndex < 0) scrollIndex = 0;
-  if (scrollIndex > maxScroll) scrollIndex = maxScroll;
-
-  galleryImages.style.transform = `translateX(-${scrollIndex * imageWidth}px)`;
-}
-
-/* Функции для автоматической прокрутки */
-function startAutoScroll() {
-  autoScrollInterval = setInterval(() => {
-    scrollGallery(1);
-  }, 2000);
-}
-
-function stopAutoScroll() {
-  clearInterval(autoScrollInterval);
-}
 

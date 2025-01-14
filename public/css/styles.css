@@ -924,7 +924,7 @@ body {
 
 /* Стиль для блока новостей и календаря */
 #news-calendar {
-  margin-top: 5px;
+  margin-top: 0px;
   background-color: transparent;
   border: 5px solid #00ecfd;
   box-shadow: 0 8px 20px rgb(0, 238, 255);
@@ -976,11 +976,11 @@ body {
 
 .calendar-section {
   margin: 0px;
-  padding: 20px;
+  padding: 10px;
   background-color: #0898ec28;
   border: 1px solid #00d9ff;
   border-radius: 8px;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 8px rgb(0, 204, 255);
 }
 
 /* Контейнер для бегущей строки с фоном */
@@ -1066,7 +1066,7 @@ body {
 .image-carousel {
   display: flex; /* Размещаем элементы в строку */
   overflow-x: auto; /* Добавляем горизонтальную прокрутку */
-  gap: 16px; /* Отступы между изображениями */
+  gap: 10px; /* Отступы между изображениями */
   padding: 10px 0; /* Внутренние отступы */
   align-items: flex-end; /* Выравнивание по нижнему краю */
 }
@@ -1075,7 +1075,7 @@ body {
 .image-wrapper {
   flex: 0 0 30%; /* Ограничиваем ширину каждого изображения до 30% */
   border-radius: 8px; /* Закругляем углы */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для изображений */
+  box-shadow: 0 4px 8px rgb(0, 217, 255); /* Тень для изображений */
   overflow: hidden; /* Прячем содержимое за границами */
 }
 
@@ -1163,11 +1163,11 @@ body {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.151);
 }
 
 .component img {
-  width: 90%;
+  width: 100%;
   height: 90%;
   object-fit: scale-down;
   border-radius: 15px;
@@ -1235,13 +1235,14 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   display: flex; /* Используем Flexbox для управления содержимым */
-  flex-direction: column; /* Размещаем заголовок сверху, а остальное снизу */
+  flex-direction: row; /* Размещаем заголовок сверху, а остальное снизу */
   gap: 10px; /* Расстояние между заголовком и остальным содержимым */
   justify-content: center; /* Выравниваем содержимое по центру */
+  padding-top: 10px; /* Управляет расстоянием от верхнего края контейнера */
 }
 
 .detail-block h3 {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Arial', cursive;
   font-size: 28px;
   color: #fa7837;
   margin-bottom: 10px;
@@ -1794,8 +1795,8 @@ body {
 
 /* Секция галереи */
 #gallery {
-  padding: 50px 20px;
-  background: #111; /* Темный фон */
+  padding: 110px 10px;
+  background: #11111100; /* Темный фон */
   color: #fff;
   text-align: center;
   font-family: 'Arial', sans-serif;
@@ -1819,7 +1820,7 @@ body {
 /* Обёртка для изображений */
 .gallery-wrapper {
   overflow: hidden;
-  width: 80%; /* Ширина галереи */
+  width: 100%; /* Ширина галереи */
   max-width: 1000px; /* Максимальная ширина */
   position: relative;
 }
@@ -1881,4 +1882,7 @@ body {
     font-size: 20px; /* Уменьшаем размер кнопок */
   }
 }
+
+
+
 
