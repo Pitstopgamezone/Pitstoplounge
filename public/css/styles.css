@@ -1914,7 +1914,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0);
   width: 150px;
   height: 150px;
   transition: all 0.3s ease;
@@ -1966,20 +1966,44 @@ body {
   --scale: 1.2; /* Четвёртый блок уменьшен */
 }
 
+.game:nth-child(5) {
+  --scale: 1; /* Четвёртый блок уменьшен */
+}
+.game:nth-child(6) {
+  --scale: 0.9; /* Четвёртый блок уменьшен */
+}
+.game:nth-child(7) {
+  --scale: 0.8; /* Четвёртый блок уменьшен */
+}
+
 /* Медиазапрос для мобильных устройств */
 @media (max-width: 768px) {
   .games-container {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Уменьшаем расстояние между блоками */
   }
 
   .game-logo {
-      width: 50%; /* Уменьшаем логотип на мобильных устройствах */
+    width: 50%; /* Уменьшаем логотип на мобильных устройствах */
+    max-width: 70px; /* Уменьшаем максимальную ширину логотипа */
   }
 
   /* Уменьшаем блоки на мобильных устройствах */
   .game {
-      --scale: calc(1 + var(--hours) / 1500);
+    --scale: calc(1 + var(--hours) / 1500);
+    width: 120px; /* Уменьшаем размер блока */
+    height: 120px; /* Уменьшаем высоту блока */
+    padding: 8px; /* Уменьшаем отступы */
+  }
+
+  #popular-games h2 {
+    font-size: 28px; /* Уменьшаем размер заголовка */
+    margin-bottom: 20px; /* Уменьшаем отступ снизу */
+  }
+
+  .game {
+    --scale: calc(1 + var(--hours) / 1500);
   }
 }
 
