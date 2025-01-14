@@ -327,17 +327,23 @@ setTimeout(() => {
 }, 3000);
 
 
-function scrollGallery(direction) {
-  const gallery = document.querySelector('.gallery-images');
-  const galleryWidth = gallery.offsetWidth;
-  
-  // Рассчитываем сколько пикселей прокручивать на каждое нажатие
-  const scrollAmount = galleryWidth / 3; // Можно отрегулировать, например, на 1/3 от общей ширины
-
-  // Получаем текущую позицию и прокручиваем
-  gallery.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth'
+$(document).ready(function(){
+  $('.gallery-images').slick({
+      slidesToShow: 3, // Показываем 3 изображения за раз
+      slidesToScroll: 1, // Прокручиваем 1 изображение за раз
+      arrows: true, // Включаем стрелки
+      prevArrow: '<button class="gallery-btn prev-btn">❮</button>',
+      nextArrow: '<button class="gallery-btn next-btn">❯</button>',
+      responsive: [
+          {
+              breakpoint: 768,
+              settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+              }
+          }
+      ]
   });
-}
+});
+
 

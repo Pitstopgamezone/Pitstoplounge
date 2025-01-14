@@ -1793,10 +1793,9 @@ body {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Секция галереи */
 #gallery {
   padding: 110px 10px;
-  background: #11111100; /* Темный фон */
+  background: #11111100;
   color: #fff;
   text-align: center;
   font-family: 'Arial', sans-serif;
@@ -1805,43 +1804,25 @@ body {
 #gallery h2 {
   font-size: 32px;
   margin-bottom: 30px;
-  color: #ffcc00; /* Золотистый акцент */
+  color: #ffcc00;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Контейнер галереи */
 .gallery-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  position: relative;
+  align-items: center;
 }
 
-/* Обёртка для изображений */
-.gallery-wrapper {
-  overflow: hidden;
-  width: 100%; /* Ширина галереи */
-  max-width: 1000px; /* Максимальная ширина */
-  position: relative;
-}
-
-/* Ряд изображений */
-.gallery-images {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-  gap: 10px; /* Расстояние между изображениями */
-}
-
-/* Изображения */
 .gallery-images img {
   width: 200px;
   height: 150px;
   object-fit: cover;
-  border-radius: 10px; /* Скругленные углы */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Кнопки листания */
+
 .gallery-btn {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -1869,17 +1850,13 @@ body {
 
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
-  .gallery-wrapper {
-    width: 100%; /* Галерея занимает всю ширину */
-  }
-  
   .gallery-images img {
-    width: 150px;
-    height: 100px; /* Уменьшаем размер изображений */
+      width: 150px;
+      height: 100px;
   }
 
   .gallery-btn {
-    font-size: 20px; /* Уменьшаем размер кнопок */
+      font-size: 20px;
   }
 }
 
