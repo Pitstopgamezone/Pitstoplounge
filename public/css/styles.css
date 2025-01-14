@@ -1153,26 +1153,10 @@ body {
 
 
 
-/* Общие стили для блока */
-#high-performance {
-  display: flex;
-  flex-wrap: wrap; /* Перенос элементов на следующую строку */
-  gap: 20px;
-  justify-content: center;
-}
-
-#high-performance h3 {
-  width: 100%;
-  text-align: center;
-  top: 10%; /* Устанавливаем отступ сверху */
-  font-family: 'Permanent Marker', cursive;
-  color: #fa7837;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
 
 /* Стили для каждого компонента */
 .component {
-  position: flex;
+  position: relative;
   width: 150px; /* Ширина кнопки */
   height: 150px; /* Высота кнопки */
   border-radius: 10px;
@@ -1241,6 +1225,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для визуального улучшения */
   opacity: 0.9; /* Добавление прозрачности изображения */
 }
+
 .detail-block {
   background-color: transparent;
   color: #fff;
@@ -1250,9 +1235,9 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   display: flex; /* Используем Flexbox для управления содержимым */
-  flex-direction: row; /* Размещаем изображение и текст в строку */
-  align-items: center; /* Выравниваем содержимое по нижнему краю */
-  gap: 20px; /* Расстояние между изображением и текстом */
+  flex-direction: column; /* Размещаем заголовок сверху, а остальное снизу */
+  gap: 10px; /* Расстояние между заголовком и остальным содержимым */
+  justify-content: center; /* Выравниваем содержимое по центру */
 }
 
 .detail-block h3 {
@@ -1261,8 +1246,18 @@ body {
   color: #fa7837;
   margin-bottom: 10px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  align-self: center; /* Выравниваем заголовок отдельно */
+  text-align: center; /* Выравниваем заголовок по центру */
 }
+
+.detail-block .content {
+  display: flex; /* Для содержимого, если это изображения и текст */
+  flex-direction: row; /* Элементы в строку */
+  align-items: center; /* Выравниваем содержимое по центру */
+  gap: 20px; /* Расстояние между элементами */
+}
+
+
+
 
 .detail-block p {
   font-size: 18px;
@@ -1735,117 +1730,11 @@ body {
 
 body {
   margin: 0;
-  font-family: Circular, sans-serif;
+  font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
 
-/* Заголовок галереи */
-.gallery-title {
-  font-family: 'Permanent Marker', sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: #c4a704;
-}
-
-/* Контейнер для галереи */
-.gallery-collage {
-  display: flex;
-  gap: var(--collage-gap);
-  justify-content: center;
-  align-items: center;
-  margin: 50px auto;
-  width: 70%;
-  max-width: 1200px;
-  overflow-x: auto; /* Разрешаем горизонтальный скроллинг */
-}
-
-/* Элементы галереи */
-.gallery-item {
-  position: relative;
-  width: 300px; /* Задаем ширину изображения */
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  will-change: transform, filter;
-  cursor: pointer; /* Курсор изменяется при наведении */
-}
-
-/* Эффект при наведении на изображение */
-.gallery-item:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
-}
-
-/* Модальное окно */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
-}
-
-/* Содержимое модального окна */
-.modal-content {
-  max-width: 80%;
-  max-height: 80%;
-}
-
-/* Изображение внутри модального окна */
-.modal img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Кнопки переключения изображений */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  padding: 16px;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  transition: 0.3s;
-  cursor: pointer;
-  user-select: none;
-}
-
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .gallery-item {
-    width: 200px; /* Меньше изображение на экранах с шириной меньше 768px */
-    height: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery-item {
-    width: 150px; /* Еще меньше изображение для экранов до 480px */
-    height: 120px;
-  }
-}
-
-
+ 
 
 /* Секция цен */
 #pricing {
@@ -1855,6 +1744,7 @@ body {
   text-align: center;
   font-family: 'Arial', sans-serif;
 }
+
 
 #pricing h2 {
   font-size: 32px;
@@ -1902,4 +1792,93 @@ body {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+/* Секция галереи */
+#gallery {
+  padding: 50px 20px;
+  background: #111; /* Темный фон */
+  color: #fff;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+#gallery h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #ffcc00; /* Золотистый акцент */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Контейнер галереи */
+.gallery-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Обёртка для изображений */
+.gallery-wrapper {
+  overflow: hidden;
+  width: 80%; /* Ширина галереи */
+  max-width: 1000px; /* Максимальная ширина */
+  position: relative;
+}
+
+/* Ряд изображений */
+.gallery-images {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  gap: 10px; /* Расстояние между изображениями */
+}
+
+/* Изображения */
+.gallery-images img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px; /* Скругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень */
+}
+
+/* Кнопки листания */
+.gallery-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.gallery-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .gallery-wrapper {
+    width: 100%; /* Галерея занимает всю ширину */
+  }
+  
+  .gallery-images img {
+    width: 150px;
+    height: 100px; /* Уменьшаем размер изображений */
+  }
+
+  .gallery-btn {
+    font-size: 20px; /* Уменьшаем размер кнопок */
+  }
+}
 

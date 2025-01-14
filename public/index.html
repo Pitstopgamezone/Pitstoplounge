@@ -7,19 +7,16 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Agu+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Circular&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css">
      <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      
     <!-- FullCalendar CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css" rel="stylesheet">
-      
     <!-- FullCalendar JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
@@ -27,265 +24,242 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@interactjs/interactjs/dist/interact.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
-    
-
-
-</head>
-
-      
     <script src="js/script.js"></script>
 
    
-
-
-
 </head>
 <body>
     
     <!-- Сетка -->
     <div id="background-grid"></div>
-
-    <!-- Пиксельный персонаж -->
-    <div id="pixel-character"></div>
-    
-    <!-- Прогресс-бар -->
-    <div id="progress-bar"></div>
-
-    <!--<div id="company-name">
-        Pit-Stop Game Zone s.r.o
-    </div>-->
-    
-    <!-- Неоновая заставка -->
-    <div id="neon-text-container">
-        <h1 id="neon-text">
-            <span class="neon-letter">P</span>
-            <span class="neon-letter">i</span>
-            <span class="neon-letter">t</span>
-            <span class="neon-letter">-</span>
-            <span class="neon-letter">S</span>
-            <span class="neon-letter">t</span>
-            <span class="neon-letter">o</span>
-            <span class="neon-letter">p</span>
-            <span class="neon-letter"> </span>
-            <span class="neon-letter">G</span>
-            <span class="neon-letter">a</span>
-            <span class="neon-letter">m</span>
-            <span class="neon-letter">e</span>
-            <span class="neon-letter"> </span>
-            <span class="neon-letter">Z</span>
-            <span class="neon-letter">o</span>
-            <span class="neon-letter">n</span>
-            <span class="neon-letter">e</span>
-        </h1>
-    </div>
-
-    
-
-    <!-- Верхний блок с адресом и телефоном -->
-    <!-- <div id="header-info">
-        <p id="address">Address: Chrudimská 2526/2a, Praha 3</p>
-        <p id="phone">Phone: +(420) 720 888 131</p>
-    </div> -->
-
-    <!-- Нижний блок с адресом и телефоном -->
-<div id="footer-info">
-    <p id="address-footer">
-        Address: 
-        <a href="https://maps.app.goo.gl/iFwwjAqRLb5ToML68" target="_blank" class="address-link">
-            Chrudimská, 2a | 
-            <span id="working-hours" class="working-hours">Mo-Su,10-22</span>
-        </a>
-        <span class="tooltip">
-            <strong>Full Address:</strong> Chrudimská 2526/2a, Prague 3, Vinohrady<br>
-            <strong>Working Hours:</strong> Monday-Sunday, 10:00 AM - 10:00 PM
-        </span>
-    </p>
-    <div id="contact-footer">
-        <p id="phone-footer">
-            Phone: <a href="tel:+420720888131" class="phone-link">+(420) 720 888 131</a>
-        </p>
-        <a href="https://t.me/your_telegram_link" target="_blank" class="telegram-button" aria-label="Telegram">
-            <i class="fab fa-telegram-plane"></i> <!-- Telegram -->
-        </a>
-        <button class="footer-docs-button" onclick="openModal()">View Documents</button>
-    </div>
-</div>
-
-        <!-- Модальное окно -->
-<div id="documents-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button" onclick="closeModal()">&times;</span>
-        <h2>Documents</h2>
-        <ul>
-            <li><a href="#privacy-policy">Privacy Policy</a></li>
-            <li><a href="#terms-and-conditions">Terms and Conditions</a></li>
-            <li><a href="#impressum">Impressum</a></li>
-            <!-- Добавьте дополнительные документы, если нужно -->
-        </ul>
-    </div>
-</div>
-    </div>
-    
-    
-
-    <!-- Левый верхний блок с контактами, соцсетями и личным кабинетом -->
-<div id="header-left">
-    <div class="socials-container">
-        <a href="https://facebook.com" target="_blank" class="social-icon fb" aria-label="Facebook"></a>
-    </div>
-    <div class="socials-container">
-        <a href="https://www.instagram.com/pitstoploungecz/" target="_blank" class="social-icon ig" aria-label="Instagram"></a>
-    </div>
-    <div class="socials-container">
-        <a href="https://www.tiktok.com/@pitstoplounge0" target="_blank" class="social-icon tw" aria-label="TikTok"></a>
-    </div>
-</div>
-
-    <!-- Выбор языка -->
-    <div id="language-selector">
-        <select id="language-dropdown" class="button" onchange="changeLanguage(this.value)">
-            <option value="en">EN</option>
-            <option value="cz">CZ</option>
-            <option value="ru">RU</option>
-            <option value="uk">UA</option>
-        </select>
-    </div>
-
-    
-
-    <!-- Основной контент -->
-    <div id="main-content" style="display: none;">
-        <!-- Навигация (вкладки) -->
-        <div class="tabs">
-            <button class="tab-button club-button active" onclick="showTab('club')" role="tab" aria-label="Перейти в компьютерный клуб">
-                <i class="fas fa-gamepad fa-3x"></i> Game Zone
-            </button>
-            <button class="tab-button service-button" onclick="showTab('service')" role="tab" aria-label="Перейти в Pit-Stop Service">
-                <i class="fas fa-bicycle fa-3x"></i> Pit-Stop
-            <!-- </button>
-            <button class="tab-button token-button" onclick="showTab('token')" role="tab" aria-label="Перейти в раздел Token">
-                <i class="fas fa-coins fa-3x"></i> Token -->
-            </button>
-        </div>
-
-        <!-- Контент вкладки "Computer Club" -->
-        <div id="club" class="tab-content">
-            <div class="club-content">
-            <img src="images/logo.png" alt="Pit Stop Image" class="club-image">
-            <div class="circle-text">
-                <div class="circle-content">
-                    <span>Pit-Stop Lounge</span>
+        <!-- Пиксельный персонаж -->
+        <div id="pixel-character"></div>
+            <!-- Прогресс-бар -->
+            <div id="progress-bar"></div>
+                <!-- Неоновая заставка -->
+                <div id="neon-text-container">
+                    <h1 id="neon-text">
+                        <span class="neon-letter">P</span>
+                        <span class="neon-letter">i</span>
+                        <span class="neon-letter">t</span>
+                        <span class="neon-letter">-</span>
+                        <span class="neon-letter">S</span>
+                        <span class="neon-letter">t</span>
+                        <span class="neon-letter">o</span>
+                        <span class="neon-letter">p</span>
+                        <span class="neon-letter"> </span>
+                        <span class="neon-letter">G</span>
+                        <span class="neon-letter">a</span>
+                        <span class="neon-letter">m</span>
+                        <span class="neon-letter">e</span>
+                        <span class="neon-letter"> </span>
+                        <span class="neon-letter">Z</span>
+                        <span class="neon-letter">o</span>
+                        <span class="neon-letter">n</span>
+                        <span class="neon-letter">e</span>
+                    </h1>
                 </div>
-        </div>
-        <div class="club-overlay">
-          <h2>Our Gaming Zone</h2>
-          <p>Experience the gaming environment:</p>
-          <ul>
-            <li><a href="#high-performance">Our Computers</a></li>
-            <li><a href="#gaming-chairs">Consoles Zone</a></li>
-            <li><a href="#hourly-rates">Prices</a></li>
-            <li><a href="#group-discounts">Loyalty program</a></li>
-          </ul>
-        </div>
-        <!-- Неоновые всплывающие элементы -->
-        <div class="neon-spray" style="top: 40%; left: 55%;"></div>
-        <div class="neon-spray" style="top: 40%; left: 56%; animation-delay: 1s;"></div>
-        <div class="neon-spray" style="top: 40%; left: 55%; animation-delay: 2s;"></div>
-        <div class="neon-spray" style="top: 41%; left: 54%; animation-delay: 2.5s;"></div>
-        <div class="neon-spray" style="top: 41%; left: 57%; animation-delay: 3s;"></div>
-        <div class="neon-spray" style="top: 41%; left: 57%; animation-delay: 1s;"></div>
-        <div class="neon-spray" style="top: 40%; left: 57%; animation-delay: 2s;"></div>
-        <div class="neon-spray" style="top: 38%; left: 57%; animation-delay: 2.5s;"></div>
-        <div class="neon-spray" style="top: 45%; left: 57%; animation-delay: 3s;"></div>
-        </div>
-      
-      <!-- Блок новостей и календаря событий -->
-<div id="news-calendar" class="news-calendar-container">
-    <h2>News & Events</h2>
-    <div class="news-section marquee">
-        <ul>
-            <li>
-                <strong>January 15, 2025</strong> - Gaming Tournament
-                <p>Join us for an exciting gaming tournament with great prizes!</p>
-            </li>
-            <li>
-                <strong>January 22, 2025</strong> - VR Experience Night
-                <p>Step into the world of virtual reality and experience the future of gaming.</p>
-            </li>
-        </ul>
-    </div>
-</div>
+                <!-- Кнопка онлайн бронирования -->
+                <button class="booking-button" onclick="window.location.href='https://pitstoplounge.booking.enes.tech/'" aria-label="Online Booking">
+                    Online Booking
+                </button>
+                <!-- Нижний блок с адресом и телефоном -->
+                <div id="footer-info">
+                    <p id="address-footer">
+                        Address: 
+                        <a href="https://maps.app.goo.gl/iFwwjAqRLb5ToML68" target="_blank" class="address-link">
+                            Chrudimská, 2a | 
+                            <span id="working-hours" class="working-hours">Mo-Su,10-22</span>
+                        </a>
+                            <span class="tooltip">
+                                <strong>Full Address:</strong> Chrudimská 2526/2a, Prague 3, Vinohrady<br>
+                                <strong>Working Hours:</strong> Monday-Sunday, 10:00 AM - 10:00 PM
+                            </span>
+                    </p>
+                        <div id="contact-footer">
+                            <p id="phone-footer">
+                                Phone: <a href="tel:+420720888131" class="phone-link">+(420) 720 888 131</a>
+                            </p>
+                                <a href="https://t.me/your_telegram_link" target="_blank" class="telegram-button" aria-label="Telegram">
+                                    <i class="fab fa-telegram-plane"></i> <!-- Telegram -->
+                                </a>
+                                    <button class="footer-docs-button" onclick="openModal()">View Documents</button>
+                            </div>
+                                
+
+                                                <!-- Модальное окно -->
+                                                <div id="documents-modal" class="modal">
+                                                    <div class="modal-content">
+                                                        <span class="close-button" onclick="closeModal()">&times;</span>
+                                                            <h2>Documents</h2>
+                                                                <ul>
+                                                                    <li><a href="#privacy-policy">Privacy Policy</a></li>
+                                                                    <li><a href="#terms-and-conditions">Terms and Conditions</a></li>
+                                                                    <li><a href="#impressum">Impressum</a></li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                <!-- Левый верхний блок с контактами, соцсетями и личным кабинетом -->
+                                                <div id="header-left">
+                                                    <div class="socials-container">
+                                                        <a href="https://facebook.com" target="_blank" class="social-icon fb" aria-label="Facebook"></a>
+                                                    </div>
+                                                        <div class="socials-container">
+                                                            <a href="https://www.instagram.com/pitstoploungecz/" target="_blank" class="social-icon ig" aria-label="Instagram"></a>
+                                                        </div>
+                                                            <div class="socials-container">
+                                                                <a href="https://www.tiktok.com/@pitstoplounge0" target="_blank" class="social-icon tw" aria-label="TikTok"></a>
+                                                            </div>
+                                                    </div>
+
+                                            <!-- Выбор языка -->
+                                            <div id="language-selector">
+                                                <select id="language-dropdown" class="button" onchange="changeLanguage(this.value)">
+                                                    <option value="en">EN</option>
+                                                    <option value="cz">CZ</option>
+                                                    <option value="ru">RU</option>
+                                                    <option value="uk">UA</option>
+                                                </select>
+                                            </div>
+
+    
+
+                                            <!-- Основной контент -->
+                                            <div id="main-content" style="display: none;">
+                                                <!-- Навигация (вкладки) -->
+                                                    <!-- Контейнер вкладок -->
+                                                    <div class="tabs" role="tablist">
+                                                        <button class="tab-button club-button active" onclick="showTab('club')" role="tab" aria-label="Перейти в компьютерный клуб">
+                                                            <i class="fas fa-gamepad fa-3x"></i> Game Zone
+                                                        </button>
+                                                        <button class="tab-button service-button" onclick="showTab('service')" role="tab" aria-label="Перейти в Pit-Stop Service">
+                                                            <i class="fas fa-bicycle fa-3x"></i> Pit-Stop
+                                                        </button>
+                                                        <!--<button class="tab-button token-button" onclick="showTab('token')" role="tab" aria-label="Перейти в раздел токенов">
+                                                            <i class="fas fa-coins fa-3x"></i> Token
+                                                        </button>-->
+                                                    </div>
 
 
-        <div class="calendar-section">
-            <h3>Event Calendar</h3>
-            <div id="calendar"></div> <!-- integrate a calendar plugin or custom calendar here -->
-            <div class="image-carousel-container">
-                <button class="carousel-control prev" onclick="scrollCarousel(-1)">&#8249;</button>
-                <div class="image-carousel">
-                    <div class="image-wrapper">
-                        <img src="images/image0011.jpg" alt="Image 1">
-                    </div>
-                    <div class="image-wrapper">
-                        <img src="images/img2.jpg" alt="Image 2">
-                    </div>
-                    <div class="image-wrapper">
-                        <img src="images/img3.avif" alt="Image 3">
-                    </div>
-                    <div class="image-wrapper">
-                        <img src="images/img4.jpg" alt="Image 3">
-                    </div>
-                    <div class="image-wrapper">
-                        <img src="images/img5.jpg" alt="Image 3">
-                    </div>
-                    <div class="image-wrapper">
-                        <img src="images/IMG_7746.JPG" alt="Image 3">
-                    </div>
-                </div>
-                <button class="carousel-control next" onclick="scrollCarousel(1)">&#8250;</button>
-            </div>
-            
-        </div>
-    </div> 
+                                                        <!-- Контент вкладки "Computer Club" -->
+                                                        <div id="club" class="tab-content">
+                                                            <div class="club-content">
+                                                                <img src="images/logo.png" alt="Pit Stop Image" class="club-image">
+                                                                    <div class="circle-text">
+                                                                        <div class="circle-content">
+                                                                            <span>Pit-Stop Lounge</span>
+                                                                        </div>
+                                                                    </div>
+                                                                        <div class="club-overlay">
+                                                                            <h2>Our Gaming Zone</h2>
+                                                                                <p>Experience the gaming environment:</p>
+                                                                                    <ul>
+                                                                                        <li><a href="#high-performance">Our Computers</a></li>
+                                                                                        <li><a href="#gaming-chairs">Consoles Zone</a></li>
+                                                                                        <li><a href="#hourly-rates">Prices</a></li>
+                                                                                        <li><a href="#group-discounts">Loyalty program</a></li>
+                                                                                    </ul>
+                                                                            </div>
+                                                                                    <!-- Неоновые всплывающие элементы -->
+                                                                                    <div class="neon-spray" style="top: 40%; left: 55%;"></div>
+                                                                                    <div class="neon-spray" style="top: 40%; left: 56%; animation-delay: 1s;"></div>
+                                                                                    <div class="neon-spray" style="top: 40%; left: 55%; animation-delay: 2s;"></div>
+                                                                                    <div class="neon-spray" style="top: 41%; left: 54%; animation-delay: 2.5s;"></div>
+                                                                                    <div class="neon-spray" style="top: 41%; left: 57%; animation-delay: 3s;"></div>
+                                                                                    <div class="neon-spray" style="top: 41%; left: 57%; animation-delay: 1s;"></div>
+                                                                                    <div class="neon-spray" style="top: 40%; left: 57%; animation-delay: 2s;"></div>
+                                                                                    <div class="neon-spray" style="top: 38%; left: 57%; animation-delay: 2.5s;"></div>
+                                                                                    <div class="neon-spray" style="top: 45%; left: 57%; animation-delay: 3s;"></div>
+                                                                                    </div>
+      
+                                                                                            <!-- Блок новостей и календаря событий -->
+                                                                                        <div id="news-calendar" class="news-calendar-container">
+                                                                                            <h2>News & Events</h2>
+                                                                                            <div class="news-section marquee">
+                                                                                                <ul>
+                                                                                                    <li>
+                                                                                                        <strong>January 15, 2025</strong> - Gaming Tournament
+                                                                                                        <p>Join us for an exciting gaming tournament with great prizes!</p>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                        <strong>January 22, 2025</strong> - VR Experience Night
+                                                                                                        <p>Step into the world of virtual reality and experience the future of gaming.</p>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </div>
 
-    <div id="high-performance" class="detail-block">
-        <h3>Now we have 5 PCs</h3>
-        <h3></h3>
-        <!-- Processor -->
-        <div class="component">
-          <img src="images/processor.png" alt="Processor">
-          <div class="info">Processor: Intel Core i5 with 4.4 GHz</div>
-        </div>
+
+                                                                                                    <div class="calendar-section">
+                                                                                                        <h3>Event Calendar</h3>
+                                                                                                        <div id="calendar"></div> <!-- integrate a calendar plugin or custom calendar here -->
+                                                                                                        <div class="image-carousel-container">
+                                                                                                            <button class="carousel-control prev" onclick="scrollCarousel(-1)">&#8249;</button>
+                                                                                                            <div class="image-carousel">
+                                                                                                                <div class="image-wrapper">
+                                                                                                                    <img src="images/image0011.jpg" alt="Image 1">
+                                                                                                                </div>
+                                                                                                                <div class="image-wrapper">
+                                                                                                                    <img src="images/img2.jpg" alt="Image 2">
+                                                                                                                </div>
+                                                                                                                <div class="image-wrapper">
+                                                                                                                    <img src="images/img3.avif" alt="Image 3">
+                                                                                                                </div>
+                                                                                                                <div class="image-wrapper">
+                                                                                                                    <img src="images/img4.jpg" alt="Image 3">
+                                                                                                                </div>
+                                                                                                                <div class="image-wrapper">
+                                                                                                                    <img src="images/img5.jpg" alt="Image 3">
+                                                                                                                </div>
+                                                                                                                <div class="image-wrapper">
+                                                                                                                    <img src="images/IMG_7746.JPG" alt="Image 3">
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <button class="carousel-control next" onclick="scrollCarousel(1)">&#8250;</button>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                    </div>
+                                                                                                </div> 
+
+                                                                                                    <div id="high-performance" class="detail-block">
+                                                                                                        <h3>Now we have 5 PCs</h3>
+                                                                                                        <!-- Processor -->
+                                                                                                        <div class="component">
+                                                                                                        <img src="images/processor.png" alt="Processor">
+                                                                                                        <div class="info">Processor: Intel Core i5 with 4.4 GHz</div>
+                                                                                                        </div>
+                                                                                                    
+                                                                                                        <!-- Graphics Card -->
+                                                                                                        <div class="component">
+                                                                                                        <img src="images/graphics-card.png" alt="Graphics Card">
+                                                                                                        <div class="info">Graphics card: GeForce RTX 4060 Ti</div>
+                                                                                                        </div>
+                                                                                                    
+                                                                                                        <!-- RAM --> <!-- Storage -->
+                                                                                                        <div class="component">
+                                                                                                        <img src="images/ram9.png" alt="RAM">
+                                                                                                        <div class="info">RAM and Storage: Kingston 32 GB, 2Tb M2 </div>
+                                                                                                        </div>
+                                                                                                    
+                                                                                                        <!-- Display -->
+                                                                                                        <div class="component">
+                                                                                                        <img src="images/display.png" alt="Display">
+                                                                                                        <div class="info">Display: Samsung Odyssey G40B </div>
+                                                                                                        </div>
+                                                                                                    
+                                                                                                        <!-- Headset -->
+                                                                                                        <div class="component">
+                                                                                                        <img src="images/headset.png" alt="Headset">
+                                                                                                        <div class="info">Peripherals: HyperX </div>
+                                                                                                        </div>
+                                                                                                    
+                                                                                                        
+                                                                                                    </div>
       
-        <!-- Graphics Card -->
-        <div class="component">
-          <img src="images/graphics-card.png" alt="Graphics Card">
-          <div class="info">Graphics card: GeForce RTX 4060 Ti</div>
-        </div>
       
-        <!-- RAM --> <!-- Storage -->
-        <div class="component">
-          <img src="images/ram9.png" alt="RAM">
-          <div class="info">RAM and Storage: Kingston 32 GB, 2Tb M2 </div>
-        </div>
-      
-        <!-- Display -->
-        <div class="component">
-          <img src="images/display (2).png" alt="Display">
-          <div class="info">Display: Samsung Odyssey G40B </div>
-        </div>
-      
-        <!-- Headset -->
-        <div class="component">
-          <img src="images/headset.png" alt="Headset">
-          <div class="info">Peripherals: HyperX </div>
-        </div>
-      
-        
-      </div>
-      
-      
-      <div id="high-performance" class="detail-block">
+      <div id="high-performance-consoles" class="detail-block">
         <h3>Consoles Zone</h3>
         <!-- PS5 -->
         <div class="component">
@@ -307,7 +281,7 @@
             <img src="images/tv2.png" alt="Headset">
             <div class="info">2xTV  4K, 55" </div>
           </div>
-        </div>
+       
         </div>
         
           
@@ -346,16 +320,36 @@
         </div>
       </section>
       
+      <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+          <!-- Кнопка "влево" -->
+          <button class="gallery-btn prev-btn" onclick="scrollGallery(-1)">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+      
+          <!-- Контейнер для изображений -->
+          <div class="gallery-wrapper" onmouseover="startAutoScroll()" onmouseout="stopAutoScroll()">
+            <div class="gallery-images">
+              <img src="images/IMG_7718.JPG" alt="Gallery Image 1">
+              <img src="images/IMG_7731.JPG" alt="Gallery Image 2">
+              <img src="images/IMG_7746.JPG" alt="Gallery Image 3">
+              <img src="images/IMG_7748.JPG" alt="Gallery Image 4">
+              <img src="images/image11.jpg" alt="Gallery Image 5">
+            </div>
+          </div>
+      
+          <!-- Кнопка "вправо" -->
+          <button class="gallery-btn next-btn" onclick="scrollGallery(1)">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
       
 
       
       
 
-    </div>
-    
-
-      
-</div>
 
 
 
@@ -367,18 +361,9 @@
 </div>
 
 
-        <!-- Контент вкладки "Token" -->
-        <div id="token" class="tab-content">
-            <h2>Our Token</h2>
-            <p>Your token balance: <span id="balance">Loading...</span></p>
-            <button id="exchangeTokens" aria-label="Exchange 10 PTC">Exchange 10 PTC</button>
-        </div>
-    </div>
+     
 
-    <!-- Кнопка онлайн бронирования -->
-    <button class="booking-button" onclick="window.location.href='https://pitstoplounge.booking.enes.tech/'" aria-label="Online Booking">
-        Online Booking
-    </button>
+    
 
     <script src="js/script.js"></script>
 </body>

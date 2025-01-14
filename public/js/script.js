@@ -115,35 +115,7 @@ function changeLanguage(language) {
   });
 }
 
-// Получаем баланс с сервера
-async function fetchBalance() {
-  try {
-    const response = await fetch('http://localhost:3000/balance');
-    if (!response.ok) throw new Error('Network response was not ok');
-    const data = await response.json();
-    document.getElementById('balance').textContent = data.balance;
-  } catch (error) {
-    console.error('Fetch balance error:', error);
-  }
-}
 
-// Обмен токенов
-async function exchangeTokens() {
-  try {
-    const response = await fetch('/exchange', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ tokens: 10 })
-    });
-
-    if (!response.ok) throw new Error('Exchange request failed');
-    const data = await response.json();
-    alert(data.message);
-    fetchBalance(); // Обновляем баланс после обмена
-  } catch (error) {
-    alert('Ошибка обмена токенов: ' + error.message);
-  }
-}
 
 // Получаем 10 токенов
 async function claimTokens() {
@@ -177,11 +149,7 @@ document.getElementById('neon-text')?.addEventListener('animationend', function(
   document.getElementById('footer-info').style.display = 'block';
 });
 
-// Плавное появление названия компании с задержкой 3 секунды
-setTimeout(() => {
-  const companyName = document.getElementById('company-name');
-  companyName.style.opacity = 1;
-}, 3000); // 3000 миллисекунд = 3 секунды
+
 
 // Функция для плавного скроллинга к соответствующим блокам
 document.querySelectorAll('.club-overlay ul li a').forEach(anchor => {
@@ -196,24 +164,8 @@ document.querySelectorAll('.club-overlay ul li a').forEach(anchor => {
   });
 });
 
-// Инициализация галереи
-showSlide(0);
-let currentSlide = 0;
-
-function moveSlide(direction) {
-  const slides = document.querySelector('.gallery-slide');
-  const totalSlides = slides.children.length;
-  const slideWidth = slides.children[0].getBoundingClientRect().width;
-
-  currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-  slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-}
 
 
-
-
-//const canvas = document.getElementById('snake-game');
-const ctx = canvas.getContext('2d');
 
 // Пиксельный персонаж
 const character = document.getElementById('pixel-character');
@@ -366,4 +318,39 @@ window.addEventListener('load', function() {
   setTimeout(updateServiceStatus, 500); // Плавно показываем через 500ms
 });
 
+
+
+// Плавное появление нижнего блока с задержкой 4 секунды
+setTimeout(() => {
+  const pricingSection = document.getElementById('pricing');
+  pricingSection.style.opacity = 1;
+}, 3000);
+
+let autoScrollInterval;
+const galleryImages = document.querySelector('.gallery-images');
+let scrollIndex = 0;
+
+/* Функция для листания галереи */
+function scrollGallery(direction) {
+  const imageWidth = galleryImages.querySelector('img').offsetWidth + 10; // Ширина + gap
+  scrollIndex += direction;
+  const maxScroll = galleryImages.children.length - 4; // Видимые изображения
+
+  // Проверка границ прокрутки
+  if (scrollIndex < 0) scrollIndex = 0;
+  if (scrollIndex > maxScroll) scrollIndex = maxScroll;
+
+  galleryImages.style.transform = `translateX(-${scrollIndex * imageWidth}px)`;
+}
+
+/* Функции для автоматической прокрутки */
+function startAutoScroll() {
+  autoScrollInterval = setInterval(() => {
+    scrollGallery(1);
+  }, 2000);
+}
+
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
 
