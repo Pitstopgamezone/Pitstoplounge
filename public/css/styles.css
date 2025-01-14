@@ -680,7 +680,7 @@ body {
 
 /* Заглавный Контейнер с изображением и текстом */
 .club-content {
-  font-family: 'Permanent Marker', sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #fff;
   background-color: transparent; /* Прозрачный фон */
   padding: 40px;
@@ -758,6 +758,7 @@ body {
   color: #ff7f00;
   transform: scale(1.1);
   text-shadow: 0 0 10px rgb(0, 0, 0);
+  font-size: 18px;
 }
 
 .club-overlay ul li::before {
@@ -817,10 +818,11 @@ body {
 
 /* Стиль для ссылки */
 .club-overlay a {
-  color: #ff7f00;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .club-overlay a:hover {
@@ -933,7 +935,7 @@ body {
 }
 
 .news-calendar-container h2 {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Arial', cursive;
   font-size: 2rem;
   text-align: center;
   margin-bottom: 5px;
@@ -946,7 +948,7 @@ body {
 }
 
 .news-section h3, .calendar-section h3 {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Arial', cursive;
   font-size: 1.5rem;
   color: #007bff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
@@ -958,7 +960,7 @@ body {
 }
 
 .news-section li {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Arial', cursive;
   margin-bottom: 10px;
   font-size: 1.1rem;
   color: #00ecfd;
@@ -966,7 +968,7 @@ body {
 }
 
 .news-section li p {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Arial', cursive;
   margin: 5px 0;
   font-size: 1rem;
   color: #ffffff;
@@ -1244,7 +1246,7 @@ body {
 .detail-block h3 {
   font-family: 'Arial', cursive;
   font-size: 28px;
-  color: #fa7837;
+  color: #fcfcfc;
   margin-bottom: 10px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   text-align: center; /* Выравниваем заголовок по центру */
@@ -1702,6 +1704,7 @@ body {
 }
 
 .circle-content span {
+  font-family: 'Permanent marker', sans-serif;
   font-size: 14px;
   font-weight: bold;
   color: white;
