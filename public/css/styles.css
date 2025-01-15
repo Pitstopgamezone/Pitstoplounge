@@ -1205,28 +1205,7 @@ body {
   opacity: 1; /* Показываем текст при наведении */
 }
 
-/* Общие стили для всех блоков */
-#high-performance .detail-image {
-  width: 100%; /* Ширина изображения 100% относительно родительского блока */
-  max-width: 800px; /* Ограничиваем максимальную ширину изображения */
-  margin: 10px 0; /* Отступы сверху и снизу */
-  display: block; /* Блокируем изображение для упрощения стилизации */
-  border-radius: 8px; /* Добавим немного закругления углов для красоты */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для изображения */
-  opacity: 0.9; /* Добавление прозрачности изображения */
-  align-items: flex-end; /* Выравниваем содержимое по нижнему краю */
-  background-color: transparent;
-}
-#gaming-chairs .detail-image {
-  max-width: 100%; /* Изображение не будет превышать ширину родительского блока */
-  max-height: 500px; /* Ограничиваем максимальную высоту */
-  width: auto; /* Автоматическая ширина для сохранения пропорций */
-  height: auto; /* Автоматическая высота для сохранения пропорций */
-  object-fit: contain; /* Убедимся, что изображение вписывается в указанные размеры */
-  border-radius: 8px; /* Добавляем закругленные углы для красоты */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для визуального улучшения */
-  opacity: 0.9; /* Добавление прозрачности изображения */
-}
+
 
 .detail-block {
   background-color: transparent;
@@ -1955,6 +1934,27 @@ body {
 }
 .game:nth-child(7) {
   --scale: 0.8; /* Четвёртый блок уменьшен */
+}
+
+/* Информация, всплывающая при наведении */
+.game .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Запрещаем клики по тексту */
+}
+
+.game:hover .info {
+  opacity: 1; /* Показываем текст при наведении */
 }
 
 /* Медиазапрос для мобильных устройств */
