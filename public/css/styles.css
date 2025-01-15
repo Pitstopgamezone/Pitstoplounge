@@ -1686,7 +1686,7 @@ body {
   font-family: 'Permanent marker', sans-serif;
   font-size: 14px;
   font-weight: bold;
-  color: white;
+  color: #ff6600;
   letter-spacing: 2px;
   display: inline-block;
   position: absolute;
@@ -1845,13 +1845,28 @@ body {
 
 
 
+/* Основной блок "Популярные игры" */
 #popular-games {
   padding: 50px;
   background-color: #22222200;
   color: white;
   text-align: center;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  animation: slideInFromLeft 5s ease-in-out;
 }
+
+/* Анимация выезда сбоку */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%); /* Начальная позиция - за пределами экрана */
+    opacity: 0; /* Прозрачность 0 */
+  }
+  to {
+    transform: translateX(0); /* Финальная позиция - внутри экрана */
+    opacity: 1; /* Полная видимость */
+  }
+}
+
 
 #popular-games h2 {
   font-size: 36px;
