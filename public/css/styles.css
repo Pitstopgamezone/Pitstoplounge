@@ -708,7 +708,7 @@ body {
 /* Адаптация для совсем узких экранов */
 @media (max-width: 480px) {
   .modal-content {
-      width: 95%;
+      width: 90%;
       margin: 20% auto;
   }
 
