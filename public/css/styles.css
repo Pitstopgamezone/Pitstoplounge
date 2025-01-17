@@ -542,18 +542,22 @@ body {
 
 
 
-/* Стили для ссылки на адрес */
+/* Контейнер для ссылки и подсказки */
+.tooltip-container {
+  position: relative; /* Относительное позиционирование для подсказки */
+  display: inline-block;
+}
+
+/* Стили для ссылки */
 .address-link {
   color: #ffffff; /* Белый цвет */
   text-decoration: none; /* Убираем подчеркивание */
   transition: color 0.3s ease; /* Плавный переход для цвета */
-  position: relative; /* Относительное позиционирование */
 }
 
 /* Стили для всплывающей подсказки */
 .tooltip {
-  display: none; /* Скрыто по умолчанию */
-  position: absolute; /* Абсолютное позиционирование */
+  position: absolute; /* Абсолютное позиционирование относительно контейнера */
   background-color: rgb(0, 0, 0); /* Темный фон */
   color: #ffffff; /* Белый текст */
   padding: 10px;  
@@ -561,37 +565,37 @@ body {
   font-size: 16px;
   max-width: 270px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  top: -95px; /* Смещение вверх от ссылки */
-  left: 50%; /* Центровка относительно ссылки */
-  transform: translateX(-50%); /* Сдвиг для центровки */
+  top: -125px; /* Смещение вверх от ссылки */
+  left: 50%; /* Центровка относительно контейнера */
+  transform: translateX(-50%); /* Центрирование */
   z-index: 100000; /* Поверх других элементов */
   opacity: 0; /* Невидимо по умолчанию */
+  pointer-events: none; /* Отключение взаимодействия для предотвращения мерцания */
   transition: opacity 0.3s ease; /* Плавное появление */
 }
 
-/* Показывать подсказку при наведении */
-.address-link:hover + .tooltip,
-.tooltip:hover {
-  display: block; /* Показывать элемент */
-  opacity: 1; /* Делать видимым */
+/* Показываем подсказку при наведении на контейнер */
+.tooltip-container:hover .tooltip {
+  opacity: 1; /* Делаем видимой */
+  pointer-events: auto; /* Включаем взаимодействие, если нужно */
 }
 
 /* Медиазапрос для мобильных устройств */
 @media (max-width: 768px) {
   .tooltip {
-    top: -120px; /* Смещение вверх от ссылки для мобильных устройств */
-    left: 50%; /* Центровка относительно ссылки */
-    transform: translateX(-50%); /* Сдвиг для центровки */
+    top: -120px; /* Смещение вверх для мобильных устройств */
+    max-width: 250px;
   }
 }
 
 /* Медиазапрос для очень маленьких экранов (например, телефоны) */
 @media (max-width: 480px) {
   .tooltip {
-    top: -140px; /* Смещение вверх для очень маленьких экранов */
-    max-width: 220px; /* Меньше ширина подсказки для маленьких экранов */
+    top: -140px; /* Дополнительное смещение для маленьких экранов */
+    max-width: 220px; /* Более узкая подсказка */
   }
 }
+
 
 
 
@@ -600,67 +604,125 @@ body {
 
 /* Основной контейнер модального окна */
 .modal {
-    display: none; /* Скрыто по умолчанию */
-    position: fixed;
-    z-index: 1000; /* Поверх остальных элементов */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
-    z-index: 100000; /* Поверх других элементов */
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  z-index: 1000; /* Поверх остальных элементов */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
 }
 
 /* Контент внутри модального окна */
 .modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Кнопка закрытия */
 .close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: #000;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
+/* Заголовок и список в модальном окне */
 .modal-content h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
 .modal-content ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .modal-content li {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .modal-content a {
-    text-decoration: none;
-    color: #007BFF;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #007BFF;
+  transition: color 0.3s ease;
 }
 
 .modal-content a:hover {
-    color: #0056b3;
+  color: #0056b3;
 }
+
+/* Текстовый блок с содержимым документа */
+#document-content {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ccc;
+  font-family: monospace;
+  white-space: pre-wrap; /* Сохраняет разрывы строк и переносит текст */
+  word-wrap: break-word; /* Переносит слова, если они слишком длинные */
+  overflow-wrap: break-word; /* Современный вариант свойства для переносов */
+  line-height: 1.5; /* Улучшает читаемость */
+  text-align: left; /* Выравнивание текста по левому краю */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .modal-content {
+      width: 90%; /* Уменьшаем ширину окна */
+      margin: 15% auto; /* Увеличиваем отступ сверху */
+      padding: 15px; /* Уменьшаем внутренние отступы */
+  }
+
+  .modal-content h2 {
+      font-size: 20px; /* Уменьшаем размер заголовка */
+  }
+
+  .modal-content ul {
+      padding: 10px;
+  }
+
+  #document-content {
+      max-height: 300px; /* Уменьшаем высоту текста для мобильных */
+      padding: 8px; /* Уменьшаем внутренние отступы */
+      font-size: 14px; /* Уменьшаем размер шрифта */
+  }
+}
+
+/* Адаптация для совсем узких экранов */
+@media (max-width: 480px) {
+  .modal-content {
+      width: 95%;
+      margin: 20% auto;
+  }
+
+  .close-button {
+      font-size: 24px; /* Уменьшаем кнопку закрытия */
+  }
+
+  #document-content {
+      max-height: 250px;
+      font-size: 12px; /* Ещё больше уменьшаем шрифт */
+  }
+}
+
+
 
 
 /* Заглавный Контейнер с изображением и текстом */
@@ -2037,7 +2099,7 @@ body {
 
 
 #gallery-section {
-  padding: 75px 0;
+  padding: 80px 0;
   background-color: transparent;
   text-align: center;
 }

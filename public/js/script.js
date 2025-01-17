@@ -164,3 +164,40 @@ function initializeTooltip() {
 }
 
 document.addEventListener('DOMContentLoaded', initializeTooltip);
+
+
+// Открытие модального окна
+function openModal() {
+  document.getElementById('documents-modal').style.display = 'block';
+}
+
+// Закрытие модального окна
+function closeModal() {
+  document.getElementById('documents-modal').style.display = 'none';
+  document.getElementById('document-content').innerHTML = ''; // Очищаем содержимое
+}
+
+// Загрузка текстового документа в модальное окно
+function loadDocument(filePath) {
+  fetch(filePath)
+      .then((response) => {
+          if (!response.ok) {
+              throw new Error(`Could not load document: ${response.statusText}`);
+          }
+          return response.text();
+      })
+      .then((text) => {
+          document.getElementById('document-content').innerHTML = `<pre>${text}</pre>`;
+      })
+      .catch((error) => {
+          document.getElementById('document-content').innerHTML = `<p>Error: ${error.message}</p>`;
+      });
+}
+
+// Закрытие модального окна при клике вне его
+window.onclick = function (event) {
+  const modal = document.getElementById('documents-modal');
+  if (event.target === modal) {
+      closeModal();
+  }
+};

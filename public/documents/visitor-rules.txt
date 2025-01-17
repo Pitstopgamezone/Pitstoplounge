@@ -1,12 +1,13 @@
-Visitor Rules for Pitstop Lounge	
-Identification: Pitstop Lounge
+Visitor Rules for Pitstop Lounge
+--------------------------------
 Operator: Pit Stop Game Zone s.r.o
 Address: Chrudimská 2526/2a, 130 00 Prague, Vinohrady
 Company ID: 21965544
 Responsible Person for Pitstop Lounge: Alexardr Kuzko
 E-mail: @gmail.com
 Phone: +(420) 720 888 131
-
+Welcome to our facility. Please observe the following rules:
+Identification: Pitstop Lounge
 1. By entering the premises, you agree to these visitor rules for Pitstop Lounge,
 including the potential use of your photo for promotional purposes (e.g.,
 presentation on websites or social networks).
@@ -34,7 +35,6 @@ flames and firearms, within the premises.
 14. Bringing food and beverages into the premises and consuming them is prohibited.
 15. A security camera system with recording is installed for safety reasons; data processing
 principles are outlined in a separate document. 
-
 16. The operator is not responsible for items left unattended on the premises, nor for any losses,
 thefts, or damages to visitors’ personal property.
 17. Bringing alcoholic beverages into the premises and consuming them is prohibited.
