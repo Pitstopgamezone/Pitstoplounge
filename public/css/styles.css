@@ -1735,12 +1735,18 @@ body {
 /* Секция цен */
 #pricing {
   padding: 50px 20px;
-  background: #00000000; /* Тёмный фон секции */
+  background: #00000000; /* Прозрачный фон секции */
   color: #fff;
   text-align: center;
   font-family: 'Arial', sans-serif;
-  box-shadow: 0 4px 8px rgb(255, 0, 0); /* Тень */
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5); /* Изначально слабая тень */
+  transition: box-shadow 0.3s ease; /* Плавное появление тени */
 }
+
+#pricing:hover {
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.8); /* Яркая тень при наведении */
+}
+
 
 
 #pricing h2 {
@@ -1810,9 +1816,15 @@ body {
   background-color: #22222200;
   color: white;
   text-align: center;
-  box-shadow: 0 6px 15px rgb(212, 0, 255);
+  box-shadow: 0 6px 15px rgba(212, 0, 255, 0.26); /* Изначально тень отсутствует */
   animation: slideInFromLeft 5s ease-in-out;
+  transition: box-shadow 0.3s ease; /* Добавляем плавный переход */
 }
+
+#popular-games:hover {
+  box-shadow: 0 10px 30px rgb(212, 0, 255); /* Тень при наведении */
+}
+
 
 /* Анимация выезда сбоку */
 @keyframes slideInFromLeft {
