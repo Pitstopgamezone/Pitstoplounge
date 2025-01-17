@@ -1739,6 +1739,7 @@ body {
   color: #fff;
   text-align: center;
   font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 8px rgb(255, 0, 0); /* Тень */
 }
 
 
@@ -1761,7 +1762,7 @@ body {
 .pricing-box {
   background: transparent; /* Прозрачный белый фон */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Полупрозрачная рамка */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.322); /* Тень */
   border-radius: 10px; /* Скруглённые углы */
   padding: 20px;
   width: 300px; /* Размер квадрата */
@@ -1993,7 +1994,8 @@ body {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #fdfdfd;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 6px rgb(1, 97, 1);
 }
 
 .gallery-container {
