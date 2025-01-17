@@ -357,4 +357,21 @@ function scrollToTop() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollToTopButton = document.querySelector(".scroll-to-top");
+
+  // Показываем кнопку через 4 секунды
+  setTimeout(() => {
+    scrollToTopButton.classList.add("show");
+  }, 4000); // 4000 миллисекунд = 4 секунды
+
+  // Логика прокрутки наверх
+  scrollToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Плавная прокрутка
+    });
+  });
+});
+
 

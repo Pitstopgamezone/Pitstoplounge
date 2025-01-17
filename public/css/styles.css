@@ -1495,29 +1495,43 @@ body {
   color: #00e1ffe7; /* Цвет при наведении */
 }
 
+.copyright-symbol {
+  font-size: 10px; /* Размер шрифта */
+  font-family: Arial, sans-serif; /* Шрифт текста */
+  color: #ffffff; /* Цвет текста (например, темно-серый) */
+  line-height: 1.5; /* Межстрочный интервал */
+  text-align: center; /* Центрирование текста */
+}
+
+
 .scroll-to-top {
   position: fixed;
-  bottom: 70px; /* Расстояние от нижнего края */
-  left: 20px; /* Расстояние от левого края */
-  width: 50px; /* Ширина кнопки */
-  height: 50px; /* Высота кнопки */
+  bottom: 70px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
   background-color: #ff6600; /* Основной цвет кнопки */
-  color: white; /* Цвет текста */
-  border: none; /* Убираем границу */
-  border-radius: 50%; /* Закругляем края */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
-  cursor: pointer; /* Изменяем курсор на указатель */
-  display:none  ; /* Кнопка скрыта по умолчанию */
-  justify-content: center; /* Центрирование текста */
-  align-items: center; /* Центрирование текста */
-  font-size: 24px; /* Размер текста или иконки */
-  z-index: 10000; /* Поверх других элементов */
-  transition: opacity 0.3s, transform 0.3s; /* Анимация появления */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: none; /* Изначально кнопка скрыта */
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  z-index: 10000;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.scroll-to-top.show {
+  display: flex; /* Показываем кнопку */
+  opacity: 1; /* Полная видимость */
 }
 
 .scroll-to-top:hover {
-  background-color: #cc5200; /* Цвет при наведении */
-  transform: scale(1.1); /* Увеличение кнопки при наведении */
+  background-color: #cc5200;
+  transform: scale(1.1);
 }
 
 
