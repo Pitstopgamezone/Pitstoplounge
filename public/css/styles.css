@@ -529,7 +529,7 @@ body {
   width: 100%;
   background: rgba(0, 0, 0, 0.5); /* Прозрачный фон */
   color: #fff;
-  padding: 5px 20px;
+  padding: 0px 20px;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.61); /* Прозрачная граница */
   z-index: 10000; /* Поднято на верхний уровень */
@@ -2007,7 +2007,7 @@ body {
   margin-bottom: 20px;
   color: #fdfdfd;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  box-shadow: 0 4px 6px rgb(1, 97, 1);
+  box-shadow: 0 4px 6px rgba(1, 97, 1, 0);
 }
 
 .gallery-container {
