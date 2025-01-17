@@ -3,41 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pit-Stop Lounge - A gaming zone with powerful PCs, PlayStation, VR, bike rentals, and repair services. Explore packages, games, and more.">
+    <meta name="keywords" content="Pit-Stop Lounge, gaming zone, PlayStation, bike repair, packages, games">
+    <meta name="author" content="Pit-Stop Lounge">
+    <meta property="og:title" content="Pit-Stop Lounge - Packages & Games">
+    <meta property="og:description" content="Discover gaming and repair services at Pit-Stop Lounge. Your one-stop destination for entertainment and active lifestyle.">
+    <meta property="og:image" content="images/social-share-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pit-Stop Lounge - Packages & Games">
+    <meta name="twitter:description" content="Join Pit-Stop Lounge for gaming and bike repair services.">
+    <meta name="twitter:image" content="images/social-share-image.jpg">
     <title>Pit-Stop Lounge - Packages & Games</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Agu+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css">
-     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- FullCalendar CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css" rel="stylesheet">
-    <!-- FullCalendar JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@interactjs/interactjs/dist/interact.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@interactjs/interactjs/dist/interact.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="js/script.js"></script>
-
-   
 </head>
+
 <body>
     
     <!-- Сетка -->
     <div id="background-grid"></div>
         <!-- Пиксельный персонаж -->
-        <div id="pixel-character"></div>
+        <!--<div id="pixel-character"></div>-->
             <!-- Прогресс-бар -->
             <div id="progress-bar"></div>
                 <!-- Неоновая заставка -->
@@ -67,10 +75,13 @@
                 <button class="booking-button" onclick="window.location.href='https://pitstoplounge.booking.enes.tech/'" aria-label="Online Booking">
                     Online Booking
                 </button>
+
+                <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">⬆</button>
+
                 <!-- Нижний блок с адресом и телефоном -->
                 <div id="footer-info">
                     <p id="address-footer">
-                        Address: 
+                      <!--  Address: -->
                         <a href="https://maps.app.goo.gl/iFwwjAqRLb5ToML68" target="_blank" class="address-link">
                             Chrudimská, 2a | 
                             <span id="working-hours" class="working-hours">Mo-Su,10-22</span>
@@ -82,7 +93,7 @@
                     </p>
                         <div id="contact-footer">
                             <p id="phone-footer">
-                                Phone: <a href="tel:+420720888131" class="phone-link">+(420) 720 888 131</a>
+                                <!--Phone:--> <a href="tel:+420720888131" class="phone-link">+(420) 720 888 131</a>
                             </p>
                                 <a href="https://t.me/your_telegram_link" target="_blank" class="telegram-button" aria-label="Telegram">
                                     <i class="fab fa-telegram-plane"></i> <!-- Telegram -->
@@ -97,8 +108,9 @@
                                                         <span class="close-button" onclick="closeModal()">&times;</span>
                                                             <h2>Documents</h2>
                                                                 <ul>
-                                                                    <li><a href="#privacy-policy">Visitor Rules</a></li>
+                                                                    <li><a href="#vizitor-rules">Visitor Rules</a></li>
                                                                     <li><a href="#terms-and-conditions">General Terms and Conditions</a></li>
+                                                                    <li><a href="#privacy-policy">Privacy Policy</a></li>
                                                                     <li><a href="#impressum">About us</a></li>
                                                                     <li><a href="#FAQ">FAQ</a></li>
                                                                 </ul>
@@ -116,6 +128,9 @@
                                                         </div>
                                                             <div class="socials-container">
                                                                 <a href="https://www.tiktok.com/@pitstoplounge0" target="_blank" class="social-icon tw" aria-label="TikTok"></a>
+                                                            </div>
+                                                            <div class="socials-container">
+                                                                <a href="https://www.youtube.com/@PitStopLounge" target="_blank" class="social-icon yt" aria-label="YouTube"></a>
                                                             </div>
                                                     </div>
 
@@ -137,10 +152,10 @@
                                                     <!-- Контейнер вкладок -->
                                                     <div class="tabs" role="tablist">
                                                         <button class="tab-button club-button active" onclick="showTab('club')" role="tab" aria-label="Перейти в компьютерный клуб">
-                                                            <i class="fas fa-gamepad fa-3x"></i> Game Zone
+                                                            <i class="fas fa-gamepad fa-3x"></i> <!--Game Zone-->
                                                         </button>
                                                         <button class="tab-button service-button" onclick="window.location.href='pit-stop.html'" role="tab" aria-label="Перейти в Pit-Stop Service">
-                                                            <i class="fas fa-bicycle fa-3x"></i> Pit-Stop
+                                                            <i class="fas fa-bicycle fa-3x"></i> <!--Pit-Stop-->
                                                         </button>
                                                         
                                                         <!--<button class="tab-button token-button" onclick="showTab('token')" role="tab" aria-label="Перейти в раздел токенов">
@@ -155,17 +170,21 @@
                                                                 <img src="images/logo.png" alt="Pit Stop Image" class="club-image">
                                                                     <div class="circle-text">
                                                                         <div class="circle-content">
-                                                                            <span>Pit-Stop Radio</span>
+                                                                            <span>Pit-Stop Lounge</span>
                                                                         </div>
                                                                     </div>
                                                                         <div class="club-overlay">
-                                                                            <h2>Pit-Stop Lounge</h2>
-                                                                                <p>Experience our gaming environment:</p>
+                                                                            <h2 id="welcome-message">Welcome to Pit-Stop Lounge</h2>
+                                                                            <p id="description">We are a small but ambitious company located in a cozy and compact space, 
+                                                                                where every corner is designed for your enjoyment and comfort. 
+                                                                                At Pit Stop Game Zone, we believe that every moment should be special, 
+                                                                                and we strive to provide you with an exceptional experience that will be 
+                                                                                remembered only in the best possible way. And you will definitely want to visit us again and again</p>
                                                                                     <ul>
                                                                                         <li><a href="#high-performance">Our Deviсes</a></li>
                                                                                         <li><a href="#popular-games">Most popular games</a></li>
                                                                                         <li><a href="#pricing">Prices</a></li>
-                                                                                        <li><a href="#gallery">Gallery</a></li>
+                                                                                        <li><a href="#gallery-section">Gallery</a></li>
                                                                                     </ul>
                                                                             </div>
                                                                                     <!-- Неоновые всплывающие элементы -->
@@ -212,13 +231,13 @@
                                                                                                                     <img src="images/image0011.jpg" alt="Image 1">
                                                                                                                 </div>
                                                                                                                 <div class="image-wrapper">
-                                                                                                                    <img src="images/image0011.jpg" alt="Image 2">
+                                                                                                                    <img src="images/Stalker2.jpg" alt="Image 2">
                                                                                                                 </div>
                                                                                                                 <div class="image-wrapper">
-                                                                                                                    <img src="images/image0011.jpg" alt="Image 3">
+                                                                                                                    <img src="images/UFCT.webp" alt="Image 3">
                                                                                                                 </div>
                                                                                                                 <div class="image-wrapper">
-                                                                                                                    <img src="images/image0011.jpg" alt="Image 3">
+                                                                                                                    <img src="images/guest.webp" alt="Image 3">
                                                                                                                 </div>
                                                                                                                 <div class="image-wrapper">
                                                                                                                     <img src="images/image0011.jpg" alt="Image 3">
@@ -297,40 +316,40 @@
         <section id="popular-games">
             <h2>Most popular games</h2>
             <div class="games-container">
-                <div class="game" style="--index: 1; --hours: 1000;">
+                <div class="game" style="--index: 1; --hours: 300;">
                     <img src="images/game1-logo.ico" alt="Game 1 Logo" class="game-logo">
                     <h3>Game 1</h3>
-                    <div class="info">CS2 >1000 hours</div>
+                    <div class="info">CS2 >300 hours</div>
                 </div>
-                <div class="game" style="--index: 2; --hours: 400;">
+                <div class="game" style="--index: 2; --hours: 200;">
                     <img src="images/game2-logo.png" alt="Game 2 Logo" class="game-logo">
                     <h3>Game 2</h3>
-                    <div class="info">Fortnite >500 hours</div>
+                    <div class="info">Fortnite >200 hours</div>
                 </div>
-                <div class="game" style="--index: 3; --hours: 300;">
+                <div class="game" style="--index: 3; --hours: 180;">
                     <img src="images/game3-logo.webp" alt="Game 3 Logo" class="game-logo">
                     <h3>Game 3</h3>
-                    <div class="info">UFC 5 >400 hours</div>
+                    <div class="info">UFC 5 >180 hours</div>
                 </div>
-                <div class="game" style="--index: 4; --hours: 280;">
+                <div class="game" style="--index: 4; --hours: 160;">
                     <img src="images/game4-logo.png" alt="Game 4 Logo" class="game-logo">
                     <h3>Game 3</h3>
-                    <div class="info">FC25 >350 hours</div>
+                    <div class="info">FC25 >160 hours</div>
                 </div>
-                <div class="game" style="--index: 5; --hours: 270;">
+                <div class="game" style="--index: 5; --hours: 140;">
                     <img src="images/game5-logo.png" alt="Game 5 Logo" class="game-logo">
                     <h3>Game 3</h3>
-                    <div class="info">Stalker2 >300 hours</div>
+                    <div class="info">Stalker2 >140 hours</div>
                 </div>
-                <div class="game" style="--index: 6; --hours: 250;">
+                <div class="game" style="--index: 6; --hours: 120;">
                     <img src="images/game6-logo.png" alt="Game 6 Logo" class="game-logo">
                     <h3>Game 3</h3>
-                    <div class="info">Overwatch2 >250 hours</div>
+                    <div class="info">Overwatch2 >120 hours</div>
                 </div>
-                <div class="game" style="--index: 7; --hours: 200;">
+                <div class="game" style="--index: 7; --hours: 100;">
                     <img src="images/game7-logo.png" alt="Game 7 Logo" class="game-logo">
                     <h3>Game 3</h3>
-                    <div class="info">Valorant >200 hours</div>
+                    <div class="info">Valorant >100 hours</div>
                 </div>
                 <!-- Добавьте другие игры с разным количеством часов -->
             </div>
@@ -343,30 +362,33 @@
         <div class="pricing-container">
           <!-- Блок с ценами -->
           <div class="pricing-box">
-            <h3>Hourly Rates</h3>
+            <h3>Standart Tariff Plans</h3>
+            <h4> ! Please note that ! </h4>
+            <h4>Plans expire 24 hours after purchase.</h4>
             <ul>
-              <li>PC Gaming: 100 crowns / 1 hour</li>
-              <li>PC Gaming: 270 crowns / 3 hours</li>
-              <li>PC Gaming: 400 crowns / 5 hours</li>
-              <li>PC Gaming: 600 crowns / 8 hours</li>
-              <li>PlayStation 5: 100 crowns / 1 hour</li>
-              <li>VR Gaming: 150 crowns / 1 hour</li>
+              <li>PC Gaming: 100 Kč / 1 hour</li>
+              <li>PC Gaming: 180 Kč / 2 hours</li>
+              <li>PC Gaming: 200 Kč / 3 hours</li>
+              <li>PC Gaming: 300 Kč / 4 hours</li>
+              <li>PC Gaming: 400 Kč / 6 hours</li>
+              <li>PC Gaming: 600 Kč / 9 hours</li>
+              <li>PlayStation 5: 100 Kč / 1 hour</li>
+              <li>VR Gaming: 150 Kč / 1 hour</li>
             </ul>
           </div>
           <!-- Блок с абонементами -->
           <div class="pricing-box">
-            <h3>Membership Plan for PC</h3>
+            <h3>Membership and special tarifs plans for PC</h3>
+            <h4>Purchasing a club membership unlocks special prices for you</h4>
             <ul>
-              <li>Weekly Membership: 300 crowns</li>
-              <li>Mounthly Membership: 1000 crowns</li>
-              <li>Cost for members: 50 crowns / 1 hour </li>
-            </ul>
-          </div>
-          <!-- Блок с дополнительными услугами -->
-          <div class="pricing-box">
-            <h3>Additional Discount</h3>
-            <ul>
-              <li>Book 3 or more PCs for 2 hours or more and get a bonus of 1 hour each</li>
+              <li>Weekly Membership: 300 Kč</li>
+              <li>Mounthly Membership: 1000 Kč</li>
+              <li>Weekly members: 50 Kč / 1 hour </li>
+              <li>Mounthly members: 45 Kč / 1 hour </li>
+              <li>School tarif for PC: 60 Kč / 1 hour</li>
+              <li>Student tarif for PC: 70 Kč / 1 hour</li>
+              <li>Senior tarif for PC: 60 Kč / 1 hour</li>
+              
             </ul>
           </div>
         </div>
@@ -375,21 +397,30 @@
       
     
       
-      <section id="gallery">
+      <div id="gallery-section">
         <h2>Gallery</h2>
         <div class="gallery-container">
-            <div class="gallery-images">
-                <img src="images/IMG_8201.JPG" alt="Image 1">
-                <img src="images/IMG_8201.JPG" alt="Image 2">
-                <img src="images/IMG_8201.JPG" alt="Image 3">
-                <img src="images/IMG_8201.JPG" alt="Image 4">
-                <img src="images/IMG_8201.JPG" alt="Image 5">
-                <img src="images/IMG_8201.JPG" alt="Image 6">
-                <img src="images/IMG_8201.JPG" alt="Image 7">
-                <img src="images/IMG_8201.JPG" alt="Image 8">
+            <div class="gallery-item">
+                <img src="images/computer-zone.JPG" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/computer-zone2.jpg" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/IMG_8185.JPG" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="images/ps-zone.JPG" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo3.JPG" alt="Gallery Image 5">
+            </div>
+            <div class="gallery-item">
+                <img src="images/IMG_8658.jpg" alt="Gallery Image 6">
             </div>
         </div>
-    </section>
+    </div>
+    
     
     
     

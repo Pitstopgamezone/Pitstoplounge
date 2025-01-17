@@ -95,8 +95,8 @@ body {
 .tabs {
   display: flex;
   justify-content: center;
-  margin-top: 26px;
-  gap: 20px; /* Расстояние между кнопками */
+  margin-top: 1px;
+  gap: 3px; /* Расстояние между кнопками */
 }
 
 /* Базовые стили кнопки */
@@ -192,11 +192,6 @@ body {
 
 
 
-#club {
-  background: url('../images/pc-console.jpg') no-repeat center center;
-  background-size: cover;
-  min-height: 500px;
-}
 
 
 #service {
@@ -231,13 +226,26 @@ body {
 
 #progress-bar {
   position: fixed;
+  height: 4px;
   top: 0;
   left: 0;
-  height: 5px;
-  background-color: #00FFFF;
-  width: 0;
-  z-index: 9999;
+  background: linear-gradient(to bottom, #fa7837, #e06c26);
+  border: 1px solid #d55c1f;
+  width: 50%; /* Example value */
+  border-radius: 2px;
+  z-index: 30000;
+  opacity: 0; /* Изначально скрыт */
+  animation: fadeIn 2s ease-in-out 3.5s forwards; /* Анимация с задержкой 3.5 секунд */
 }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Сделать видимым */
+  }
+}
+
+
+
 
 /* Общие стили для кнопок */
 .button {
@@ -271,7 +279,7 @@ body {
   display: flex; /* Устанавливает flexbox для выравнивания содержимого */
   align-items: center;
   justify-content: center; /* Центрирует содержимое */
-  gap: 5px;
+  gap: 4px;
   border: 0px solid white; /* Рамка кнопки */
   padding: 0px 0px; /* Отступы внутри кнопки */
   border-radius: 5px; /* Закруглённые углы */
@@ -290,8 +298,8 @@ body {
 
 
 .social-icon {
-  width: 26px; /* Размер иконки */
-  height: 26px;
+  width: 24px; /* Размер иконки */
+  height: 24px;
   background-size: contain; /* Подгонка изображения */
   display: inline-block;
 }
@@ -306,6 +314,10 @@ body {
 
 .social-icon.tw {
   background-image: url('../images/tiktok.png');
+}
+
+.social-icon.yt {
+  background-image: url('../images/youtube.png');
 }
 
 .social-icon:hover {
@@ -451,12 +463,8 @@ body {
   }
 }
 
-/* Прогресс-бар */
-#progress-bar {
-  height: 4px;
-  background-color: #fa7837;
-  width: 0;
-}
+
+
 /* Стиль для кнопки онлайн бронирования */
 .booking-button {
   position: fixed;
@@ -585,29 +593,6 @@ body {
   }
 }
 
-/* Рабочие часы */
-.working-hours {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-/* Мигающий зеленый */
-.blink-green {
-  color: green;
-  animation: blink 1s infinite;
-}
-
-/* Статичный красный */
-.static-red {
-  color: red;
-}
-
-/* Анимация мигания */
-@keyframes blink {
-  50% {
-    opacity: 0.5;
-  }
-}
 
 
 
@@ -684,7 +669,7 @@ body {
   color: #fff;
   background-color: transparent; /* Прозрачный фон */
   padding: 40px;
-  border: 4px solid #fa7837; /* Рамка по периметру */
+  border: 4px solid #fa783700; /* Рамка по периметру */
   border-radius: 15px;
   box-shadow: 0 6px 20px rgb(0, 238, 255), 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -724,10 +709,10 @@ body {
 .club-overlay h2 {
   font-family: 'Permanent Marker', cursive;
   font-size: 36px;
-  color: #ff7f00; /* Ярко-оранжевый цвет для заголовков */
+  color: #ffffff; /* Ярко-оранжевый цвет для заголовков */
   margin-bottom: 20px;
   margin-top: 1px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
 .club-overlay p {
@@ -743,8 +728,9 @@ body {
   padding-left: 20px;
   font-size: 16px;
   list-style-type: none;
-  color: #e0e0e0;
+  color: #ffffff;
   margin-top: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .club-overlay ul li {
@@ -1248,7 +1234,7 @@ body {
 }
 
 .detail-block:hover {
-  background-color: #ffe3442f;
+  background-color: #ffe34410;
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgb(255, 230, 0);
 }
@@ -1511,6 +1497,33 @@ body {
   color: #00e1ffe7; /* Цвет при наведении */
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 70px; /* Расстояние от нижнего края */
+  left: 20px; /* Расстояние от левого края */
+  width: 50px; /* Ширина кнопки */
+  height: 50px; /* Высота кнопки */
+  background-color: #ff6600; /* Основной цвет кнопки */
+  color: white; /* Цвет текста */
+  border: none; /* Убираем границу */
+  border-radius: 50%; /* Закругляем края */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+  cursor: pointer; /* Изменяем курсор на указатель */
+  display:none  ; /* Кнопка скрыта по умолчанию */
+  justify-content: center; /* Центрирование текста */
+  align-items: center; /* Центрирование текста */
+  font-size: 24px; /* Размер текста или иконки */
+  z-index: 10000; /* Поверх других элементов */
+  transition: opacity 0.3s, transform 0.3s; /* Анимация появления */
+}
+
+.scroll-to-top:hover {
+  background-color: #cc5200; /* Цвет при наведении */
+  transform: scale(1.1); /* Увеличение кнопки при наведении */
+}
+
+
+
 #background-grid {
   content: '';
   position: fixed;
@@ -1761,6 +1774,15 @@ body {
   margin-bottom: 15px;
   color: #ffcc00; /* Золотой акцент для заголовка */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  text-align: center; /* Центрирование текста заголовка */
+}
+
+.pricing-box h4 {
+  font-size: 20px;
+  margin-bottom: 1px;
+  color: #ff0000; /* Золотой акцент для заголовка */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  text-align: center; /* Центрирование текста заголовка */
 }
 
 .pricing-box ul {
@@ -1773,85 +1795,21 @@ body {
   font-size: 18px;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-#gallery {
-  padding: 110px 10px;
-  background: #11111100;
-  color: #fff;
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-}
-
-#gallery h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: #ffcc00;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.gallery-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.gallery-images img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center; /* Центрирование текста заголовка */
 }
 
 
-.gallery-btn {
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 24px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
-}
-
-.prev-btn {
-  left: 10px;
-}
-
-.next-btn {
-  right: 10px;
-}
-
-.gallery-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Адаптация для мобильных устройств */
-@media (max-width: 768px) {
-  .gallery-images img {
-      width: 150px;
-      height: 100px;
-  }
-
-  .gallery-btn {
-      font-size: 20px;
-  }
-}
 
 
 
 
 /* Основной блок "Популярные игры" */
 #popular-games {
-  padding: 50px;
+  padding: 10px;
   background-color: #22222200;
   color: white;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 15px rgb(212, 0, 255);
   animation: slideInFromLeft 5s ease-in-out;
 }
 
@@ -1870,8 +1828,9 @@ body {
 
 #popular-games h2 {
   font-size: 36px;
-  color: #ffcc00;
-  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
 }
 
 .games-container {
@@ -2021,4 +1980,47 @@ body {
   to {
     transform: translateY(0);
   }
+}
+
+
+#gallery-section {
+  padding: 70px 0;
+  background-color: transparent;
+  text-align: center;
+}
+
+#gallery-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fdfdfd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); /* Увеличение изображения при наведении */
+}
+
+.gallery-item:hover {
+  cursor: pointer;
 }

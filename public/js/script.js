@@ -59,61 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 3000);
 });
 
-// Применение изменений для языков
-function changeLanguage(language) {
-  const translations = {
-    en: {
-      "club-description": "Information about the computer club, photos, contact details, and map.",
-      "service-description": "Details about bike and scooter repair and rental services.",
-      "club-button": "Computer Club",
-      "service-button": "Pit-Stop Service",
-      "token-button": "Token",
-      "online-booking": "Online Booking",
-      "claimTokens": "Claim Tokens",
-      "exchangeTokens": "Exchange 10 PTC"
-    },
-    ru: {
-      "club-description": "Информация о компьютерном клубе, фотографии, контактные данные и карта.",
-      "service-description": "Подробности о ремонте и аренде велосипедов и самокатов.",
-      "club-button": "Компьютерный клуб",
-      "service-button": "Pit-Stop Сервис",
-      "token-button": "Токен",
-      "online-booking": "Онлайн-бронирование",
-      "claimTokens": "Получить токены",
-      "exchangeTokens": "Обменять 10 PTC"
-    },
-    uk: {
-      "club-description": "Інформація про комп'ютерний клуб, фотографії, контактні дані та карта.",
-      "service-description": "Деталі про ремонт і оренду велосипедів та самокатів.",
-      "club-button": "Комп'ютерний клуб",
-      "service-button": "Pit-Stop Сервіс",
-      "token-button": "Токен",
-      "online-booking": "Онлайн бронювання",
-      "claimTokens": "Отримати токени",
-      "exchangeTokens": "Обміняти 10 PTC"
-    },
-    cz: {
-      "club-description": "Informace o počítačovém klubu, fotky, kontaktní údaje a mapa.",
-      "service-description": "Podrobnosti o opravách a pronájmu bicyklů a koloběžek.",
-      "club-button": "Počítačový klub",
-      "service-button": "Pit-Stop Služby",
-      "token-button": "Token",
-      "online-booking": "Online rezervace",
-      "claimTokens": "Získat tokeny",
-      "exchangeTokens": "Vyměnit 10 PTC"
-    }
-  };
 
-  // Перевод для всех элементов с id и для кнопок вкладок
-  const elementsToTranslate = document.querySelectorAll('[id], .tab-button');
-
-  elementsToTranslate.forEach(element => {
-    const id = element.id || element.classList.contains('tab-button') && element.className.split(' ').find(cls => cls.includes('-button'));
-    if (translations[language] && translations[language][id]) {
-      element.innerText = translations[language][id];
-    }
-  });
-}
 
 
 
@@ -347,5 +293,68 @@ $(document).ready(function(){
 });
 
 
+const translations = {
+  en: {
+      welcome: "Welcome to Pit-Stop Lounge",
+      description: "We are a small but ambitious company...",
+      booking: "Online Booking"
+  },
+  cz: {
+      welcome: "Vítejte v Pit-Stop Lounge",
+      description: "Jsme malá, ale ambiciózní společnost...",
+      booking: "Online Rezervace"
+  },
+  ru: {
+      welcome: "Добро пожаловать в Pit-Stop Lounge",
+      description: "Мы небольшая, но амбициозная компания...",
+      booking: "Онлайн Бронирование"
+  },
+  uk: {
+      welcome: "Ласкаво просимо до Pit-Stop Lounge",
+      description: "Ми невелика, але амбіційна компанія...",
+      booking: "Онлайн Бронювання"
+  }
+};
+
+function changeLanguage(lang) {
+  // Получить элементы для перевода
+  const welcomeMessage = document.getElementById("welcome-message");
+  const description = document.getElementById("description");
+  const bookingButton = document.getElementById("booking-button");
+
+  // Установить тексты в зависимости от выбранного языка
+  welcomeMessage.textContent = translations[lang].welcome;
+  description.textContent = translations[lang].description;
+  bookingButton.textContent = translations[lang].booking;
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const defaultLanguage = "en"; // Язык по умолчанию
+  changeLanguage(defaultLanguage);
+});
+
+// Отображение кнопки, когда пользователь прокручивает страницу до низа
+window.addEventListener("scroll", () => {
+  const scrollToTopButton = document.getElementById("scrollToTop");
+
+  // Проверяем, достигнут ли низ страницы
+  const scrollPosition = window.scrollY + window.innerHeight; // Текущее положение + высота окна
+  const documentHeight = document.documentElement.scrollHeight; // Полная высота документа
+
+  if (scrollPosition >= documentHeight) {
+      scrollToTopButton.style.display = "flex"; // Показываем кнопку
+  } else {
+      scrollToTopButton.style.display = "none"; // Скрываем кнопку
+  }
+});
+
+// Плавная прокрутка к началу страницы
+function scrollToTop() {
+  window.scrollTo({
+      top: 0, // Начало страницы
+      behavior: "smooth" // Плавный эффект
+  });
+}
 
 
