@@ -113,22 +113,22 @@ document.getElementById('exchangeTokens')?.addEventListener('click', () => {
 const translations = {
   en: {
       welcome: 'Welcome to Pit-Stop Lounge',
-      description: 'We are a small but ambitious company...',
+      description: 'We are a small but ambitious company located in a cozy and compact space, where every corner is designed for your enjoyment and comfort. At Pit Stop Game Zone, we believe that every moment should be special, and we strive to provide you with an exceptional experience that will be remembered only in the best possible way. And you will definitely want to visit us again and again.',
       booking: 'Online Booking'
   },
   cz: {
       welcome: 'Vítejte v Pit-Stop Lounge',
-      description: 'Jsme malá, ale ambiciózní společnost...',
+      description: 'Jsme malá, ale ambiciózní společnost sídlící v útulném a kompaktním prostoru, kde je každý kout navržen pro vaše potěšení a pohodlí. V Pit Stop Game Zone věříme, že každý okamžik by měl být výjimečný, a snažíme se vám poskytnout výjimečný zážitek, na který se bude vzpomínat jen v tom nejlepším. A určitě nás budete chtít navštívit znovu a znovu.',
       booking: 'Online Rezervace'
   },
   ru: {
       welcome: 'Добро пожаловать в Pit-Stop Lounge',
-      description: 'Мы небольшая, но амбициозная компания...',
+      description: 'Мы небольшая, но амбициозная компания, расположенная в уютном и компактном пространстве, где каждый уголок создан для вашего удовольствия и комфорта. В Pit Stop Game Zone мы считаем, что каждый момент должен быть особенным, и стремимся подарить вам исключительные впечатления, которые запомнятся только в лучшем виде. И вам обязательно захочется посетить нас снова и снова.',
       booking: 'Онлайн Бронирование'
   },
   uk: {
       welcome: 'Ласкаво просимо до Pit-Stop Lounge',
-      description: 'Ми невелика, але амбіційна компанія...',
+      description: 'Ми невелика, але амбітна компанія, розташована в затишному та компактному приміщенні, де кожен куточок створений для вашого задоволення та комфорту. У Pit Stop Game Zone ми віримо, що кожен момент має бути особливим, і ми прагнемо надати вам винятковий досвід, який запам’ятається лише найкращим чином. І ви неодмінно захочете відвідати нас знову і знову.',
       booking: 'Онлайн Бронювання'
   }
 };
