@@ -573,6 +573,14 @@ body {
   transition: color 0.3s ease; /* Плавный переход для цвета */
 }
 
+/* Стили для изображения внутри подсказки */
+.tooltip-image {
+  width: 100%; /* Растянуть изображение на всю ширину */
+  height: auto; /* Сохранять пропорции изображения */
+  border-radius: 5px 5px 0 0; /* Скругление верхних углов для соответствия контейнеру */
+  margin-bottom: 10px; /* Отступ между изображением и текстом */
+}
+
 /* Стили для всплывающей подсказки */
 .tooltip {
   position: absolute; /* Абсолютное позиционирование относительно контейнера */
@@ -583,7 +591,7 @@ body {
   font-size: 16px;
   max-width: 270px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  top: -125px; /* Смещение вверх от ссылки */
+  top: -340px; /* Смещение вверх от ссылки */
   left: 50%; /* Центровка относительно контейнера */
   transform: translateX(-50%); /* Центрирование */
   z-index: 100000; /* Поверх других элементов */
@@ -601,7 +609,7 @@ body {
 /* Медиазапрос для мобильных устройств */
 @media (max-width: 768px) {
   .tooltip {
-    top: -120px; /* Смещение вверх для мобильных устройств */
+    top: -300px; /* Смещение вверх для мобильных устройств */
     max-width: 250px;
   }
 }
@@ -609,7 +617,7 @@ body {
 /* Медиазапрос для очень маленьких экранов (например, телефоны) */
 @media (max-width: 480px) {
   .tooltip {
-    top: -140px; /* Дополнительное смещение для маленьких экранов */
+    top: -325px; /* Дополнительное смещение для маленьких экранов */
     max-width: 220px; /* Более узкая подсказка */
   }
 }
@@ -1602,21 +1610,22 @@ body {
   position: fixed;
   bottom: 80px;
   left: 20px;
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #ff6600, #ff9900); /* Градиентный фон */
-  color: #fff;
+  width: 50px;
+  height: 50px;
+  background: transparent; /* Прозрачный фон */
+  border: 2px solid rgba(255, 255, 255, 0.7); /* Тонкая полупрозрачная рамка */
+  color: rgba(255, 255, 255, 0.9); /* Цвет текста (стрелки) */
   font-family: "Orbitron", sans-serif;
-  font-size: 24px;
-  border: 2px solid #ff9900;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #ff6600, 0 0 20px #ff9900;
+  font-size: 20px;
+  border-radius: 50%; /* Круглая форма */
   display: none; /* Скрыто по умолчанию */
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease; /* Плавный переход для всех эффектов */
   z-index: 10000;
+  backdrop-filter: blur(5px); /* Эффект размытия фона */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Легкая подсветка */
 }
 
 .scroll-to-top.show {
@@ -1625,43 +1634,35 @@ body {
 }
 
 .scroll-to-top:hover {
-  transform: scale(1.2) rotate(1deg);
-  box-shadow: 0 0 20px #ff6600, 0 0 30px #ff9900, 0 0 40px #ffcc00;
-  background: linear-gradient(135deg, #ff9900, #ff6600);
+  transform: scale(1.1); /* Легкое увеличение при наведении */
+  border-color: rgba(255, 255, 255, 1); /* Увеличение яркости рамки */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Яркая подсветка */
+  color: #ffffff; /* Более насыщенный цвет стрелки */
 }
 
 .scroll-to-top:active {
-  transform: scale(1) rotate(0);
-  box-shadow: 0 0 5px #ff6600, 0 0 10px #ff9900;
+  transform: scale(0.95); /* Легкое уменьшение при нажатии */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
 /* Мобильные устройства (ширина экрана меньше 768px) */
 @media (max-width: 768px) {
   .scroll-to-top {
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    bottom: 75px; /* Чуть выше, чтобы не мешать другим элементам */
-    left: 10px; /* Ближе к краю экрана */
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    bottom: 75px;
+    left: 15px;
+    border-width: 1px; /* Уменьшенная рамка */
     box-shadow: none; /* Убираем тень */
-    border: none; /* Убираем рамку */
-    background: transparent; /* Прозрачный фон */
-  }
-
-  .scroll-to-top::before {
-    content: '˄'; /* Галочка вверх */
-    font-size: 20px;
-    color: #ff660000; /* Оранжевый цвет стрелки */
-  }
-
-  .scroll-to-top:hover::before {
-    color: #ff9900; /* Изменение цвета стрелки при наведении */
   }
 
   .scroll-to-top:hover {
-    transform: scale(1.1); /* Меньшее увеличение на мобильных устройствах */
+    transform: scale(1.05); /* Легкое увеличение */
+    border-color: rgba(255, 255, 255, 0.8); /* Меньший эффект */
   }
 }
+
 
 
 
