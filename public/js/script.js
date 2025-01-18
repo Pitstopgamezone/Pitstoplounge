@@ -201,3 +201,23 @@ window.onclick = function (event) {
       closeModal();
   }
 };
+
+// Показ кнопки прокрутки вверх после прокрутки 50% страницы
+window.addEventListener('scroll', () => {
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    const scrollThreshold = document.documentElement.scrollHeight / 2;
+
+    if (window.scrollY > scrollThreshold) {
+        scrollToTopButton.classList.add('show');
+    } else {
+        scrollToTopButton.classList.remove('show');
+    }
+});
+
+// Функция для прокрутки вверх
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Плавная прокрутка
+    });
+}

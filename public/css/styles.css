@@ -87,10 +87,7 @@ body {
   transition: opacity 1s ease-in-out; /* Плавное появление */
 }
 
-.booking-button {
-  opacity: 0; /* Начальное состояние – скрыт */
-  transition: opacity 1s ease-in-out; /* Плавное появление */
-}
+
 
 .tabs {
   display: flex;
@@ -769,7 +766,7 @@ body {
 }
 
 .club-overlay h2 {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Orbitron', cursive;
   font-size: 36px;
   color: #ffffff; /* Ярко-оранжевый цвет для заголовков */
   margin-bottom: 20px;
@@ -778,13 +775,21 @@ body {
 }
 
 .club-overlay p {
-  font-size: 18px;
+  font-size: 16px;
+  backdrop-filter: blur(20px); /* Эффект размытия фона */
+  -webkit-backdrop-filter: blur(10px); /* Для поддержки Safari */
+  background: rgba(0, 0, 0, 0.808); /* Прозрачный черный фон для выделения текста */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень вокруг блока */
+  border-radius: 10px; /* Скруглённые углы */
   line-height: 1.8;
-  color: #e0e0e0;
+  color: #ffffff; /* Белый текст */
   margin-bottom: 20px;
   font-weight: 300;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень текста */
+  padding: 20px; /* Внутренний отступ */
+  position: relative; /* Для возможности контроля слоя */
 }
+
 
 .club-overlay ul {
   padding-left: 20px;
@@ -1496,6 +1501,11 @@ body {
   }
 }
 
+.booking-button {
+  opacity: 0; /* Начальное состояние – скрыт */
+  transition: opacity 1s ease-in-out; /* Плавное появление */
+}
+
 #contact-footer {
   display: flex;
   align-items: center;
@@ -1579,7 +1589,7 @@ body {
   border: 2px solid #ff9900;
   border-radius: 50%;
   box-shadow: 0 0 10px #ff6600, 0 0 20px #ff9900;
-  display: none;
+  display: none; /* Скрыто по умолчанию */
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -1588,7 +1598,7 @@ body {
 }
 
 .scroll-to-top.show {
-  display: flex;
+  display: flex; /* Показываем кнопку */
   opacity: 1;
 }
 
@@ -1838,7 +1848,7 @@ body {
   color: #fff;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
-  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5); /* Изначально слабая тень */
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.219); /* Изначально слабая тень */
   transition: box-shadow 0.3s ease; /* Плавное появление тени */
 }
 
@@ -1904,7 +1914,7 @@ body {
   font-size: 18px;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  text-align: center; /* Центрирование текста заголовка */
+  text-align: left; /* Центрирование текста заголовка */
 }
 
 
@@ -1918,7 +1928,7 @@ body {
   background-color: #22222200;
   color: white;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(212, 0, 255, 0.26); /* Изначально тень отсутствует */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.37); /* Изначально тень отсутствует */
   animation: slideInFromLeft 5s ease-in-out;
   transition: box-shadow 0.3s ease; /* Добавляем плавный переход */
 }
