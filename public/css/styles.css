@@ -1549,7 +1549,7 @@ body {
 }
 
 .telegram-button:active {
-  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgba(255, 255, 255, 0.7); /* Вдавленный эффект при нажатии */
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgb(255, 255, 255); /* Вдавленный эффект при нажатии */
   transform: translateY(1px); /* Имитируем нажатие */
 }
 

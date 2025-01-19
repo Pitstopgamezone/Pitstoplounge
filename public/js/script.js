@@ -222,21 +222,22 @@ function scrollToTop() {
     });
 }
 
-let currentIndex = 0;
-const images = document.querySelectorAll('.image-wrapper');
-const totalImages = images.length;
+document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".image-carousel");
+    const prevButton = document.querySelector(".carousel-control.prev");
+    const nextButton = document.querySelector(".carousel-control.next");
 
-function moveCarousel(direction) {
-  currentIndex += direction;
-  if (currentIndex < 0) {
-    currentIndex = totalImages - 1;
-  } else if (currentIndex >= totalImages) {
-    currentIndex = 0;
-  }
-  const offset = -(currentIndex * 33.33); // 33.33% для 3 изображений на экране
-  document.querySelector('.image-carousel').style.transform = `translateX(${offset}%)`;
-}
+    let scrollAmount = 0;
 
-document.querySelector('.carousel-control.next').addEventListener('click', () => moveCarousel(1));
-document.querySelector('.carousel-control.prev').addEventListener('click', () => moveCarousel(-1));
+    function scrollCarousel(direction) {
+        const containerWidth = carousel.offsetWidth;
+        scrollAmount += direction * containerWidth * 0.5; // Прокрутка на 50% ширины контейнера
+        carousel.scrollTo({
+            left: scrollAmount,
+            behavior: "smooth",
+        });
+    }
 
+    prevButton.addEventListener("click", () => scrollCarousel(-1));
+    nextButton.addEventListener("click", () => scrollCarousel(1));
+});
