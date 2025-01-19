@@ -1065,6 +1065,22 @@ body {
   box-shadow: 0 8px 8px rgb(0, 204, 255);
 }
 
+.background-image {
+  position: absolute;
+  z-index: -1; /* Помещает изображение под текст */
+  width: 100%; /* Растягивает изображение по ширине блока */
+  height: 100%; /* Растягивает изображение по высоте блока */
+  object-fit: cover; /* Масштабирует изображение, сохраняя пропорции, и заполняет весь блок */
+  opacity: 0.8; /* Добавляет прозрачность */
+}
+
+.news-calendar-container {
+  position: relative; /* Для корректного наложения элементов */
+  width: 100%; /* Убедитесь, что блок занимает всю ширину */
+  height: 150px; /* Или задайте желаемую высоту блока */
+  overflow: hidden; /* Чтобы не было выступающих частей изображения */
+}
+
 /* Контейнер для бегущей строки с фоном */
 .marquee {
   position: relative;
@@ -1072,7 +1088,7 @@ body {
   white-space: nowrap;
   box-sizing: border-box;
   width: 100%;
-  background: url('images/--collage2.png') repeat-x; /* Фон с повторением по горизонтали */
+  background: url('https://via.placeholder.com/300x150') repeat-x; /* Фон с повторением по горизонтали */
   background-size: cover; /* Масштабирование фоновых изображений */
   padding: 20px 0; /* Отступы сверху и снизу */
 }
@@ -1091,7 +1107,7 @@ body {
   margin-right: 50px; /* Расстояние между элементами */
   font-size: 16px; /* Размер текста */
   color: #ffffff; /* Цвет текста */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Тень для выделения текста */
+  text-shadow: 1px 1px 3px rgb(0, 0, 0); /* Тень для выделения текста */
 }
 
 .marquee p {
@@ -1132,7 +1148,7 @@ body {
   }
 
   .marquee ul {
-    animation: scroll 20s linear infinite; /* Делаем текст чуть быстрее */
+    animation: scroll 25s linear infinite; /* Делаем текст чуть быстрее */
   }
 
   .marquee li {
@@ -1157,7 +1173,7 @@ body {
 .image-wrapper {
   flex: 0 0 30%; /* Ограничиваем ширину каждого изображения до 30% */
   border-radius: 8px; /* Закругляем углы */
-  box-shadow: 0 4px 8px rgb(0, 217, 255); /* Тень для изображений */
+  box-shadow: 2px 4px 8px rgb(0, 217, 255); /* Тень для изображений */
   overflow: hidden; /* Прячем содержимое за границами */
 }
 
