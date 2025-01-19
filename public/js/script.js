@@ -221,3 +221,22 @@ function scrollToTop() {
         behavior: 'smooth' // Плавная прокрутка
     });
 }
+
+let currentIndex = 0;
+const images = document.querySelectorAll('.image-wrapper');
+const totalImages = images.length;
+
+function moveCarousel(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) {
+    currentIndex = totalImages - 1;
+  } else if (currentIndex >= totalImages) {
+    currentIndex = 0;
+  }
+  const offset = -(currentIndex * 33.33); // 33.33% для 3 изображений на экране
+  document.querySelector('.image-carousel').style.transform = `translateX(${offset}%)`;
+}
+
+document.querySelector('.carousel-control.next').addEventListener('click', () => moveCarousel(1));
+document.querySelector('.carousel-control.prev').addEventListener('click', () => moveCarousel(-1));
+

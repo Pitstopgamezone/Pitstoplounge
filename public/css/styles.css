@@ -759,7 +759,7 @@ body {
   padding: 40px;
   border: 4px solid #fa783700; /* Рамка по периметру */
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgb(0, 238, 255), 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 238, 255, 0), 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -808,7 +808,7 @@ body {
   backdrop-filter: blur(20px); /* Эффект размытия фона */
   -webkit-backdrop-filter: blur(10px); /* Для поддержки Safari */
   background: rgba(0, 0, 0, 0.808); /* Прозрачный черный фон для выделения текста */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень вокруг блока */
+  box-shadow: 0 4px 8px rgb(255, 102, 0); /* Тень вокруг блока */
   border-radius: 10px; /* Скруглённые углы */
   line-height: 1.8;
   color: #ffffff; /* Белый текст */
@@ -932,7 +932,7 @@ body {
   opacity: 0.9; /* Полупрозрачность */
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   border-radius: 15px; /* Закругленные края */
-  box-shadow: 0px 4px 8px rgba(247, 133, 40, 0.5); /* Тень */
+  box-shadow: 0px 4px 8px rgb(252, 113, 0); /* Тень */
 }
 
 .club-content img:hover {
@@ -1008,89 +1008,53 @@ body {
 #news-calendar {
   margin-top: 0px;
   background-color: transparent;
-  border: 5px solid #00ecfd;
-  box-shadow: 0 8px 20px rgb(0, 238, 255);
+  border: 5px solid #8919f9;
+  box-shadow: 0 8px 20px #0005e5;
   padding: 3px; /* Отступы внутри блока */
   border-radius: 15px;
+  position: relative; /* Добавляем относительное позиционирование */
+  height: 150px; /* Высота блока */
+  overflow: hidden; /* Убираем возможные выступающие части */
 }
 
-.news-calendar-container h2 {
+/* Изображение на заднем плане */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Растягиваем изображение по ширине блока */
+  height: 100%; /* Растягиваем изображение по высоте блока */
+  object-fit: cover; /* Масштабируем изображение, сохраняя пропорции */
+  opacity: 0.8; /* Добавляем прозрачность */
+  z-index: -1; /* Отправляем изображение на задний план */
+}
+
+/* Заголовок блока новостей */
+#news-calendar h2 {
   font-family: 'Orbitron', cursive;
   font-size: 2rem;
   text-align: center;
   margin-bottom: 5px;
-  color: #00ecfd;
-  text-shadow: 2px 2px 5px rgb(0, 0, 0);
-}
-
-.news-section, .calendar-section {
-  margin-bottom: 10px;
-}
-
-.news-section h3, .calendar-section h3 {
-  font-family: 'Orbitron', cursive;
-  font-size: 1.5rem;
-  color: #007bff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.news-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.news-section li {
-  font-family: 'Orbitron', cursive;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  color: #00ecfd;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.news-section li p {
-  font-family: 'Orbitron', cursive;
-  margin: 5px 0;
-  font-size: 1rem;
   color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  opacity: 1; /* Убираем прозрачность, чтобы текст был полностью видимым */
 }
 
 
-.calendar-section {
-  margin: 0px;
-  padding: 10px;
-  background-color: #0898ec28;
-  border: 1px solid #00d9ff;
-  border-radius: 8px;
-  box-shadow: 0 8px 8px rgb(0, 204, 255);
+/* Контейнер для бегущей строки */
+.news-section {
+  margin-bottom: 10px;
 }
 
-.background-image {
-  position: absolute;
-  z-index: -1; /* Помещает изображение под текст */
-  width: 100%; /* Растягивает изображение по ширине блока */
-  height: 100%; /* Растягивает изображение по высоте блока */
-  object-fit: cover; /* Масштабирует изображение, сохраняя пропорции, и заполняет весь блок */
-  opacity: 0.8; /* Добавляет прозрачность */
-}
-
-.news-calendar-container {
-  position: relative; /* Для корректного наложения элементов */
-  width: 100%; /* Убедитесь, что блок занимает всю ширину */
-  height: 150px; /* Или задайте желаемую высоту блока */
-  overflow: hidden; /* Чтобы не было выступающих частей изображения */
-}
-
-/* Контейнер для бегущей строки с фоном */
+/* Контейнер для бегущей строки */
 .marquee {
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
   width: 100%;
-  background: url('https://via.placeholder.com/300x150') repeat-x; /* Фон с повторением по горизонтали */
-  background-size: cover; /* Масштабирование фоновых изображений */
   padding: 20px 0; /* Отступы сверху и снизу */
+  background: none; /* Убираем фон, так как фоном является изображение контейнера */
 }
 
 /* Анимация текста */
@@ -1129,7 +1093,6 @@ body {
 @media (max-width: 768px) {
   .marquee {
     padding: 10px 0; /* Уменьшаем отступы */
-    background-size: auto; /* Подгоняем фон под меньший экран */
   }
 
   .marquee ul {
@@ -1167,13 +1130,14 @@ body {
   gap: 10px; /* Отступы между изображениями */
   padding: 10px 0; /* Внутренние отступы */
   align-items: flex-end; /* Выравнивание по нижнему краю */
+  margin-top: -20px; /* Отступ сверху */
 }
 
 /* Обертка для каждого изображения */
 .image-wrapper {
   flex: 0 0 30%; /* Ограничиваем ширину каждого изображения до 30% */
   border-radius: 8px; /* Закругляем углы */
-  box-shadow: 2px 4px 8px rgb(0, 217, 255); /* Тень для изображений */
+  box-shadow: 2px 4px 8px #0005e5; /* Тень для изображений */
   overflow: hidden; /* Прячем содержимое за границами */
 }
 
@@ -1200,8 +1164,11 @@ body {
   font-size: 24px;
   padding: 10px;
   position: absolute;
-  z-index: 2;
+  z-index: 9999; /* Устанавливаем высокий z-index */
+  top: 50%;
+  transform: translateY(-50%);
 }
+
 
 .carousel-control.prev {
   left: 0;
@@ -1248,6 +1215,7 @@ body {
     padding: 6px;
   }
 }
+
 
 
 
@@ -1561,9 +1529,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, #d9e1e2, #ffffff); /* Градиентный фон для объемности */
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.7); /* Тени для 3D-эффекта */
-  color: rgb(1, 155, 226); /* Цвет текста/иконки */
+  background: linear-gradient(145deg,#58b4ff, #00a2ff); /* Градиентный фон для объемности */
+  box-shadow: 5px 5px 10px rgb(0, 0, 0), -5px -5px 10px rgba(255, 254, 254, 0.411); /* Тени для 3D-эффекта */
+  color: rgb(250, 250, 250); /* Цвет текста/иконки */
   padding: 10px;
   border-radius: 50%; /* Круглая форма */
   text-decoration: none;
@@ -1574,10 +1542,10 @@ body {
 }
 
 .telegram-button:hover {
-  background: linear-gradient(145deg, #58b4ff, #00a2ff); /* Обратный градиент при наведении */
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(255, 255, 255, 0.8); /* Более сильная тень */
+  background: linear-gradient(145deg, #fafafa, #fcfcfc); /* Обратный градиент при наведении #58b4ff, #00a2ff rgb(1, 155, 226)*/
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgb(255, 255, 255); /* Более сильная тень */
   transform: translateY(-2px); /* Небольшое "поднятие" кнопки */
-  color: #ffffff; /* Меняем цвет текста/иконки */
+  color: #00a2ff; /* Меняем цвет текста/иконки */
 }
 
 .telegram-button:active {

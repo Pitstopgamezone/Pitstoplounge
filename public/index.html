@@ -197,71 +197,67 @@
                                                                                         <li><a href="#gallery-section">Gallery</a></li>
                                                                                     </ul>
                                                                             </div>
-                                                                                    <!-- Неоновые всплывающие элементы -->
-                                                                                    <div class="neon-spray" style="top: 40%; left: 55%;"></div>
-                                                                                    <div class="neon-spray" style="top: 40%; left: 56%; animation-delay: 1s;"></div>
-                                                                                    <div class="neon-spray" style="top: 40%; left: 55%; animation-delay: 2s;"></div>
-                                                                                    <div class="neon-spray" style="top: 41%; left: 54%; animation-delay: 2.5s;"></div>
-                                                                                    <div class="neon-spray" style="top: 41%; left: 57%; animation-delay: 3s;"></div>
-                                                                                    <div class="neon-spray" style="top: 41%; left: 57%; animation-delay: 1s;"></div>
-                                                                                    <div class="neon-spray" style="top: 40%; left: 57%; animation-delay: 2s;"></div>
-                                                                                    <div class="neon-spray" style="top: 38%; left: 57%; animation-delay: 2.5s;"></div>
-                                                                                    <div class="neon-spray" style="top: 45%; left: 57%; animation-delay: 3s;"></div>
-                                                                                    </div>
-      
-                                                                                            <!-- Блок новостей и календаря событий -->
-                                                                                        <div id="news-calendar" class="news-calendar-container">
-                                                                                            <img src="images/collage2.png" alt="Background Image" class="background-image">
-                                                                                            <h2>News & Events</h2>
-                                                                                            <div class="news-section marquee">
-                                                                                            
-                                                                                                <ul>
-                                                                                                    <li>
-                                                                                                        <strong>January 15, 2025</strong> - Gaming Tournament
-                                                                                                        <p>Join us for an exciting gaming tournament with great prizes!</p>
-                                                                                                    </li>
-                                                                                                    <li>
-                                                                                                        <strong>January 22, 2025</strong> - VR Experience Night
-                                                                                                        <p>Step into the world of virtual reality and experience the future of gaming.</p>
-                                                                                                    </li>
-                                                                                                    <li>
-                                                                                                        <strong>January 28, 2025</strong> - PC Marathon Night
-                                                                                                        <p>Play as much as you can take.</p>
-                                                                                                    </li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
+<!-- Неоновые всплывающие элементы -->
+<div class="neon-spray" style="top: 40%; left: 55%;"></div>
+<div class="neon-spray" style="top: 40%; left: 56%; animation-delay: 1s;"></div>
+<div class="neon-spray" style="top: 40%; left: 55%; animation-delay: 2s;"></div>
+<div class="neon-spray" style="top: 41%; left: 54%; animation-delay: 2.5s;"></div>
+<div class="neon-spray" style="top: 41%; left: 57%; animation-delay: 3s;"></div>
+<div class="neon-spray" style="top: 41%; left: 57%; animation-delay: 1s;"></div>
+<div class="neon-spray" style="top: 40%; left: 57%; animation-delay: 2s;"></div>
+<div class="neon-spray" style="top: 38%; left: 57%; animation-delay: 2.5s;"></div>
+<div class="neon-spray" style="top: 45%; left: 57%; animation-delay: 3s;"></div>
+</div>
+<!-- Блок новостей и календаря событий -->
+<div id="news-calendar" class="news-calendar-container">
+    <img src="images/pexels.jpg" alt="Background Image" class="background-image">
+    <h2>News & Events</h2>
+    <div class="news-section marquee">
+        <ul>
+            <li>
+                <strong>January 15, 2025</strong> - Gaming Tournament
+                <p>Join us for an exciting gaming tournament with great prizes!</p>
+            </li>
+            <li>
+                <strong>January 22, 2025</strong> - VR Experience Night
+                <p>Step into the world of virtual reality and experience the future of gaming.</p>
+            </li>
+            <li>
+                <strong>January 28, 2025</strong> - PC Marathon Night
+                <p>Play as much as you can take.</p>
+            </li>
+        </ul>
+    </div>
+</div>
 
 
-                                                                                                    <div class="calendar-section">
-                                                                                                        <h3></h3>
-                                                                                                        <div id="calendar"></div> <!-- integrate a calendar plugin or custom calendar here -->
-                                                                                                        <div class="image-carousel-container">
-                                                                                                            <button class="carousel-control prev" onclick="scrollCarousel(-1)">&#8249;</button>
-                                                                                                            <div class="image-carousel">
-                                                                                                                <div class="image-wrapper">
-                                                                                                                    <img src="images/image0011.jpg" alt="Image 1">
-                                                                                                                </div>
-                                                                                                                <div class="image-wrapper">
-                                                                                                                    <img src="images/Stalker2.jpg" alt="Image 2">
-                                                                                                                </div>
-                                                                                                                <div class="image-wrapper">
-                                                                                                                    <img src="images/UFCT.webp" alt="Image 3">
-                                                                                                                </div>
-                                                                                                                <div class="image-wrapper">
-                                                                                                                    <img src="images/guest.webp" alt="Image 3">
-                                                                                                                </div>
-                                                                                                                <div class="image-wrapper">
-                                                                                                                    <img src="images/image0011.jpg" alt="Image 3">
-                                                                                                                </div>
-                                                                                                                <div class="image-wrapper">
-                                                                                                                    <img src="images/image0011.jpg" alt="Image 3">
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                            <button class="carousel-control next" onclick="scrollCarousel(1)">&#8250;</button>
-                                                                                                        </div>
-                                                                                                        
-                                                                                                    </div>
+
+
+<div class="calendar-section">
+    <h3></h3>
+    <div id="carousel-container" class="image-carousel-container">
+        <button class="carousel-control prev" id="prevButton">&#8249;</button>
+        <div class="image-carousel">
+            <div class="image-wrapper">
+                <img src="images/image0011.jpg" alt="Image 1">
+            </div>
+            <div class="image-wrapper">
+                <img src="images/Stalker2.jpg" alt="Image 2">
+            </div>
+            <div class="image-wrapper">
+                <img src="images/UFCT.webp" alt="Image 3">
+            </div>
+            <div class="image-wrapper">
+                <img src="images/guest.webp" alt="Image 4">
+            </div>
+            <div class="image-wrapper">
+                <img src="images/image0011.jpg" alt="Image 5">
+            </div>
+        </div>
+        <button class="carousel-control next" id="nextButton">&#8250;</button>
+    </div>
+</div>
+
                                                                                                 </div> 
 
                                                                                                     <div id="high-performance" class="detail-block">
