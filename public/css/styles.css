@@ -547,7 +547,7 @@ body {
   width: 100%;
   background: rgba(0, 0, 0, 0.5); /* Прозрачный фон */
   color: #fff;
-  padding: 0px 20px;
+  padding: 0px 0px;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.61); /* Прозрачная граница */
   z-index: 10000; /* Поднято на верхний уровень */
@@ -609,7 +609,7 @@ body {
 /* Медиазапрос для мобильных устройств */
 @media (max-width: 768px) {
   .tooltip {
-    top: -300px; /* Смещение вверх для мобильных устройств */
+    top: -336px; /* Смещение вверх для мобильных устройств */
     max-width: 250px;
   }
 }
@@ -618,7 +618,7 @@ body {
 @media (max-width: 480px) {
   .tooltip {
     top: -325px; /* Дополнительное смещение для маленьких экранов */
-    max-width: 220px; /* Более узкая подсказка */
+    max-width: 240px; /* Более узкая подсказка */
   }
 }
 
@@ -1545,26 +1545,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fcfdfd; /* Цвет Telegram */
-  color: rgb(0, 142, 207);
-  padding: 10px; /* Оставляем только padding, чтобы контролировать размер */
-  border-radius: 55%; /* Округляем края */
+  background: linear-gradient(145deg, #d9e1e2, #ffffff); /* Градиентный фон для объемности */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.7); /* Тени для 3D-эффекта */
+  color: rgb(1, 155, 226); /* Цвет текста/иконки */
+  padding: 10px;
+  border-radius: 50%; /* Круглая форма */
   text-decoration: none;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-  width: 10px; /* Устанавливаем фиксированную ширину */
-  height: 10px; /* Устанавливаем фиксированную высоту */
+  font-size: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 10px; /* Размер кнопки */
+  height: 10px; /* Размер кнопки */
 }
 
 .telegram-button:hover {
-  background-color: #0077b5; /* Темнее при наведении */
-  color: #fff;
+  background: linear-gradient(145deg, #58b4ff, #00a2ff); /* Обратный градиент при наведении */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(255, 255, 255, 0.8); /* Более сильная тень */
+  transform: translateY(-2px); /* Небольшое "поднятие" кнопки */
+  color: #ffffff; /* Меняем цвет текста/иконки */
+}
+
+.telegram-button:active {
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgba(255, 255, 255, 0.7); /* Вдавленный эффект при нажатии */
+  transform: translateY(1px); /* Имитируем нажатие */
 }
 
 .telegram-button i {
-  margin: 0; /* Убираем отступы для иконки */
-  font-size: 24px; /* Устанавливаем нужный размер иконки */
+  margin: 0; /* Убираем отступы */
+  font-size: 22px; /* Размер иконки */
 }
+
 
 #footer-info {
   display: flex;
@@ -1609,7 +1618,7 @@ body {
 .scroll-to-top {
   position: fixed;
   bottom: 80px;
-  left: 20px;
+  left: 10px;
   width: 50px;
   height: 50px;
   background: transparent; /* Прозрачный фон */
@@ -1651,7 +1660,7 @@ body {
     width: 40px;
     height: 40px;
     font-size: 16px;
-    bottom: 75px;
+    bottom: 80px;
     left: 15px;
     border-width: 1px; /* Уменьшенная рамка */
     box-shadow: none; /* Убираем тень */
@@ -1988,8 +1997,9 @@ body {
 #popular-games h2 {
   font-size: 36px;
   color: #ffffff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.993);
   margin-bottom: 10px;
+  gap: 20px;
 }
 
 .games-container {
