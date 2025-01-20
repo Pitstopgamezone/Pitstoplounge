@@ -296,3 +296,48 @@ document.addEventListener('DOMContentLoaded', () => {
         changeLanguage(selectedLanguage); // Функция changeLanguage уже должна быть у вас
     });
 });
+
+// Падение блока с новостями
+document.addEventListener("DOMContentLoaded", () => {
+    const newsCalendar = document.getElementById("news-calendar");
+  
+    const handleScroll = () => {
+      const rect = newsCalendar.getBoundingClientRect();
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        newsCalendar.classList.add("visible"); // Добавляем класс для анимации
+        window.removeEventListener("scroll", handleScroll); // Удаляем обработчик после активации
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+  });
+  
+
+
+// Функция для установки координат для neon-spray
+function setNeonCoordinates(element, top, left) {
+    element.style.top = top + '%';
+    element.style.left = left + '%';
+  }
+  
+  // Функция для скрытия или отображения элементов на мобильных устройствах
+  function toggleNeonVisibility() {
+    const neonElements = document.querySelectorAll('.neon-spray');
+  
+    if (window.innerWidth <= 768) {  // Если экран — мобильное устройство
+      neonElements.forEach(element => {
+        element.classList.add('hidden');  // Добавляем класс 'hidden', чтобы скрыть элемент
+      });
+    } else {
+      neonElements.forEach(element => {
+        element.classList.remove('hidden');  // Убираем класс 'hidden', чтобы показать элемент
+      });
+    }
+  }
+  
+  // Вызов функции при загрузке страницы и при изменении размера окна
+  window.addEventListener('load', toggleNeonVisibility);
+  window.addEventListener('resize', toggleNeonVisibility);
+  
+  
+  
