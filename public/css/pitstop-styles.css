@@ -1,9 +1,12 @@
 /* Основной фон страницы */
+/* Устанавливаем фоновое изображение для всей страницы */
 body {
-    background-color: #f4f4f4;
-    font-family: 'Arial', sans-serif;
-    animation: fadeIn 2s ease-in-out;
-    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+    background-image: url('images/console2.jpg'); /* Указываем путь к вашему изображению */
+    background-size: cover; /* Чтобы изображение заполняло весь экран */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Отключаем повторение изображения */
+    font-family: Arial, sans-serif; /* Можно установить шрифт для текста */
+    color: #fff; /* Цвет текста, чтобы он был видим на фоне */
 }
 
 /* Секция Pit-Stop Service */
