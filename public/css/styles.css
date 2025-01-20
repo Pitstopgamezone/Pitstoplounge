@@ -2201,15 +2201,48 @@ body {
 
 /* Кнопка бургер-меню */
 .burger-menu-button {
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  border: none;
-  font-size: 24px;
-  padding: 10px;
-  border-radius: 5px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.8); /* Фон кнопки */
+  color: white; /* Цвет текста */
+  font-size: 20px;
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  border: 3px solid transparent; /* Граница по умолчанию */
+  border-radius: 10px; /* Закругленные углы */
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1; /* Расположение над анимацией */
+  transition: transform 0.3s ease; /* Анимация при нажатии */
+  overflow: hidden; /* Скрываем лишнее */
 }
+
+/* Радужная рамка через псевдоэлемент */
+.burger-menu-button::before {
+  content: '';
+  position: absolute;
+  top: -3px; /* Размер рамки */
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
+  z-index: -1; /* Позади кнопки */
+  border-radius: 12px; /* Соответствует закруглению кнопки */
+  background-size: 300%; /* Для плавного движения */
+  animation: rainbow-border 10s linear infinite; /* Анимация градиента */
+}
+
+/* Анимация перелива */
+@keyframes rainbow-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 
 /* Кнопка закрытия меню */
 .close-menu {
