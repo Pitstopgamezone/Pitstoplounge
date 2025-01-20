@@ -1008,7 +1008,7 @@ body {
 #news-calendar {
   margin-top: 0px;
   background-color: transparent;
-  border: 5px solid #8919f9;
+  border: 2px solid #8919f9;
   box-shadow: 0 8px 20px #0005e5;
   padding: 3px; /* Отступы внутри блока */
   border-radius: 15px;
