@@ -2179,3 +2179,160 @@ body {
   cursor: pointer;
 }
 
+
+/* Контейнер для бургер-меню */
+.burger-menu-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+
+}
+/* Показ меню через 4 секунды */
+.burger-menu-container.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+/* Кнопка бургер-меню */
+.burger-menu-button {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Кнопка закрытия меню */
+.close-menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+.close-menu:hover {
+  color: #00ecfd;
+}
+
+.burger-menu-button:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  transform: scale(1.1);
+}
+
+/* Меню */
+.burger-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 20px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.burger-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.burger-menu ul li {
+  margin-bottom: 10px;
+}
+
+.burger-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.burger-menu ul li a:hover {
+  color: #00ecfd;
+}
+
+/* Открытое меню */
+.burger-menu.open {
+  transform: translateX(0);
+}
+
+/* Контейнер для социальных сетей */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.socials a {
+  color: white;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #00ecfd;
+}
+
+/* Переключатель языка */
+.language-selector {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.language-select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.language-select:hover {
+  background: white;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .burger-menu-container {
+      display: block;
+  }
+
+  .tabs, #header-left, #language-selector {
+      display: none; /* Скрываем верхние кнопки */
+  }
+}
+
+@media (min-width: 769px) {
+  .burger-menu-container {
+      display: none; /* Скрываем бургер-меню на больших экранах */
+  }
+}
+
+

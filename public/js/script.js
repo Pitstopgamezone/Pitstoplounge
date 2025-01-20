@@ -259,3 +259,40 @@ document.addEventListener("DOMContentLoaded", () => {
     prevButton.addEventListener("click", () => scrollCarousel(-1));
     nextButton.addEventListener("click", () => scrollCarousel(1));
 });
+
+// Бургер-меню
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerButton = document.querySelector('.burger-menu-button');
+    const burgerMenu = document.querySelector('.burger-menu');
+    const closeButton = document.querySelector('.close-menu');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const burgerContainer = document.querySelector('.burger-menu-container');
+
+    // Показ меню через 4 секунды
+    setTimeout(() => {
+        burgerContainer.classList.add('visible');
+    }, 4000);
+
+    // Открытие меню
+    burgerButton.addEventListener('click', () => {
+        burgerMenu.classList.toggle('open');
+    });
+
+    // Закрытие меню через кнопку "×"
+    closeButton.addEventListener('click', () => {
+        burgerMenu.classList.remove('open');
+    });
+
+    // Закрытие меню при клике на ссылку
+    burgerMenu.addEventListener('click', (event) => {
+        if (event.target.tagName === 'A') {
+            burgerMenu.classList.remove('open');
+        }
+    });
+
+    // Смена языка
+    languageDropdown.addEventListener('change', (event) => {
+        const selectedLanguage = event.target.value;
+        changeLanguage(selectedLanguage); // Функция changeLanguage уже должна быть у вас
+    });
+});
