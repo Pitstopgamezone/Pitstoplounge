@@ -41,6 +41,25 @@
             Online Booking
         </button>
     </section>
+    <!-- Кнопка для открытия чата WhatsApp -->
+<div class="whatsapp-chat">
+    <a href="https://wa.me/420720888131?text=Здравствуйте,%20я%20хочу%20узнать%20о%20ценах%20на%20аренду%20велосипедов." 
+       target="_blank">
+        <button class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+        </button>
+    </a>
+</div>
+
+<!-- Секция чата -->
+<section id="chatbot">
+    <div id="chat-box">
+        <!-- Здесь будут отображаться сообщения -->
+    </div>
+    <input type="text" id="user-input" placeholder="Введите вопрос..." />
+    <button onclick="sendMessage()">Отправить</button>
+</section>
+
 
     <script src="js/script.js"></script> <!-- Если требуется дополнительный JS -->
 </body>
