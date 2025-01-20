@@ -114,12 +114,19 @@ const translations = {
   en: {
       welcome: 'Welcome to Pit-Stop Lounge',
       description: 'We are a small but ambitious company located in a cozy and compact space, where every corner is designed for your enjoyment and comfort. At Pit Stop Game Zone, we believe that every moment should be special, and we strive to provide you with an exceptional experience that will be remembered only in the best possible way. And you will definitely want to visit us again and again.',
-      booking: 'Online Booking'
+      booking: 'Online Booking',
+      menu: {
+      devices: 'Our Devices'
+    },
+      
   },
   cz: {
       welcome: 'Vítejte v Pit-Stop Lounge',
       description: 'Jsme malá, ale ambiciózní společnost sídlící v útulném a kompaktním prostoru, kde je každý kout navržen pro vaše potěšení a pohodlí. V Pit Stop Game Zone věříme, že každý okamžik by měl být výjimečný, a snažíme se vám poskytnout výjimečný zážitek, na který se bude vzpomínat jen v tom nejlepším. A určitě nás budete chtít navštívit znovu a znovu.',
-      booking: 'Online Rezervace'
+      booking: 'Online Rezervace',
+      menu: {
+      devices: 'Naše zařízení'
+    },
   },
   ru: {
       welcome: 'Добро пожаловать в Pit-Stop Lounge',
@@ -137,10 +144,21 @@ function changeLanguage(lang) {
   const welcomeMessage = document.getElementById('welcome-message');
   const description = document.getElementById('description');
   const bookingButton = document.getElementById('booking-button');
+  const menuItems = document.querySelectorAll('.menu-item');
+  const footerText = document.getElementById('footer-text');
+
 
   if (welcomeMessage) welcomeMessage.textContent = translations[lang]?.welcome || translations.en.welcome;
   if (description) description.textContent = translations[lang]?.description || translations.en.description;
   if (bookingButton) bookingButton.textContent = translations[lang]?.booking || translations.en.booking;
+  if (menuItems) {
+    const menuTranslation = translations[lang]?.menu || translations.en.menu;
+    menuItems[0].textContent = menuTranslation.devices;
+    menuItems[1].textContent = menuTranslation.games;
+    menuItems[2].textContent = menuTranslation.pricing;
+    menuItems[3].textContent = menuTranslation.gallery;
+  }
+  if (footerText) footerText.textContent = translations[lang]?.footer || translations.en.footer;
 }
 
 // Tooltip для адреса
