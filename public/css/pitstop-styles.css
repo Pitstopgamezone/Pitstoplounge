@@ -1,230 +1,142 @@
-/* Основной фон страницы */
-/* Устанавливаем фоновое изображение для всей страницы */
+/* Общие стили */
 body {
-    background-image: url('images/console2.jpg'); /* Указываем путь к вашему изображению */
-    background-size: cover; /* Чтобы изображение заполняло весь экран */
-    background-position: center; /* Центрируем изображение */
-    background-repeat: no-repeat; /* Отключаем повторение изображения */
-    font-family: Arial, sans-serif; /* Можно установить шрифт для текста */
-    color: #fff; /* Цвет текста, чтобы он был видим на фоне */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #3b7a57, #2b4f3b);
+    color: #ffffff;
 }
 
-/* Секция Pit-Stop Service */
-#pit-stop-service {
-    padding: 50px;
+/* Стили навигации */
+nav {
+    background: #283c34;
+    padding: 10px 20px;
+    text-align: left;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+/* Главная секция */
+header {
     text-align: center;
-    background: linear-gradient(135deg, #222, #444);
-    color: #fff;
-    animation: slideInTop 1.5s ease-out;
+    padding: 50px 20px;
+    background: url('images/header-bg.jpg') no-repeat center center/cover;
+    animation: fadeIn 2s;
+}
+header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+header p {
+    font-size: 1.5em;
 }
 
-/* Анимация заголовка */
-#pit-stop-service h1 {
-    font-size: 36px;
-    color: #ffcc00;
-    margin-bottom: 30px;
-    animation: textGlow 2s infinite alternate;
+/* Анимация появления */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Секция списка услуг */
-.services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+/* Секции услуг */
+section {
+    padding: 40px 20px;
 }
-
-/* Карточки услуг */
+#services {
+    background: #2b4f3b;
+    text-align: center;
+    animation: slideIn 1s;
+}
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
 .service-item {
-    background: linear-gradient(135deg, #333, #555);
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: scale(1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 1s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
 }
-
 .service-item:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
+    transform: scale(1.05);
 }
-
-.service-item h2 {
-    font-size: 24px;
-    color: #ffcc00;
+.service-item h3 {
+    font-size: 1.5em;
     margin-bottom: 10px;
-    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
 }
 
-.service-item p {
-    font-size: 16px;
-    opacity: 0.9;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.service-item:hover p {
-    opacity: 1;
-}
-
-/* Кнопка возврата на главную */
-nav .back-to-home {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: linear-gradient(135deg, #bbff00, #88cc00);
-    color: #222;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 2px solid #88cc00;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-}
-
-nav .back-to-home:hover {
-    background: linear-gradient(135deg, #e6b800, #ffcc00);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    transform: translateY(-3px);
-}
-
-/* Кнопка онлайн-бронирования */
-.booking-button {
-    background: linear-gradient(135deg, #ffcc00, #e6b800);
-    color: #222;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 50px;
-    transition: all 0.3s ease;
-    animation: pulse 2s infinite;
-}
-
-.booking-button:hover {
-    background: linear-gradient(135deg, #ffaa00, #dd9900);
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* Анимации */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideInTop {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes textGlow {
-    from {
-        text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ff8800, 0 0 50px #ff6600;
-    }
-    to {
-        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff8800, 0 0 40px #ff6600, 0 0 60px #ff3300;
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-}
-
-.whatsapp-chat {
+/* Таблица цен */
+#pricing {
     text-align: center;
-    margin-top: 20px;
+    animation: slideIn 1.5s;
 }
-
-.whatsapp-button {
-    background-color: #25d366; /* Цвет WhatsApp */
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-}
-
-.whatsapp-button i {
-    margin-right: 10px;
-}
-
-#chatbot {
-    width: 300px;
+table {
+    width: 80%;
     margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #ccc;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    background-color: #f9f9f9;
+    overflow: hidden;
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+th {
+    background: rgba(0, 0, 0, 0.5);
 }
 
-#chat-box {
-    height: 300px;
-    overflow-y: scroll;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
+tbody tr:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+/* Контакты */
+#contact {
+    background: #3b7a57;
+    text-align: center;
+    animation: slideIn 2s;
+}
+#contact a {
+    color: #00ffcc;
+    text-decoration: none;
 }
 
-button {
-    width: 25%;
-    padding: 10px;
+/* Кнопка WhatsApp */
+.whatsapp-chat button {
+    background: #25d366;
     border: none;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 1em;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.whatsapp-chat button:hover {
+    background: #1cb154;
 }
 
-button:hover {
-    background-color: #45a049;
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1b2921;
+    color: #cccccc;
 }
 
-.user-message {
-    text-align: right;
-    color: #4CAF50;
-}
-
-.bot-message {
-    text-align: left;
-    color: #555;
+/* Анимации блоков */
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
