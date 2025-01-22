@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CS2 1v1 Tournament Tracker">
+    <title>CS2 1v1 Tournament</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+        }
+        .header {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .card {
+            margin: 15px 0;
+        }
+        .winner {
+            font-weight: bold;
+            color: green;
+        }
+        .loser {
+            font-weight: bold;
+            color: red;
+        }
+        .bracket-stage {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .bracket-stage > div {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .match {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CS2 1v1 Tournament</h1>
+            <p>Track and manage your tournament easily</p>
+        </div>
+
+        <!-- Participant Input Section -->
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                Add Participants
+            </div>
+            <div class="card-body">
+                <form id="participantForm">
+                    <div class="mb-3">
+                        <label for="participantName" class="form-label">Participant Name</label>
+                        <input type="text" class="form-control" id="participantName" placeholder="Enter player name">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="addParticipant">Add Participant</button>
+                </form>
+                <ul id="participantList" class="list-group mt-3">
+                </ul>
+            </div>
+        </div>
+
+        <!-- Generate Tournament Section -->
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                Generate Tournament Bracket
+            </div>
+            <div class="card-body">
+                <button type="button" class="btn btn-success" id="generateBracket">Generate Bracket</button>
+            </div>
+        </div>
+
+        <!-- Tournament Bracket Section -->
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                Tournament Bracket
+            </div>
+            <div class="card-body" id="bracketContainer">
+                <p class="text-muted">Bracket will appear here after participants are added.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const participants = [];
+        const participantList = document.getElementById('participantList');
+        const bracketContainer = document.getElementById('bracketContainer');
+
+        document.getElementById('addParticipant').addEventListener('click', () => {
+            const nameInput = document.getElementById('participantName');
+            const name = nameInput.value.trim();
+
+            if (name && !participants.includes(name)) {
+                participants.push(name);
+                const li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.textContent = name;
+                participantList.appendChild(li);
+                nameInput.value = '';
+            } else {
+                alert('Please enter a unique name.');
+            }
+        });
+
+        document.getElementById('generateBracket').addEventListener('click', () => {
+            if (participants.length < 2) {
+                alert('Please add at least 2 participants to generate the bracket.');
+                return;
+            }
+
+            bracketContainer.innerHTML = '';
+            const shuffled = [...participants].sort(() => Math.random() - 0.5);
+
+            let stages = [];
+            let currentStage = shuffled;
+
+            while (currentStage.length > 1) {
+                const nextStage = [];
+                const stageDiv = document.createElement('div');
+                stageDiv.className = 'bracket-stage';
+
+                for (let i = 0; i < currentStage.length; i += 2) {
+                    const player1 = currentStage[i] || 'TBD';
+                    const player2 = currentStage[i + 1] || 'TBD';
+
+                    const matchDiv = document.createElement('div');
+                    matchDiv.className = 'match';
+
+                    matchDiv.innerHTML = `
+                        <p>${player1} vs ${player2}</p>
+                        <div>
+                            <input type="number" placeholder="${player1} score" class="form-control score-input" data-player="${player1}">
+                            <input type="number" placeholder="${player2} score" class="form-control score-input" data-player="${player2}">
+                            <button class="btn btn-sm btn-success submit-score">Submit</button>
+                        </div>
+                    `;
+
+                    matchDiv.querySelector('.submit-score').addEventListener('click', () => {
+                        const inputs = matchDiv.querySelectorAll('.score-input');
+                        const score1 = parseInt(inputs[0].value, 10);
+                        const score2 = parseInt(inputs[1].value, 10);
+
+                        if (!isNaN(score1) && !isNaN(score2)) {
+                            const winner = score1 > score2 ? player1 : player2;
+                            nextStage.push(winner);
+                            matchDiv.innerHTML = `<p><span class="winner">${winner}</span> defeated <span class="loser">${score1 > score2 ? player2 : player1}</span></p>`;
+                            if (nextStage.length === 1 && currentStage.length === 2) {
+                                bracketContainer.innerHTML += `<h3 class="text-center text-success">Winner: ${winner}</h3>`;
+                            }
+                        } else {
+                            alert('Please enter valid scores.');
+                        }
+                    });
+
+                    stageDiv.appendChild(matchDiv);
+                }
+
+                stages.push(nextStage);
+                bracketContainer.appendChild(stageDiv);
+                currentStage = nextStage;
+            }
+        });
+    </script>
+</body>
+</html>
