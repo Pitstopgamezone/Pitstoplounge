@@ -123,11 +123,11 @@
         const participants = [];
         const participantList = document.getElementById('participantList');
         const bracketContainer = document.getElementById('bracketContainer');
-
+    
         document.getElementById('addParticipant').addEventListener('click', () => {
             const nameInput = document.getElementById('participantName');
             const name = nameInput.value.trim();
-
+    
             if (name && !participants.includes(name)) {
                 participants.push(name);
                 const li = document.createElement('li');
@@ -139,65 +139,73 @@
                 alert('Please enter a unique name.');
             }
         });
-
+    
         document.getElementById('generateBracket').addEventListener('click', () => {
             if (participants.length < 2) {
                 alert('Please add at least 2 participants to generate the bracket.');
                 return;
             }
-
+    
             bracketContainer.innerHTML = '';
             const shuffled = [...participants].sort(() => Math.random() - 0.5);
-
-            let stages = [];
-            let currentStage = shuffled;
-
-            while (currentStage.length > 1) {
-                const nextStage = [];
-                const stageDiv = document.createElement('div');
-                stageDiv.className = 'bracket-stage';
-
-                for (let i = 0; i < currentStage.length; i += 2) {
-                    const player1 = currentStage[i] || 'TBD';
-                    const player2 = currentStage[i + 1] || 'TBD';
-
-                    const matchDiv = document.createElement('div');
-                    matchDiv.className = 'match';
-
-                    matchDiv.innerHTML = `
-                        <p>${player1} vs ${player2}</p>
-                        <div>
-                            <input type="number" placeholder="${player1} score" class="form-control score-input" data-player="${player1}">
-                            <input type="number" placeholder="${player2} score" class="form-control score-input" data-player="${player2}">
-                            <button class="btn btn-sm btn-success submit-score">Submit</button>
-                        </div>
-                    `;
-
-                    matchDiv.querySelector('.submit-score').addEventListener('click', () => {
-                        const inputs = matchDiv.querySelectorAll('.score-input');
-                        const score1 = parseInt(inputs[0].value, 10);
-                        const score2 = parseInt(inputs[1].value, 10);
-
-                        if (!isNaN(score1) && !isNaN(score2)) {
-                            const winner = score1 > score2 ? player1 : player2;
-                            nextStage.push(winner);
-                            matchDiv.innerHTML = `<p><span class="winner">${winner}</span> defeated <span class="loser">${score1 > score2 ? player2 : player1}</span></p>`;
-                            if (nextStage.length === 1 && currentStage.length === 2) {
-                                bracketContainer.innerHTML += `<h3 class="text-center text-success">Winner: ${winner}</h3>`;
-                            }
-                        } else {
-                            alert('Please enter valid scores.');
-                        }
-                    });
-
-                    stageDiv.appendChild(matchDiv);
-                }
-
-                stages.push(nextStage);
-                bracketContainer.appendChild(stageDiv);
-                currentStage = nextStage;
-            }
+    
+            generateStage(shuffled);
         });
+    
+        function generateStage(currentStage) {
+            if (currentStage.length === 1) {
+                bracketContainer.innerHTML += `<h3 class="text-center text-success">Winner: ${currentStage[0]}</h3>`;
+                return;
+            }
+    
+            const nextStage = [];
+            const stageDiv = document.createElement('div');
+            stageDiv.className = 'bracket-stage';
+    
+            let completedMatches = 0;
+    
+            for (let i = 0; i < currentStage.length; i += 2) {
+                const player1 = currentStage[i] || 'TBD';
+                const player2 = currentStage[i + 1] || 'TBD';
+    
+                const matchDiv = document.createElement('div');
+                matchDiv.className = 'match';
+    
+                matchDiv.innerHTML = `
+                    <p>${player1} vs ${player2}</p>
+                    <div>
+                        <input type="number" placeholder="${player1} score" class="form-control score-input" data-player="${player1}">
+                        <input type="number" placeholder="${player2} score" class="form-control score-input" data-player="${player2}">
+                        <button class="btn btn-sm btn-success submit-score">Submit</button>
+                    </div>
+                `;
+    
+                matchDiv.querySelector('.submit-score').addEventListener('click', () => {
+                    const inputs = matchDiv.querySelectorAll('.score-input');
+                    const score1 = parseInt(inputs[0].value, 10);
+                    const score2 = parseInt(inputs[1].value, 10);
+    
+                    if (!isNaN(score1) && !isNaN(score2)) {
+                        const winner = score1 > score2 ? player1 : player2;
+                        nextStage.push(winner);
+                        matchDiv.innerHTML = `<p><span class="winner">${winner}</span> defeated <span class="loser">${score1 > score2 ? player2 : player1}</span></p>`;
+                        completedMatches++;
+    
+                        // Если все матчи текущего этапа завершены
+                        if (completedMatches === Math.ceil(currentStage.length / 2)) {
+                            generateStage(nextStage);
+                        }
+                    } else {
+                        alert('Please enter valid scores.');
+                    }
+                });
+    
+                stageDiv.appendChild(matchDiv);
+            }
+    
+            bracketContainer.appendChild(stageDiv);
+        }
     </script>
+    
 </body>
 </html>
