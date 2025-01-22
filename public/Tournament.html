@@ -30,10 +30,11 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+            flex-wrap: wrap;
         }
         .bracket-stage > div {
             flex: 1;
-            margin: 0 10px;
+            margin: 10px;
         }
         .match {
             margin: 10px 0;
@@ -42,10 +43,38 @@
             border-radius: 5px;
             background: white;
         }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .bracket-stage {
+                flex-direction: column;
+            }
+            .bracket-stage > div {
+                flex: none;
+                margin: 5px 0;
+            }
+            .match {
+                font-size: 14px;
+                padding: 8px;
+            }
+            .card-header {
+                font-size: 16px;
+            }
+        }
+
+        /* Для маленьких экранов */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 24px;
+            }
+            .card-body {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="header">
             <h1>CS2 1v1 Tournament</h1>
             <p>Track and manage your tournament easily</p>
