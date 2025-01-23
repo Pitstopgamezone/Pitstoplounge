@@ -190,9 +190,9 @@ body {
   height: 4px;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, #fa7837, #e06c26);
+  background: linear-gradient(to bottom, red, pink, purple, blue, green);
   border: 1px solid #d55c1f;
-  width: 50%; /* Example value */
+  width: 1%; /* Example value */
   border-radius: 2px;
   z-index: 30000;
   opacity: 0; /* Изначально скрыт */
