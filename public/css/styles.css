@@ -192,7 +192,7 @@ body {
   left: 0;
   background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
   background-size: 300% 100%; /* Увеличиваем размер фона для плавного движения */
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   width: 1%; /* Example value */
   border-radius: 5px;
   z-index: 30000;
