@@ -190,14 +190,14 @@ body {
   height: 6px;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
   background-size: 300% 100%; /* Увеличиваем размер фона для плавного движения */
   border: 1px solid #000000;
   width: 1%; /* Example value */
   border-radius: 5px;
   z-index: 30000;
   opacity: 0; /* Изначально скрыт */
-  animation: fadeIn 2s ease-in-out 3.5s forwards, gradientMove 3s infinite linear; /* Добавляем анимацию перелива */
+  animation: fadeIn 2s ease-in-out 3.5s forwards, gradientMove 6s infinite linear; /* Движение только в одну сторону */
 }
 
 @keyframes fadeIn {
@@ -211,9 +211,12 @@ body {
     background-position: 0% 50%;
   }
   100% {
-    background-position: 100% 50%;
+    background-position: 300% 50%; /* Движение в одну сторону */
   }
 }
+
+
+
 
 
 
@@ -445,7 +448,7 @@ body {
   font-size: 18px;
   font-family: 'Orbitron', cursive;
   color: white;
-  background: linear-gradient(45deg, yellow, orange, red, pink, purple, blue, green);
+  background: linear-gradient(45deg, yellow, orange, red, pink, purple, blue, green, yellow);
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -1018,14 +1021,14 @@ body {
   position: relative; /* Относительное позиционирование */
   height: 150px; /* Высота блока */
   overflow: hidden; /* Убираем возможные выступающие части */
-  opacity: 0; /* Блок скрыт по умолчанию */
-  transform: translateY(-100px); /* Смещён вверх */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Плавный переход */
+  opacity: 1; /* Блок скрыт по умолчанию */
+ /* transform: translateY(-100px); /* Смещён вверх */
+  /*transition: opacity 0.3s ease, transform 0.3s ease; /* Плавный переход */
 }
 
-#news-calendar.visible {
-  animation: dropIn 0.5s ease forwards; /* Запуск анимации */
-}
+/*#news-calendar.visible {
+  /*animation: dropIn 0.5s ease forwards; /* Запуск анимации */
+
 
 
 /* Изображение на заднем плане */
@@ -1816,80 +1819,102 @@ body {
   }
 }
 
+/* Общий стиль круга */
 .circle-text {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   margin: 20px auto;
   border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid #ff6600;
+  border: 3px solid #ff6600;
+  background-color: black;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
-  box-shadow: 0 0 15px rgba(255, 102, 0, 0.8); /* Легкое свечение вокруг круга */
+  overflow: hidden;
 }
 
 .circle-content {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transform-origin: center;
-  animation: rotate-circle 10s linear infinite, glow-text 3s ease-in-out infinite; /* Вращение и свечение текста */
-  white-space: nowrap;
 }
 
+/* Стрелки текста */
 .circle-content span {
-  font-family: 'Permanent marker', sans-serif;
-  font-size: 14px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
   font-weight: bold;
   color: #ff6600;
-  letter-spacing: 2px;
-  display: inline-block;
   position: absolute;
-  width: 100%;
   text-align: center;
   transform-origin: center;
-  transform: rotate(0deg);
-  animation: color-change 6s infinite alternate; /* Плавный цветовой переход */
 }
 
-/* Анимация вращения */
-@keyframes rotate-circle {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.hour-text {
+  top: 50%;
+  left: 50%;
+  transform: rotate(0deg) translateX(-65px) rotate(0deg); /* Уменьшено расстояние */
 }
 
-/* Плавное свечение текста */
-@keyframes glow-text {
+.minute-text {
+  top: 50%;
+  left: 50%;
+  transform: rotate(0deg) translateX(-85px) rotate(0deg); /* Уменьшено расстояние */
+}
+
+.second-text {
+  top: 50%;
+  left: 50%;
+  transform: rotate(0deg) translateX(-105px) rotate(0deg); /* Уменьшено расстояние */
+}
+
+/* Цифры на циферблате */
+.clock-numbers {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock-number {
+  position: absolute;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6600;
+  transform-origin: center;
+  text-align: center;
+}
+
+/* Индикатор статуса внутри круга */
+.club-status {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#status-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  animation: pulse-status 2s infinite ease-in-out;
+}
+
+/* Анимация статуса */
+@keyframes pulse-status {
   0%, 100% {
-    text-shadow: 0 0 5px #ff6600, 0 0 10px #ff6600, 0 0 15px #ff6600;
+    text-shadow: 0 0 5px, 0 0 10px, 0 0 15px;
   }
   50% {
-    text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 30px #ff6600;
+    text-shadow: 0 0 10px, 0 0 20px, 0 0 30px;
   }
 }
 
-/* Плавная смена цвета текста */
-@keyframes color-change {
-  0% {
-    color: #ff6600;
-  }
-  50% {
-    color: #ffcc00;
-  }
-  100% {
-    color: #ff6600;
-  }
-}
 
 
 /* Стили для галереи */
@@ -1993,7 +2018,7 @@ body {
   color: white;
   text-align: center;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.37); /* Изначально тень отсутствует */
-  animation: slideInFromLeft 5s ease-in-out;
+  animation: slideInFromLeft 0s ease-in-out;
   transition: box-shadow 0.3s ease; /* Добавляем плавный переход */
 }
 

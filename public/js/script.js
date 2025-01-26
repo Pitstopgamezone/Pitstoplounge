@@ -340,4 +340,55 @@ function setNeonCoordinates(element, top, left) {
   window.addEventListener('resize', toggleNeonVisibility);
   
   
+  function updateClock() {
+    // Получаем текущее время в Праге
+    const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
+  
+    // Преобразуем строку в объект Date
+    const pragueTime = new Date(now);
+  
+    // Получаем текущее время
+    const hours = pragueTime.getHours() % 12; // 12-часовой формат
+    const minutes = pragueTime.getMinutes();
+    const seconds = pragueTime.getSeconds();
+  
+    // Вычисляем углы вращения
+    const hourAngle = (360 / 12) * hours + (360 / 12) * (minutes / 60);
+    const minuteAngle = (360 / 60) * minutes;
+    const secondAngle = (360 / 60) * seconds;
+  
+    // Устанавливаем вращение стрелок с учётом их горизонтальности
+    document.querySelector('.hour-text').style.transform = `rotate(${hourAngle}deg) translateX(-65px) rotate(${-hourAngle}deg)`; // Скорректированное расстояние
+    document.querySelector('.minute-text').style.transform = `rotate(${minuteAngle}deg) translateX(-85px) rotate(${-minuteAngle}deg)`; // Скорректированное расстояние
+    document.querySelector('.second-text').style.transform = `rotate(${secondAngle}deg) translateX(-105px) rotate(${-secondAngle}deg)`; // Скорректированное расстояние
+  }
+  
+  function updateClubStatus() {
+    // Получаем текущее время в Праге
+    const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
+  
+    // Преобразуем строку в объект Date
+    const pragueTime = new Date(now);
+    const hours = pragueTime.getHours();
+    const statusText = document.getElementById('status-text');
+  
+    // Проверяем статус клуба (пример: 18:00 - 03:00)
+    if (hours >= 12 || hours < 3) {
+      statusText.textContent = 'We are open';
+      statusText.style.color = '#00ff00'; // Зелёный
+    } else {
+      statusText.textContent = 'We are closed';
+      statusText.style.color = '#ff0000'; // Красный
+    }
+  }
+  
+  // Обновляем часы и статус каждую секунду
+  setInterval(() => {
+    updateClock();
+    updateClubStatus();
+  }, 1000);
+  
+  // Инициализация
+  updateClock();
+  updateClubStatus();
   
