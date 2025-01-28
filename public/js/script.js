@@ -335,60 +335,65 @@ function setNeonCoordinates(element, top, left) {
     }
   }
   
-  // Вызов функции при загрузке страницы и при изменении размера окна
-  window.addEventListener('load', toggleNeonVisibility);
-  window.addEventListener('resize', toggleNeonVisibility);
-  
-  
-  function updateClock() {
-    // Получаем текущее время в Праге
-    const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
-  
-    // Преобразуем строку в объект Date
-    const pragueTime = new Date(now);
-  
-    // Получаем текущее время
-    const hours = pragueTime.getHours() % 12; // 12-часовой формат
-    const minutes = pragueTime.getMinutes();
-    const seconds = pragueTime.getSeconds();
-  
-    // Вычисляем углы вращения
-    const hourAngle = (360 / 12) * hours + (360 / 12) * (minutes / 60);
-    const minuteAngle = (360 / 60) * minutes;
-    const secondAngle = (360 / 60) * seconds;
-  
-    // Устанавливаем вращение стрелок с учётом их горизонтальности
-    document.querySelector('.hour-text').style.transform = `rotate(${hourAngle}deg) translateX(-65px) rotate(${-hourAngle}deg)`; // Скорректированное расстояние
-    document.querySelector('.minute-text').style.transform = `rotate(${minuteAngle}deg) translateX(-85px) rotate(${-minuteAngle}deg)`; // Скорректированное расстояние
-    document.querySelector('.second-text').style.transform = `rotate(${secondAngle}deg) translateX(-105px) rotate(${-secondAngle}deg)`; // Скорректированное расстояние
+  // Установка ориентации циферблата
+function setClockOrientation(angle) {
+  document.documentElement.style.setProperty('--clock-rotation', `${angle}deg`);
+}
+
+// Обновление стрелок часов
+function updateClock() {
+  // Получаем текущее время в Праге
+  const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
+  const pragueTime = new Date(now);
+
+  const hours = pragueTime.getHours() % 12; // 12-часовой формат
+  const minutes = pragueTime.getMinutes();
+  const seconds = pragueTime.getSeconds();
+
+  // Вычисление углов стрелок
+  const hourAngle = (360 / 12) * hours + (360 / 12) * (minutes / 60);
+  const minuteAngle = (360 / 60) * minutes + (360 / 60) * (seconds / 60);
+  const secondAngle = (360 / 60) * seconds;
+
+  // Установка углов
+  document.querySelector('.hour-text').style.transform = `rotate(${hourAngle}deg) translateY(-30%)`;
+  document.querySelector('.minute-text').style.transform = `rotate(${minuteAngle}deg) translateY(-40%)`;
+  document.querySelector('.second-text').style.transform = `rotate(${secondAngle}deg) translateY(-50%)`;
+}
+
+// Обновление статуса клуба
+function updateClubStatus() {
+  const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
+  const pragueTime = new Date(now);
+  const hours = pragueTime.getHours();
+
+  const statusText = document.getElementById('status-text');
+  if (hours >= 18 || hours < 3) {
+    statusText.textContent = 'We are open';
+    statusText.style.color = '#00ff00';
+    statusText.style.textShadow = '0 0 10px #00ff00, 0 0 20px #00ff00';
+  } else {
+    statusText.textContent = 'We are closed';
+    statusText.style.color = '#ff0000';
+    statusText.style.textShadow = '0 0 10px #ff0000, 0 0 20px #ff0000';
   }
-  
-  function updateClubStatus() {
-    // Получаем текущее время в Праге
-    const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
-  
-    // Преобразуем строку в объект Date
-    const pragueTime = new Date(now);
-    const hours = pragueTime.getHours();
-    const statusText = document.getElementById('status-text');
-  
-    // Проверяем статус клуба (пример: 18:00 - 03:00)
-    if (hours >= 12 || hours < 3) {
-      statusText.textContent = 'We are open';
-      statusText.style.color = '#00ff00'; // Зелёный
-    } else {
-      statusText.textContent = 'We are closed';
-      statusText.style.color = '#ff0000'; // Красный
-    }
-  }
-  
-  // Обновляем часы и статус каждую секунду
+}
+
+// Инициализация часов
+function initializeClock() {
+  // Начальная ориентация (0 градусов — стандартное положение)
+  setClockOrientation(0);
+
+  // Обновление каждую секунду
   setInterval(() => {
     updateClock();
     updateClubStatus();
   }, 1000);
-  
-  // Инициализация
+
+  // Первоначальное обновление
   updateClock();
   updateClubStatus();
-  
+}
+
+// Запуск при загрузке
+window.addEventListener('load', initializeClock);
