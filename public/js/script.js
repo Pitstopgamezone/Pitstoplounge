@@ -335,65 +335,51 @@ function setNeonCoordinates(element, top, left) {
     }
   }
   
-  // Установка ориентации циферблата
-function setClockOrientation(angle) {
-  document.documentElement.style.setProperty('--clock-rotation', `${angle}deg`);
+  // Вызов функции при загрузке страницы и при изменении размера окна
+  window.addEventListener('load', toggleNeonVisibility);
+  window.addEventListener('resize', toggleNeonVisibility);
+  
+  
+  function updateClock() {
+    const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
+    const pragueTime = new Date(now);
+
+    const hours = pragueTime.getHours();
+    const minutes = pragueTime.getMinutes();
+    const seconds = pragueTime.getSeconds();
+
+    const hourDegrees = (360 / 12) * (hours % 12) + (360 / 12) * (minutes / 60); // Часовая стрелка
+    const minuteDegrees = (360 / 60) * minutes; // Минутная стрелка
+    const secondDegrees = (360 / 60) * seconds; // Секундная стрелка
+
+    // Устанавливаем вращение стрелок
+    document.querySelector('.hour-hand').style.transform = `rotate(${hourDegrees}deg)`;
+    document.querySelector('.minute-hand').style.transform = `rotate(${minuteDegrees}deg)`;
+    document.querySelector('.second-hand').style.transform = `rotate(${secondDegrees}deg)`;
 }
 
-// Обновление стрелок часов
-function updateClock() {
-  // Получаем текущее время в Праге
-  const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
-  const pragueTime = new Date(now);
-
-  const hours = pragueTime.getHours() % 12; // 12-часовой формат
-  const minutes = pragueTime.getMinutes();
-  const seconds = pragueTime.getSeconds();
-
-  // Вычисление углов стрелок
-  const hourAngle = (360 / 12) * hours + (360 / 12) * (minutes / 60);
-  const minuteAngle = (360 / 60) * minutes + (360 / 60) * (seconds / 60);
-  const secondAngle = (360 / 60) * seconds;
-
-  // Установка углов
-  document.querySelector('.hour-text').style.transform = `rotate(${hourAngle}deg) translateY(-30%)`;
-  document.querySelector('.minute-text').style.transform = `rotate(${minuteAngle}deg) translateY(-40%)`;
-  document.querySelector('.second-text').style.transform = `rotate(${secondAngle}deg) translateY(-50%)`;
-}
-
-// Обновление статуса клуба
 function updateClubStatus() {
-  const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
-  const pragueTime = new Date(now);
-  const hours = pragueTime.getHours();
+    const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
+    const pragueTime = new Date(now);
+    const hours = pragueTime.getHours();
+    const statusText = document.getElementById('status-text');
 
-  const statusText = document.getElementById('status-text');
-  if (hours >= 18 || hours < 3) {
-    statusText.textContent = 'We are open';
-    statusText.style.color = '#00ff00';
-    statusText.style.textShadow = '0 0 10px #00ff00, 0 0 20px #00ff00';
-  } else {
-    statusText.textContent = 'We are closed';
-    statusText.style.color = '#ff0000';
-    statusText.style.textShadow = '0 0 10px #ff0000, 0 0 20px #ff0000';
-  }
+    // Часы работы клуба: 10:00 - 22:00
+    if (hours >= 10 && hours < 22) {
+        statusText.textContent = 'We are open';
+        statusText.style.color = '#00ff00';
+    } else {
+        statusText.textContent = 'We are closed';
+        statusText.style.color = '#ff0000';
+    }
 }
 
-// Инициализация часов
-function initializeClock() {
-  // Начальная ориентация (0 градусов — стандартное положение)
-  setClockOrientation(0);
-
-  // Обновление каждую секунду
-  setInterval(() => {
+// Обновляем часы и статус каждую секунду
+setInterval(() => {
     updateClock();
     updateClubStatus();
-  }, 1000);
+}, 1000);
 
-  // Первоначальное обновление
-  updateClock();
-  updateClubStatus();
-}
-
-// Запуск при загрузке
-window.addEventListener('load', initializeClock);
+// Инициализация
+updateClock();
+updateClubStatus();

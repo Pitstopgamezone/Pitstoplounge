@@ -1819,96 +1819,127 @@ body {
   }
 }
 
-/* Общий стиль круга */
+/* Общие стили для часов */
 .circle-text {
   position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  border: 4px solid #ff6c04;
   border-radius: 50%;
-  border: 3px solid #ff6600;
-  background-color: black;
-  box-shadow: 0 0 20px rgba(255, 102, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  margin: 0 auto;
+  background: #000;
+  box-shadow: 4px 4px 8px rgb(255, 102, 0); /* Тень вокруг блока */
 }
 
-.circle-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-}
-
-/* Цифры на циферблате */
 .clock-numbers {
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .clock-number {
   position: absolute;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ff6600;
-  transform-origin: center;
-  text-align: center;
-}
-
-/* Стрелки текста */
-.circle-content span {
-  font-family: 'Orbitron', sans-serif;
   font-size: 16px;
-  font-weight: bold;
-  color: #ff6600;
+  color: #fff;
+  transform-origin: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Общие стили для стрелок */
+.clock-hands {
   position: absolute;
-  text-align: center;
-  transform-origin: bottom center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center; /* Важное исправление для центрирования */
+  top: -20px;
+  left: -2px;
 }
 
-.hour-text {
-  height: 60px;
+.hour-hand, .minute-hand, .second-hand {
+  position: absolute;
+  width: 1px;
+  background-color: #fff;
+  transform-origin: bottom center; /* Убедитесь, что точка вращения внизу стрелки */
   transform: rotate(0deg);
+  border-radius: 2px;
+  top: 50%; /* Убедитесь, что стрелка начинается из центра по вертикали */
+  left: 50%; /* Убедитесь, что стрелка начинается из центра по горизонтали */
 }
 
-.minute-text {
+/* Особенности для каждой стрелки */
+.hour-hand {
+  height: 50px;
+  width: 3px;
+  z-index: 3;
+  transform-origin: 50% 100%; /* Центр, но с учетом нижней точки */
+  top: 36%;
+  box-shadow: 0 2px 5px rgb(255, 111, 0);
+}
+
+.minute-hand {
+  height: 70px;
+  width: 2px;
+  z-index: 2;
+  transform-origin: 50% 100%;
+  top: 26%;
+  box-shadow: 0 2px 5px rgb(255, 111, 0);
+}
+
+.second-hand {
   height: 80px;
-  transform: rotate(0deg);
+  background-color: #ffffff;
+  z-index: 4;
+  transform-origin: 30% 100%;
+  top: 21%;
+  left: 50%;
+  box-shadow: 0 2px 5px rgb(255, 111, 0);
 }
 
-.second-text {
-  height: 100px;
-  transform: rotate(0deg);
-  color: #ff0000;
+
+.second-hand .joystick {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  top: 90%;
+  width: 15px;
+  height: 15px;
+  background-color: #fffffe;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 5px rgb(255, 111, 0);
 }
 
-/* Индикатор статуса */
+/* Статус клуба */
 .club-status {
   position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 50px;
+  width: 100%;
   text-align: center;
-}
-
-#status-text {
+  color: #fff;
   font-family: 'Orbitron', sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  animation: pulse-status 2s infinite ease-in-out;
+  font-size: 16px;
+  font-weight: bold; /* Добавлено для жирного текста */
+  z-index: 5;
+  animation: pulse 1.5s infinite alternate; /* Добавленное свойство для анимации */
 }
 
-/* Анимация статуса */
-@keyframes pulse-status {
-  0%, 100% {
-    text-shadow: 0 0 5px, 0 0 10px, 0 0 15px;
+/* Анимация пульсации */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
-  50% {
-    text-shadow: 0 0 10px, 0 0 20px, 0 0 30px;
+  100% {
+    transform: scale(1.1);
+    opacity: 0.8;
   }
 }
 
