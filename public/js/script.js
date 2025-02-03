@@ -60,10 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   showTab('club');
   initializeContent();
 
-  const languageDropdown = document.getElementById('language-dropdown');
-  if (languageDropdown) {
-      languageDropdown.addEventListener('change', e => changeLanguage(e.target.value));
-  }
+ 
 
   const scrollToTopButton = document.querySelector('.scroll-to-top');
   if (scrollToTopButton) {
@@ -74,7 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
+const languageDropdown = document.getElementById('language-dropdown');
+  if (languageDropdown) {
+      languageDropdown.addEventListener('change', e => {
+          changeLanguage(e.target.value);
+          updateLanguageIcon(e.target.value);
+      });
+  }
 
 
 
@@ -100,6 +103,21 @@ function changeLanguage(language) {
   }
 }
 
+// Функция для обновления иконки языка
+function updateLanguageIcon(language) {
+  const languageIcon = document.getElementById('language-icon');
+  if (languageIcon) {
+      if (language === 'cz') {
+          languageIcon.textContent = 'CZ';
+      } else if (language === 'en') {
+          languageIcon.textContent = 'EN';
+      } else if (language === 'ua') {
+          languageIcon.textContent = 'UA';
+      } else if (language === 'ru') {
+          languageIcon.textContent = 'RU';
+      }
+  }
+}
 
 // Tooltip для адреса
 function initializeTooltip() {
