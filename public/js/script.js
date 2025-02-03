@@ -75,57 +75,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Перевод интерфейса
-const translations = {
-  en: {
-      welcome: 'Welcome to Pit-Stop Lounge',
-      description: 'We are a small but ambitious company located in a cozy and compact space, where every corner is designed for your enjoyment and comfort. At Pit Stop Game Zone, we believe that every moment should be special, and we strive to provide you with an exceptional experience that will be remembered only in the best possible way. And you will definitely want to visit us again and again.',
-      booking: 'Online Booking',
-      menu: {
-      devices: 'Our Devices'
-    },
-      
-  },
-  cz: {
-      welcome: 'Vítejte v Pit-Stop Lounge',
-      description: 'Jsme malá, ale ambiciózní společnost sídlící v útulném a kompaktním prostoru, kde je každý kout navržen pro vaše potěšení a pohodlí. V Pit Stop Game Zone věříme, že každý okamžik by měl být výjimečný, a snažíme se vám poskytnout výjimečný zážitek, na který se bude vzpomínat jen v tom nejlepším. A určitě nás budete chtít navštívit znovu a znovu.',
-      booking: 'Online Rezervace',
-      menu: {
-      devices: 'Naše zařízení'
-    },
-  },
-  ru: {
-      welcome: 'Добро пожаловать в Pit-Stop Lounge',
-      description: 'Мы небольшая, но амбициозная компания, расположенная в уютном и компактном пространстве, где каждый уголок создан для вашего удовольствия и комфорта. В Pit Stop Game Zone мы считаем, что каждый момент должен быть особенным, и стремимся подарить вам исключительные впечатления, которые запомнятся только в лучшем виде. И вам обязательно захочется посетить нас снова и снова.',
-      booking: 'Онлайн Бронирование'
-  },
-  uk: {
-      welcome: 'Ласкаво просимо до Pit-Stop Lounge',
-      description: 'Ми невелика, але амбітна компанія, розташована в затишному та компактному приміщенні, де кожен куточок створений для вашого задоволення та комфорту. У Pit Stop Game Zone ми віримо, що кожен момент має бути особливим, і ми прагнемо надати вам винятковий досвід, який запам’ятається лише найкращим чином. І ви неодмінно захочете відвідати нас знову і знову.',
-      booking: 'Онлайн Бронювання'
+
+
+
+
+// Функция для изменения языка
+function changeLanguage(language) {
+  if (language === 'cz') {
+      window.location.href = 'index-cz.html';
+  } else if (language === 'en') {
+      window.location.href = 'index.html';
+  } else if (language === 'cz-service') {
+      window.location.href = 'pit-stop-cz.html';
+  } else if (language === 'en-service') {
+      window.location.href = 'pit-stop.html';
+  } else if (language === 'ua') {
+      window.location.href = 'index-ua.html';
+  } else if (language === 'ru') {
+      window.location.href = 'index-ru.html';
+  } else if (language === 'ua-service') {
+      window.location.href = 'pit-stop-ua.html';
+  } else if (language === 'ru-service') {
+      window.location.href = 'pit-stop-ru.html';
   }
-};
-
-function changeLanguage(lang) {
-  const welcomeMessage = document.getElementById('welcome-message');
-  const description = document.getElementById('description');
-  const bookingButton = document.getElementById('booking-button');
-  const menuItems = document.querySelectorAll('.menu-item');
-  const footerText = document.getElementById('footer-text');
-
-
-  if (welcomeMessage) welcomeMessage.textContent = translations[lang]?.welcome || translations.en.welcome;
-  if (description) description.textContent = translations[lang]?.description || translations.en.description;
-  if (bookingButton) bookingButton.textContent = translations[lang]?.booking || translations.en.booking;
-  if (menuItems) {
-    const menuTranslation = translations[lang]?.menu || translations.en.menu;
-    menuItems[0].textContent = menuTranslation.devices;
-    menuItems[1].textContent = menuTranslation.games;
-    menuItems[2].textContent = menuTranslation.pricing;
-    menuItems[3].textContent = menuTranslation.gallery;
-  }
-  if (footerText) footerText.textContent = translations[lang]?.footer || translations.en.footer;
 }
+
 
 // Tooltip для адреса
 function initializeTooltip() {
