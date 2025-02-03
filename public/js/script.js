@@ -74,40 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Обновление баланса токенов
-async function fetchBalance() {
-  try {
-      // Логика для получения баланса (заглушка)
-      const balance = 100; // Пример баланса
-      const balanceElement = document.getElementById('balance');
-      if (balanceElement) balanceElement.textContent = `${balance} PGT`;
-  } catch (error) {
-      console.error('Ошибка при загрузке баланса:', error);
-  }
-}
-
-// Получение токенов
-async function claimTokens() {
-  try {
-      const response = await fetch('http://localhost:3000/claim', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' }
-      });
-
-      if (!response.ok) throw new Error('Claim request failed');
-
-      const data = await response.json();
-      alert(data.message);
-      fetchBalance();
-  } catch (error) {
-      alert(`Ошибка получения токенов: ${error.message}`);
-  }
-}
-
-document.getElementById('claimTokens')?.addEventListener('click', claimTokens);
-document.getElementById('exchangeTokens')?.addEventListener('click', () => {
-  alert('Обмен токенов пока не реализован');
-});
 
 // Перевод интерфейса
 const translations = {

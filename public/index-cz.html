@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pit-Stop Lounge - A gaming zone with powerful PCs, PlayStation, VR, bike rentals, and repair services. Explore packages, games, and more.">
-    <meta name="keywords" content="Pit-Stop Lounge, gaming zone, PlayStation, bike repair, packages, games">
+    <meta name="description" content="Pit-Stop Lounge - Herní zóna s výkonnými PC, PlayStation, VR, půjčovnou kol a opravárenskými službami. Prozkoumejte balíčky, hry a další.">
+    <meta name="keywords" content="Pit-Stop Lounge, herní zóna, PlayStation, oprava kol, balíčky, hry">
     <meta name="author" content="Pit-Stop Lounge">
-    <meta property="og:title" content="Pit-Stop Lounge - Bike Service & Games">
-    <meta property="og:description" content="Discover gaming and repair services at Pit-Stop Lounge. Your one-stop destination for entertainment and active lifestyle.">
+    <meta property="og:title" content="Pit-Stop Lounge - Servis kol a hry">
+    <meta property="og:description" content="Objevte herní a opravárenské služby v Pit-Stop Lounge. Vaše jediné místo pro zábavu a aktivní životní styl.">
     <meta property="og:image" content="images/social-share-image.jpg">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="webová stránka">
     <meta property="og:url" content="https://yourwebsite.com">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pit-Stop Lounge -Bikes Games">
-    <meta name="twitter:description" content="Join Pit-Stop Lounge for gaming and bike repair services.">
+    <meta name="twitter:title" content="Pit-Stop Lounge - Kola a hry">
+    <meta name="twitter:description" content="Připojte se k Pit-Stop Lounge pro herní a opravárenské služby.">
     <meta name="twitter:image" content="images/social-share-image.jpg">
-    <title>Pit-Stop Lounge - Bike Service & Games</title>
+    <title>Pit-Stop Lounge - Servis kol a hry</title>
     
-    <!-- Stylesheets -->
+    
+    <!-- Styly -->
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Agu+Display&display=swap" rel="stylesheet">
@@ -33,14 +34,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@interactjs/interactjs/dist/interact.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+     <!-- Skripty -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/script.js"></script>
 </head>
 
@@ -55,13 +57,13 @@
             <button class="close-menu" aria-label="Close navigation menu">&times;</button>
     
             <ul>
-                <li><a href="#high-performance">Devices</a></li>
-                <li><a href="#popular-games">Games</a></li>
-                <li><a href="#pricing">Prices</a></li>
-                <li><a href="#gallery-section">Gallery</a></li>
-                <li><a href="#news-calendar">News</a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="pit-stop.html">Bike Service</a></li>
+                <li><a href="#high-performance">Zařízení</a></li>
+                <li><a href="#popular-games">Hry</a></li>
+                <li><a href="#pricing">Ceny</a></li>
+                <li><a href="#gallery-section">Galerie</a></li>
+                <li><a href="#news-calendar">Novinky</a></li>
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="pit-stop.html">Servis kol</a></li>
             </ul>
     
             <!-- Социальные сети -->
@@ -126,7 +128,7 @@
                 </div>
                 <!-- Кнопка онлайн бронирования -->
 <button class="booking-button" onclick="window.location.href='https://pitstoplounge.booking.enes.tech/'" aria-label="Online Booking">
-    Online Booking
+    Online rezervace
 </button>
 
                 <!-- Кнопка прокрутки вверх -->
@@ -139,11 +141,11 @@
     <p id="address-footer">
         <a href="https://maps.app.goo.gl/iFwwjAqRLb5ToML68" target="_blank" class="address-link">
             Chrudimská, 2a | 
-            <span id="working-hours" class="working-hours">Mo-Su,10-22</span>
+            <span id="working-hours" class="working-hours">Po-Ne,10-22</span>
         </a>
         <span class="tooltip">
-            <strong>Full Address:</strong> Chrudimská 2526/2a, Prague 3, Vinohrady<br>
-            <strong>Opening Hours:</strong> Monday-Sunday, 10:00 AM - 10:00 PM
+            <strong>Celá adresa:</strong> Chrudimská 2526/2a, Praha 3, Vinohrady<br>
+            <strong>Otevírací doba:</strong> Pondělí-Neděle, 10:00 - 22:00
             <img src="images/map2.png" alt="Map" class="tooltip-image">
         </span>
     </p>
@@ -157,7 +159,7 @@
         <button class="footer-docs-button" onclick="openModal()">View Documents</button>
     </div>
     <div class="copyright-icon">
-        <span class="copyright-symbol">© All rights reserved. Pit Stop Game Zone s.r.o.</span>
+        <span class="copyright-symbol">© Všechna práva vyhrazena. Pit Stop Game Zone s.r.o.</span>
     </div>
 </div>
 
@@ -165,13 +167,13 @@
 <div id="documents-modal" class="modal">
     <div class="modal-content">
         <span class="close-button" onclick="closeModal()">&times;</span>
-        <h2>Documents</h2>
+        <h2>Dokumenty</h2>
         <ul>
-            <li><a href="#" onclick="loadDocument('documents/visitor-rules.txt')">Visitor Rules</a></li>
-            <li><a href="#" onclick="loadDocument('documents/terms-and-conditions.txt')">General Terms and Conditions</a></li>
-            <li><a href="#" onclick="loadDocument('documents/privacy-policy.txt')">Privacy Policy</a></li>
-            <li><a href="#" onclick="loadDocument('documents/about-us.txt')">About Us</a></li>
-            <li><a href="#" onclick="loadDocument('documents/FAQ.txt')">FAQ</a></li>
+            <li><a href="#" onclick="loadDocument('documents/visitor-rules-cz.txt')">Návštěvní řád</a></li>
+            <li><a href="#" onclick="loadDocument('documents/terms-and-conditions-cz.txt')">Všeobecné obchodní podmínky</a></li>
+            <li><a href="#" onclick="loadDocument('documents/privacy-policy-cz.txt')">Zásady ochrany osobních údajů</a></li>
+            <li><a href="#" onclick="loadDocument('documents/about-us-cz.txt')">O nás</a></li>
+            <li><a href="#" onclick="loadDocument('documents/FAQ-cz.txt')">Často kladené otázky</a></li>
         </ul>
         <div id="document-content"></div>
     </div>
@@ -266,17 +268,18 @@
                                                                   
                                                                   
                                                                         <div class="club-overlay">
-                                                                            <h2 id="welcome-message">Welcome to Pit-Stop Lounge</h2>
-                                                                            <p id="description">We are a small but ambitious company located in a cozy and compact space, 
-                                                                                where every corner is designed for your enjoyment and comfort. 
-                                                                                At Pit Stop Game Zone, we believe that every moment should be special, 
-                                                                                and we strive to provide you with an exceptional experience that will be 
-                                                                                remembered only in the best possible way. And you will definitely want to visit us again and again</p>
+                                                                            <h2 id="welcome-message">Vítejte v Pit-Stop Lounge</h2>
+                                                                            <p id="description">Jsme malá, ale ambiciózní společnost sídlící v útulném a kompaktním prostoru, 
+                                                                                kde je každý kout navržen pro vaše potěšení a pohodlí. 
+                                                                                V Pit Stop Game Zone věříme, že každý okamžik by měl být výjimečný,
+                                                                                 a snažíme se vám poskytnout výjimečný zážitek, na který se bude vzpomínat jen v tom nejlepším. 
+                                                                                 A určitě nás budete chtít navštívit znovu a znovu.
+                                                                            </p>
                                                                                     <ul>
-                                                                                        <li><a href="#high-performance">Deviсes</a></li>
-                                                                                        <li><a href="#popular-games">Games</a></li>
-                                                                                        <li><a href="#pricing">Prices</a></li>
-                                                                                        <li><a href="#gallery-section">Gallery</a></li>
+                                                                                        <li><a href="#high-performance">Zařízení</a></li>
+                                                                                        <li><a href="#popular-games">Hry</a></li>
+                                                                                        <li><a href="#pricing">Ceny</a></li>
+                                                                                        <li><a href="#gallery-section">Galerie</a></li>
                                                                                     </ul>
                                                                             </div>
 <!-- Неоновые всплывающие элементы -->
@@ -293,11 +296,11 @@
 <!-- Блок новостей и календаря событий -->
 <div id="news-calendar" class="news-calendar-container">
     <img src="images/pexels.jpg" alt="Background Image" class="background-image">
-    <h2>News & Events</h2>
+    <h2>Novinky a události</h2>
     <div class="news-section marquee">
         <ul>
             <li>
-                <strong>January 15, 2025</strong> - Gaming Tournament
+                <strong>January 15, 2025</strong> - Herní turnaj
                 <p>Join us for an exciting gaming tournament with great prizes!</p>
             </li>
             <li>
@@ -343,35 +346,35 @@
                                                                                                 </div> 
 
                                                                                                     <div id="high-performance" class="detail-block">
-                                                                                                        <h3>Now we have 5 PCs with such confuguration:</h3>
+                                                                                                        <h3>Nyní máme 5 PC s takovou konfigurací:</h3>
                                                                                                         <!-- Processor -->
                                                                                                         <div class="component">
                                                                                                         <img src="images/processor.png" alt="Processor">
-                                                                                                        <div class="info">Processor: Intel Core i5 with 4.4 GHz</div>
+                                                                                                        <div class="info">Procesor: Intel Core i5 s 4,4 GHz</div>
                                                                                                         </div>
                                                                                                     
                                                                                                         <!-- Graphics Card -->
                                                                                                         <div class="component">
                                                                                                         <img src="images/graphics-card.png" alt="Graphics Card">
-                                                                                                        <div class="info">Graphics card: GeForce RTX 4060 Ti</div>
+                                                                                                        <div class="info">Grafická karta: GeForce RTX 4060 Ti</div>
                                                                                                         </div>
                                                                                                     
                                                                                                         <!-- RAM --> <!-- Storage -->
                                                                                                         <div class="component">
                                                                                                         <img src="images/ram9.png" alt="RAM">
-                                                                                                        <div class="info">RAM and Storage: Kingston 32 GB, 2Tb M2 </div>
+                                                                                                        <div class="info">RAM a úložiště: Kingston 32 GB, 2Tb M2 </div>
                                                                                                         </div>
                                                                                                     
                                                                                                         <!-- Display -->
                                                                                                         <div class="component">
                                                                                                         <img src="images/display.png" alt="Display">
-                                                                                                        <div class="info">Display: Samsung Odyssey 240 Hz </div>
+                                                                                                        <div class="info">Displej: Samsung Odyssey 240 Hz </div>
                                                                                                         </div>
                                                                                                     
                                                                                                         <!-- Headset -->
                                                                                                         <div class="component">
                                                                                                         <img src="images/headset.png" alt="Headset">
-                                                                                                        <div class="info">Peripherals: HyperX </div>
+                                                                                                        <div class="info">Periferie: HyperX </div>
                                                                                                         </div>
                                                                                                     
                                                                                                         
@@ -379,7 +382,7 @@
       
       
       <div id="high-performance-consoles" class="detail-block">
-        <h3>Our Consoles Zone consists of:</h3>
+        <h3>Naše zóna konzolí se skládá z:</h3>
         <!-- PS5 -->
         <div class="component">
             <img src="images/ps.png" alt="Headset">
@@ -404,42 +407,42 @@
         </div>
         
         <section id="popular-games">
-            <h2>Most popular games in our gaming zone</h2>
+            <h2>Nejoblíbenější hry v naší herní zóně:</h2>
             <div class="games-container">
                 <div class="game" style="--index: 1; --hours: 300;">
                     <img src="images/game1-logo.ico" alt="Game 1 Logo" class="game-logo">
                     <h3>Game 1</h3>
-                    <div class="info">CS2 >300 hours</div>
+                    <div class="info">CS2 >300 hodin</div>
                 </div>
                 <div class="game" style="--index: 2; --hours: 200;">
                     <img src="images/game2-logo.png" alt="Game 2 Logo" class="game-logo">
                     <h3>Game 2</h3>
-                    <div class="info">Fortnite >200 hours</div>
+                    <div class="info">Fortnite >200 hodin</div>
                 </div>
                 <div class="game" style="--index: 3; --hours: 180;">
                     <img src="images/game3-logo.webp" alt="Game 3 Logo" class="game-logo">
                     <h3>Game 3</h3>
-                    <div class="info">UFC 5 >180 hours</div>
+                    <div class="info">UFC 5 >180 hodin</div>
                 </div>
                 <div class="game" style="--index: 4; --hours: 160;">
                     <img src="images/game4-logo.png" alt="Game 4 Logo" class="game-logo">
                     <h3>Game 3</h3>
-                    <div class="info">FC25 >160 hours</div>
+                    <div class="info">FC25 >160 hodin</div>
                 </div>
                 <div class="game" style="--index: 5; --hours: 140;">
                     <img src="images/game5-logo.png" alt="Game 5 Logo" class="game-logo">
                     <h3>Game 3</h3>
-                    <div class="info">Stalker2 >140 hours</div>
+                    <div class="info">Stalker2 >140 hodin</div>
                 </div>
                 <div class="game" style="--index: 6; --hours: 120;">
                     <img src="images/game6-logo.png" alt="Game 6 Logo" class="game-logo">
                     <h3>Game 3</h3>
-                    <div class="info">Overwatch2 >120 hours</div>
+                    <div class="info">Overwatch2 >120 hodin</div>
                 </div>
                 <div class="game" style="--index: 7; --hours: 100;">
                     <img src="images/game7-logo.png" alt="Game 7 Logo" class="game-logo">
                     <h3>Game 3</h3>
-                    <div class="info">Valorant >100 hours</div>
+                    <div class="info">Valorant >100 hodin</div>
                 </div>
                 <!-- Добавьте другие игры с разным количеством часов -->
             </div>
@@ -448,42 +451,42 @@
      
     
     <section id="pricing">
-        <h2>Our Pricing & Memberships</h2>
+        <h2>Naše ceny a členství</h2>
         <div class="pricing-container">
           <!-- Блок с ценами -->
           <div class="pricing-box">
-            <h3>Standard Tariff Plans</h3>
-            <h4> ! Please note that ! </h4>
-            <h4>Plans expire 24 hours after purchase.</h4>
+            <h3>Standardní tarifní plány</h3>
+            <h4> ! Upozorňujeme, že ! </h4>
+            <h4>Plány vyprší 24 hodin po zakoupení.</h4>
             <ul>
-                <li>PC: 1 hour........................Kč 100</li>
-                <li>PC: 2 hours......................Kč 180</li>
-                <li>PC: 3 hours......................Kč 200</li>
-                <li>PC: 4 hours......................Kč 300</li>
-                <li>PC: 6 hours......................Kč 400</li>
-                <li>PC: 9 hours......................Kč 600</li>
-                <li>PS5: 1 hour......................Kč 100</li>
-                <li>VR: 1 hour........................Kč 150</li>
+                <li>PC: 1 hodina........................Kč 100</li>
+                <li>PC: 2 hodiny......................Kč 180</li>
+                <li>PC: 3 hodiny......................Kč 200</li>
+                <li>PC: 4 hodiny......................Kč 300</li>
+                <li>PC: 6 hodin......................Kč 400</li>
+                <li>PC: 9 hodin......................Kč 600</li>
+                <li>PS5: 1 hodina......................Kč 100</li>
+                <li>VR: 1 hodina........................Kč 150</li>
             </ul>  
           </div>
           <!-- Блок с абонементами -->
           <div class="pricing-box">
-            <h3>Membership and special tariff plans for PC</h3>
-            <h4>Purchasing club membership unlocks special prices for you</h4>
+            <h3>Členství a speciální tarifní plány pro PC</h3>
+            <h4>Nákupem klubového členství získáte speciální ceny</h4>
             <ul>
-              <li>Weekly Membership............Kč 300 </li>
-              <li>Weekly Members: 1 hour........Kč 50</li>
-              <li>Monthly Membership........Kč 1000</li>
-              <li>Monthly members: 1 hour......Kč 45 </li>
+              <li>Týdenní členství............Kč 300 </li>
+              <li>Týdenní členové: 1 hour........Kč 50</li>
+              <li>Měsíční členství........Kč 1000</li>
+              <li>Měsíční členové: 1 hour......Kč 45 </li>
             </ul>
           </div>
           <!-- Блок с ценами -->
           <div class="pricing-box">
-            <h3>Special Tariff Plans for PC</h3>
+            <h3>Speciální tarifní plány pro PC</h3>
             <ul>
-                <li>School PC: 1 hour...................Kč 60</li>
-                <li>Student PC: 1 hour..................Kč 70</li>
-                <li>Senior PC: 1 hour....................Kč 60</li>
+                <li>Školní PC: 1 hodina...................Kč 60</li>
+                <li>Studentský PC: 1 hodina..................Kč 70</li>
+                <li>Seniorský PC: 1 hodina....................Kč 60</li>
             </ul>  
           </div>
         </div>
@@ -493,7 +496,7 @@
     
       
       <div id="gallery-section">
-        <h2>Gallery</h2>
+        <h2>Galerie</h2>
         <div class="gallery-container">
             <div class="gallery-item">
                 <img src="images/computer-zone.JPG" alt="Gallery Image 1">
@@ -536,7 +539,7 @@
             "telephone": "+420720888131",
             "url": "https://yourwebsite.com",
             "priceRange": "$$",
-            "openingHours": "Mo-Su 10:00-22:00"
+            "openingHours": "Po-Ne 10:00-22:00"
         }
         </script>
     

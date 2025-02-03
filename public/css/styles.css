@@ -471,9 +471,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.104);
   border-radius: 50px;
-  animation: pulse 1.5s infinite ease-in-out;
+  animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes pulse {
@@ -481,15 +481,24 @@ body {
     transform: scale(1);
     opacity: 0.8;
   }
-  50% {
-    transform: scale(1.2);
+  40% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  60% {
+    transform: scale(1.12);
     opacity: 0.3;
+  }
+  80% {
+    transform: scale(1.1);
+    opacity: 0.5;
   }
   100% {
     transform: scale(1);
     opacity: 0.8;
   }
 }
+
 
 /* Анимация градиента */
 .booking-button {
@@ -1014,8 +1023,8 @@ body {
 #news-calendar {
   margin-top: 0px;
   background-color: transparent;
-  border: 2px solid #8919f9;
-  box-shadow: 0 8px 20px #0005e5;
+  border: 2px solid #fe0202;
+  box-shadow: 0 8px 20px #ee0303;
   padding: 3px; /* Отступы внутри блока */
   border-radius: 15px;
   position: relative; /* Относительное позиционирование */
@@ -1151,7 +1160,7 @@ body {
 .image-wrapper {
   flex: 0 0 30%; /* Ограничиваем ширину каждого изображения до 30% */
   border-radius: 8px; /* Закругляем углы */
-  box-shadow: 2px 4px 8px #0005e5; /* Тень для изображений */
+  box-shadow: 2px 4px 8px #ff0000; /* Тень для изображений */
   overflow: hidden; /* Прячем содержимое за границами */
 }
 
@@ -1243,7 +1252,7 @@ body {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.151);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
 }
 
 .component img {
@@ -1328,7 +1337,7 @@ body {
 .detail-block:hover {
   background-color: #ffe34410;
   transform: scale(1.03);
-  box-shadow: 0 8px 20px rgb(255, 230, 0);
+  box-shadow: 0 8px 20px rgb(255, 0, 251);
 }
 
 .detail-block a {
@@ -1824,11 +1833,11 @@ body {
   position: relative;
   width: 200px;
   height: 200px;
-  border: 4px solid #ff6c04;
+  border: 1px solid #000000;
   border-radius: 50%;
   margin: 0 auto;
   background: #000;
-  box-shadow: 4px 4px 8px rgb(255, 102, 0); /* Тень вокруг блока */
+  box-shadow: 4px 4px 8px rgba(255, 102, 0, 0.716); /* Тень вокруг блока */
 }
 
 .clock-numbers {
@@ -1965,12 +1974,12 @@ body {
   color: #fff;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
-  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.219); /* Изначально слабая тень */
+  box-shadow: 0 4px 8px rgba(21, 0, 255, 0.219); /* Изначально слабая тень */
   transition: box-shadow 0.3s ease; /* Плавное появление тени */
 }
 
 #pricing:hover {
-  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.8); /* Яркая тень при наведении */
+  box-shadow: 0 10px 30px rgb(0, 0, 255); /* Яркая тень при наведении */
 }
 
 
@@ -2051,7 +2060,7 @@ body {
 }
 
 #popular-games:hover {
-  box-shadow: 0 10px 30px rgb(212, 0, 255); /* Тень при наведении */
+  box-shadow: 0 10px 30px rgb(157, 0, 255); /* Тень при наведении */
 }
 
 
@@ -2105,9 +2114,20 @@ body {
 }
 
 .game:hover {
-  transform: scale(var(--scale-hover, 1.1)) rotate(5deg); /* Увеличение и вращение при наведении */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Увеличение тени */
+  transform: scale(var(--scale-hover, 1.1)) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
 }
+
+/* Четные элементы вращаются в одну сторону */
+.game:nth-child(even):hover {
+  transform: scale(var(--scale-hover, 1.1)) rotate(-5deg);
+}
+
+/* Нечетные элементы вращаются в другую сторону */
+.game:nth-child(odd):hover {
+  transform: scale(var(--scale-hover, 1.1)) rotate(5deg);
+}
+
 
 /* Эффект увеличения размера блока на основе часов */
 .game-logo {
