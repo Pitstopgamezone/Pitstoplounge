@@ -60,7 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
   showTab('club');
   initializeContent();
 
- 
+  const languageDropdown = document.getElementById('language-dropdown');
+  if (languageDropdown) {
+      languageDropdown.addEventListener('change', e => {
+          changeLanguage(e.target.value);
+      });
+  }
 
   const scrollToTopButton = document.querySelector('.scroll-to-top');
   if (scrollToTopButton) {
@@ -69,17 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
       });
   }
+
+  // Установить правильную иконку языка при загрузке страницы
+  setInitialLanguageIcon();
 });
-
-const languageDropdown = document.getElementById('language-dropdown');
-  if (languageDropdown) {
-      languageDropdown.addEventListener('change', e => {
-          changeLanguage(e.target.value);
-          updateLanguageIcon(e.target.value);
-      });
-  }
-
-
 
 
 // Функция для изменения языка
@@ -92,32 +90,52 @@ function changeLanguage(language) {
       window.location.href = 'pit-stop-cz.html';
   } else if (language === 'en-service') {
       window.location.href = 'pit-stop.html';
-  } else if (language === 'ua') {
+  } else if (language === 'uk') {
       window.location.href = 'index-ua.html';
   } else if (language === 'ru') {
       window.location.href = 'index-ru.html';
-  } else if (language === 'ua-service') {
+  } else if (language === 'uk-service') {
       window.location.href = 'pit-stop-ua.html';
   } else if (language === 'ru-service') {
       window.location.href = 'pit-stop-ru.html';
   }
 }
 
-// Функция для обновления иконки языка
-function updateLanguageIcon(language) {
-  const languageIcon = document.getElementById('language-icon');
-  if (languageIcon) {
-      if (language === 'cz') {
-          languageIcon.textContent = 'CZ';
-      } else if (language === 'en') {
-          languageIcon.textContent = 'EN';
-      } else if (language === 'ua') {
-          languageIcon.textContent = 'UA';
-      } else if (language === 'ru') {
-          languageIcon.textContent = 'RU';
-      }
+// Функция для установки начальной иконки языка при загрузке страницы
+function setInitialLanguageIcon() {
+  const languageDropdown = document.getElementById('language-dropdown');
+  const currentUrl = window.location.href;
+
+  if (currentUrl.includes('index-cz.html')) {
+      languageDropdown.value = 'cz';
+  } else if (currentUrl.includes('index-ua.html')) {
+      languageDropdown.value = 'uk';
+  } else if (currentUrl.includes('index-ru.html')) {
+      languageDropdown.value = 'ru';
+  } else {
+      languageDropdown.value = 'en';
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const userLang = navigator.language || navigator.userLanguage; // Определяем язык браузера
+  let targetPage = "index.html"; // По умолчанию английская версия
+
+  if (userLang.startsWith("cs")) { // Чешский
+      targetPage = "index-cs.html";
+  } else if (userLang.startsWith("ru")) { // Русский
+      targetPage = "index-ru.html";
+  } else if (userLang.startsWith("uk")) { // Украинский
+      targetPage = "index-ua.html";
+  }
+
+  // Проверяем, чтобы не делать редирект повторно
+  if (window.location.pathname === "/index.html" && targetPage !== "index.html") {
+      window.location.replace(targetPage);
+  }
+});
+
+
 
 // Tooltip для адреса
 function initializeTooltip() {
@@ -141,7 +159,6 @@ function initializeTooltip() {
 
 document.addEventListener('DOMContentLoaded', initializeTooltip);
 
-
 // Открытие модального окна
 function openModal() {
   document.getElementById('documents-modal').style.display = 'block';
@@ -150,9 +167,7 @@ function openModal() {
 // Закрытие модального окна
 function closeModal() {
   document.getElementById('documents-modal').style.display = 'none';
-  document.getElementById('document-content').innerHTML = ''; // Очищаем содержимое
 }
-
 // Загрузка текстового документа в модальное окно
 function loadDocument(filePath) {
   fetch(filePath)
@@ -220,39 +235,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Бургер-меню
 document.addEventListener('DOMContentLoaded', () => {
-    const burgerButton = document.querySelector('.burger-menu-button');
-    const burgerMenu = document.querySelector('.burger-menu');
-    const closeButton = document.querySelector('.close-menu');
-    const languageDropdown = document.getElementById('language-dropdown');
-    const burgerContainer = document.querySelector('.burger-menu-container');
+  const burgerButton = document.querySelector('.burger-menu-button');
+  const burgerMenu = document.querySelector('.burger-menu');
+  const closeButton = document.querySelector('.close-menu');
+  const languageDropdown = document.getElementById('language-dropdown');
+  const burgerContainer = document.querySelector('.burger-menu-container');
 
-    // Показ меню через 4 секунды
-    setTimeout(() => {
-        burgerContainer.classList.add('visible');
-    }, 4000);
+  if (burgerContainer) {
+      // Показ меню через 4 секунды
+      setTimeout(() => {
+          burgerContainer.classList.add('visible');
+      }, 4000);
+  }
 
-    // Открытие меню
-    burgerButton.addEventListener('click', () => {
-        burgerMenu.classList.toggle('open');
-    });
+  if (burgerButton && burgerMenu) {
+      // Открытие меню
+      burgerButton.addEventListener('click', () => {
+          burgerMenu.classList.toggle('open');
+      });
 
-    // Закрытие меню через кнопку "×"
-    closeButton.addEventListener('click', () => {
-        burgerMenu.classList.remove('open');
-    });
+      // Закрытие меню через кнопку "×"
+      closeButton.addEventListener('click', () => {
+          burgerMenu.classList.remove('open');
+      });
 
-    // Закрытие меню при клике на ссылку
-    burgerMenu.addEventListener('click', (event) => {
-        if (event.target.tagName === 'A') {
-            burgerMenu.classList.remove('open');
-        }
-    });
+      // Закрытие меню при клике на ссылку
+      burgerMenu.addEventListener('click', (event) => {
+          if (event.target.tagName === 'A') {
+              burgerMenu.classList.remove('open');
+          }
+      });
+  }
 
-    // Смена языка
-    languageDropdown.addEventListener('change', (event) => {
-        const selectedLanguage = event.target.value;
-        changeLanguage(selectedLanguage); // Функция changeLanguage уже должна быть у вас
-    });
+  // Смена языка
+  if (languageDropdown) {
+      languageDropdown.addEventListener('change', (event) => {
+          const selectedLanguage = event.target.value;
+          changeLanguage(selectedLanguage); // Функция changeLanguage уже должна быть у вас
+      });
+  }
 });
 
 // Падение блока с новостями
@@ -341,3 +362,4 @@ setInterval(() => {
 // Инициализация
 updateClock();
 updateClubStatus();
+
