@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +12,20 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="back-to-home">Game Zone</a>
-        <button id="language-switcher">EN / RU</button>
-        <!--<button id="theme-toggle">🌙 / ☀️</button>-->
+        <div class="burger-menu" id="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Game Zone</a></li>
+            
+            <li><a href="#services"><i class="fas fa-tools"></i> Услуги</a></li>
+            <li><a href="#pricing"><i class="fas fa-dollar-sign"></i> Цены</a></li>
+            <li><a href="#partners"><i class="fas fa-handshake"></i> Партнеры</a></li>
+            <li><a href="#contact"><i class="fas fa-address-book"></i> Контакты</a></li>
+            <li><button id="language-switcher">EN</button></li>
+        </ul>
     </nav>
 
     <header>
@@ -146,9 +157,15 @@
         </a>
     </div>
 
+<!-- Кнопка "Вверх" -->
+<button id="scrollToTopBtn" title="Наверх">↑</button>
+
     <footer>
         <p>&copy; 2025 Pit-Stop Service. Все права защищены.</p>
     </footer>
+
+     
+
 
     <script>
         document.getElementById('theme-toggle').addEventListener('click', function() {
@@ -161,6 +178,11 @@
         window.onload = function() {
             document.querySelector('header').classList.add('animate-bikes');
         };
+
+        document.getElementById('burger-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
     </script>
 </body>
 </html>

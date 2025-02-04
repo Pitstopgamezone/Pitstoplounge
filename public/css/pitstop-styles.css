@@ -45,6 +45,75 @@ nav a.back-to-home:hover {
     background: #e65c00;
 }
 
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.burger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a, .nav-links button {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .burger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
 button#language-switcher {
     padding: 10px 15px;
     font-size: 1em;
@@ -247,6 +316,7 @@ footer {
     position: absolute;
     width: 100px;
     transition: transform 3s ease-in-out;
+    z-index: 1;
 }
 .bike-repair {
     left: -120px;
@@ -348,7 +418,7 @@ footer {
 
     .service-item img, .partner-item img {
         width: 70%;
-        max-width: 10px;
+        max-width: 100px;
         height: auto;
         border-radius: 8px;
         object-fit: cover;
@@ -370,4 +440,29 @@ footer {
     footer {
         padding: 5px;
     }
+}
+
+/* Стили для кнопки "Вверх" */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 80px;
+    left: 10px;
+    display: none;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+}
+
+#scrollToTopBtn.showBtn {
+    display: block;
+    opacity: 1;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #ff3300;
 }

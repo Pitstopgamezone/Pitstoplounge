@@ -62,3 +62,32 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('animate-bikes');
 });
+
+
+document.getElementById('burger-menu').addEventListener('click', function() {
+    document.getElementById('nav-links').classList.toggle('active');
+    this.classList.toggle('active');
+});
+
+// Скрипт для кнопки "Вверх"
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+const rootElement = document.documentElement;
+
+function handleScroll() {
+    const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+    if ((rootElement.scrollTop / scrollTotal) > 0.8) {
+        scrollToTopBtn.classList.add('showBtn');
+    } else {
+        scrollToTopBtn.classList.remove('showBtn');
+    }
+}
+
+function scrollToTop() {
+    rootElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+scrollToTopBtn.addEventListener('click', scrollToTop);
+document.addEventListener('scroll', handleScroll);
