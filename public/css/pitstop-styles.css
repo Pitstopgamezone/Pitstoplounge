@@ -243,3 +243,131 @@ footer {
     background: rgba(0, 0, 0, 0.9);
 }
 
+.bike {
+    position: absolute;
+    width: 100px;
+    transition: transform 3s ease-in-out;
+}
+.bike-repair {
+    left: -120px;
+    top: 29%;
+    transform: translateY(-50%);
+}
+.bike-fixed {
+    right: -120px;
+    top: 29%;
+    transform: translateY(-50%) scaleX(-1);
+}
+.animate-bikes .bike-repair {
+    transform: translate(50vw, -50%);
+}
+.animate-bikes .bike-fixed {
+    transform: translate(-50vw, -50%) scaleX(-1);
+}
+
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .bike {
+        width: 80px;
+    }
+
+    section {
+        padding: 20px 10px;
+        margin: 10px auto;
+    }
+
+    .service-item, .partner-item {
+        padding: 15px;
+    }
+
+    .service-item img, .partner-item img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+        
+    }
+
+    table, th, td {
+        padding: 5px;
+    }
+
+    th {
+        font-size: 0.9em;
+    }
+
+    td {
+        font-size: 0.8em;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
+
+/* Адаптация для экранов шириной до 480px */
+@media (max-width: 480px) {
+    header {
+        padding: 20px 5px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .bike {
+        width: 60px;
+    }
+
+    section {
+        padding: 15px 5px;
+        margin: 5px auto;
+    }
+
+    .service-item, .partner-item {
+        padding: 10px;
+    }
+
+    .service-item img, .partner-item img {
+        width: 70%;
+        max-width: 10px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+        filter: contrast(1.2);
+    }
+
+    table, th, td {
+        padding: 3px;
+    }
+
+    th {
+        font-size: 0.8em;
+    }
+
+    td {
+        font-size: 0.7em;
+    }
+
+    footer {
+        padding: 5px;
+    }
+}

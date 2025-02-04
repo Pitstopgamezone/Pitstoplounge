@@ -1335,7 +1335,7 @@ body {
 }
 
 .detail-block:hover {
-  background-color: #ffe34410;
+  background-color: #fc00ef00;
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgb(255, 0, 251);
 }
