@@ -90,6 +90,50 @@ nav a.back-to-home:hover {
     color: #00ffcc;
 }
 
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    color: #fff;
+    background-color: #333;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    transition: background-color 0.3s;
+}
+
+.social-button:hover {
+    background-color: #555;
+}
+
+.social-button.facebook {
+    background-color: #3b5998;
+}
+
+.social-button.twitter {
+    background-color: #1da1f2;
+}
+
+.social-button.instagram {
+    background-color: #e4405f;
+}
+
+.social-button.linkedin {
+    background-color: #0077b5;
+}
+
+.social-button i {
+    font-size: 20px;
+}
+
+/* Стили для мобильных устройств */
 @media (max-width: 768px) {
     .burger-menu {
         display: flex;
@@ -126,13 +170,10 @@ nav a.back-to-home:hover {
     }
 }
 
+/* Стили для широкоформатных экранов */
 @media (min-width: 769px) {
     .burger-menu {
-        display: flex;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        display: none;
     }
 
     .nav-links {
@@ -477,11 +518,7 @@ footer {
 /* Стили для широкоформатных экранов */
 @media (min-width: 769px) {
     .burger-menu {
-        display: flex;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        display: none;
     }
 
     .nav-links {
@@ -494,7 +531,6 @@ footer {
         margin: 0 20px;
     }
 }
-
 
 /* Стили для кнопки "Вверх" */
 #scrollToTopBtn {
