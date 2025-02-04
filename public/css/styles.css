@@ -805,6 +805,7 @@ body {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень текста */
   padding: 20px; /* Внутренний отступ */
   position: relative; /* Для возможности контроля слоя */
+  text-align: center; /* Центрирование текста */
 }
 
 
@@ -822,6 +823,7 @@ body {
   position: relative;
   padding-left: 30px;
   transition: all 0.3s ease-in-out;
+  text-align: center; /* Центрирование текста */
 }
 
 .club-overlay ul li:hover {
@@ -831,16 +833,7 @@ body {
   font-size: 18px;
 }
 
-.club-overlay ul li::before {
-  content: '\2022'; /* Добавляем маркеры */
-  color: #00ff0d;
-  font-size: 20px;
-  position: absolute;
-  left: 0;
-  padding-left: 20px;
-  top: 0;
-  transition: all 0.3s ease-in-out;
-}
+
 
 .club-overlay ul li:hover::before {
   color: #ffffff;
@@ -909,7 +902,14 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   transform: translateY(-5px);
 }
+ul li a {
+  display: flex;
+  align-items: center;
+}
 
+ul li a i {
+  margin-right: 8px; /* Расстояние между иконкой и текстом */
+}
 /* Стили для изображения */
 .club-content img {
   flex: 1; /* Изображение занимает 50% ширины */
@@ -954,6 +954,7 @@ body {
 @media (max-width: 480px) {
   .club-overlay {
     font-size: 12px; /* Ещё меньше шрифт для самых маленьких экранов */
+    text-align: center; /* Центрирование текста */
   }
 
   .club-content img {
