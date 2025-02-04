@@ -36,3 +36,24 @@ function displayMessage(message, sender) {
     // Прокручиваем чат до самого низа
     chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceItems = document.querySelectorAll('.service-item');
+
+    serviceItems.forEach(item => {
+        item.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const pricingItems = document.querySelectorAll('.pricing-item');
+
+    pricingItems.forEach(item => {
+        item.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
+});
