@@ -3,54 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pit-Stop Service — ремонт и аренда велосипедов и самокатов в Праге. Качественные услуги, доступные цены, удобное расположение.">
-    <meta name="keywords" content="ремонт велосипедов, аренда велосипедов, ремонт самокатов, аренда самокатов, Pit-Stop Service, Прага">
+    <meta name="description" content="Pit-Stop Service — ремонт и аренда велосипедов в Праге. Качественные услуги, доступные цены, удобное расположение.">
+    <meta name="keywords" content="ремонт велосипедов, аренда велосипедов, Pit-Stop Service, Прага">
     <meta name="author" content="Pit-Stop Service">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Pit-Stop Service — ремонт и аренда велосипедов и самокатов">
-    <meta property="og:description" content="Качественные услуги по ремонту и аренде велосипедов и самокатов в Праге. Доступные цены и удобное расположение рядом с метро.">
-    <meta property="og:image" content="https://yourwebsite.com/images/preview.jpg">
-    <meta property="og:url" content="https://yourwebsite.com">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pit-Stop Service">
-    <meta name="twitter:description" content="Лучший сервис по ремонту и аренде велосипедов и самокатов в Праге.">
-    <meta name="twitter:image" content="https://yourwebsite.com/images/preview.jpg">
-
-    <title>Pit-Stop Service — ремонт и аренда велосипедов и самокатов</title>
+    <title>Pit-Stop Service — ремонт и аренда велосипедов</title>
     <link rel="stylesheet" href="css/pitstop-styles.css">
+    <script src="js/service-script.js"></script>
 </head>
 <body>
-   
     
-    <!-- Навигация -->
     <nav>
         <a href="index.html" class="back-to-home">Game Zone</a>
+        <button id="language-switcher">EN / RU</button>
     </nav>
 
-    <!-- Главная секция -->
     <header>
-        
         <h1>Добро пожаловать в Pit-Stop Service</h1>
-        <p>Ваш надежный партнер в ремонте и аренде велосипедов и самокатов в Праге.</p>
+        <p>Ваш надежный партнер в ремонте и аренде велосипедов в Праге.</p>
     </header>
-    <div class="bike-animation">
-        <!-- Используем изображения из папки images -->
-        <div class="bike" id="bike1">
-            <img src="images/bike1.svg" alt="Bike 1" width="80" height="60">
-        </div>
-        <div class="bike" id="bike2">
-            <img src="images/bike2.svg" alt="Bike 2" width="80" height="60">
-        </div>
-        <div class="bike" id="bike3">
-            <img src="images/bike3.svg" alt="Bike 3" width="80" height="60">
-        </div>
-    </div>
 
-    <!-- Сервисы -->
     <section id="services">
         <h2>Наши услуги</h2>
         <div class="services-container">
@@ -62,18 +34,9 @@
                 <h3>Аренда велосипедов</h3>
                 <p>Доступная аренда велосипедов для прогулок по городу и за его пределами.</p>
             </div>
-            <div class="service-item">
-                <h3>Ремонт самокатов</h3>
-                <p>Обслуживание электрических и механических самокатов любой сложности.</p>
-            </div>
-            <div class="service-item">
-                <h3>Аренда самокатов</h3>
-                <p>Удобная аренда самокатов с выбором моделей на любой вкус.</p>
-            </div>
         </div>
     </section>
 
-    <!-- Цены -->
     <section id="pricing">
         <h2>Цены</h2>
         <table>
@@ -92,19 +55,24 @@
                     <td>Аренда велосипеда</td>
                     <td>150 CZK/час</td>
                 </tr>
-                <tr>
-                    <td>Ремонт самоката</td>
-                    <td>от 400 CZK</td>
-                </tr>
-                <tr>
-                    <td>Аренда самоката</td>
-                    <td>120 CZK/час</td>
-                </tr>
             </tbody>
         </table>
     </section>
 
-    <!-- Контакты -->
+    <section id="partners">
+        <h2>Наши партнеры</h2>
+        <div class="partners-container">
+            <div class="partner-item">
+                <img src="images/foodora-logo.png" alt="Foodora">
+                <p>Foodora</p>
+            </div>
+            <div class="partner-item">
+                <img src="images/bolt-logo.png" alt="Bolt">
+                <p>Bolt</p>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <h2>Контакты</h2>
         <p>📍 Мы находимся: Улица Пример, дом 10, Прага</p>
@@ -112,37 +80,14 @@
         <p>📧 Email: <a href="mailto:info@pitstopservice.cz">info@pitstopservice.cz</a></p>
     </section>
 
-    <!-- Чат WhatsApp -->
     <div class="whatsapp-chat">
         <a href="https://wa.me/420720888131?text=Здравствуйте,%20я%20хочу%20узнать%20о%20ваших%20услугах" target="_blank">
             <button>Чат с нами в WhatsApp</button>
         </a>
     </div>
 
-    <!-- Подвал -->
     <footer>
         <p>&copy; 2025 Pit-Stop Service. Все права защищены.</p>
     </footer>
-
-    <!-- Структурированные данные -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Pit-Stop Service",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Улица Пример, дом 10",
-            "addressLocality": "Прага",
-            "addressCountry": "CZ"
-        },
-        "telephone": "+420720888131",
-        "url": "https://yourwebsite.com",
-        "priceRange": "$$",
-        "openingHours": "Mo-Su 08:00-20:00"
-    }
-    </script>
-
-
 </body>
 </html>
