@@ -78,6 +78,24 @@ nav a.back-to-home:hover {
     cursor: pointer;
 }
 
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #0879fa;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #00ffcc;
+}
+
+
 @media (max-width: 768px) {
     .burger-menu {
         display: flex;
@@ -382,7 +400,7 @@ footer {
     }
 
     td {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     footer {
@@ -431,17 +449,39 @@ footer {
     }
 
     th {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     td {
-        font-size: 0.7em;
+        font-size: 0.9em;
     }
 
     footer {
         padding: 5px;
     }
 }
+
+/* Стили для широкоформатных экранов */
+@media (min-width: 769px) {
+    .burger-menu {
+        display: flex;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 0 20px;
+    }
+}
+
 
 /* Стили для кнопки "Вверх" */
 #scrollToTopBtn {

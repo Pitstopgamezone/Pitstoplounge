@@ -19,12 +19,17 @@
         </div>
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html"><i class="fas fa-home"></i> Game Zone</a></li>
-            
             <li><a href="#services"><i class="fas fa-tools"></i> Услуги</a></li>
             <li><a href="#pricing"><i class="fas fa-dollar-sign"></i> Цены</a></li>
             <li><a href="#partners"><i class="fas fa-handshake"></i> Партнеры</a></li>
             <li><a href="#contact"><i class="fas fa-address-book"></i> Контакты</a></li>
             <li><button id="language-switcher">EN</button></li>
+            <li class="social-links">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </li>
         </ul>
     </nav>
 
@@ -183,6 +188,30 @@
             document.getElementById('nav-links').classList.toggle('active');
             this.classList.toggle('active');
         });
+
+        // Скрипт для кнопки "Вверх"
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        const rootElement = document.documentElement;
+
+        function handleScroll() {
+            const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+            if ((rootElement.scrollTop / scrollTotal) > 0.8) {
+                scrollToTopBtn.classList.add('showBtn');
+            } else {
+                scrollToTopBtn.classList.remove('showBtn');
+            }
+        }
+
+        function scrollToTop() {
+            rootElement.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        scrollToTopBtn.addEventListener('click', scrollToTop);
+        document.addEventListener('scroll', handleScroll);
+    
     </script>
 </body>
 </html>
