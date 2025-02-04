@@ -60,11 +60,6 @@ nav a.back-to-home:hover {
     transition: 0.4s;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
 .nav-links li {
     margin: 0 10px;
 }
@@ -85,7 +80,7 @@ nav a.back-to-home:hover {
 }
 
 .social-links a {
-    color: #0879fa;
+    color: #ffffff;
     font-size: 24px;
     margin: 0 10px;
     transition: color 0.3s;
@@ -94,7 +89,6 @@ nav a.back-to-home:hover {
 .social-links a:hover {
     color: #00ffcc;
 }
-
 
 @media (max-width: 768px) {
     .burger-menu {
@@ -132,6 +126,25 @@ nav a.back-to-home:hover {
     }
 }
 
+@media (min-width: 769px) {
+    .burger-menu {
+        display: flex;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 0 20px;
+    }
+}
 button#language-switcher {
     padding: 10px 15px;
     font-size: 1em;
