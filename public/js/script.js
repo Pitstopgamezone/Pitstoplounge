@@ -62,7 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const languageDropdown = document.getElementById('language-dropdown');
   if (languageDropdown) {
-      languageDropdown.addEventListener('change', e => changeLanguage(e.target.value));
+      languageDropdown.addEventListener('change', e => {
+          changeLanguage(e.target.value);
+      });
   }
 
   const scrollToTopButton = document.querySelector('.scroll-to-top');
@@ -72,94 +74,68 @@ document.addEventListener('DOMContentLoaded', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
       });
   }
+
+  // Установить правильную иконку языка при загрузке страницы
+  setInitialLanguageIcon();
 });
 
-// Обновление баланса токенов
-async function fetchBalance() {
-  try {
-      // Логика для получения баланса (заглушка)
-      const balance = 100; // Пример баланса
-      const balanceElement = document.getElementById('balance');
-      if (balanceElement) balanceElement.textContent = `${balance} PGT`;
-  } catch (error) {
-      console.error('Ошибка при загрузке баланса:', error);
+
+// Функция для изменения языка
+function changeLanguage(language) {
+  if (language === 'cz') {
+      window.location.href = 'index-cz.html';
+  } else if (language === 'en') {
+      window.location.href = 'index.html';
+  } else if (language === 'cz-service') {
+      window.location.href = 'pit-stop-cz.html';
+  } else if (language === 'en-service') {
+      window.location.href = 'pit-stop.html';
+  } else if (language === 'uk') {
+      window.location.href = 'index-ua.html';
+  } else if (language === 'ru') {
+      window.location.href = 'index-ru.html';
+  } else if (language === 'uk-service') {
+      window.location.href = 'pit-stop-ua.html';
+  } else if (language === 'ru-service') {
+      window.location.href = 'pit-stop-ru.html';
   }
 }
 
-// Получение токенов
-async function claimTokens() {
-  try {
-      const response = await fetch('http://localhost:3000/claim', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' }
-      });
+// Функция для установки начальной иконки языка при загрузке страницы
+function setInitialLanguageIcon() {
+  const languageDropdown = document.getElementById('language-dropdown');
+  const currentUrl = window.location.href;
 
-      if (!response.ok) throw new Error('Claim request failed');
-
-      const data = await response.json();
-      alert(data.message);
-      fetchBalance();
-  } catch (error) {
-      alert(`Ошибка получения токенов: ${error.message}`);
+  if (currentUrl.includes('index-cz.html')) {
+      languageDropdown.value = 'cz';
+  } else if (currentUrl.includes('index-ua.html')) {
+      languageDropdown.value = 'uk';
+  } else if (currentUrl.includes('index-ru.html')) {
+      languageDropdown.value = 'ru';
+  } else {
+      languageDropdown.value = 'en';
   }
 }
 
-document.getElementById('claimTokens')?.addEventListener('click', claimTokens);
-document.getElementById('exchangeTokens')?.addEventListener('click', () => {
-  alert('Обмен токенов пока не реализован');
+document.addEventListener("DOMContentLoaded", function () {
+  const userLang = navigator.language || navigator.userLanguage; // Определяем язык браузера
+  let targetPage = "index.html"; // По умолчанию английская версия
+
+  if (userLang.startsWith("cs")) { // Чешский
+      targetPage = "index-cs.html";
+  } else if (userLang.startsWith("ru")) { // Русский
+      targetPage = "index-ru.html";
+  } else if (userLang.startsWith("uk")) { // Украинский
+      targetPage = "index-ua.html";
+  }
+
+  // Проверяем, чтобы не делать редирект повторно
+  if (window.location.pathname === "/index.html" && targetPage !== "index.html") {
+      window.location.replace(targetPage);
+  }
 });
 
-// Перевод интерфейса
-const translations = {
-  en: {
-      welcome: 'Welcome to Pit-Stop Lounge',
-      description: 'We are a small but ambitious company located in a cozy and compact space, where every corner is designed for your enjoyment and comfort. At Pit Stop Game Zone, we believe that every moment should be special, and we strive to provide you with an exceptional experience that will be remembered only in the best possible way. And you will definitely want to visit us again and again.',
-      booking: 'Online Booking',
-      menu: {
-      devices: 'Our Devices'
-    },
-      
-  },
-  cz: {
-      welcome: 'Vítejte v Pit-Stop Lounge',
-      description: 'Jsme malá, ale ambiciózní společnost sídlící v útulném a kompaktním prostoru, kde je každý kout navržen pro vaše potěšení a pohodlí. V Pit Stop Game Zone věříme, že každý okamžik by měl být výjimečný, a snažíme se vám poskytnout výjimečný zážitek, na který se bude vzpomínat jen v tom nejlepším. A určitě nás budete chtít navštívit znovu a znovu.',
-      booking: 'Online Rezervace',
-      menu: {
-      devices: 'Naše zařízení'
-    },
-  },
-  ru: {
-      welcome: 'Добро пожаловать в Pit-Stop Lounge',
-      description: 'Мы небольшая, но амбициозная компания, расположенная в уютном и компактном пространстве, где каждый уголок создан для вашего удовольствия и комфорта. В Pit Stop Game Zone мы считаем, что каждый момент должен быть особенным, и стремимся подарить вам исключительные впечатления, которые запомнятся только в лучшем виде. И вам обязательно захочется посетить нас снова и снова.',
-      booking: 'Онлайн Бронирование'
-  },
-  uk: {
-      welcome: 'Ласкаво просимо до Pit-Stop Lounge',
-      description: 'Ми невелика, але амбітна компанія, розташована в затишному та компактному приміщенні, де кожен куточок створений для вашого задоволення та комфорту. У Pit Stop Game Zone ми віримо, що кожен момент має бути особливим, і ми прагнемо надати вам винятковий досвід, який запам’ятається лише найкращим чином. І ви неодмінно захочете відвідати нас знову і знову.',
-      booking: 'Онлайн Бронювання'
-  }
-};
 
-function changeLanguage(lang) {
-  const welcomeMessage = document.getElementById('welcome-message');
-  const description = document.getElementById('description');
-  const bookingButton = document.getElementById('booking-button');
-  const menuItems = document.querySelectorAll('.menu-item');
-  const footerText = document.getElementById('footer-text');
-
-
-  if (welcomeMessage) welcomeMessage.textContent = translations[lang]?.welcome || translations.en.welcome;
-  if (description) description.textContent = translations[lang]?.description || translations.en.description;
-  if (bookingButton) bookingButton.textContent = translations[lang]?.booking || translations.en.booking;
-  if (menuItems) {
-    const menuTranslation = translations[lang]?.menu || translations.en.menu;
-    menuItems[0].textContent = menuTranslation.devices;
-    menuItems[1].textContent = menuTranslation.games;
-    menuItems[2].textContent = menuTranslation.pricing;
-    menuItems[3].textContent = menuTranslation.gallery;
-  }
-  if (footerText) footerText.textContent = translations[lang]?.footer || translations.en.footer;
-}
 
 // Tooltip для адреса
 function initializeTooltip() {
@@ -183,7 +159,6 @@ function initializeTooltip() {
 
 document.addEventListener('DOMContentLoaded', initializeTooltip);
 
-
 // Открытие модального окна
 function openModal() {
   document.getElementById('documents-modal').style.display = 'block';
@@ -192,9 +167,7 @@ function openModal() {
 // Закрытие модального окна
 function closeModal() {
   document.getElementById('documents-modal').style.display = 'none';
-  document.getElementById('document-content').innerHTML = ''; // Очищаем содержимое
 }
-
 // Загрузка текстового документа в модальное окно
 function loadDocument(filePath) {
   fetch(filePath)
@@ -262,39 +235,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Бургер-меню
 document.addEventListener('DOMContentLoaded', () => {
-    const burgerButton = document.querySelector('.burger-menu-button');
-    const burgerMenu = document.querySelector('.burger-menu');
-    const closeButton = document.querySelector('.close-menu');
-    const languageDropdown = document.getElementById('language-dropdown');
-    const burgerContainer = document.querySelector('.burger-menu-container');
+  const burgerButton = document.querySelector('.burger-menu-button');
+  const burgerMenu = document.querySelector('.burger-menu');
+  const closeButton = document.querySelector('.close-menu');
+  const languageDropdown = document.getElementById('language-dropdown');
+  const burgerContainer = document.querySelector('.burger-menu-container');
 
-    // Показ меню через 4 секунды
-    setTimeout(() => {
-        burgerContainer.classList.add('visible');
-    }, 4000);
+  if (burgerContainer) {
+      // Показ меню через 4 секунды
+      setTimeout(() => {
+          burgerContainer.classList.add('visible');
+      }, 4000);
+  }
 
-    // Открытие меню
-    burgerButton.addEventListener('click', () => {
-        burgerMenu.classList.toggle('open');
-    });
+  if (burgerButton && burgerMenu) {
+      // Открытие меню
+      burgerButton.addEventListener('click', () => {
+          burgerMenu.classList.toggle('open');
+      });
 
-    // Закрытие меню через кнопку "×"
-    closeButton.addEventListener('click', () => {
-        burgerMenu.classList.remove('open');
-    });
+      // Закрытие меню через кнопку "×"
+      closeButton.addEventListener('click', () => {
+          burgerMenu.classList.remove('open');
+      });
 
-    // Закрытие меню при клике на ссылку
-    burgerMenu.addEventListener('click', (event) => {
-        if (event.target.tagName === 'A') {
-            burgerMenu.classList.remove('open');
-        }
-    });
+      // Закрытие меню при клике на ссылку
+      burgerMenu.addEventListener('click', (event) => {
+          if (event.target.tagName === 'A') {
+              burgerMenu.classList.remove('open');
+          }
+      });
+  }
 
-    // Смена языка
-    languageDropdown.addEventListener('change', (event) => {
-        const selectedLanguage = event.target.value;
-        changeLanguage(selectedLanguage); // Функция changeLanguage уже должна быть у вас
-    });
+  // Смена языка
+  if (languageDropdown) {
+      languageDropdown.addEventListener('change', (event) => {
+          const selectedLanguage = event.target.value;
+          changeLanguage(selectedLanguage); // Функция changeLanguage уже должна быть у вас
+      });
+  }
 });
 
 // Падение блока с новостями
@@ -383,3 +362,4 @@ setInterval(() => {
 // Инициализация
 updateClock();
 updateClubStatus();
+
