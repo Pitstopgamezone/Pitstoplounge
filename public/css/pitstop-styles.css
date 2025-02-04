@@ -321,12 +321,12 @@ footer {
 }
 .bike-repair {
     left: -120px;
-    top: 29%;
+    top: 33%;
     transform: translateY(-50%);
 }
 .bike-fixed {
     right: -120px;
-    top: 29%;
+    top: 33%;
     transform: translateY(-50%) scaleX(-1);
 }
 .animate-bikes .bike-repair {
