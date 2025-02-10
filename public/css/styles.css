@@ -390,52 +390,7 @@ body {
   transform: scale(1.1);
 }
 
-#status-indicator {
-  font-size: 24px;
-  font-weight: bold;
-  transition: color 0.3s ease, transform 0.3s ease;
-  
-}
 
-.status-on {
-  color: green;
-  animation: pulseGreen 1s infinite;
-}
-
-.status-off {
-  color: red;
-  animation: pulseRed 1s infinite;
-}
-
-@keyframes pulseGreen {
-  0% {
-      transform: scale(1);
-      color: lightgreen;
-  }
-  50% {
-      transform: scale(1.2);
-      color: green;
-  }
-  100% {
-      transform: scale(1);
-      color: lightgreen;
-  }
-}
-
-@keyframes pulseRed {
-  0% {
-      transform: scale(1);
-      color: lightcoral;
-  }
-  50% {
-      transform: scale(1.2);
-      color: red;
-  }
-  100% {
-      transform: scale(1);
-      color: lightcoral;
-  }
-}
 
 
 
@@ -1025,16 +980,54 @@ ul li a i {
   margin-top: 0px;
   background-color: transparent;
   border: 2px solid #fe0202;
-  box-shadow: 0 8px 20px #ee0303;
+  box-shadow: 0 8px 20px rgb(255, 0, 0), 
+              0 8px 20px rgb(255, 213, 0), 
+              0 8px 20px rgb(43, 255, 0), 
+              0 8px 20px rgb(0, 238, 255), 
+              0 8px 20px rgba(0, 0, 255, 0.5), 
+              0 8px 20px rgb(76, 0, 130), 
+              0 8px 20px rgb(230, 0, 255); /* Радужная тень */ 
   padding: 3px; /* Отступы внутри блока */
   border-radius: 15px;
   position: relative; /* Относительное позиционирование */
   height: 150px; /* Высота блока */
   overflow: hidden; /* Убираем возможные выступающие части */
   opacity: 1; /* Блок скрыт по умолчанию */
+  animation: rainbowShadow 3s infinite; /* Анимация переливающейся тени */
  /* transform: translateY(-100px); /* Смещён вверх */
   /*transition: opacity 0.3s ease, transform 0.3s ease; /* Плавный переход */
 }
+
+@keyframes rainbowShadow {
+  0% {
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5), 
+                0 8px 20px rgba(255, 127, 0, 0.5), 
+                0 8px 20px rgba(255, 255, 0, 0.5), 
+                0 8px 20px rgba(0, 255, 0, 0.5), 
+                0 8px 20px rgba(0, 0, 255, 0.5), 
+                0 8px 20px rgba(75, 0, 130, 0.5), 
+                0 8px 20px rgba(148, 0, 211, 0.5);
+  }
+  50% {
+    box-shadow: 0 8px 20px rgba(148, 0, 211, 0.5), 
+                0 8px 20px rgba(75, 0, 130, 0.5), 
+                0 8px 20px rgba(0, 0, 255, 0.5), 
+                0 8px 20px rgba(0, 255, 0, 0.5), 
+                0 8px 20px rgba(255, 255, 0, 0.5), 
+                0 8px 20px rgba(255, 127, 0, 0.5), 
+                0 8px 20px rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5), 
+                0 8px 20px rgba(255, 127, 0, 0.5), 
+                0 8px 20px rgba(255, 255, 0, 0.5), 
+                0 8px 20px rgba(0, 255, 0, 0.5), 
+                0 8px 20px rgba(0, 0, 255, 0.5), 
+                0 8px 20px rgba(75, 0, 130, 0.5), 
+                0 8px 20px rgba(148, 0, 211, 0.5);
+  }
+}
+
 
 /*#news-calendar.visible {
   /*animation: dropIn 0.5s ease forwards; /* Запуск анимации */
@@ -1151,8 +1144,8 @@ ul li a i {
 .image-carousel {
   display: flex; /* Размещаем элементы в строку */
   overflow-x: auto; /* Добавляем горизонтальную прокрутку */
-  gap: 10px; /* Отступы между изображениями */
-  padding: 10px 0; /* Внутренние отступы */
+  gap: 20px; /* Отступы между изображениями */
+  padding: 20px 0; /* Внутренние отступы */
   align-items: flex-end; /* Выравнивание по нижнему краю */
   margin-top: -20px; /* Отступ сверху */
 }
@@ -2016,7 +2009,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 24px;
   margin-bottom: 15px;
-  color: #ffcc00; /* Золотой акцент для заголовка */
+  color: #001aff; /* Золотой акцент для заголовка */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   text-align: center; /* Центрирование текста заголовка */
 }
@@ -2289,6 +2282,7 @@ body {
 .gallery-item:hover {
   cursor: pointer;
 }
+
 
 
 /* Бургер-меню всегда видно */
