@@ -345,10 +345,10 @@ function updateClubStatus() {
 
     // Часы работы клуба: 10:00 - 22:00
     if (hours >= 10 && hours < 22) {
-        statusText.textContent = 'We are open';
+        statusText.textContent = 'Open';
         statusText.style.color = '#00ff00';
     } else {
-        statusText.textContent = 'We are closed';
+        statusText.textContent = 'Closed';
         statusText.style.color = '#ff0000';
     }
 }
