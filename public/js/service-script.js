@@ -93,3 +93,45 @@ scrollToTopBtn.addEventListener('click', scrollToTop);
 document.addEventListener('scroll', handleScroll);
 
 
+
+const languageSwitcher = document.getElementById('language-switcher');
+
+function handleScroll() {
+    const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+    if ((rootElement.scrollTop / scrollTotal) > 0.8) {
+        scrollToTopBtn.classList.add('showBtn');
+    } else {
+        scrollToTopBtn.classList.remove('showBtn');
+    }
+}
+
+function scrollToTop() {
+    rootElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+scrollToTopBtn.addEventListener('click', scrollToTop);
+document.addEventListener('scroll', handleScroll);
+
+languageSwitcher.addEventListener('click', function() {
+    const currentLang = document.documentElement.lang;
+    let newLang = 'en';
+    let newFile = 'pit-stop-en.html';
+
+    if (currentLang === 'ru') {
+        newLang = 'en';
+        newFile = 'pit-stop-en.html';
+    } else if (currentLang === 'en') {
+        newLang = 'cs';
+        newFile = 'pit-stop-cz.html';
+    } else if (currentLang === 'cs') {
+        newLang = 'ru';
+        newFile = 'pit-stop-ru.html';
+    }
+
+    window.location.href = newFile;
+});
+
+
