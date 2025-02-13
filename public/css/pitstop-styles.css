@@ -538,11 +538,11 @@ footer {
     bottom: 80px;
     left: 10px;
     display: none;
-    background-color: #ff6600;
+    background-color: #ff660083;
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 15px;
+    border-radius: 21px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: opacity 0.3s;
