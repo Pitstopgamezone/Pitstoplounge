@@ -105,15 +105,7 @@ function handleScroll() {
     }
 }
 
-function scrollToTop() {
-    rootElement.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
 
-scrollToTopBtn.addEventListener('click', scrollToTop);
-document.addEventListener('scroll', handleScroll);
 
 languageSwitcher.addEventListener('click', function() {
     const currentLang = document.documentElement.lang;
