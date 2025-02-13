@@ -213,6 +213,14 @@ function scrollToTop() {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const marquee = document.querySelector('.marquee');
+  
+    marquee.addEventListener('click', () => {
+      marquee.classList.toggle('paused');
+    });
+  });
+  
 document.addEventListener("DOMContentLoaded", () => {
     const carousel = document.querySelector(".image-carousel");
     const prevButton = document.querySelector(".carousel-control.prev");
