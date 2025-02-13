@@ -979,14 +979,8 @@ ul li a i {
 #news-calendar {
   margin-top: 0px;
   background-color: transparent;
-  border: 2px solid #fe9102;
-  box-shadow: 0 1px 20px rgba(255, 0, 0, 0.311), 
-              0 8px 20px rgba(255, 213, 0, 0.31), 
-              0 8px 20px rgba(43, 255, 0, 0.215), 
-              0 8px 20px rgba(0, 238, 255, 0.307), 
-              0 8px 20px rgba(0, 0, 255, 0.5), 
-              0 8px 20px rgba(76, 0, 130, 0.256), 
-              0 8px 20px rgba(230, 0, 255, 0.244); /* Радужная тень */ 
+  border: 2px solid #fe5a02;
+  box-shadow: 0 10px 20px rgba(255, 55, 0, 0.978); /* Радужная тень */ 
   padding: 3px; /* Отступы внутри блока */
   border-radius: 15px;
   position: relative; /* Относительное позиционирование */
