@@ -1115,9 +1115,7 @@ ul li a i {
   animation-play-state: paused; /* Остановка анимации */
 }
 
-.marquee.paused li {
-  font-size: 24px; /* Увеличенный размер текста */
-}
+
 
 
 
