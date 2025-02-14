@@ -116,8 +116,8 @@ function setInitialLanguageIcon() {
       languageDropdown.value = 'uk';
   } else if (currentUrl.includes('index-ru.html')) {
       languageDropdown.value = 'ru';
-  } else {
-      languageDropdown.value = 'en';
+  } else if (currentUrl.includes('index.html')) {
+    languageDropdown.value = 'en';
   }
 }
 
