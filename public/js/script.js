@@ -77,7 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Установить правильную иконку языка при загрузке страницы
   setInitialLanguageIcon();
+
+  // Проверить, нужно ли показывать заставку
+  checkAndShowIntro();
 });
+
 
 
 // Функция для изменения языка
@@ -117,6 +121,29 @@ function setInitialLanguageIcon() {
   }
 }
 
+// Функция для проверки и показа заставки
+function checkAndShowIntro() {
+    const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+    const neonTextContainer = document.getElementById('neon-text-container');
+    const mainContent = document.getElementById('main-content');
+  
+    if (!hasSeenIntro) {
+        // Показываем заставку
+        if (neonTextContainer) neonTextContainer.style.display = 'block';
+        if (mainContent) mainContent.style.display = 'none';
+  
+        setTimeout(() => {
+            if (neonTextContainer) neonTextContainer.style.display = 'none';
+            if (mainContent) mainContent.style.display = 'block';
+            localStorage.setItem('hasSeenIntro', 'true');
+        }, 3000); // Задержка для показа заставки
+    } else {
+        // Скрываем заставку и показываем контент сразу
+        if (neonTextContainer) neonTextContainer.style.display = 'none';
+        if (mainContent) mainContent.style.display = 'block';
+    }
+  }
+  
 document.addEventListener("DOMContentLoaded", function () {
   const userLang = navigator.language || navigator.userLanguage; // Определяем язык браузера
   let targetPage = "index.html"; // По умолчанию английская версия
@@ -220,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       marquee.classList.toggle('paused');
     });
   });
-  
+
 document.addEventListener("DOMContentLoaded", () => {
     const carousel = document.querySelector(".image-carousel");
     const prevButton = document.querySelector(".carousel-control.prev");
