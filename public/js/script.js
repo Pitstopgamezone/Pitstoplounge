@@ -111,14 +111,22 @@ function setInitialLanguageIcon() {
   const currentUrl = window.location.href;
 
   if (currentUrl.includes('index-cz.html')) {
-      languageDropdown.value = 'cz';
-  } else if (currentUrl.includes('index-ua.html')) {
-      languageDropdown.value = 'uk';
-  } else if (currentUrl.includes('index-ru.html')) {
-      languageDropdown.value = 'ru';
-  } else if (currentUrl.includes('index.html')) {
+    languageDropdown.value = 'cz';
+} else if (currentUrl.includes('index-ua.html')) {
+    languageDropdown.value = 'uk';
+} else if (currentUrl.includes('index-ru.html')) {
+    languageDropdown.value = 'ru';
+} else if (currentUrl.includes('index.html')) {
     languageDropdown.value = 'en';
-  }
+} else if (currentUrl.includes('pit-stop-cz.html')) {
+    languageDropdown.value = 'cz-service';
+} else if (currentUrl.includes('pit-stop.html')) {
+    languageDropdown.value = 'en-service';
+} else if (currentUrl.includes('pit-stop-ua.html')) {
+    languageDropdown.value = 'uk-service';
+} else if (currentUrl.includes('pit-stop-ru.html')) {
+    languageDropdown.value = 'ru-service';
+}
 }
 
 // Функция для проверки и показа заставки
