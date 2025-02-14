@@ -143,7 +143,7 @@ function checkAndShowIntro() {
         if (mainContent) mainContent.style.display = 'block';
     }
   }
-  
+
 document.addEventListener("DOMContentLoaded", function () {
   const userLang = navigator.language || navigator.userLanguage; // Определяем язык браузера
   let targetPage = "index.html"; // По умолчанию английская версия
