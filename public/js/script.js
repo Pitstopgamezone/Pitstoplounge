@@ -310,7 +310,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
- 
+  // Смена языка
+  if (languageDropdown) {
+      languageDropdown.addEventListener('change', (event) => {
+          const selectedLanguage = event.target.value;
+          changeLanguage(selectedLanguage); // Функция changeLanguage уже должна быть у вас
+      });
+  }
 });
 
 // Падение блока с новостями
