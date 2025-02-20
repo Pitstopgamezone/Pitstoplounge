@@ -60,12 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   showTab('club');
   initializeContent();
 
-  const languageDropdown = document.getElementById('language-dropdown');
-  if (languageDropdown) {
-      languageDropdown.addEventListener('change', e => {
-          changeLanguage(e.target.value);
-      });
-  }
+
 
   const scrollToTopButton = document.querySelector('.scroll-to-top');
   if (scrollToTopButton) {
