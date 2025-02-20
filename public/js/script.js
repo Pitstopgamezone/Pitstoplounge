@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Показ меню через 4 секунды
       setTimeout(() => {
           burgerContainer.classList.add('visible');
-      }, 4000);
+      }, 3000);
   }
 
   if (burgerButton && burgerMenu) {
