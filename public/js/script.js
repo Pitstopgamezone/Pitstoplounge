@@ -392,3 +392,13 @@ window.addEventListener('scroll', () => {
   // Инициализация
   updateClock();
   updateClubStatus();
+
+
+  pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    "panorama": "images/02 copy.jpg",
+    "autoLoad": true,
+    "autoRotate": -2,
+    "showZoomCtrl": false,
+    "showFullscreenCtrl": true
+});
