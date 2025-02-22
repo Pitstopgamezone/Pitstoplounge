@@ -394,11 +394,17 @@ window.addEventListener('scroll', () => {
   updateClubStatus();
 
 
-  const viewer = new PhotoSphereViewer.Viewer({
-    container: document.getElementById('viewer'),
-    panorama: '02 copy.jpg', // Укажи путь к своему изображению
-    navbar: true,
-    loadingTxt: "Загрузка панорамы...",
-    defaultYaw: 0,
-    mousewheel: true,
+  document.addEventListener('DOMContentLoaded', function() {
+    const viewer = new PhotoSphereViewer.Viewer({
+        container: document.querySelector('#panorama'),
+        panorama: 'images/02copy.jpg',
+        navbar: [
+            'autorotate',
+            'zoom',
+            'fullscreen'
+        ],
+        autorotateDelay: 3000,
+        mousewheel: true,
+        touchmoveTwoFingers: true
+    });
 });
