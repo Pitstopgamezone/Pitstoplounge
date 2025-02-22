@@ -394,11 +394,11 @@ window.addEventListener('scroll', () => {
   updateClubStatus();
 
 
-  pannellum.viewer('panorama', {
-    "type": "equirectangular",
-    "panorama": "images/02 copy.jpg",
-    "autoLoad": true,
-    "autoRotate": -2,
-    "showZoomCtrl": false,
-    "showFullscreenCtrl": true
+  const viewer = new PhotoSphereViewer.Viewer({
+    container: document.getElementById('viewer'),
+    panorama: '02 copy.jpg', // Укажи путь к своему изображению
+    navbar: true,
+    loadingTxt: "Загрузка панорамы...",
+    defaultYaw: 0,
+    mousewheel: true,
 });

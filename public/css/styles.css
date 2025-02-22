@@ -2256,6 +2256,10 @@ body {
   cursor: pointer;
 }
 
+#viewer {
+  width: 100vw;
+  height: 100vh;
+}
 
 
 /* Бургер-меню всегда видно */
