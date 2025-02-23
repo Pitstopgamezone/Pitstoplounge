@@ -397,7 +397,7 @@ window.addEventListener('scroll', () => {
   document.addEventListener('DOMContentLoaded', function() {
     const viewer = new PhotoSphereViewer.Viewer({
         container: document.querySelector('#panorama'),
-        panorama: 'images/02copy.jpg',
+        panorama: 'images/panorama.jpg',
         navbar: [
             'autorotate',
             'zoom',
