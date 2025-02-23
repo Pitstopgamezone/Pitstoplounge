@@ -2224,28 +2224,82 @@ body {
   margin-bottom: 25px;
   color: #fdfdfd;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 1s ease-in-out;
 }
 
 .gallery-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .gallery-item {
   width: 100%;
   max-width: 1000px;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 15px; /* Закругленные углы */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 5px solid transparent; /* Изначально прозрачная рамка */
+  background-clip: padding-box; /* Учитываем отступы */
+  position: relative; /* Для псевдоэлементов */
+}
+
+.gallery-item::before, .gallery-item::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 15px;
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.gallery-item::after {
+  filter: blur(10px);
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.5); /* Полупрозрачная рамка при наведении */
+}
+
+.gallery-item:hover::before, .gallery-item:hover::after {
+  opacity: 1;
 }
 
 .panorama-image {
   width: 100%;
   height: auto;
   display: block;
+  animation: slideIn 1s ease-in-out;
 }
 
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
 
 
 /* Бургер-меню всегда видно */
