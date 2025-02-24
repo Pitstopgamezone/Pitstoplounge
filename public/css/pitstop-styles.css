@@ -346,25 +346,31 @@ tr:nth-child(even) {
     font-size: 1.1em;
 }
 
-/* WhatsApp Чат */
-.whatsapp-chat {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.whatsapp-chat button {
-    padding: 12px 20px;
-    font-size: 1.2em;
-    background: #25D366;
+/* Стили для кнопки WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000;
 }
 
-.whatsapp-chat button:hover {
-    background: #1da851;
+.whatsapp-button:hover {
+    background-color: #1da851;
+    transform: scale(1.1);
+}
+
+.whatsapp-button i {
+    font-size: 30px;
 }
 
 /* Подвал */
