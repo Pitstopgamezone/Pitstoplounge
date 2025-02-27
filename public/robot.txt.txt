@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /documents/
+
+# Allow all robots complete access to the following directories
+Allow: /css/
+Allow: /images/
+Allow: /js/
+
+# Sitemap location
+Sitemap: https://www.pitstoplounge.com/sitemap.xml
