@@ -13,7 +13,43 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.pitstoplounge.com/index-cz.html</loc>
+        <lastmod>2025-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.pitstoplounge.com/index-ru.html</loc>
+        <lastmod>2025-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.pitstoplounge.com/index-ua.html</loc>
+        <lastmod>2025-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.pitstoplounge.com/pit-stop-en.html</loc>
+        <lastmod>2025-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.pitstoplounge.com/pit-stop-cz.html</loc>
+        <lastmod>2025-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.pitstoplounge.com/pit-stop-ru.html</loc>
+        <lastmod>2025-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.pitstoplounge.com/pit-stop-ua.html</loc>
         <lastmod>2025-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

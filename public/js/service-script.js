@@ -119,11 +119,13 @@ languageSwitcher.addEventListener('click', function() {
         newLang = 'cs';
         newFile = 'pit-stop-cz.html';
     } else if (currentLang === 'cs') {
+        newLang = 'ua';
+        newFile = 'pit-stop-ua.html';
+    } else if (currentLang === 'ua') {
         newLang = 'ru';
         newFile = 'pit-stop-ru.html';
     }
 
     window.location.href = newFile;
 });
-
 

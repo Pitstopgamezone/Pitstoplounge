@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X4Z3KPJMW5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X4Z3KPJMW5');
+</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Pit-Stop Service — ремонт та оренда велосипедів у Празі. Якісні послуги, доступні ціни, зручне розташування.">
+        <meta name="keywords" content="ремонт велосипедів, оренда велосипедів, Pit-Stop Service, Прага">
+        <meta name="author" content="Pit-Stop Service">
+        <title>Pit-Stop Service — ремонт та оренда велосипедів</title>
+        <!-- Favicon -->
+        <link rel="icon" href="images/icon2.webp" type="image/x-icon">
+        <link rel="stylesheet" href="css/pitstop-styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script src="js/service-script.js" defer></script>
+    </head>
+<body>
+    <nav>
+        <div class="burger-menu" id="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html"><i class="fas fa-gamepad"></i> Кібер клуб</a></li>
+            <li><a href="#services"><i class="fas fa-tools"></i> Послуги</a></li>
+            <li><a href="#pricing"><i class="fas fa-dollar-sign"></i> Ціни</a></li>
+            <li><a href="#partners"><i class="fas fa-handshake"></i> Партнери</a></li>
+            <li><a href="#contact"><i class="fas fa-address-book"></i> Контакти</a></li>
+            <li><button id="language-switcher">EN</button></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Ласкаво просимо до Pit-Stop Bike Service</h1>
+        <p>Ваш надійний партнер у ремонті та оренді велосипедів у Празі.</p>
+        <!--<img src="images/bike1.svg" alt="Велосипед заїжджає" class="bike bike-repair">
+        <img src="images/bike2.svg" alt="Велосипед виїжджає" class="bike bike-fixed">-->
+    </header>
+
+    <section id="services">
+        <h2>Наші послуги</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <h3>Ремонт велосипедів</h3>
+                <p>Якісний ремонт всіх типів велосипедів від досвідчених майстрів.</p>
+                <div class="service-details">
+                    <p>Детальний опис ремонту велосипедів. Ми пропонуємо ремонт всіх типів велосипедів, включаючи гірські, шосейні та міські велосипеди. Наші майстри мають багаторічний досвід і використовують тільки якісні запчастини.</p>
+                </div>
+            </div>
+            <!--<div class="service-item">
+                <h3>Оренда велосипедів</h3>
+                <p>Доступна оренда велосипедів для прогулянок по місту та за його межами.</p>
+                <div class="service-details">
+                    <p>Детальний опис оренди велосипедів. Ми пропонуємо широкий вибір велосипедів для оренди, включаючи гірські, шосейні та міські велосипеди. Наші велосипеди регулярно проходять технічне обслуговування і знаходяться в відмінному стані.</p>
+                </div>
+            </div>-->
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2>Ціни</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Послуга</th>
+                    <th>Ціна</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="pricing-item">
+                    <td>Ремонт велосипеда</td>
+                    <td>від 500 CZK</td>
+                </tr>
+                <tr class="pricing-details">
+                    <td colspan="2">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Послуга</th>
+                                    <th>Ціна</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Заміна шин</td>
+                                    <td>200 CZK</td>
+                                </tr>
+                                <tr>
+                                    <td>Налаштування гальм</td>
+                                    <td>150 CZK</td>
+                                </tr>
+                                <tr>
+                                    <td>Регулювання передач</td>
+                                    <td>250 CZK</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!--<tr class="pricing-item">
+                    <td>Оренда велосипеда</td>
+                    <td>150 CZK/год</td>
+                </tr>
+                <tr class="pricing-details">
+                    <td colspan="2">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Тип оренди</th>
+                                    <th>Ціна</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Погодинна оренда</td>
+                                    <td>150 CZK/год</td>
+                                </tr>
+                                <tr>
+                                    <td>Денна оренда</td>
+                                    <td>1000 CZK/день</td>
+                                </tr>
+                                <tr>
+                                    <td>Тижнева оренда</td>
+                                    <td>5000 CZK/тиждень</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>-->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="partners">
+        <h2>Наші партнери</h2>
+        <div class="partners-container">
+            <div class="partner-item">
+                <img src="images/foodora-logo.gif" alt="Foodora">
+                <p>Foodora</p>
+            </div>
+            <div class="partner-item">
+                <img src="images/bolt-logo.gif" alt="Bolt">
+                <p>Bolt</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Контакти</h2>
+        <p>📍 Ми знаходимося:<a href="https://maps.app.goo.gl/iFwwjAqRLb5ToML68" target="_blank" class="address-link">
+             Chrudimská 2526/2b, Praha 3, Vinohrady</a> </p>
+        <p>📞 Телефон: <a href="tel:+420720888131">+420 720 888 131</a></p>
+        <p>📧 Email: <a href="mailto:info@pitstopservice.cz">info@pitstopservice.cz</a></p>
+        <div class="social-buttons">
+            <a href="https://www.facebook.com" target="_blank" class="social-button facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank" class="social-button twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank" class="social-button instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-button linkedin"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </section>
+
+    <div class="whatsapp-chat">
+        <a href="https://wa.me/420720888131?text=Здравствуйте,%20я%20хочу%20узнать%20о%20ваших%20услугах" target="_blank">
+            <button>Чат з нами в WhatsApp</button>
+        </a>
+    </div>
+
+<!-- Кнопка "Вгору" -->
+<button id="scrollToTopBtn" title="Вгору">↑</button>
+
+<footer>
+    <p>&copy; 2025 Pit-Stop Service. Всі права захищені.</p>
+</footer>
+
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            document.querySelectorAll('section, table, th, td, .service-item, .partner-item, footer, nav').forEach(el => {
+                el.classList.toggle('dark-mode');
+            });
+        });
+
+        window.onload = function() {
+            document.querySelector('header').classList.add('animate-bikes');
+        };
+
+        document.getElementById('burger-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
