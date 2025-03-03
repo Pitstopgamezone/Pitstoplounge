@@ -113,8 +113,8 @@ languageSwitcher.addEventListener('click', function() {
     let newFile = 'pit-stop-en.html';
 
     if (currentLang === 'ru') {
-        newLang = 'en';
-        newFile = 'pit-stop-en.html';
+        newLang = 'ua';
+        newFile = 'pit-stop-ua.html';
     } else if (currentLang === 'en') {
         newLang = 'cs';
         newFile = 'pit-stop-cz.html';
