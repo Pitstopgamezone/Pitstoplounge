@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const pricingItems = document.querySelectorAll('.pricing-item');
 
@@ -58,11 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('animate-bikes');
 });
-
 
 document.getElementById('burger-menu').addEventListener('click', function() {
     document.getElementById('nav-links').classList.toggle('active');
@@ -92,20 +89,7 @@ function scrollToTop() {
 scrollToTopBtn.addEventListener('click', scrollToTop);
 document.addEventListener('scroll', handleScroll);
 
-
-
 const languageSwitcher = document.getElementById('language-switcher');
-
-function handleScroll() {
-    const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
-    if ((rootElement.scrollTop / scrollTotal) > 0.8) {
-        scrollToTopBtn.classList.add('showBtn');
-    } else {
-        scrollToTopBtn.classList.remove('showBtn');
-    }
-}
-
-
 
 languageSwitcher.addEventListener('click', function() {
     const currentLang = document.documentElement.lang;
@@ -126,9 +110,9 @@ languageSwitcher.addEventListener('click', function() {
         newFile = 'pit-stop-ru.html';
     }
 
+    document.documentElement.lang = newLang;
     window.location.href = newFile;
 });
-
 
 // Get the modal
 var modal = document.getElementById("privacy-policy-modal");
