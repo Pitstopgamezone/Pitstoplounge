@@ -141,7 +141,18 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    fetch('documents/privacy-policy-bike.txt')
+    const currentLang = document.documentElement.lang;
+    let policyFile = 'privacy-policy-bike-en.txt';
+
+    if (currentLang === 'ru') {
+        policyFile = 'privacy-policy-bike-ru.txt';
+    } else if (currentLang === 'cs') {
+        policyFile = 'privacy-policy-bike-cz.txt';
+    } else if (currentLang === 'ua') {
+        policyFile = 'privacy-policy-bike-ua.txt';
+    }
+
+    fetch('documents/' + policyFile)
         .then(response => response.text())
         .then(data => {
             document.getElementById('privacy-policy-text').textContent = data;
