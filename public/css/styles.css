@@ -979,8 +979,8 @@ ul li a i {
 #news-calendar {
   margin-top: 0px;
   background-color: transparent;
-  border: 2px solid #fe5a02;
-  box-shadow: 0 10px 20px rgba(255, 55, 0, 0.978); /* Радужная тень */ 
+  border: 2px solid #6b02fe;
+  box-shadow: 0 10px 20px rgba(76, 0, 255, 0.978); /* Радужная тень */ 
   padding: 3px; /* Отступы внутри блока */
   border-radius: 15px;
   position: relative; /* Относительное позиционирование */
