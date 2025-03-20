@@ -148,7 +148,7 @@ btn.onclick = function() {
         policyFile = 'privacy-policy-bike-ru.txt';
     } else if (currentLang === 'cs') {
         policyFile = 'privacy-policy-bike-cz.txt';
-    } else if (currentLang === 'ua') {
+    } else if (currentLang === 'uk') {
         policyFile = 'privacy-policy-bike-ua.txt';
     }
 
