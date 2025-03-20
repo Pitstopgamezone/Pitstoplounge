@@ -1,7 +1,7 @@
 Privacy Policy
 Last Updated: [23.02.2025]
 
-At Pit Stop Game Zone, we respect your privacy and are committed to safeguarding the personal information you share with us. This Privacy Policy explains how we collect, use, and protect your data, including the information stored on third-party platforms like Senet.
+At Pit Stop Game Zone, we respect your privacy and are committed to safeguarding the personal information you share with us. This Privacy Policy explains how we collect, use, and protect your data, including the information stored on third-party platforms like Senet, Cloudflare, jsDelivr CDN, and Font Awesome.
 
 1. What Information We Collect
 
@@ -15,6 +15,9 @@ After visiting our gaming club, we collect your name and phone number for the fo
 
 1.3. We do not collect or store sensitive data, such as payment details, addresses, or other personal identifiers outside the information listed above.
 
+1.4. Fonts and Analytics:
+We use Google Fonts and other web fonts to enhance the visual appeal of our website. Additionally, we use Google Analytics to track and analyze website traffic and user behavior.
+
 2. How We Use Your Information
 
 2.1. Email Address:
@@ -26,20 +29,42 @@ Stored securely in the Senet system to:
  • Notify you about account activity or upcoming events.
  • Ensure a personalized experience during subsequent visits.
 
-2.3. We will never sell or share your information with third parties for marketing purposes.
+2.3. Fonts and Analytics:
+ • Google Fonts: Used to display web fonts on our website. Google may collect and process data about your usage of the fonts.
+ • Google Analytics: Used to analyze website traffic and user behavior. Google Analytics collects data such as your IP address, browser type, and pages visited.
+
+2.4. Cloudflare:
+We use Cloudflare to enhance the security and performance of our website. Cloudflare may collect and process data such as your IP address, browser type, and pages visited to provide its services.
+
+2.5. jsDelivr CDN:
+We use jsDelivr CDN to deliver static content such as JavaScript libraries and CSS files. jsDelivr may collect and process data such as your IP address and browser type to provide its services.
+
+2.6. Font Awesome:
+We use Font Awesome to display icons on our website. Font Awesome may collect and process data about your usage of the icons.
+
+2.7. We will never sell or share your information with third parties for marketing purposes.
 
 3. Data Storage and Security
 
 3.1. Senet System:
 We use the Senet platform to store and manage customer data, including names and phone numbers. Senet is a secure, industry-standard system designed for gaming club operations. Their privacy practices are detailed in their own privacy policy, which you can review on the Senet website.
 
-3.2. Security Measures:
+3.2. Cloudflare:
+We use Cloudflare to protect our website from malicious attacks and to improve its performance. Cloudflare's privacy practices are detailed in their own privacy policy, which you can review on the Cloudflare website.
+
+3.3. jsDelivr CDN:
+We use jsDelivr CDN to deliver static content. jsDelivr's privacy practices are detailed in their own privacy policy, which you can review on the jsDelivr website.
+
+3.4. Font Awesome:
+We use Font Awesome to display icons on our website. Font Awesome's privacy practices are detailed in their own privacy policy, which you can review on the Font Awesome website.
+
+3.5. Security Measures:
 We implement strict access controls and encryption protocols to protect your personal data. While we take every precaution to safeguard your information, no system is entirely immune to breaches.
 
 4. Third-Party Services
 
 4.1. This website and booking platform may use third-party services for specific functionalities. These services are responsible for protecting your data under their respective privacy policies.
-4.2. We recommend reviewing the privacy policy of the Senet platform and any other linked services for additional details on their data practices.
+4.2. We recommend reviewing the privacy policy of the Senet platform, Google Fonts, Google Analytics, Cloudflare, jsDelivr CDN, Font Awesome, and any other linked services for additional details on their data practices.
 
 5. Your Rights
 
@@ -50,10 +75,15 @@ We implement strict access controls and encryption protocols to protect your per
 
 5.2. To exercise these rights, contact us at [Your Email Address].
 
-6. Changes to This Policy
+6. Cookie Consent Banner
 
-6.1. We may update this Privacy Policy periodically. Any changes will be posted on this page with the updated date.
-6.2. By continuing to use our services after changes are posted, you agree to the updated terms.
+6.1. We use a cookie consent banner to inform you about our use of cookies and to obtain your consent for data collection.
+6.2. You have the option to accept or decline the use of cookies. If you decline, certain features of our website may not function properly.
+
+7. Changes to This Policy
+
+7.1. We may update this Privacy Policy periodically. Any changes will be posted on this page with the updated date.
+7.2. By continuing to use our services after changes are posted, you agree to the updated terms.
 
 8. Contact Us
 

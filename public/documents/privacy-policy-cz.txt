@@ -1,50 +1,94 @@
 Zásady ochrany osobních údajů
 Poslední aktualizace: [23.02.2025]
 
-V Pit Stop Game Zone respektujeme vaše soukromí a zavazujeme se chránit osobní údaje, které s námi sdílíte. Tyto zásady ochrany osobních údajů vysvětlují, jak shromažďujeme, používáme a chráníme vaše údaje, včetně informací uložených na platformách třetích stran, jako je Senet.
+V Pit Stop Game Zone respektujeme vaše soukromí a zavazujeme se chránit osobní údaje, které s námi sdílíte. Tyto zásady ochrany osobních údajů vysvětlují, jak shromažďujeme, používáme a chráníme vaše data, včetně informací uložených na platformách třetích stran, jako jsou Senet, Cloudflare, jsDelivr CDN a Font Awesome.
 
 1. Jaké informace shromažďujeme
-1.1. E-mailová adresa:
-Když používáte náš rezervační portál, shromažďujeme vaši e-mailovou adresu za účelem potvrzení a správy vašich rezervací.
+
+1.1. Emailová adresa:
+Když používáte náš rezervační portál, shromažďujeme vaši emailovou adresu pro potvrzení a správu vašich rezervací.
 
 1.2. Jméno a telefonní číslo:
 Po návštěvě našeho herního klubu shromažďujeme vaše jméno a telefonní číslo pro následující účely:
-• Správa vašeho účtu a využití služeb v našem herním klubu.
-• Poskytování personalizované podpory a zasílání oznámení.
+ • Správa vašeho účtu a používání v našem herním klubu.
+ • Poskytování personalizované podpory a oznámení.
 
-1.3. Neshromažďujeme ani neukládáme citlivé údaje, jako jsou platební údaje, adresy nebo jiné osobní identifikátory nad rámec výše uvedených informací.
-2. Jak vaše údaje používáme
-2.1. E-mailová adresa:
-Používáme ji k potvrzení rezervací a komunikaci ohledně vašich rezervací.
+1.3. Neshromažďujeme ani neukládáme citlivé údaje, jako jsou platební údaje, adresy nebo jiné osobní identifikátory mimo výše uvedené informace.
+
+1.4. Fonty a analytika:
+Používáme Google Fonts a další webové fonty ke zlepšení vizuálního vzhledu našich webových stránek. Kromě toho používáme Google Analytics ke sledování a analýze návštěvnosti webových stránek a chování uživatelů.
+
+2. Jak používáme vaše informace
+
+2.1. Emailová adresa:
+Používá se pro potvrzení rezervací a komunikaci o vašich rezervacích.
 
 2.2. Jméno a telefonní číslo:
-Bezpečně ukládáme v systému Senet pro:
-• Sledování vaší aktivity v klubu.
-• Oznámení o aktivitě účtu nebo nadcházejících událostech.
-• Zajištění personalizovaného zážitku při dalších návštěvách.
+Ukládá se bezpečně v systému Senet pro:
+ • Sledování vašeho používání klubu.
+ • Oznámení o aktivitě účtu nebo nadcházejících událostech.
+ • Zajištění personalizovaného zážitku při následných návštěvách.
 
-2.3. Nikdy neprodáváme ani nesdílíme vaše údaje s třetími stranami pro marketingové účely.
-3. Uchovávání a zabezpečení dat
+2.3. Fonty a analytika:
+ • Google Fonts: Používá se k zobrazování webových fontů na našich webových stránkách. Google může shromažďovat a zpracovávat data o vašem používání fontů.
+ • Google Analytics: Používá se k analýze návštěvnosti webových stránek a chování uživatelů. Google Analytics shromažďuje data, jako je vaše IP adresa, typ prohlížeče a navštívené stránky.
+
+2.4. Cloudflare:
+Používáme Cloudflare ke zvýšení bezpečnosti a výkonu našich webových stránek. Cloudflare může shromažďovat a zpracovávat data, jako je vaše IP adresa, typ prohlížeče a navštívené stránky, aby poskytoval své služby.
+
+2.5. jsDelivr CDN:
+Používáme jsDelivr CDN k doručování statického obsahu, jako jsou knihovny JavaScriptu a soubory CSS. jsDelivr může shromažďovat a zpracovávat data, jako je vaše IP adresa a typ prohlížeče, aby poskytoval své služby.
+
+2.6. Font Awesome:
+Používáme Font Awesome k zobrazování ikon na našich webových stránkách. Font Awesome může shromažďovat a zpracovávat data o vašem používání ikon.
+
+2.7. Nikdy neprodáme ani nesdílíme vaše informace s třetími stranami pro marketingové účely.
+
+3. Ukládání a zabezpečení dat
+
 3.1. Systém Senet:
-Používáme platformu Senet k ukládání a správě zákaznických údajů, včetně jmen a telefonních čísel. Senet je bezpečný a splňuje průmyslové standardy pro provoz herních klubů. Jejich zásady ochrany osobních údajů naleznete na webových stránkách Senet.
+Používáme platformu Senet k ukládání a správě zákaznických dat, včetně jmen a telefonních čísel. Senet je bezpečný, průmyslový standardní systém navržený pro provoz herních klubů. Jejich zásady ochrany osobních údajů jsou podrobně popsány v jejich vlastních zásadách ochrany osobních údajů, které si můžete přečíst na webových stránkách Senet.
 
-3.2. Bezpečnostní opatření:
-Provádíme přísná kontrolní opatření pro přístup k datům a šifrovací protokoly k ochraně vašich osobních údajů. Přestože podnikáme všechny možné kroky k zabezpečení vašich informací, žádný systém není zcela odolný vůči narušení bezpečnosti.
+3.2. Cloudflare:
+Používáme Cloudflare k ochraně našich webových stránek před škodlivými útoky a ke zlepšení jejich výkonu. Zásady ochrany osobních údajů Cloudflare jsou podrobně popsány v jejich vlastních zásadách ochrany osobních údajů, které si můžete přečíst na webových stránkách Cloudflare.
+
+3.3. jsDelivr CDN:
+Používáme jsDelivr CDN k doručování statického obsahu. Zásady ochrany osobních údajů jsDelivr jsou podrobně popsány v jejich vlastních zásadách ochrany osobních údajů, které si můžete přečíst na webových stránkách jsDelivr.
+
+3.4. Font Awesome:
+Používáme Font Awesome k zobrazování ikon na našich webových stránkách. Zásady ochrany osobních údajů Font Awesome jsou podrobně popsány v jejich vlastních zásadách ochrany osobních údajů, které si můžete přečíst na webových stránkách Font Awesome.
+
+3.5. Bezpečnostní opatření:
+Implementujeme přísné přístupové kontroly a šifrovací protokoly k ochraně vašich osobních údajů. I když přijímáme veškerá opatření k ochraně vašich informací, žádný systém není zcela imunní vůči narušení.
 
 4. Služby třetích stran
-4.1. Tento web a rezervační platforma mohou používat služby třetích stran pro specifické funkce. Tyto služby jsou odpovědné za ochranu vašich údajů podle svých vlastních zásad ochrany osobních údajů.
-4.2. Doporučujeme, abyste si přečetli zásady ochrany osobních údajů platformy Senet a jakýchkoli dalších připojených služeb pro podrobnější informace o jejich postupech při nakládání s daty.
-5. Vaše práva
-5.1. Máte právo:
-• Přistupovat ke svým osobním údajům uloženým v našich systémech.
-• Požádat o opravu nebo vymazání svých údajů, pokud je to možné.
-• Odvolat svůj souhlas s budoucí komunikací.
 
-5.2. Chcete-li uplatnit svá práva, kontaktujte nás na [Vaše e-mailová adresa].
-6. Změny těchto zásad
-6.1. Tyto zásady ochrany osobních údajů můžeme čas od času aktualizovat. Jakékoli změny budou zveřejněny na této stránce s aktualizovaným datem.
-6.2. Pokračováním v používání našich služeb po zveřejnění změn souhlasíte s aktualizovanými podmínkami.
-7. Kontaktujte nás
-Pokud máte jakékoli dotazy nebo obavy týkající se těchto zásad ochrany osobních údajů nebo nakládání s vašimi osobními údaji, kontaktujte nás:
-• E-mail: [pitstoplounge29@gmail.com]
-• Telefon: [+(420) 720 888 131]
+4.1. Tento web a rezervační platforma mohou používat služby třetích stran pro specifické funkce. Tyto služby jsou odpovědné za ochranu vašich dat podle jejich příslušných zásad ochrany osobních údajů.
+4.2. Doporučujeme si přečíst zásady ochrany osobních údajů platformy Senet, Google Fonts, Google Analytics, Cloudflare, jsDelivr CDN, Font Awesome a jakýchkoli dalších propojených služeb pro další podrobnosti o jejich postupech ochrany dat.
+
+5. Vaše práva
+
+5.1. Máte právo:
+ • Přístup k vašim osobním informacím uloženým v našich systémech.
+ • Požádat o opravu nebo smazání vašich informací, pokud je to možné.
+ • Odvolat souhlas s budoucí komunikací.
+
+5.2. Chcete-li uplatnit tato práva, kontaktujte nás na [Vaše emailová adresa].
+
+6. Banner souhlasu s cookies
+
+6.1. Používáme banner souhlasu s cookies, abychom vás informovali o našem používání cookies a získali váš souhlas se shromažďováním dat.
+6.2. Máte možnost přijmout nebo odmítnout používání cookies. Pokud odmítnete, některé funkce našich webových stránek nemusí fungovat správně.
+
+7. Změny těchto zásad
+
+7.1. Tyto zásady ochrany osobních údajů můžeme pravidelně aktualizovat. Jakékoli změny budou zveřejněny na této stránce s aktualizovaným datem.
+7.2. Pokračováním v používání našich služeb po zveřejnění změn souhlasíte s aktualizovanými podmínkami.
+
+8. Kontaktujte nás
+
+Pokud máte jakékoli dotazy nebo obavy ohledně těchto zásad ochrany osobních údajů nebo jak nakládáme s vašimi osobními údaji, kontaktujte nás:
+ • Email: [pitstoplounge29@gmail.com]
+ • Telefon: [+(420) 720 888 131]
+
+Tyto zásady ochrany osobních údajů odrážejí vaše používání systému Senet a řeší shromažďování jmen a telefonních čísel. Dejte mi vědět, pokud jsou potřeba další úpravy!
