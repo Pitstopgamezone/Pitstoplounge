@@ -84,7 +84,7 @@ window.addEventListener('scroll', () => {
     } else if (language === 'cz-service') {
         window.location.href = 'pit-stop-cz.html'; // Перенаправляем на чешскую версию сервиса
     } else if (language === 'en-service') {
-        window.location.href = 'pit-stop.html'; // Перенаправляем на английскую версию сервиса
+        window.location.href = 'pit-stop-en.html'; // Перенаправляем на английскую версию сервиса
     } else if (language === 'uk') {
         window.location.href = 'index-ua.html'; // Перенаправляем на украинскую версию
     } else if (language === 'ru') {
@@ -111,7 +111,7 @@ window.addEventListener('scroll', () => {
       languageDropdown.value = 'en'; // Устанавливаем значение выпадающего списка на английский
   } else if (currentUrl.includes('pit-stop-cz.html')) {
       languageDropdown.value = 'cz-service'; // Устанавливаем значение выпадающего списка на чешский сервис
-  } else if (currentUrl.includes('pit-stop.html')) {
+  } else if (currentUrl.includes('pit-stop-en.html')) {
       languageDropdown.value = 'en-service'; // Устанавливаем значение выпадающего списка на английский сервис
   } else if (currentUrl.includes('pit-stop-ua.html')) {
       languageDropdown.value = 'uk-service'; // Устанавливаем значение выпадающего списка на украинский сервис
