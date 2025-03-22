@@ -733,7 +733,7 @@ body {
   flex: 1; /* Текст занимает всю доступную ширину */
   padding: 10px;
   color: #fff;
-  text-align: left;
+  text-align: center; /* Центрирование текста */
   font-size: 16px;
 }
 
@@ -776,7 +776,7 @@ body {
 .club-overlay ul li {
   margin: 12px 0;
   position: relative;
-  padding-left: 30px;
+  padding-left: 200px;
   transition: all 0.3s ease-in-out;
   text-align: center; /* Центрирование текста */
 }
