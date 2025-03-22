@@ -7,7 +7,7 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.pitstoplounge.com/index-cz.html</loc>
+        <loc>https://www.pitstoplounge.com/index.html</loc>
         <lastmod>2025-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -25,7 +25,19 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.pitstoplounge.com/index-en.html</loc>
+        <lastmod>2025-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.pitstoplounge.com/pit-stop-en.html</loc>
+        <lastmod>2025-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.pitstoplounge.com/pit-stop-en</loc>
         <lastmod>2025-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
