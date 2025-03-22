@@ -78,9 +78,9 @@ window.addEventListener('scroll', () => {
   // Функция для изменения языка
   function changeLanguage(language) {
     if (language === 'cz') {
-        window.location.href = 'index-cz.html'; // Перенаправляем на чешскую версию
+        window.location.href = 'index.html'; // Перенаправляем на чешскую версию
     } else if (language === 'en') {
-        window.location.href = 'index.html'; // Перенаправляем на английскую версию
+        window.location.href = 'index-en.html'; // Перенаправляем на английскую версию
     } else if (language === 'cz-service') {
         window.location.href = 'pit-stop-cz.html'; // Перенаправляем на чешскую версию сервиса
     } else if (language === 'en-service') {
@@ -101,13 +101,13 @@ window.addEventListener('scroll', () => {
     const languageDropdown = document.getElementById('language-dropdown'); // Находим выпадающий список языков
     const currentUrl = window.location.href; // Получаем текущий URL
   
-    if (currentUrl.includes('index-cz.html')) {
+    if (currentUrl.includes('index.html')) {
       languageDropdown.value = 'cz'; // Устанавливаем значение выпадающего списка на чешский
   } else if (currentUrl.includes('index-ua.html')) {
       languageDropdown.value = 'uk'; // Устанавливаем значение выпадающего списка на украинский
   } else if (currentUrl.includes('index-ru.html')) {
       languageDropdown.value = 'ru'; // Устанавливаем значение выпадающего списка на русский
-  } else if (currentUrl.includes('index.html')) {
+  } else if (currentUrl.includes('index-en.html')) {
       languageDropdown.value = 'en'; // Устанавливаем значение выпадающего списка на английский
   } else if (currentUrl.includes('pit-stop-cz.html')) {
       languageDropdown.value = 'cz-service'; // Устанавливаем значение выпадающего списка на чешский сервис
