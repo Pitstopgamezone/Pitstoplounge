@@ -776,7 +776,7 @@ body {
 .club-overlay ul li {
   margin: 12px 0;
   position: relative;
-  padding-left: 200px;
+  padding-left: 50px;
   transition: all 0.3s ease-in-out;
   text-align: center; /* Центрирование текста */
 }
