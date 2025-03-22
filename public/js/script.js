@@ -352,20 +352,31 @@ window.addEventListener('scroll', () => {
   }
   
   function updateClubStatus() {
-      const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
-      const pragueTime = new Date(now);
-      const hours = pragueTime.getHours();
-      const statusText = document.getElementById('status-text');
-  
-      // Часы работы клуба: 10:00 - 22:00
-      if (hours >= 11 && hours < 22) {
-          statusText.textContent = 'Open';
-          statusText.style.color = '#00ff00';
-      } else {
-          statusText.textContent = 'Closed';
-          statusText.style.color = '#ff0000';
-      }
-  }
+    const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Prague" });
+    const pragueTime = new Date(now);
+    const hours = pragueTime.getHours();
+    const statusText = document.getElementById('status-text');
+
+    // Определяем текущий язык страницы
+    const currentLang = document.documentElement.lang;
+
+    // Объект с переводами
+    const translations = {
+        en: { open: 'Open', closed: 'Closed' },
+        cs: { open: 'Otevřeno', closed: 'Zavřeno' },
+        ru: { open: 'Открыто', closed: 'Закрыто' },
+        uk: { open: 'Відкрито', closed: 'Закрито' }
+    };
+
+    // Часы работы клуба: 10:00 - 22:00
+    if (hours >= 10 && hours < 22) {
+        statusText.textContent = translations[currentLang]?.open || translations.en.open;
+        statusText.style.color = '#00ff00';
+    } else {
+        statusText.textContent = translations[currentLang]?.closed || translations.en.closed;
+        statusText.style.color = '#ff0000';
+    }
+}
   
   // Обновляем часы и статус каждую секунду
   setInterval(() => {
