@@ -143,23 +143,7 @@ window.addEventListener('scroll', () => {
       }
   }
   
- //  document.addEventListener("DOMContentLoaded", function () {
-  //   const userLang = navigator.language || navigator.userLanguage; // Определяем язык браузера
-   //  let targetPage = "index.html"; // По умолчанию английская версия
-  
-   //  if (userLang.startsWith("cs")) { // Чешский
-   //      targetPage = "index-cs.html";
-   //  } else if (userLang.startsWith("ru")) { // Русский
-   //      targetPage = "index-ru.html";
-   //  } else if (userLang.startsWith("uk")) { // Украинский
-   //      targetPage = "index-ua.html";
-   //  }
-  
-    // Проверяем, чтобы не делать редирект повторно
-   //  if (window.location.pathname === "/index.html" && targetPage !== "index.html") {
-   //      window.location.replace(targetPage); // Перенаправляем на нужную версию страницы
-   //  }
- //  });
+ 
   
   // Tooltip для адреса
   function initializeTooltip() {
@@ -278,7 +262,7 @@ window.addEventListener('scroll', () => {
         // Показ меню через 4 секунды
         setTimeout(() => {
             burgerContainer.classList.add('visible');
-        }, 3000);
+        }, 2000);
     }
   
     if (burgerButton && burgerMenu) {
