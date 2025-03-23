@@ -369,7 +369,7 @@ window.addEventListener('scroll', () => {
     };
 
     // Часы работы клуба: 10:00 - 22:00
-    if (hours >= 10 && hours < 22) {
+    if (hours >= 11 && hours < 22) {
         statusText.textContent = translations[currentLang]?.open || translations.en.open;
         statusText.style.color = '#00ff00';
     } else {
