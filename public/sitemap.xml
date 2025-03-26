@@ -2,18 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.pitstoplounge.com/</loc>
-        <lastmod>2025-02-26</lastmod>
-        <changefreq>monthly</changefreq>
+        <lastmod>2025-03-01</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.pitstoplounge.com/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.pitstoplounge.com/index-ru.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pitstoplounge.com/index-en.html" />
+        <xhtml:link rel="alternate" hreflang="uk" href="https://www.pitstoplounge.com/index-ua.html" />
     </url>
-    <url>
-    <loc>https://www.pitstoplounge.com/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://www.pitstoplounge.com/index.html" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.pitstoplounge.com/index-ru.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.pitstoplounge.com/index-en.html" />
-    <xhtml:link rel="alternate" hreflang="uk" href="https://www.pitstoplounge.com/index-ua.html" />
-    </url>
-    <url>
         <loc>https://www.pitstoplounge.com/index-ru.html</loc>
         <lastmod>2025-02-26</lastmod>
         <changefreq>monthly</changefreq>
