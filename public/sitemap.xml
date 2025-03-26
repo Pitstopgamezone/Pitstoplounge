@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- Главная страница -->
     <url>
         <loc>https://www.pitstoplounge.com/</loc>
         <lastmod>2025-03-01</lastmod>
@@ -10,23 +11,40 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://www.pitstoplounge.com/index-en.html" />
         <xhtml:link rel="alternate" hreflang="uk" href="https://www.pitstoplounge.com/index-ua.html" />
     </url>
+
+    <!-- Русская версия -->
+    <url>
         <loc>https://www.pitstoplounge.com/index-ru.html</loc>
         <lastmod>2025-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- Украинская версия -->
     <url>
         <loc>https://www.pitstoplounge.com/index-ua.html</loc>
         <lastmod>2025-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- Английская версия -->
     <url>
         <loc>https://www.pitstoplounge.com/index-en.html</loc>
         <lastmod>2025-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- Чешская версия -->
+    <url>
+        <loc>https://www.pitstoplounge.com/index.html</loc>
+        <lastmod>2025-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Страницы сервиса велосипедов -->
     <url>
         <loc>https://www.pitstoplounge.com/pit-stop-en.html</loc>
         <lastmod>2025-02-26</lastmod>
@@ -51,5 +69,4 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
 </urlset>
