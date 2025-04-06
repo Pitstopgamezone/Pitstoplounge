@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <!-- Главная страница -->
     <url>
-        <loc>https://www.pitstoplounge.com/</loc>
+        <loc>https://pitstoplounge.com/</loc>
         <lastmod>2025-03-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="cs" href="https://www.pitstoplounge.com/" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://www.pitstoplounge.com/index-ru.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.pitstoplounge.com/index-en.html" />
-        <xhtml:link rel="alternate" hreflang="uk" href="https://www.pitstoplounge.com/index-ua.html" />
+        <xhtml:link rel="alternate" hreflang="cs" href="https://pitstoplounge.com/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://pitstoplounge.com/index-ru.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://pitstoplounge.com/index-en.html" />
+        <xhtml:link rel="alternate" hreflang="uk" href="https://pitstoplounge.com/index-ua.html" />
     </url>
 
     <!-- Русская версия -->
