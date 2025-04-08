@@ -49,11 +49,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const pricingItems = document.querySelectorAll('.pricing-item');
 
     pricingItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
+            // Убираем подсветку со всех элементов
+            pricingItems.forEach(el => el.classList.remove('highlight'));
+
+            // Добавляем подсветку к текущему элементу
+            this.classList.add('highlight');
+
             // Переключаем класс active для заголовка
             this.classList.toggle('active');
 
