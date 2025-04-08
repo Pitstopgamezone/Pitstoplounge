@@ -344,21 +344,25 @@ tr:nth-child(even) {
 /* Анимация для стрелки-указателя */
 @keyframes bounce {
     0%, 100% {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
     50% {
-        transform: translateY(-5px);
+        transform: translateY(-5px) scale(1.2); /* Подпрыгивание и увеличение */
     }
 }
 
 @keyframes pulse {
-    0%, 100% {
+    0% {
         transform: scale(1);
-        color: #ff6600;
+        color: #ffd500; /* Белый */
     }
     50% {
         transform: scale(1.2);
-        color: #ff3300;
+        color: #ff6600; /* Оранжевый */
+    }
+    100% {
+        transform: scale(1);
+        color: #ff3300; /* Красный */
     }
 }
 
@@ -373,7 +377,7 @@ tr:nth-child(even) {
 .pricing-item.active .toggle-indicator {
     transform: rotate(180deg);
     animation: none; /* Отключаем анимацию при раскрытии */
-    color: #ff3300; /* Меняем цвет при раскрытии */
+    color: #010101; /* Меняем цвет при раскрытии */
 }
 
 .pricing-note {
