@@ -542,7 +542,7 @@ footer {
 
     .service-item img, .partner-item img {
         width: 70%;
-        max-width: 100px;
+        max-width: 60px;
         height: auto;
         border-radius: 8px;
         object-fit: cover;
