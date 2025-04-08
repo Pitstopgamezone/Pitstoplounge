@@ -2010,6 +2010,16 @@ body {
   text-align: center; /* Центрирование текста заголовка */
 }
 
+/* Стиль для текста с информацией о сроках действия тарифов */
+.pricing-box p {
+  font-family: Arial, sans-serif;
+  font-size: 14px; /* Размер шрифта */
+  color: #ffcc00; /* Золотистый цвет текста */
+  text-align: center; /* Центрирование текста */
+  margin: 10px 0; /* Отступы сверху и снизу */
+  font-style: italic; /* Курсив для выделения */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Лёгкая тень для текста */
+}
 
 
 
