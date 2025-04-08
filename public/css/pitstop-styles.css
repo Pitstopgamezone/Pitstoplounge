@@ -351,17 +351,37 @@ tr:nth-child(even) {
     }
 }
 
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        color: #ff6600;
+    }
+    50% {
+        transform: scale(1.2);
+        color: #ff3300;
+    }
+}
+
 .toggle-indicator {
     font-size: 1.2em;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    animation: bounce 1.5s infinite; /* Анимация подпрыгивания */
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: bounce 1.5s infinite, pulse 2s infinite; /* Подпрыгивание и пульсация */
 }
 
 /* Поворот стрелки при активной секции */
 .pricing-item.active .toggle-indicator {
     transform: rotate(180deg);
     animation: none; /* Отключаем анимацию при раскрытии */
+    color: #ff3300; /* Меняем цвет при раскрытии */
+}
+
+.pricing-note {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+    font-style: italic;
 }
 
 
