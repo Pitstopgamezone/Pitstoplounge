@@ -341,6 +341,30 @@ tr:nth-child(even) {
     color: #fff;
 }
 
+/* Анимация для стрелки-указателя */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.toggle-indicator {
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: bounce 1.5s infinite; /* Анимация подпрыгивания */
+}
+
+/* Поворот стрелки при активной секции */
+.pricing-item.active .toggle-indicator {
+    transform: rotate(180deg);
+    animation: none; /* Отключаем анимацию при раскрытии */
+}
+
+
 /* Контакты */
 #contact p {
     text-align: center;

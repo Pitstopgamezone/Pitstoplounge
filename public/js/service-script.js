@@ -47,12 +47,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const pricingItems = document.querySelectorAll('.pricing-item');
 
     pricingItems.forEach(item => {
         item.addEventListener('click', function() {
+            // Переключаем класс active для заголовка
             this.classList.toggle('active');
+
+            // Находим следующую строку (детали прайса)
+            const detailsRow = this.nextElementSibling;
+
+            // Проверяем, есть ли у следующей строки класс pricing-details
+            if (detailsRow && detailsRow.classList.contains('pricing-details')) {
+                // Переключаем видимость строки
+                if (detailsRow.style.display === 'none' || !detailsRow.style.display) {
+                    detailsRow.style.display = 'table-row';
+                } else {
+                    detailsRow.style.display = 'none';
+                }
+            }
         });
     });
 });
