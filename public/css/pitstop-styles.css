@@ -293,6 +293,7 @@ table, th, td {
 th, td {
     padding: 10px;
     text-align: center;
+    font-weight: bold;
 }
 
 th {
