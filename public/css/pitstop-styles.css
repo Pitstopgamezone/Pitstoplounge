@@ -395,6 +395,107 @@ tr:nth-child(even) {
     font-style: italic;
 }
 
+.hidden {
+    display: none;/* для класса целого */
+}
+#calculator {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 600px;
+    background-color: #f9f9f9;
+}
+
+#calculator h2, #calculator h3 {
+    text-align: center;
+    color: #333;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #ff6600;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff3300;
+}
+
+#selected-services {
+    list-style: none;
+    padding: 0;
+}
+
+#selected-services li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#selected-services li button {
+    background-color: #ff3300;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#selected-services li button:hover {
+    background-color: #cc0000;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form select, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #ff6600;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff3300;
+}
+
+#total-price {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
 
 /* Контакты */
 #contact p {

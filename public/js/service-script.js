@@ -179,3 +179,168 @@ window.onclick = function(event) {
 }
 
 
+// Полный перечень услуг
+// Полный перечень услуг
+const services = {
+    complex: [
+        { name: "Základní servis", price: 1000 },
+        { name: "Standardní servis", price: 1800 },
+        { name: "Kompletní servis", price: 2800 }
+    ],
+    single: [
+        { name: "Diagnostika", price: 0 },
+        { name: "Seřízení přehazovačky (přední/zadní)", price: 150 },
+        { name: "Seřízení brzd (přední/zadní)", price: 150 },
+        { name: "Měření/čištění/mazání řetězu", price: 200 },
+        { name: "Centrovaní kola", price: 300 }
+    ],
+    electro: [
+        { name: "Diagnostika baterie", price: 500 },
+        { name: "Výměna článku baterie", price: 150 },
+        { name: "Oprava konektorů/kontaktů", price: 200 },
+        { name: "Testování elektrokola", price: 150 },
+        { name: "Výměna baterie", price: 100 },
+        { name: "Výměna displeje (neintegrovaný)", price: 150 },
+        { name: "Výměna displeje (integrovaný)", price: 350 },
+        { name: "Výměna ložisek motorového kola", price: 200 },
+        { name: "Výměna kabelу mezi baterií a motorem", price: 400 },
+        { name: "Výměna rychlostního senzoru", price: 200 },
+        { name: "Výměna ložisek středového motoru", price: 300 },
+        { name: "Výměna zámku baterie", price: 200 }
+    ],
+    additional: [
+        { name: "Bezkamerní páska 2,5 m (1 kolo)", price: 200 },
+        { name: "Dávka DOT 50 ml", price: 150 },
+        { name: "Dávka minerálního oleje Sram 50 ml", price: 150 },
+        { name: "Dávka minerálního oleje Shimano 50 ml", price: 150 },
+        { name: "Bezkamerní tmel", price: 200 },
+        { name: "Základní mytí kola", price: 300 },
+        { name: "Mytí jednotlivých částí kola", price: 100 },
+        { name: "Mytí kol", price: 100 },
+        { name: "Balení kola do krabice", price: 600 },
+        { name: "Řezání závitu", price: 100 },
+        { name: "Obnovení závitu (přes vložku)", price: 100 },
+        { name: "Povolení šroubu", price: 50 },
+        { name: "Demontáž celého kola", price: 700 },
+        { name: "Sestavení kola z krabice", price: 1600 },
+        { name: "Kompletní sestavení kola z jednotlivých dílů", price: 2500 },
+        { name: "Sestavení dětského kola", price: 700 },
+        { name: "Montáž stojánku", price: 100 },
+        { name: "Montáž cyklopočítače", price: 200 },
+        { name: "Montáž košíku", price: 100 },
+        { name: "Montáž světla", price: 100 },
+        { name: "Montáž blatníků", price: 150 },
+        { name: "Montáž malých blatníků", price: 50 },
+        { name: "Aplikace malé ochranné fólie", price: 300 },
+        { name: "Aplikace velké ochranné fólie", price: 500 }
+    ],
+    brakes: [
+        { name: "Odzvdušnění hydraulických brzd", price: 350 },
+        { name: "Odstranění vzduchu z hydraulických brzd", price: 150 },
+        { name: "Výměna brzdových destiček", price: 100 },
+        { name: "Seřízení přední/zadní brzdy", price: 150 },
+        { name: "Čištění/seřízení třmenu", price: 100 },
+        { name: "Výměna brzdového kotouče", price: 100 },
+        { name: "Rovnání brzdového kotouče", price: 100 },
+        { name: "Frézování brzdových dosedacích ploch", price: 300 }
+    ],
+    wheels: [
+        { name: "Výměna pláště", price: 150 },
+        { name: "Výměna duše", price: 150 },
+        { name: "Instalace vložky do pláště", price: 100 },
+        { name: "Lepení bezdušové pásky (1 vrstva)", price: 100 },
+        { name: "Lepení bezdušové pásky (2 vrstvy)", price: 150 },
+        { name: "Výměna pásky do ráfku", price: 50 },
+        { name: "Čištění pláště od tmelu", price: 150 },
+        { name: "Čištění ráfku od tmelu", price: 150 },
+        { name: "Výměna tmelu", price: 400 },
+        { name: "Montáž ventilku na bezdušové kolo", price: 50 },
+        { name: "Centrovaní kola", price: 300 }
+    ]
+};
+
+// Остальная логика калькулятора остаётся без изменений
+
+let selectedServices = [];
+
+function updateServiceOptions() {
+    const category = document.getElementById("service-category").value;
+    const serviceType = document.getElementById("service-type");
+
+    serviceType.innerHTML = "";
+
+    services[category].forEach(service => {
+        const option = document.createElement("option");
+        option.value = service.price;
+        option.textContent = `${service.name} - ${service.price} Kč`;
+        serviceType.appendChild(option);
+    });
+}
+
+function addService() {
+    const serviceType = document.getElementById("service-type");
+    const quantity = document.getElementById("quantity").value;
+
+    if (serviceType.selectedIndex === -1) {
+        alert("Vyberte službu!");
+        return;
+    }
+
+    const selectedOption = serviceType.options[serviceType.selectedIndex];
+    const serviceName = selectedOption.textContent.split(" - ")[0];
+    const servicePrice = parseInt(selectedOption.value) * quantity;
+
+    selectedServices.push({ name: serviceName, price: servicePrice });
+
+    updateSelectedServices();
+    calculateTotalPrice();
+}
+
+function updateSelectedServices() {
+    const selectedServicesList = document.getElementById("selected-services");
+    selectedServicesList.innerHTML = "";
+
+    selectedServices.forEach((service, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            ${service.name} - ${service.price} Kč
+            <button onclick="removeService(${index})">Odstranit</button>
+        `;
+        selectedServicesList.appendChild(li);
+    });
+}
+
+function removeService(index) {
+    selectedServices.splice(index, 1);
+    updateSelectedServices();
+    calculateTotalPrice();
+}
+
+function calculateTotalPrice() {
+    const totalPrice = selectedServices.reduce((sum, service) => sum + service.price, 0);
+    document.getElementById("total-price").textContent = `Celková cena: ${totalPrice} Kč`;
+}
+
+function resetCalculator() {
+    selectedServices = [];
+    updateSelectedServices();
+    calculateTotalPrice();
+}
+
+// Инициализация опций при загрузке страницы
+document.addEventListener("DOMContentLoaded", updateServiceOptions);
+
+// Обработка формы заявки
+document.getElementById('order-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+
+    alert(`Děkujeme za vaši objednávku, ${name}! Brzy vás budeme kontaktovat.`);
+    
+    // Здесь можно добавить логику для отправки данных на сервер
+    this.reset();
+});
