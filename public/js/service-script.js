@@ -373,6 +373,7 @@ function sendToTelegram(event) {
 
     const token = "7120258533:AAFr3vdl55kkjk1WMszxBEqUIYbKIH1C9KQ"; // Ваш токен
     const chatId = "-1002370341473"; // ID вашей группы
+    const threadId = 1119; // ID темы (ветки)
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
     // Получаем данные из формы
@@ -388,7 +389,7 @@ function sendToTelegram(event) {
     fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: chatId, text: text }),
+        body: JSON.stringify({ chat_id: chatId, message_thread_id: threadId, text: text }),
     })
         .then(response => {
             if (response.ok) {
@@ -400,3 +401,35 @@ function sendToTelegram(event) {
         })
         .catch(error => console.error("Ошибка:", error));
 }
+
+
+document.getElementById('order-form').addEventListener('submit', function (event) {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (name.length > 50 || !/^[A-Za-zÀ-ž\s]+$/.test(name)) {
+        alert('Jméno může obsahovat pouze písmena a mezery (max. 50 znaků).');
+        event.preventDefault();
+        return;
+    }
+
+    if (email.length > 100 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Zadejte platný email (max. 100 znaků).');
+        event.preventDefault();
+        return;
+    }
+
+    if (phone.length > 15 || !/^\+?[0-9\s\-]+$/.test(phone)) {
+        alert('Telefon může obsahovat pouze čísla, mezery, pomlčky a + (max. 15 znaků).');
+        event.preventDefault();
+        return;
+    }
+
+    if (message.length > 500) {
+        alert('Zpráva může obsahovat maximálně 500 znaků.');
+        event.preventDefault();
+        return;
+    }
+});
