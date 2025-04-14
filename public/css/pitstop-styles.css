@@ -693,6 +693,12 @@ form {
     font-weight: bold;
     color: #333;
 }
+.price-note {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+    text-align: center;
+}
 
 #partners {
     margin: 40px auto;
