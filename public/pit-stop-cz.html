@@ -91,6 +91,7 @@
     </header>
 
     <section id="services">
+        <div class="tire-track"></div>
         <h2>Oprava kol a servis elektrokol</h2>
         <div class="services-container">
             <div class="service-item">
@@ -1231,6 +1232,7 @@
     </section>
 
     <section id="calculator" class="calculator-card">
+        <div class="tire-track"></div>
         <h2>Kalkulačka ceny</h2>
         <form id="price-calculator">
             <div class="form-group">
@@ -1265,21 +1267,21 @@
         <button type="button" class="btn-secondary" onclick="resetCalculator()">Resetovat kalkulačku</button>
     </section>
     
-    <section id="request-form" class="hidden"><!-- -->
+    <section id="request-form">
         <h2>Formulář pro objednávku</h2>
-        <form id="order-form">
+        <form id="order-form" action="mailto:pitstoplounge29@gmail.com" method="POST" enctype="text/plain">
             <label for="name">Jméno:</label>
-            <input type="text" id="name" required>
-    
+            <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+        
             <label for="email">Email:</label>
-            <input type="email" id="email" required>
-    
+            <input type="email" id="email" name="email" placeholder="Váš email" required>
+        
             <label for="phone">Telefon:</label>
-            <input type="tel" id="phone" required>
-    
+            <input type="tel" id="phone" name="phone" placeholder="Váš telefon" required>
+        
             <label for="message">Zpráva:</label>
-            <textarea id="message" rows="4"></textarea>
-    
+            <textarea id="message" name="message" rows="4" placeholder="Vaše zpráva"></textarea>
+        
             <button type="submit">Odeslat</button>
         </form>
     </section>
@@ -1287,15 +1289,23 @@
 
     <section id="partners">
         <h2>Naši partneři</h2>
+        <p>Jsme hrdí na spolupráci s těmito společnostmi. Kurýři těchto firem u nás získávají <strong>speciální slevy</strong> na opravy a údržbu kol.</p>
         <div class="partners-container">
             <div class="partner-item">
-                <img src="images/foodora-logo.gif" alt="Foodora">
-                <p>Foodora</p>
+                <a href="https://www.foodora.cz" target="_blank" rel="noopener noreferrer">
+                    <img src="images/foodora-logo.gif" alt="Foodora - Kurýrní služba">
+                    <p>Foodora</p>
+                </a>
+                <p>Kurýři Foodora získávají <strong>extra slevu</strong> na všechny služby.</p>
             </div>
             <div class="partner-item">
-                <img src="images/bolt-logo.gif" alt="Bolt">
-                <p>Bolt</p>
+                <a href="https://www.bolt.eu" target="_blank" rel="noopener noreferrer">
+                    <img src="images/bolt-logo.gif" alt="Bolt - Kurýrní služba">
+                    <p>Bolt</p>
+                </a>
+                <p>Kurýři Bolt získávají <strong>extra slevu</strong> na opravy kol a elektrokol.</p>
             </div>
+            
         </div>
     </section>
 

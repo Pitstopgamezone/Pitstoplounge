@@ -1,3 +1,21 @@
+// следы
+document.addEventListener('DOMContentLoaded', () => {
+    const tracks = document.querySelectorAll('.tire-track');
+
+    const handleScroll = () => {
+        tracks.forEach(track => {
+            const rect = track.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                track.style.animationPlayState = 'running'; // Запускаем анимацию
+            } else {
+                track.style.animationPlayState = 'paused'; // Останавливаем анимацию
+            }
+        });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+});
+
 // Массив заранее подготовленных ответов
 const predefinedAnswers = {
     "привет": "Здравствуйте! Чем могу помочь?",
