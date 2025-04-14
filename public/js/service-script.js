@@ -294,6 +294,11 @@ function addService() {
 
     updateSelectedServices();
     calculateTotalPrice();
+
+    // Анимация добавления
+    const totalPriceElement = document.getElementById("total-price");
+    totalPriceElement.classList.add("highlight");
+    setTimeout(() => totalPriceElement.classList.remove("highlight"), 500);
 }
 
 function updateSelectedServices() {

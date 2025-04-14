@@ -1230,36 +1230,42 @@
         </p>
     </section>
 
-    <section id="calculator">
+    <section id="calculator" class="calculator-card">
         <h2>Kalkulačka ceny</h2>
         <form id="price-calculator">
-            <label for="service-category">Vyberte kategorii:</label>
-            <select id="service-category" onchange="updateServiceOptions()">
-                <option value="complex">Komplexní servis</option>
-                <option value="single">Jednotlivé služby</option>
-                <option value="electro">Elektrokola</option>
-                <option value="additional">Doplňkové práce</option>
-                <option value="brakes">Brzdy</option>
-                <option value="wheels">Kola</option>
-            </select>
+            <div class="form-group">
+                <label for="service-category"><i class="fas fa-list"></i> Vyberte kategorii:</label>
+                <select id="service-category" onchange="updateServiceOptions()">
+                    <option value="complex">Komplexní servis</option>
+                    <option value="single">Jednotlivé služby</option>
+                    <option value="electro">Elektrokola</option>
+                    <option value="additional">Doplňkové práce</option>
+                    <option value="brakes">Brzdy</option>
+                    <option value="wheels">Kola</option>
+                </select>
+            </div>
     
-            <label for="service-type">Vyberte služby:</label>
-            <select id="service-type"></select>
+            <div class="form-group">
+                <label for="service-type"><i class="fas fa-tools"></i> Vyberte služby:</label>
+                <select id="service-type"></select>
+            </div>
     
-            <label for="quantity">Počet kol:</label>
-            <input type="number" id="quantity" min="1" value="1">
+            <div class="form-group">
+                <label for="quantity"><i class="fas fa-bicycle"></i> Počet kol:</label>
+                <input type="number" id="quantity" min="1" value="1">
+            </div>
     
-            <button type="button" onclick="addService()">Přidat službu</button>
+            <button type="button" class="btn-primary" onclick="addService()">Přidat službu</button>
         </form>
     
         <h3>Vybrané služby:</h3>
         <ul id="selected-services"></ul>
     
-        <p id="total-price">Celková cena: 0 Kč</p>
-        <button type="button" onclick="resetCalculator()">Resetovat kalkulačku</button>
+        <p id="total-price" class="total-price">Celková cena: 0 Kč</p>
+        <button type="button" class="btn-secondary" onclick="resetCalculator()">Resetovat kalkulačku</button>
     </section>
     
-    <section id="request-form" class="hidden">
+    <section id="request-form" class="hidden"><!-- -->
         <h2>Formulář pro objednávku</h2>
         <form id="order-form">
             <label for="name">Jméno:</label>
