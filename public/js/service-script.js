@@ -367,3 +367,36 @@ document.getElementById('order-form').addEventListener('submit', function (e) {
     // Здесь можно добавить логику для отправки данных на сервер
     this.reset();
 });
+
+function sendToTelegram(event) {
+    event.preventDefault(); // Останавливаем стандартное поведение формы
+
+    const token = "7120258533:AAFr3vdl55kkjk1WMszxBEqUIYbKIH1C9KQ"; // Ваш токен
+    const chatId = "-1002370341473"; // ID вашей группы
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+    // Получаем данные из формы
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
+
+    // Формируем текст сообщения
+    const text = `📝 Новая заявка:\n\n👤 Имя: ${name}\n📧 Email: ${email}\n📞 Телефон: ${phone}\n💬 Сообщение: ${message}`;
+
+    // Отправляем запрос в Telegram
+    fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text: text }),
+    })
+        .then(response => {
+            if (response.ok) {
+                alert("Сообщение успешно отправлено в Telegram!");
+                document.getElementById("order-form").reset(); // Сбрасываем форму
+            } else {
+                alert("Ошибка при отправке сообщения.");
+            }
+        })
+        .catch(error => console.error("Ошибка:", error));
+}
