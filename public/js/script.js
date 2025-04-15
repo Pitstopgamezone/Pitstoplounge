@@ -122,28 +122,54 @@ window.addEventListener('scroll', () => {
   
   // Функция для проверки и показа заставки
   function checkAndShowIntro() {
-      const hasSeenIntro = localStorage.getItem('hasSeenIntro'); // Проверяем, видел ли пользователь заставку
-      const neonTextContainer = document.getElementById('neon-text-container'); // Находим контейнер с неоновым текстом
-      const mainContent = document.getElementById('main-content'); // Находим основной контент
-    
-      if (!hasSeenIntro) {
-          // Показываем заставку
-          if (neonTextContainer) neonTextContainer.style.display = 'block';
-          if (mainContent) mainContent.style.display = 'none';
-    
-          setTimeout(() => {
-              if (neonTextContainer) neonTextContainer.style.display = 'none';
-              if (mainContent) mainContent.style.display = 'block';
-              localStorage.setItem('hasSeenIntro', 'true'); // Сохраняем информацию о том, что пользователь видел заставку
-          }, 3000); // Задержка для показа заставки
-      } else {
-          // Скрываем заставку и показываем контент сразу
-          if (neonTextContainer) neonTextContainer.style.display = 'none';
-          if (mainContent) mainContent.style.display = 'block';
-      }
-  }
+    const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+    const neonTextContainer = document.getElementById('neon-text-container');
+    const mainContent = document.getElementById('main-content');
+
+    if (!hasSeenIntro) {
+        if (neonTextContainer) neonTextContainer.style.display = 'block';
+        if (mainContent) mainContent.style.display = 'none';
+
+        setTimeout(() => {
+            if (neonTextContainer) neonTextContainer.style.display = 'none';
+            launchFireworks(); // Запускаем фейерверк
+            localStorage.setItem('hasSeenIntro', 'true');
+        }, 3000); // Задержка перед запуском фейерверка
+    } else {
+        if (neonTextContainer) neonTextContainer.style.display = 'none';
+        if (mainContent) mainContent.style.display = 'block';
+    }
+}
   
- 
+  function createFirework(x, y) {
+    const firework = document.createElement('div');
+    firework.classList.add('firework');
+    firework.style.left = `${x}px`;
+    firework.style.top = `${y}px`;
+    firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    document.getElementById('fireworks-container').appendChild(firework);
+
+    setTimeout(() => {
+        firework.remove();
+    }, 1500);
+}
+
+function launchFireworks() {
+    const container = document.getElementById('fireworks-container');
+    container.style.display = 'block';
+
+    const interval = setInterval(() => {
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        createFirework(x, y);
+    }, 200);
+
+    setTimeout(() => {
+        clearInterval(interval);
+        container.style.display = 'none';
+        document.getElementById('main-content').style.display = 'block'; // Показываем основной контент
+    }, 5000); // Фейерверк длится 5 секунд
+}
   
   // Tooltip для адреса
   function initializeTooltip() {
