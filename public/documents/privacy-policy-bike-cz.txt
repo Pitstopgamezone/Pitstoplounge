@@ -37,20 +37,20 @@
     Customers must test their bicycles upon collection; later claims regarding completed repairs will not be accepted.  
 
 ### 5. Skladování a nevyzvednutá kola / Storage & Unclaimed Bicycles
-5.1 Zákazníci musí svá kola vyzvednout do **5 dnů** po dokončení opravy.  
-    Customers must collect their bicycles within **5 days** after service completion.  
-5.2 Po **5 dnech** bude účtován denní poplatek za skladování.  
-    Unclaimed bicycles will incur a daily storage fee after **5 days**.  
-5.3 Po **30 dnech** bude kolo považováno za opuštěné a může být prodáno k pokrytí nákladů.  
-    After **30 days**, unclaimed bicycles will be considered abandoned and may be sold to recover costs.  
+5.1 Zákazníci musí svá kola vyzvednout do **3 dnů** po dokončení opravy.  
+    Customers must collect their bicycles within **3 days** after service completion.  
+5.2 Po **3 dnech** bude účtován denní poplatek za skladování.  
+    Unclaimed bicycles will incur a daily storage fee after **3 days**.  
+5.3 Po **15 dnech** bude kolo považováno za opuštěné a může být prodáno k pokrytí nákladů.  
+    After **15 days**, unclaimed bicycles will be considered abandoned and may be sold to recover costs.  
 
 ### 6. Podmínky mobilního servisu / Mobile Workshop Terms
-6.1 Zákazníci musí zajistit vhodné místo pro provedení mobilní opravy.  
-    Customers must ensure a suitable workspace for mobile repairs.  
-6.2 V případě nepříznivého počasí nebo bezpečnostních problémů si vyhrazujeme právo přeplánovat termín.  
-    If weather conditions or safety concerns prevent service, we reserve the right to reschedule.  
-6.3 Pokud zákazník není přítomen v dohodnutém čase, může být účtován poplatek za nové objednání.  
-    If the customer is absent at the scheduled time, a rebooking fee may apply.  
+6.1 Zákazníci musí zajistit vhodné místo pro provedení mobilní opravy (volné parkovací místo nebo povolenou oblast pro parkování).  
+    Customers must ensure a suitable workspace for mobile repairs (free parking space or a permitted area for parking).  
+6.2 V případě nepříznivého počasí nebo bezpečnostních problémů si vyhrazujeme právo přeplánovat termín (do stacionární dílny).  
+    If weather conditions or safety concerns prevent service, we reserve the right to reschedule it (to the in-shop workshop).  
+6.3 Pokud zákazník není přítomen v dohodnutém čase nebo na dohodnutém místě, může být účtován poplatek za nové objednání (výjezd mobilní dílny).  
+    If the customer is absent at the scheduled time or location, a rebooking fee may apply (for the mobile workshop call-out).   
 
 ### 7. Storno podmínky a vrácení peněz / Cancellation & Refund Policy
 7.1 Zrušení objednávky musí být provedeno alespoň **24 hodin** předem.  
