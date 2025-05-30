@@ -177,6 +177,8 @@ languageSwitcher.addEventListener('click', function () {
     }
 });
 
+
+
 // Get the modal
 var modal = document.getElementById("privacy-policy-modal");
 
