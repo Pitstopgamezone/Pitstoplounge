@@ -277,7 +277,7 @@ h2 {
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 15px;
-    background: #f8f8f8;
+    background: rgb(248, 248, 248); /* Чуть прозрачный фон */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -287,18 +287,7 @@ h2 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.service-item img, .partner-item img {
-    width: 40%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: contain;
-    transition: transform 0.3s, opacity 0.3s;
-}
 
-.service-item:hover img, .partner-item:hover img {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
 .service-item {
     cursor: pointer;
 }
@@ -441,7 +430,7 @@ tr:nth-child(even) {
     border: 1px solid #ddd;
     border-radius: 10px;
     max-width: 600px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9e4;
 }
 
 #calculator h2, #calculator h3 {
@@ -707,7 +696,7 @@ form {
 #partners {
     margin: 40px auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9e0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -728,12 +717,13 @@ form {
 .partners-container {
     display: flex;
     flex-wrap: wrap;
+    background-color: #f9f9f9a1;
     justify-content: center;
     gap: 20px;
 }
 
 .partner-item {
-    background-color: #fff;
+    background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 15px;
