@@ -9,6 +9,22 @@ body {
     overflow-x: hidden;
 }
 
+/* Адаптация для маленьких экранов */
+@media (max-width: 768px) {
+    body {
+        background-size: cover; /* Убедитесь, что изображение сохраняет пропорции */
+        background-position: center; /* Центрируем изображение */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: contain; /* Уменьшаем изображение, чтобы оно полностью помещалось */
+        background-repeat: no-repeat; /* Убираем повторение */
+        background-position: center; /* Центрируем изображение */
+    }
+}
+
 /* Навигация */
 nav {
     display: flex;
