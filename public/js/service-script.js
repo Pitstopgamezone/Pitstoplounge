@@ -224,7 +224,35 @@ const services = {
         { name: "Výměna kabelу mezi baterií a motorem", price: 400 },
         { name: "Výměna rychlostního senzoru", price: 200 },
         { name: "Výměna ložisek středového motoru", price: 300 },
-        { name: "Výměna zámku baterie", price: 200 }
+        { name: "Výměna zámku baterie", price: 200 },
+        { name: "Demontáž a diagnostika závady motoru", price: 300 },
+        { name: "Převinutí vinutí / oprava statoru", price: "2000–6000" },
+        { name: "Výměna ložiska", price: 400 },
+        { name: "Údržba motoru (čištění, mazání)", price: 600 },
+        { name: "Vyplétání motorového kola", price: 800 },
+        { name: "Diagnostika regulátoru", price: 100 },
+        { name: "Výměna regulátoru", price: 200 },
+        { name: "Přeprogramování / nastavení parametrů", price: 200 },
+        { name: "Ochrana proti vlhkosti (hermetizace)", price: 250 },
+        { name: "Diagnostika baterie (test článků na vnitřní odpor)", price: 500 },
+        { name: "Výměna článku baterie", price: "150–300" },
+        { name: "Oprava/výměna BMS", price: 500 },
+        { name: "Oprava konektorů/kontaktů", price: "200–500" },
+        { name: "Přepákování baterie (voděodolná vrstva)", price: 250 },
+        { name: "Instalace přídavné baterie", price: 500 },
+        { name: "Výměna Hallova senzoru v motorovém kole", price: 800 },
+        { name: "Výměna pedálového senzoru PAS", price: 250 },
+        { name: "Nastavení brzdových senzorů", price: 150 },
+        { name: "Kontrola/oprava senzorů rychlosti a otáček", price: 400 },
+        { name: "Diagnostika zkratu", price: 250 },
+        { name: "Výměna poškozené kabeláže", price: 100 },
+        { name: "Vytvoření nového kabelového schématu", price: "400–800" },
+        { name: "Instalace ochranných bužírek / návleků", price: "30 Kč / 10 cm" },
+        { name: "Oprava konektorů", price: "200–500" },
+        { name: "Výměna tlačítka napájení / režimu", price: "150–300" },
+        { name: "Instalace nového displeje", price: "150–250" },
+        { name: "Oprava ovládacího panelu", price: "200–500" },
+        { name: "Instalace plynové rukojeti / PAS senzoru", price: 100 }
     ],
     additional: [
         { name: "Bezkamerní páska 2,5 m (1 kolo)", price: 200 },
@@ -295,6 +323,10 @@ function updateServiceOptions() {
     });
 }
 
+function formatPrice(price) {
+    return typeof price === "string" ? price : `${price} Kč`;
+}
+
 function addService() {
     const serviceType = document.getElementById("service-type");
     const quantity = document.getElementById("quantity").value;
@@ -306,9 +338,19 @@ function addService() {
 
     const selectedOption = serviceType.options[serviceType.selectedIndex];
     const serviceName = selectedOption.textContent.split(" - ")[0];
-    const servicePrice = parseInt(selectedOption.value) * quantity;
+    const servicePrice = selectedOption.value;
 
-    selectedServices.push({ name: serviceName, price: servicePrice });
+    // Проверяем, является ли цена диапазоном
+    if (isNaN(servicePrice)) {
+        const userPrice = prompt(`Zadejte cenu pro službu "${serviceName}" v rámci rozsahu ${servicePrice} Kč:`);
+        if (!userPrice || isNaN(userPrice) || userPrice < parseInt(servicePrice.split("–")[0]) || userPrice > parseInt(servicePrice.split("–")[1])) {
+            alert(`Zadejte platnou cenu v rámci rozsahu ${servicePrice} Kč.`);
+            return;
+        }
+        selectedServices.push({ name: serviceName, price: parseInt(userPrice) * quantity });
+    } else {
+        selectedServices.push({ name: serviceName, price: parseInt(servicePrice) * quantity });
+    }
 
     updateSelectedServices();
     calculateTotalPrice();
