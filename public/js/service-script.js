@@ -131,27 +131,50 @@ document.addEventListener('scroll', handleScroll);
 
 const languageSwitcher = document.getElementById('language-switcher');
 
-languageSwitcher.addEventListener('click', function() {
-    const currentLang = document.documentElement.lang;
-    let newLang = 'en';
-    let newFile = 'pit-stop-en.html';
+languageSwitcher.addEventListener('click', function () {
+    const currentLang = document.documentElement.lang; // Текущий язык
+    const currentPath = window.location.pathname; // Текущий путь
+    let newLang = '';
+    let newFile = '';
 
-    if (currentLang === 'ru') {
-        newLang = 'ua';
-        newFile = 'pit-stop-ua.html';
-    } else if (currentLang === 'en') {
-        newLang = 'cs';
-        newFile = 'pit-stop-cz.html';
-    } else if (currentLang === 'cs') {
-        newLang = 'ua';
-        newFile = 'pit-stop-ua.html';
-    } else if (currentLang === 'ua') {
-        newLang = 'ru';
-        newFile = 'pit-stop-ru.html';
+    if (currentPath.includes('pit-stop')) {
+        // Если находимся на странице сервиса
+        if (currentLang === 'ru') {
+            newLang = 'uk';
+            newFile = 'pit-stop-ua.html';
+        } else if (currentLang === 'uk') {
+            newLang = 'en';
+            newFile = 'pit-stop-en.html';
+        } else if (currentLang === 'en') {
+            newLang = 'cs';
+            newFile = 'pit-stop-cz.html';
+        } else if (currentLang === 'cs') {
+            newLang = 'ru';
+            newFile = 'pit-stop-ru.html';
+        }
+    } else {
+        // Если находимся на главной странице
+        if (currentLang === 'ru') {
+            newLang = 'uk';
+            newFile = 'index-ua.html';
+        } else if (currentLang === 'uk') {
+            newLang = 'en';
+            newFile = 'index-en.html';
+        } else if (currentLang === 'en') {
+            newLang = 'cz';
+            newFile = 'index.html';
+        } else if (currentLang === 'cz') {
+            newLang = 'ru';
+            newFile = 'index-ru.html';
+        }
     }
 
-    document.documentElement.lang = newLang;
-    window.location.href = newFile;
+    if (newFile) {
+        document.documentElement.lang = newLang;
+        window.location.href = newFile;
+    } else {
+        console.error('Не удалось определить новый файл для переключения языка.');
+    }
 });
 
 // Get the modal
