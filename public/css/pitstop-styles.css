@@ -9,7 +9,14 @@ body {
     overflow-x: hidden;
 }
 
-
+/* Фон для маленьких экранов */
+@media (max-width: 480px) {
+    body {
+        background: url('../images/header-small.jpg') no-repeat center center;
+        background-size: contain; /* Убедитесь, что изображение полностью помещается */
+        background-attachment: scroll; /* Отключаем фиксированное положение */
+    }
+}
 
 /* Навигация */
 nav {
