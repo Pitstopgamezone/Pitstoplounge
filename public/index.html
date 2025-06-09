@@ -90,6 +90,30 @@
     </head>
 
 <body>
+
+   <!-- Кастомный баннер куки сверху -->
+  <div id="cookie-banner">
+    <div>
+      Tato webová stránka používá cookies pro zajištění nejlepšího zážitku z prohlížení.
+      <a href="/privacy-policy-cz.html" target="_blank">Více informací</a>
+    </div>
+    <button id="cookie-accept">Rozumím</button>
+  </div>
+
+  <script>
+    // Показываем баннер, если пользователь ещё не принял
+    if (!localStorage.getItem("cookiesAccepted")) {
+      document.getElementById("cookie-banner").style.display = "flex";
+    } else {
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    // Обработка клика
+    document.getElementById("cookie-accept").addEventListener("click", function () {
+      localStorage.setItem("cookiesAccepted", "true");
+      document.getElementById("cookie-banner").style.display = "none";
+    });
+  </script>
     
     <div class="burger-menu-container">
         <button class="burger-menu-button" aria-label="Toggle navigation menu">
@@ -207,6 +231,7 @@
     <div class="copyright-icon">
         <span class="copyright-symbol">© 2025 Pit Stop Game Zone</span>
     </div>
+    
 </div>
 
 <!-- Модальное окно -->
@@ -555,7 +580,9 @@
     </div>
 </div>
     
+
       
+
     </div>
     
     
